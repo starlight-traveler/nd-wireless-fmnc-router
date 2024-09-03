@@ -1,0 +1,14 @@
+[
+{
+  "directory": "/Users/rpaillet/local/research/research-mitmproxy/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DBUILD_DATE=\"\\\"2024-09-03 09:11:58.3N\\\"\" -I/Users/rpaillet/local/research/research-mitmproxy/include -I/Users/rpaillet/local/research/research-mitmproxy/build -I/Users/rpaillet/local/research/research-mitmproxy/lib/quill/include -isystem /opt/homebrew/opt/openssl@3/include -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -Werror=return-type -Wno-gnu-zero-variadic-macro-arguments -o CMakeFiles/FMNC-MITM.dir/src/main.cpp.o -c /Users/rpaillet/local/research/research-mitmproxy/src/main.cpp",
+  "file": "/Users/rpaillet/local/research/research-mitmproxy/src/main.cpp",
+  "output": "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/rpaillet/local/research/research-mitmproxy/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -DBUILD_DATE=\"\\\"2024-09-03 09:11:58.3N\\\"\" -I/Users/rpaillet/local/research/research-mitmproxy/include -I/Users/rpaillet/local/research/research-mitmproxy/build -I/Users/rpaillet/local/research/research-mitmproxy/lib/quill/include -isystem /opt/homebrew/opt/openssl@3/include -g -std=gnu++17 -arch arm64 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.4 -Werror=return-type -Wno-gnu-zero-variadic-macro-arguments -o CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o -c /Users/rpaillet/local/research/research-mitmproxy/src/logger.cpp",
+  "file": "/Users/rpaillet/local/research/research-mitmproxy/src/logger.cpp",
+  "output": "CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o"
+}
+]
