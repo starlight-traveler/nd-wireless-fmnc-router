@@ -1,0 +1,6 @@
+[submodule "lib/quill"]
+	path = lib/quill
+	url = https://github.com/odygrd/quill.git
+[submodule "lib/raw_tcp"]
+	path = lib/raw_tcp
+	url = https://github.com/h3xduck/RawTCP_Lib.git
