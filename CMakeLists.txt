@@ -136,12 +136,21 @@ enable_clang_tidy(ON)
 enable_coverage(${OPTION_ENABLE_COVERAGE})
 
 # OpenSSL
-set(OPENSSL_ROOT_DIR "/opt/homebrew/opt/openssl@3" CACHE PATH "Root directory of OpenSSL")
-set(OPENSSL_INCLUDE_DIR "${OPENSSL_ROOT_DIR}/include")
-set(OPENSSL_CRYPTO_LIBRARY "${OPENSSL_ROOT_DIR}/lib/libcrypto.dylib")
-set(OPENSSL_SSL_LIBRARY "${OPENSSL_ROOT_DIR}/lib/libssl.dylib")
-find_package(OpenSSL REQUIRED)
+# set(OPENSSL_ROOT_DIR "/opt/homebrew/opt/openssl@3" CACHE PATH "Root directory of OpenSSL")
+# set(OPENSSL_INCLUDE_DIR "${OPENSSL_ROOT_DIR}/include")
+# set(OPENSSL_CRYPTO_LIBRARY "${OPENSSL_ROOT_DIR}/lib/libcrypto.dylib")
+# set(OPENSSL_SSL_LIBRARY "${OPENSSL_ROOT_DIR}/lib/libssl.dylib")
+find_package(ssl REQUIRED)
 
+if(OpenSSL_FOUND)
+    message(STATUS "OpenSSL version: ${OpenSSL_VERSION}")
+    message(STATUS "OpenSSL include dir: ${OpenSSL_INCLUDE_DIR}")
+    message(STATUS "OpenSSL libraries: ${OpenSSL_LIBRARIES}")
+else()
+    message(FATAL_ERROR "OpenSSL not found")
+endif()
+
+include_directories(${OpenSSL_INCLUDE_DIR})
 
 
 # Project-wide include directories. Add any new general include directories here.
@@ -154,7 +163,6 @@ include_directories(${OPENSSL_INCLUDE_DIR})
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/quill)
 
 # Pcap
-find_package(libpcap)
 
 # Project declaration must be after the Hunter Cmake build system.
 project(FMNC-MITM LANGUAGES CXX)
