@@ -15,6 +15,7 @@
 #include <sys/ioctl.h>
 #include <linux/if_packet.h>
 #include <thread>
+#include <net/if_arp.h>
 
 #define MAX_PACKET_SIZE 65536
 
@@ -22,18 +23,12 @@
 int raw_socket;
 int if_index;
 unsigned char src_mac[6];
-const char *interface = "enp3s0"; // Replace with your network interface
+const char *interface = "enp3s0";
 
 // Function prototypes
 void packet_handler(u_char *args, const struct pcap_pkthdr *header, const u_char *packet);
 void setup_raw_socket();
-
-unsigned char *get_mac_address(const char *ip_address)
-{
-    // Replace with the actual MAC address of 192.168.2.2
-    static unsigned char dest_mac[6] = {0x2C, 0xCF, 0x67, 0x03, 0x31, 0xFF};
-    return dest_mac;
-}
+unsigned char *get_mac_address(const char *ip_address);
 
 int main()
 {
@@ -92,6 +87,7 @@ void setup_raw_socket()
     struct ifreq ifr
     {
     };
+
     strncpy(ifr.ifr_name, interface, IFNAMSIZ - 1);
     if (ioctl(raw_socket, SIOCGIFINDEX, &ifr) == -1)
     {
@@ -166,4 +162,35 @@ void packet_handler(u_char *args, const struct pcap_pkthdr *header, const u_char
     {
         std::cout << "Forwarded packet of length " << sent << " bytes" << std::endl;
     }
+}
+
+unsigned char *get_mac_address(const char *ip_address)
+{
+    static unsigned char dest_mac[6];
+    FILE *fp = fopen("/proc/net/arp", "r");
+    if (!fp)
+    {
+        perror("Failed to open /proc/net/arp");
+        return nullptr;
+    }
+
+    char line[256];
+    fgets(line, sizeof(line), fp);
+
+    while (fgets(line, sizeof(line), fp))
+    {
+        char ip[64], hw_type[64], flags[64], mac[64], mask[64], device[64];
+        sscanf(line, "%63s %63s %63s %63s %63s %63s", ip, hw_type, flags, mac, mask, device);
+        if (strcmp(ip, ip_address) == 0)
+        {
+            sscanf(mac, "%hhx:%hhx:%hhx:%hhx:%hhx:%hhx",
+                   &dest_mac[0], &dest_mac[1], &dest_mac[2],
+                   &dest_mac[3], &dest_mac[4], &dest_mac[5]);
+            fclose(fp);
+            return dest_mac;
+        }
+    }
+
+    fclose(fp);
+    return nullptr;
 }
