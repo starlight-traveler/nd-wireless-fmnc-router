@@ -23,7 +23,7 @@ if [[ -f "FMNC-MITM" ]]; then
   echo "${Yellow}================================================================================${Reset}"
   echo "${Green}Executing FMNC...${Reset}"
   echo "${Yellow}================================================================================${Reset}"
-  ./FMNC-MITM
+  sudo ./FMNC-MITM
 else
   echo "${Red}================================================================================${Reset}"
   echo "${Red}Error: Executable FMNC not found in build/bin${Reset}"

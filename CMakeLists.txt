@@ -140,17 +140,8 @@ enable_coverage(${OPTION_ENABLE_COVERAGE})
 # set(OPENSSL_INCLUDE_DIR "${OPENSSL_ROOT_DIR}/include")
 # set(OPENSSL_CRYPTO_LIBRARY "${OPENSSL_ROOT_DIR}/lib/libcrypto.dylib")
 # set(OPENSSL_SSL_LIBRARY "${OPENSSL_ROOT_DIR}/lib/libssl.dylib")
-find_package(ssl REQUIRED)
+find_package(OpenSSL REQUIRED)
 
-if(OpenSSL_FOUND)
-    message(STATUS "OpenSSL version: ${OpenSSL_VERSION}")
-    message(STATUS "OpenSSL include dir: ${OpenSSL_INCLUDE_DIR}")
-    message(STATUS "OpenSSL libraries: ${OpenSSL_LIBRARIES}")
-else()
-    message(FATAL_ERROR "OpenSSL not found")
-endif()
-
-include_directories(${OpenSSL_INCLUDE_DIR})
 
 
 # Project-wide include directories. Add any new general include directories here.
@@ -167,14 +158,11 @@ add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/quill)
 # Project declaration must be after the Hunter Cmake build system.
 project(FMNC-MITM LANGUAGES CXX)
 
-link_directories(/opt/homebrew/opt/libpcap/lib)
-
 
 # Define the executable target. 
 # Add new source files to this list to compile them as part of the project.
 add_executable(${PROJECT_NAME} 
     src/main.cpp
-    src/logger.cpp
 )
 
 # Set include directories for the target. 
@@ -193,7 +181,6 @@ target_link_libraries(${PROJECT_NAME}
     OpenSSL::Crypto
     quill::quill
     pcap
-    ${CMAKE_CURRENT_SOURCE_DIR}/lib/raw_tcp/lib/libRawTCP_Lib.a
     ${OPENSSL_LIBRARIES}
 )
 # Specify C++17 as the target C++ standard for this project.
