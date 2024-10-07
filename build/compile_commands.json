@@ -1,7 +1,7 @@
 [
 {
   "directory": "/local/research/research-mitmproxy/build",
-  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2024-10-07 06:39:57.374\\\"\" -I/local/research/research-mitmproxy/include -I/local/research/research-mitmproxy/build -I/local/research/research-mitmproxy/lib/quill/include -g -std=gnu++17 -Werror=return-type -Wno-gnu-zero-variadic-macro-arguments -o CMakeFiles/FMNC-MITM.dir/src/main.cpp.o -c /local/research/research-mitmproxy/src/main.cpp",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2024-10-07 08:14:05.494\\\"\" -I/local/research/research-mitmproxy/include -I/local/research/research-mitmproxy/build -I/local/research/research-mitmproxy/lib/quill/include -g -std=gnu++17 -Werror=return-type -Wno-gnu-zero-variadic-macro-arguments -o CMakeFiles/FMNC-MITM.dir/src/main.cpp.o -c /local/research/research-mitmproxy/src/main.cpp",
   "file": "/local/research/research-mitmproxy/src/main.cpp",
   "output": "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o"
 }

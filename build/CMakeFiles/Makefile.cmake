@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_GENERATOR "Unix Makefiles")
 set(CMAKE_MAKEFILE_DEPENDS
   "CMakeCache.txt"
   "/local/research/research-mitmproxy/.git/HEAD"
-  "/local/research/research-mitmproxy/.git/refs/heads/main"
+  "/local/research/research-mitmproxy/.git/refs/heads/working_passthrough"
   "/local/research/research-mitmproxy/CMakeLists.txt"
   "CMakeFiles/3.28.3/CMakeCCompiler.cmake"
   "CMakeFiles/3.28.3/CMakeCXXCompiler.cmake"
