@@ -1,8 +1,38 @@
 [
 {
   "directory": "/local/research/research-mitmproxy/build",
-  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2024-10-07 08:14:05.494\\\"\" -I/local/research/research-mitmproxy/include -I/local/research/research-mitmproxy/build -I/local/research/research-mitmproxy/lib/quill/include -g -std=gnu++17 -Werror=return-type -Wno-gnu-zero-variadic-macro-arguments -o CMakeFiles/FMNC-MITM.dir/src/main.cpp.o -c /local/research/research-mitmproxy/src/main.cpp",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2024-10-07 09:47:12.646\\\"\" -I/local/research/research-mitmproxy/include -I/local/research/research-mitmproxy/build -I/local/research/research-mitmproxy/lib/quill/include -g -std=gnu++17 -Werror=return-type -Wno-gnu-zero-variadic-macro-arguments -o CMakeFiles/FMNC-MITM.dir/src/main.cpp.o -c /local/research/research-mitmproxy/src/main.cpp",
   "file": "/local/research/research-mitmproxy/src/main.cpp",
   "output": "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o"
+},
+{
+  "directory": "/local/research/research-mitmproxy/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2024-10-07 09:47:12.646\\\"\" -I/local/research/research-mitmproxy/include -I/local/research/research-mitmproxy/build -I/local/research/research-mitmproxy/lib/quill/include -g -std=gnu++17 -Werror=return-type -Wno-gnu-zero-variadic-macro-arguments -o CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o -c /local/research/research-mitmproxy/src/logger.cpp",
+  "file": "/local/research/research-mitmproxy/src/logger.cpp",
+  "output": "CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o"
+},
+{
+  "directory": "/local/research/research-mitmproxy/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2024-10-07 09:47:12.646\\\"\" -I/local/research/research-mitmproxy/include -I/local/research/research-mitmproxy/build -I/local/research/research-mitmproxy/lib/quill/include -g -std=gnu++17 -Werror=return-type -Wno-gnu-zero-variadic-macro-arguments -o CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o -c /local/research/research-mitmproxy/src/sockets.cpp",
+  "file": "/local/research/research-mitmproxy/src/sockets.cpp",
+  "output": "CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o"
+},
+{
+  "directory": "/local/research/research-mitmproxy/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2024-10-07 09:47:12.646\\\"\" -I/local/research/research-mitmproxy/include -I/local/research/research-mitmproxy/build -I/local/research/research-mitmproxy/lib/quill/include -g -std=gnu++17 -Werror=return-type -Wno-gnu-zero-variadic-macro-arguments -o CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o -c /local/research/research-mitmproxy/src/client_to_server/client.cpp",
+  "file": "/local/research/research-mitmproxy/src/client_to_server/client.cpp",
+  "output": "CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o"
+},
+{
+  "directory": "/local/research/research-mitmproxy/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2024-10-07 09:47:12.646\\\"\" -I/local/research/research-mitmproxy/include -I/local/research/research-mitmproxy/build -I/local/research/research-mitmproxy/lib/quill/include -g -std=gnu++17 -Werror=return-type -Wno-gnu-zero-variadic-macro-arguments -o CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o -c /local/research/research-mitmproxy/src/arp.cpp",
+  "file": "/local/research/research-mitmproxy/src/arp.cpp",
+  "output": "CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o"
+},
+{
+  "directory": "/local/research/research-mitmproxy/build",
+  "command": "/usr/bin/c++ -DBUILD_DATE=\"\\\"2024-10-07 09:47:12.646\\\"\" -I/local/research/research-mitmproxy/include -I/local/research/research-mitmproxy/build -I/local/research/research-mitmproxy/lib/quill/include -g -std=gnu++17 -Werror=return-type -Wno-gnu-zero-variadic-macro-arguments -o CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o -c /local/research/research-mitmproxy/src/server_to_client/server.cpp",
+  "file": "/local/research/research-mitmproxy/src/server_to_client/server.cpp",
+  "output": "CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o"
 }
 ]

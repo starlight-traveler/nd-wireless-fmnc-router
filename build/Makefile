@@ -155,6 +155,78 @@ quill/fast:
 	$(MAKE) $(MAKESILENT) -f lib/quill/CMakeFiles/quill.dir/build.make lib/quill/CMakeFiles/quill.dir/build
 .PHONY : quill/fast
 
+src/arp.o: src/arp.cpp.o
+.PHONY : src/arp.o
+
+# target to build an object file
+src/arp.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o
+.PHONY : src/arp.cpp.o
+
+src/arp.i: src/arp.cpp.i
+.PHONY : src/arp.i
+
+# target to preprocess a source file
+src/arp.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/arp.cpp.i
+.PHONY : src/arp.cpp.i
+
+src/arp.s: src/arp.cpp.s
+.PHONY : src/arp.s
+
+# target to generate assembly for a file
+src/arp.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/arp.cpp.s
+.PHONY : src/arp.cpp.s
+
+src/client_to_server/client.o: src/client_to_server/client.cpp.o
+.PHONY : src/client_to_server/client.o
+
+# target to build an object file
+src/client_to_server/client.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o
+.PHONY : src/client_to_server/client.cpp.o
+
+src/client_to_server/client.i: src/client_to_server/client.cpp.i
+.PHONY : src/client_to_server/client.i
+
+# target to preprocess a source file
+src/client_to_server/client.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.i
+.PHONY : src/client_to_server/client.cpp.i
+
+src/client_to_server/client.s: src/client_to_server/client.cpp.s
+.PHONY : src/client_to_server/client.s
+
+# target to generate assembly for a file
+src/client_to_server/client.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.s
+.PHONY : src/client_to_server/client.cpp.s
+
+src/logger.o: src/logger.cpp.o
+.PHONY : src/logger.o
+
+# target to build an object file
+src/logger.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o
+.PHONY : src/logger.cpp.o
+
+src/logger.i: src/logger.cpp.i
+.PHONY : src/logger.i
+
+# target to preprocess a source file
+src/logger.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/logger.cpp.i
+.PHONY : src/logger.cpp.i
+
+src/logger.s: src/logger.cpp.s
+.PHONY : src/logger.s
+
+# target to generate assembly for a file
+src/logger.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/logger.cpp.s
+.PHONY : src/logger.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -179,6 +251,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/server_to_client/server.o: src/server_to_client/server.cpp.o
+.PHONY : src/server_to_client/server.o
+
+# target to build an object file
+src/server_to_client/server.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o
+.PHONY : src/server_to_client/server.cpp.o
+
+src/server_to_client/server.i: src/server_to_client/server.cpp.i
+.PHONY : src/server_to_client/server.i
+
+# target to preprocess a source file
+src/server_to_client/server.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.i
+.PHONY : src/server_to_client/server.cpp.i
+
+src/server_to_client/server.s: src/server_to_client/server.cpp.s
+.PHONY : src/server_to_client/server.s
+
+# target to generate assembly for a file
+src/server_to_client/server.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.s
+.PHONY : src/server_to_client/server.cpp.s
+
+src/sockets.o: src/sockets.cpp.o
+.PHONY : src/sockets.o
+
+# target to build an object file
+src/sockets.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o
+.PHONY : src/sockets.cpp.o
+
+src/sockets.i: src/sockets.cpp.i
+.PHONY : src/sockets.i
+
+# target to preprocess a source file
+src/sockets.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.i
+.PHONY : src/sockets.cpp.i
+
+src/sockets.s: src/sockets.cpp.s
+.PHONY : src/sockets.s
+
+# target to generate assembly for a file
+src/sockets.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.s
+.PHONY : src/sockets.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -190,9 +310,24 @@ help:
 	@echo "... check-template"
 	@echo "... FMNC-MITM"
 	@echo "... quill"
+	@echo "... src/arp.o"
+	@echo "... src/arp.i"
+	@echo "... src/arp.s"
+	@echo "... src/client_to_server/client.o"
+	@echo "... src/client_to_server/client.i"
+	@echo "... src/client_to_server/client.s"
+	@echo "... src/logger.o"
+	@echo "... src/logger.i"
+	@echo "... src/logger.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/server_to_client/server.o"
+	@echo "... src/server_to_client/server.i"
+	@echo "... src/server_to_client/server.s"
+	@echo "... src/sockets.o"
+	@echo "... src/sockets.i"
+	@echo "... src/sockets.s"
 .PHONY : help
 
 

@@ -1,15 +1,10 @@
 #ifndef CLIENT
 #define CLIENT
 
-#include <iostream>
-#include <cstring>
-#include <unistd.h>
-#include <arpa/inet.h>
-#include <thread>
-#include "client.h"
+#include "general.h"
 
-const int BUFFER_SIZE = 4096;
+#define MAX_PACKET_SIZE 65536
 
-void client(int src_fd, int dest_fd);
+void capture_packets_to_192_168_2_2(quill::Logger *logger);
 
 #endif

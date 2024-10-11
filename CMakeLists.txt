@@ -163,6 +163,11 @@ project(FMNC-MITM LANGUAGES CXX)
 # Add new source files to this list to compile them as part of the project.
 add_executable(${PROJECT_NAME} 
     src/main.cpp
+    src/logger.cpp
+    src/sockets.cpp
+    src/client_to_server/client.cpp
+    src/arp.cpp
+    src/server_to_client/server.cpp
 )
 
 # Set include directories for the target. 

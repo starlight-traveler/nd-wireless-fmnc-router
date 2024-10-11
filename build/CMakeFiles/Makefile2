@@ -125,12 +125,12 @@ CMakeFiles/check-template.dir/clean:
 CMakeFiles/FMNC-MITM.dir/all: lib/quill/CMakeFiles/quill.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=1,2 "Built target FMNC-MITM"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=1,2,3,4,5,6,7 "Built target FMNC-MITM"
 .PHONY : CMakeFiles/FMNC-MITM.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/FMNC-MITM.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /local/research/research-mitmproxy/build/CMakeFiles 2
+	$(CMAKE_COMMAND) -E cmake_progress_start /local/research/research-mitmproxy/build/CMakeFiles 7
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/FMNC-MITM.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /local/research/research-mitmproxy/build/CMakeFiles 0
 .PHONY : CMakeFiles/FMNC-MITM.dir/rule

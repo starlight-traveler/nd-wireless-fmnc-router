@@ -83,21 +83,101 @@ CMakeFiles/FMNC-MITM.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FMNC-MITM.dir/src/main.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /local/research/research-mitmproxy/src/main.cpp -o CMakeFiles/FMNC-MITM.dir/src/main.cpp.s
 
+CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o: CMakeFiles/FMNC-MITM.dir/flags.make
+CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o: /local/research/research-mitmproxy/src/logger.cpp
+CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o: CMakeFiles/FMNC-MITM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o -MF CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o.d -o CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o -c /local/research/research-mitmproxy/src/logger.cpp
+
+CMakeFiles/FMNC-MITM.dir/src/logger.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FMNC-MITM.dir/src/logger.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /local/research/research-mitmproxy/src/logger.cpp > CMakeFiles/FMNC-MITM.dir/src/logger.cpp.i
+
+CMakeFiles/FMNC-MITM.dir/src/logger.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FMNC-MITM.dir/src/logger.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /local/research/research-mitmproxy/src/logger.cpp -o CMakeFiles/FMNC-MITM.dir/src/logger.cpp.s
+
+CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o: CMakeFiles/FMNC-MITM.dir/flags.make
+CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o: /local/research/research-mitmproxy/src/sockets.cpp
+CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o: CMakeFiles/FMNC-MITM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o -MF CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o.d -o CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o -c /local/research/research-mitmproxy/src/sockets.cpp
+
+CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /local/research/research-mitmproxy/src/sockets.cpp > CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.i
+
+CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /local/research/research-mitmproxy/src/sockets.cpp -o CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.s
+
+CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o: CMakeFiles/FMNC-MITM.dir/flags.make
+CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o: /local/research/research-mitmproxy/src/client_to_server/client.cpp
+CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o: CMakeFiles/FMNC-MITM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o -MF CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o.d -o CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o -c /local/research/research-mitmproxy/src/client_to_server/client.cpp
+
+CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /local/research/research-mitmproxy/src/client_to_server/client.cpp > CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.i
+
+CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /local/research/research-mitmproxy/src/client_to_server/client.cpp -o CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.s
+
+CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o: CMakeFiles/FMNC-MITM.dir/flags.make
+CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o: /local/research/research-mitmproxy/src/arp.cpp
+CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o: CMakeFiles/FMNC-MITM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o -MF CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o.d -o CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o -c /local/research/research-mitmproxy/src/arp.cpp
+
+CMakeFiles/FMNC-MITM.dir/src/arp.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FMNC-MITM.dir/src/arp.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /local/research/research-mitmproxy/src/arp.cpp > CMakeFiles/FMNC-MITM.dir/src/arp.cpp.i
+
+CMakeFiles/FMNC-MITM.dir/src/arp.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FMNC-MITM.dir/src/arp.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /local/research/research-mitmproxy/src/arp.cpp -o CMakeFiles/FMNC-MITM.dir/src/arp.cpp.s
+
+CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o: CMakeFiles/FMNC-MITM.dir/flags.make
+CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o: /local/research/research-mitmproxy/src/server_to_client/server.cpp
+CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o: CMakeFiles/FMNC-MITM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o -MF CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o.d -o CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o -c /local/research/research-mitmproxy/src/server_to_client/server.cpp
+
+CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /local/research/research-mitmproxy/src/server_to_client/server.cpp > CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.i
+
+CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /local/research/research-mitmproxy/src/server_to_client/server.cpp -o CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.s
+
 # Object files for target FMNC-MITM
 FMNC__MITM_OBJECTS = \
-"CMakeFiles/FMNC-MITM.dir/src/main.cpp.o"
+"CMakeFiles/FMNC-MITM.dir/src/main.cpp.o" \
+"CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o" \
+"CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o" \
+"CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o" \
+"CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o" \
+"CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o"
 
 # External object files for target FMNC-MITM
 FMNC__MITM_EXTERNAL_OBJECTS =
 
 FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/main.cpp.o
+FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o
+FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o
+FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o
+FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o
+FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o
 FMNC-MITM: CMakeFiles/FMNC-MITM.dir/build.make
 FMNC-MITM: /usr/lib/x86_64-linux-gnu/libssl.so
 FMNC-MITM: /usr/lib/x86_64-linux-gnu/libcrypto.so
 FMNC-MITM: /usr/lib/x86_64-linux-gnu/libssl.so
 FMNC-MITM: /usr/lib/x86_64-linux-gnu/libcrypto.so
 FMNC-MITM: CMakeFiles/FMNC-MITM.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable FMNC-MITM"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable FMNC-MITM"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FMNC-MITM.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -E env bash /local/research/research-mitmproxy/scripts/post_build_script.sh
 
