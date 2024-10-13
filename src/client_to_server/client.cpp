@@ -1,11 +1,13 @@
 #include "client.h"
 
+// Adjusted function signature
+void packet_handler_to(u_char *user, const struct pcap_pkthdr *header, const u_char *packet);
+
 void capture_packets_to(quill::Logger *logger)
 {
-
-    // Configuration to pass to loop
-    Client::Configuration conf[1] = {
-        {logger}};
+    
+    // Use a single instance of Client::Configuration
+    Client::Configuration conf = {logger};
 
     char error_buffer[PCAP_ERRBUF_SIZE];
     pcap_t *handle;
@@ -39,15 +41,17 @@ void capture_packets_to(quill::Logger *logger)
     }
 
     // Start packet capture loop
-    pcap_loop(handle, 0, (pcap_handler)packet_handler_to, nullptr);
+    pcap_loop(handle, 0, packet_handler_to, (u_char *)&conf);
 
     // Cleanup
     pcap_close(handle);
 }
 
-void packet_handler_to(Client::Configuration args[], const struct pcap_pkthdr *header, const u_char *packet)
+void packet_handler_to(u_char *user, const struct pcap_pkthdr *header, const u_char *packet)
 {
-    
+    // Cast user parameter back to Client::Configuration
+    Client::Configuration *args = (Client::Configuration *)user;
+
     // Copy the packet
     unsigned char buffer[MAX_PACKET_SIZE];
     memcpy(buffer, packet, header->len);
@@ -62,10 +66,10 @@ void packet_handler_to(Client::Configuration args[], const struct pcap_pkthdr *h
     }
 
     // Get the MAC address of 192.168.2.2
-    unsigned char *dest_mac = get_mac_address("192.168.2.2", args[0].logger);
+    unsigned char *dest_mac = get_mac_address("192.168.2.2", args->logger);
     if (!dest_mac)
     {
-        std::cerr << "Failed to get MAC address for 192.168.2.2" << std::endl;
+        LOG_CRITICAL(args->logger, "Failed to get MAC address for 192.168.2.2");
         return;
     }
 
@@ -74,9 +78,7 @@ void packet_handler_to(Client::Configuration args[], const struct pcap_pkthdr *h
     memcpy(eth->h_dest, dest_mac, 6);  // Set destination MAC to 192.168.2.2's MAC
 
     // Send the packet
-    struct sockaddr_ll socket_address
-    {
-    };
+    struct sockaddr_ll socket_address = {};
     socket_address.sll_ifindex = if_index;
     socket_address.sll_halen = ETH_ALEN;
     memcpy(socket_address.sll_addr, dest_mac, 6);
@@ -86,11 +88,11 @@ void packet_handler_to(Client::Configuration args[], const struct pcap_pkthdr *h
         ssize_t sent = sendto(raw_socket, buffer, header->len, 0, (struct sockaddr *)&socket_address, sizeof(socket_address));
         if (sent == -1)
         {
-            perror("Failed to send packet");
+            LOG_CRITICAL(args->logger, "Failed to send packet");
         }
         else
         {
-            std::cout << "Forwarded packet to 192.168.2.2, length: " << sent << " bytes" << std::endl;
+            LOG_DEBUG(args->logger, "Forwarded packet, length: {} bytes", sent);
         }
     }
 }

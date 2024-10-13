@@ -1,0 +1,62 @@
+1199  python3 gogo.py ex-do-overlap.yaml 
+ 1200  clear
+ 1201  windows
+ 1202  ls
+ 1203  cd research/
+ 1204  ls
+ 1205  clear
+ 1206  ls
+ 1207  clear
+ 1208  ip a
+ 1209  nano /etc/sysctl.conf
+ 1210  sudo nano /etc/sysctl.conf
+ 1211  sudo ip addr add 192.168.2.1/24 dev enp3s0
+ 1212  sudo iptables -t nat -A POSTROUTING -o enp3s0 -j MASQUERADE
+ 1213  sudo iptables -A FORWARD -i enp3s0 -s 192.168.1.10 -d 192.168.2.20 -j ACCEPT
+ 1214  sudo iptables -A FORWARD -m state --state RELATED,ESTABLISHED -j ACCEPT
+ 1215  sudo ip addr add 192.168.2.1/24 dev enp3s0
+ 1216  ip addr show enp3s0
+ 1217  clear
+ 1218  ip addr show enp3s0
+ 1219  sudo ip addr del 192.168.1.100/24 dev enp3s0
+ 1220  sudo ip addr add 192.168.1.1/24 dev enp3s0
+ 1221  sudo sysctl -p
+ 1222  ip addr show
+ 1223  ipping 92.168.2.1
+ 1224  ipping 192.168.2.1
+ 1225  ping 192.168.2.1
+ 1226  ping 192.168.2.2
+ 1227  ping 192.168.1.2
+ 1228  ip addr show
+ 1229  clear
+ 1230  ip addr
+ 1231  sudo tcpdump -i enp3s0
+ 1232  history
+ 1233  sudo iptables -t nat -D POSTROUTING -o enp3s0 -j MASQUERADE
+ 1234  sudo sysctl -p
+ 1235  sudo tcpdump -i enp3s0
+ 1236  sudo tcpdump -i enp3s0 -n host 192.168.2.2 -vvv -X
+ 1237  ip aroute
+ 1238  ip route
+ 1239  ip addr
+ 1240  cat /proc/net/arp
+ 1241  history | grep sys
+ 1242  sudo nano /etc/sysctl.conf
+ 1243  clear
+ 1244  ls
+ 1245  cd research/
+ 1246  ls
+ 1247  cd research-mitmproxy/
+ 1248  ls
+ 1249  ./FMNC-MITM 
+ 1250  clear
+ 1251  ls
+ 1252  clear
+ 1253  sudo iptables -L --line-numbers
+ 1254  ip addr
+ 1255  ./CREATE --build-project
+ 1256  ./FMNC-MITM 
+ 1257  sudo tcpdump -i enp3s0 -n host 192.168.2.2
+ 1258  [A
+ 1259  sudo tcpdump -i enp3s0 -n host 192.168.2.2
+ 1260  ./FMNC-MITM 

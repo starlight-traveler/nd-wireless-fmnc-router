@@ -22,8 +22,7 @@ int main()
     ConfigManager config("../config.cfg", logger);
     if (!config.loadConfig())
     {
-        std::cerr << "Failed to load config." << std::endl;
-        return -1;
+        LOG_ERROR(logger, "Failed to load config.");
     }
 
     // Setup raw socket for packet forwarding

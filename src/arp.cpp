@@ -35,7 +35,7 @@ unsigned char *get_mac_address(const char *ip_address, quill::Logger *logger)
     FILE *fp = fopen("/proc/net/arp", "r");
     if (!fp)
     {
-        perror("Failed to open /proc/net/arp");
+        LOG_CRITICAL(logger, "Failed to open /proc/net/arp.");
         return nullptr;
     }
 
