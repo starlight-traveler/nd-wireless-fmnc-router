@@ -25,11 +25,12 @@
 #include <csignal>
 
 #include "threading.tpp"
+#include "logger.h"
 
 #define MAX_PACKET_SIZE 65536
 
 void setup_raw_socket();
-unsigned char *get_mac_address(const char *ip_address);
+unsigned char *get_mac_address(const char *ip_address, quill::Logger *logger);
 
 void packet_handler_to_192_168_2_2(u_char *args, const struct pcap_pkthdr *header, const u_char *packet);
 void packet_handler_from_192_168_2_2(u_char *args, const struct pcap_pkthdr *header, const u_char *packet);

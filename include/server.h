@@ -3,8 +3,23 @@
 
 #include "general.h"
 
-void capture_packets_from_192_168_2_2(quill::Logger *logger);
+namespace Server
+{
 
-void packet_handler_from_192_168_2_2(u_char *args, const struct pcap_pkthdr *header, const u_char *packet);
+    typedef struct
+    {
+        quill::Logger *logger;
+
+    } Configuration;
+
+}
+
+void capture_packets_from(quill::Logger *logger);
+
+void packet_handler_from(Server::Configuration args[], const struct pcap_pkthdr *header, const u_char *packet);
+
+// Configuration
+
+
 
 #endif

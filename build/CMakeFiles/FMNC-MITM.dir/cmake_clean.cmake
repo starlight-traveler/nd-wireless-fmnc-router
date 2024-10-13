@@ -3,6 +3,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o.d"
   "CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o"
   "CMakeFiles/FMNC-MITM.dir/src/client_to_server/client.cpp.o.d"
+  "CMakeFiles/FMNC-MITM.dir/src/config.cpp.o"
+  "CMakeFiles/FMNC-MITM.dir/src/config.cpp.o.d"
   "CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o"
   "CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o.d"
   "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o"

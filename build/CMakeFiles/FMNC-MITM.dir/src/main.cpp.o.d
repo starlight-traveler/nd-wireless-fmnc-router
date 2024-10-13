@@ -349,6 +349,8 @@ CMakeFiles/FMNC-MITM.dir/src/main.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/xtestintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/hresetintrin.h \
  /usr/include/c++/13/chrono \
+ /local/research/research-mitmproxy/include/config.h \
+ /usr/include/libconfig.h++ \
  /local/research/research-mitmproxy/include/client.h \
  /local/research/research-mitmproxy/include/general.h \
  /local/research/research-mitmproxy/include/server.h \

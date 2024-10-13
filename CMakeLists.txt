@@ -141,13 +141,15 @@ enable_coverage(${OPTION_ENABLE_COVERAGE})
 # set(OPENSSL_CRYPTO_LIBRARY "${OPENSSL_ROOT_DIR}/lib/libcrypto.dylib")
 # set(OPENSSL_SSL_LIBRARY "${OPENSSL_ROOT_DIR}/lib/libssl.dylib")
 find_package(OpenSSL REQUIRED)
-
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(LIBCONFIG REQUIRED libconfig++)
 
 
 # Project-wide include directories. Add any new general include directories here.
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${OPENSSL_INCLUDE_DIR})
+include_directories(${LIBCONFIG_INCLUDE_DIRS})
 
 # Quill 
 
@@ -168,6 +170,7 @@ add_executable(${PROJECT_NAME}
     src/client_to_server/client.cpp
     src/arp.cpp
     src/server_to_client/server.cpp
+    src/config.cpp
 )
 
 # Set include directories for the target. 
@@ -187,6 +190,7 @@ target_link_libraries(${PROJECT_NAME}
     quill::quill
     pcap
     ${OPENSSL_LIBRARIES}
+    ${LIBCONFIG_LIBRARIES}
 )
 # Specify C++17 as the target C++ standard for this project.
 target_compile_features(${PROJECT_NAME} PRIVATE cxx_std_17)

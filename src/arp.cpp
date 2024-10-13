@@ -1,6 +1,7 @@
 #include "mac_arp.h"
+#include "logger.h"
 
-unsigned char *get_mac_address(const char *ip_address)
+unsigned char *get_mac_address(const char *ip_address, quill::Logger *logger)
 {
     static unsigned char dest_mac[6];
     auto now = std::chrono::steady_clock::now();

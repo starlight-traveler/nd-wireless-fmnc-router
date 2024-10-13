@@ -349,4 +349,5 @@ CMakeFiles/FMNC-MITM.dir/src/arp.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/xsavesintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/xtestintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/hresetintrin.h \
- /usr/include/c++/13/chrono
+ /usr/include/c++/13/chrono \
+ /local/research/research-mitmproxy/include/logger.h

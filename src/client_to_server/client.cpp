@@ -1,7 +1,12 @@
 #include "client.h"
 
-void capture_packets_to_192_168_2_2(quill::Logger *logger)
+void capture_packets_to(quill::Logger *logger)
 {
+
+    // Configuration to pass to loop
+    Client::Configuration conf[1] = {
+        {logger}};
+
     char error_buffer[PCAP_ERRBUF_SIZE];
     pcap_t *handle;
 
@@ -9,7 +14,7 @@ void capture_packets_to_192_168_2_2(quill::Logger *logger)
     handle = pcap_open_live(interface, BUFSIZ, 1, 50, error_buffer);
     if (handle == nullptr)
     {
-        std::cerr << "Could not open device " << interface << ": " << error_buffer << std::endl;
+        LOG_ERROR(logger, "Could not open device {}: {}", interface, error_buffer);
         return;
     }
 
@@ -22,26 +27,27 @@ void capture_packets_to_192_168_2_2(quill::Logger *logger)
 
     if (pcap_compile(handle, &filter, filter_exp_to, 0, PCAP_NETMASK_UNKNOWN) == -1)
     {
-        std::cerr << "Bad filter: " << pcap_geterr(handle) << std::endl;
+        LOG_ERROR(logger, "Bad filter: {}", pcap_geterr(handle));
         pcap_close(handle);
         return;
     }
     if (pcap_setfilter(handle, &filter) == -1)
     {
-        std::cerr << "Error setting filter: " << pcap_geterr(handle) << std::endl;
+        LOG_ERROR(logger, "Error setting filter: {}", pcap_geterr(handle));
         pcap_close(handle);
         return;
     }
 
     // Start packet capture loop
-    pcap_loop(handle, 0, packet_handler_to_192_168_2_2, nullptr);
+    pcap_loop(handle, 0, (pcap_handler)packet_handler_to, nullptr);
 
     // Cleanup
     pcap_close(handle);
 }
 
-void packet_handler_to_192_168_2_2(u_char *args, const struct pcap_pkthdr *header, const u_char *packet)
+void packet_handler_to(Client::Configuration args[], const struct pcap_pkthdr *header, const u_char *packet)
 {
+    
     // Copy the packet
     unsigned char buffer[MAX_PACKET_SIZE];
     memcpy(buffer, packet, header->len);
@@ -56,7 +62,7 @@ void packet_handler_to_192_168_2_2(u_char *args, const struct pcap_pkthdr *heade
     }
 
     // Get the MAC address of 192.168.2.2
-    unsigned char *dest_mac = get_mac_address("192.168.2.2");
+    unsigned char *dest_mac = get_mac_address("192.168.2.2", args[0].logger);
     if (!dest_mac)
     {
         std::cerr << "Failed to get MAC address for 192.168.2.2" << std::endl;
