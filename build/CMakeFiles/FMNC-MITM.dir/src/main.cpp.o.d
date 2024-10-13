@@ -351,7 +351,7 @@ CMakeFiles/FMNC-MITM.dir/src/main.cpp.o: \
  /usr/include/c++/13/chrono \
  /local/research/research-mitmproxy/include/config.h \
  /usr/include/libconfig.h++ \
- /local/research/research-mitmproxy/include/client.h \
- /local/research/research-mitmproxy/include/general.h \
- /local/research/research-mitmproxy/include/server.h \
+ /local/research/research-mitmproxy/include/config.h \
+ /local/research/research-mitmproxy/include/client/client.h \
+ /local/research/research-mitmproxy/include/server/server.h \
  /local/research/research-mitmproxy/include/logger.h

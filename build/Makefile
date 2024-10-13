@@ -275,6 +275,30 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/server_to_client/sender.o: src/server_to_client/sender.cpp.o
+.PHONY : src/server_to_client/sender.o
+
+# target to build an object file
+src/server_to_client/sender.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.o
+.PHONY : src/server_to_client/sender.cpp.o
+
+src/server_to_client/sender.i: src/server_to_client/sender.cpp.i
+.PHONY : src/server_to_client/sender.i
+
+# target to preprocess a source file
+src/server_to_client/sender.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.i
+.PHONY : src/server_to_client/sender.cpp.i
+
+src/server_to_client/sender.s: src/server_to_client/sender.cpp.s
+.PHONY : src/server_to_client/sender.s
+
+# target to generate assembly for a file
+src/server_to_client/sender.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.s
+.PHONY : src/server_to_client/sender.cpp.s
+
 src/server_to_client/server.o: src/server_to_client/server.cpp.o
 .PHONY : src/server_to_client/server.o
 
@@ -349,6 +373,9 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/server_to_client/sender.o"
+	@echo "... src/server_to_client/sender.i"
+	@echo "... src/server_to_client/sender.s"
 	@echo "... src/server_to_client/server.o"
 	@echo "... src/server_to_client/server.i"
 	@echo "... src/server_to_client/server.s"

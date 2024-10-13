@@ -9,6 +9,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o.d"
   "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o"
   "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o.d"
+  "CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.o"
+  "CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.o.d"
   "CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o"
   "CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o.d"
   "CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o"

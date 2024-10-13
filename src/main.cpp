@@ -23,7 +23,11 @@ int main()
     if (!config.loadConfig())
     {
         LOG_ERROR(logger, "Failed to load config.");
+        return -1;
     }
+
+    // Set log level config
+    set_log_level(config, logger);
 
     // Setup raw socket for packet forwarding
     setup_raw_socket();
@@ -33,7 +37,7 @@ int main()
                                         { threaded(logger, 5, 3, capture_packets_to, logger); });
 
     std::thread thread_server_to_client([&]()
-                                        { threaded(logger, 5, 3, capture_packets_from, logger); });
+                                        { threaded(logger, 5, 3, capture_packets_from, logger, config); });
 
     // Just suspend until CTRL-C is called
     while (true)

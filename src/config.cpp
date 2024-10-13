@@ -11,7 +11,7 @@
 // int packetCaptureTime = config.getPacketCaptureTime();
 
 ConfigManager::ConfigManager(const std::string &filename, quill::Logger *logger)
-    : filename(filename), logLevel("TRACE_L3"), logger(logger) {}
+    : filename(filename), logLevel("TRACE_L3"), logDirectory("."), timeWait(1), reorderPackets(false), manageSSL(true), logger(logger) {}
 
 bool ConfigManager::loadConfig()
 {
@@ -34,9 +34,11 @@ bool ConfigManager::loadConfig()
     // Retrieve settings from the config file
     try
     {
-        logLevel = cfg.lookup("log_level").c_str(); // Cast to string
-
-        // LOG_INFO(logger, "Loaded packet_capture_time: {}, buffer_size: {}", packetCaptureTime, bufferSize);
+        logLevel = cfg.lookup("log_level").c_str();
+        logDirectory = cfg.lookup("log_directory").c_str(); // Cast to string
+        timeWait = cfg.lookup("time_wait_ms");
+        reorderPackets = cfg.lookup("reorder_packets");
+        manageSSL = cfg.lookup("manage_ssl");
     }
     catch (const libconfig::SettingNotFoundException &nfex)
     {
@@ -50,4 +52,24 @@ bool ConfigManager::loadConfig()
 std::string ConfigManager::getLogLevel() const
 {
     return logLevel;
+}
+
+std::string ConfigManager::getLogDirectory() const
+{
+    return logDirectory;
+}
+
+int ConfigManager::getTimeWait() const
+{
+    return timeWait;
+}
+
+bool ConfigManager::getReorderPackets() const
+{
+    return reorderPackets;
+}
+
+bool ConfigManager::getManageSSL() const
+{
+    return manageSSL;
 }

@@ -32,8 +32,8 @@
 void setup_raw_socket();
 unsigned char *get_mac_address(const char *ip_address, quill::Logger *logger);
 
-void packet_handler_to_192_168_2_2(u_char *args, const struct pcap_pkthdr *header, const u_char *packet);
-void packet_handler_from_192_168_2_2(u_char *args, const struct pcap_pkthdr *header, const u_char *packet);
+void packet_handler_to(u_char *args, const struct pcap_pkthdr *header, const u_char *packet);
+void packet_handler_from(u_char *args, const struct pcap_pkthdr *header, const u_char *packet);
 
 // Global variables
 inline int raw_socket;

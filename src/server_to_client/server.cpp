@@ -8,14 +8,14 @@
 // Adjusted function signature
 void packet_handler_from(u_char *user, const struct pcap_pkthdr *header, const u_char *packet);
 
-void capture_packets_from(quill::Logger *logger)
+void capture_packets_from(quill::Logger *logger, ConfigManager &config)
 {
-    // Initialize Server::Configuration with zeroed timestamp and payload length
-    Server::Configuration conf = {};
-    conf.logger = logger;
-    conf.prev_timestamp.tv_sec = 0;
-    conf.prev_timestamp.tv_usec = 0;
-    conf.total_payload_length = 0;
+    // Initialize Server::Data with zeroed timestamp and payload length
+    Server::Data internal = {};
+    internal.logger = logger;
+    internal.prev_timestamp.tv_sec = 0;
+    internal.prev_timestamp.tv_usec = 0;
+    internal.total_payload_length = 0;
 
     char error_buffer[PCAP_ERRBUF_SIZE];
     pcap_t *handle;
@@ -36,7 +36,7 @@ void capture_packets_from(quill::Logger *logger)
     }
 
     // Start packet capture loop
-    pcap_loop(handle, 0, packet_handler_from, (u_char *)&conf);
+    pcap_loop(handle, 0, packet_handler_from, (u_char *)&internal);
 
     // Cleanup
     pcap_close(handle);
@@ -73,69 +73,54 @@ long compute_time_difference(const struct timeval &prev, const struct timeval &c
 void packet_handler_from(u_char *user, const struct pcap_pkthdr *header, const u_char *packet)
 {
     // Cast user parameter back to Server::Configuration
-    Server::Configuration *args = (Server::Configuration *)user;
+    Server::Data *internal = (Server::Data *)user;
+
+    /**
+     * @brief Delay Mechanism, 1ms
+     */
 
     // Lock the queue mutex
-    std::lock_guard<std::mutex> lock(args->queue_mutex);
+    std::lock_guard<std::mutex> lock(internal->queue_mutex);
 
     // Get current timestamp
     struct timeval curr_timestamp = header->ts;
 
     // Compute time difference in microseconds
-    long time_diff_us = compute_time_difference(args->prev_timestamp, curr_timestamp);
+    long time_diff_us = compute_time_difference(internal->prev_timestamp, curr_timestamp);
 
     // If prev_timestamp is zero, this is the first packet
-    if (args->prev_timestamp.tv_sec == 0 && args->prev_timestamp.tv_usec == 0)
+    if (internal->prev_timestamp.tv_sec == 0 && internal->prev_timestamp.tv_usec == 0)
     {
         time_diff_us = 0;
     }
 
+    /// /// /// /// /// /// /// /// /// /// ///
+
+    /**
+     * @brief Logic For Recieved Packet in Queue
+     *
+     * TODO: 1) Need to put packet in queue
+     * TODO: 2) Need to make sure it is not SSL handshake
+     * TODO: 3) Need to send packet's out of order in the vector
+     */
+
+    /// /// /// /// /// /// /// /// /// /// ///
+
     // If time difference > 1000 microseconds (1 ms), send all queued packets
     if (time_diff_us > 1000)
     {
-        send_queued_packets(args);
+        send_queued_packets(internal);
     }
 
     // Update prev_timestamp
-    args->prev_timestamp = curr_timestamp;
+    internal->prev_timestamp = curr_timestamp;
 
     // Add the packet to the queue
-    queue_packet(args, header, packet);
+    queue_packet(internal, header, packet);
 
-    // Check if total_payload_length exceeds MAX_PAYLOAD_SIZE
-    if (args->total_payload_length > MAX_PAYLOAD_SIZE)
-    {
-        send_queued_packets(args);
-    }
 }
 
-void send_queued_packets(Server::Configuration *args)
-{
-    for (const auto &pkt : args->packet_queue)
-    {
-        send_packet(pkt, args->logger);
-    }
-    // Clear the queue and reset total payload length
-    args->packet_queue.clear();
-    args->total_payload_length = 0;
-}
-
-void send_packet(const Server::PacketData &pkt, quill::Logger *logger)
-{
-    std::lock_guard<std::mutex> raw_lock(raw_socket_mutex);
-    ssize_t sent = sendto(raw_socket, pkt.data.data(), pkt.length, 0,
-                          (struct sockaddr *)&pkt.socket_address, sizeof(pkt.socket_address));
-    if (sent == -1)
-    {
-        LOG_CRITICAL(logger, "Failed to send packet to {}", pkt.dest_ip);
-    }
-    else
-    {
-        LOG_INFO(logger, "Forwarded packet to {}, length: {} bytes", pkt.dest_ip, sent);
-    }
-}
-
-void queue_packet(Server::Configuration *args, const struct pcap_pkthdr *header, const u_char *packet)
+void queue_packet(Server::Data *internal, const struct pcap_pkthdr *header, const u_char *packet)
 {
     // Copy the packet data
     Server::PacketData packet_data;
@@ -161,10 +146,10 @@ void queue_packet(Server::Configuration *args, const struct pcap_pkthdr *header,
     inet_ntop(AF_INET, &(dest_ip_addr), packet_data.dest_ip, INET_ADDRSTRLEN);
 
     // Get the MAC address of the destination IP
-    unsigned char *dest_mac = get_mac_address(packet_data.dest_ip, args->logger);
+    unsigned char *dest_mac = get_mac_address(packet_data.dest_ip, internal->logger);
     if (!dest_mac)
     {
-        LOG_CRITICAL(args->logger, "Failed to get MAC address for {}", packet_data.dest_ip);
+        LOG_CRITICAL(internal->logger, "Failed to get MAC address for {}", packet_data.dest_ip);
         return;
     }
 
@@ -179,11 +164,21 @@ void queue_packet(Server::Configuration *args, const struct pcap_pkthdr *header,
     memcpy(packet_data.socket_address.sll_addr, dest_mac, 6);
 
     // Add packet to queue
-    args->packet_queue.push_back(std::move(packet_data));
+    internal->packet_queue.push_back(std::move(packet_data));
 
     // Update total_payload_length
-    args->total_payload_length += header->len;
+    internal->total_payload_length += header->len;
 
-    LOG_DEBUG(args->logger, "Queued packet to {}, length: {} bytes, total queued payload: {} bytes",
-              packet_data.dest_ip, header->len, args->total_payload_length);
+    LOG_DEBUG(internal->logger, "Queued packet -- client, length: {} bytes, total queued payload: {} bytes",
+            header->len, internal->total_payload_length);
 }
+
+// /**
+//  * @brief Payload size mechanism
+//  */
+
+// // Check if total_payload_length exceeds MAX_PAYLOAD_SIZE
+// if (internal->total_payload_length > MAX_PAYLOAD_SIZE)
+// {
+//     send_queued_packets(internal);
+// }

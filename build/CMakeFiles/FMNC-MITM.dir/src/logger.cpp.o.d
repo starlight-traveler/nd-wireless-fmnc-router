@@ -371,4 +371,9 @@ CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o: \
  /usr/include/c++/13/bits/istream.tcc \
  /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/codecvt \
  /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
- /local/research/research-mitmproxy/lib/quill/include/quill/sinks/FileSink.h
+ /local/research/research-mitmproxy/lib/quill/include/quill/sinks/FileSink.h \
+ /local/research/research-mitmproxy/include/config.h \
+ /usr/include/libconfig.h++ /usr/include/c++/13/iostream \
+ /local/research/research-mitmproxy/include/logger.h \
+ /local/research/research-mitmproxy/lib/quill/include/quill/LogMacros.h \
+ /local/research/research-mitmproxy/include/config.h

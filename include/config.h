@@ -15,6 +15,10 @@ public:
 
     // Getter Functions
     std::string getLogLevel() const;
+    std::string getLogDirectory() const;
+    int getTimeWait() const;
+    bool getReorderPackets() const;
+    bool getManageSSL() const;
 
 private:
     std::string filename;
@@ -23,6 +27,10 @@ private:
 
     // Variable Functions
     std::string logLevel;
+    std::string logDirectory;
+    int timeWait;
+    bool reorderPackets;
+    bool manageSSL;
 };
 
 #endif // CONFIG_H

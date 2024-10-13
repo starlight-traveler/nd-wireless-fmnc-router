@@ -147,6 +147,9 @@ pkg_check_modules(LIBCONFIG REQUIRED libconfig++)
 
 # Project-wide include directories. Add any new general include directories here.
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/client)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/server)
+
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${OPENSSL_INCLUDE_DIR})
 include_directories(${LIBCONFIG_INCLUDE_DIRS})
@@ -171,6 +174,7 @@ add_executable(${PROJECT_NAME}
     src/arp.cpp
     src/server_to_client/server.cpp
     src/config.cpp
+    src/server_to_client/sender.cpp
 )
 
 # Set include directories for the target. 

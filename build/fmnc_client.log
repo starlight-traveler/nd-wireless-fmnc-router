@@ -1,31 +1,12 @@
-10:03:18.188021277 [26231] config.cpp:21                LOG_INFO      root         Successfully read configuration file: ../config.cfg
-10:03:18.201038908 [26234] server.cpp:64                LOG_INFO      root         Successfully applied packet filter: src host 192.168.2.2 and not ether src 04:7c:16:8a:5e:6b
-10:03:20.332072474 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 98 bytes
-10:03:20.332863406 [26234] server.cpp:187               LOG_DEBUG     root         Queued packet to 192.168.1.40, length: 98 bytes, total queued payload: 98 bytes
-10:03:21.351849513 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 98 bytes
-10:03:22.323848258 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 98 bytes
-10:03:23.351843367 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 98 bytes
-10:03:24.329887337 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 98 bytes
-10:03:25.355887141 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 98 bytes
-10:03:26.340832302 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 98 bytes
-10:03:27.368832183 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 98 bytes
-10:03:28.340890697 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 98 bytes
-10:03:29.362889638 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 98 bytes
-10:03:30.331889094 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 98 bytes
-10:03:34.870900319 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 74 bytes
-10:03:34.921885727 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
-10:03:34.921898582 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 363 bytes
-10:03:34.972854559 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
-10:03:34.972865523 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 146 bytes
-10:03:35.023835705 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 102 bytes
-10:03:35.074838637 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
-10:03:35.074857395 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 90 bytes
-10:03:35.279828953 [26233] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 90 bytes
-10:03:35.966707743 [26234] server.cpp:134               LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 98 bytes
-10:03:35.966741667 [26234] server.cpp:187               LOG_DEBUG     root         Queued packet to 192.168.1.1, length: 60 bytes, total queued payload: 60 bytes
-10:03:35.966743827 [26234] server.cpp:187               LOG_DEBUG     root         Queued packet to 192.168.1.1, length: 60 bytes, total queued payload: 120 bytes
-10:03:35.966745938 [26234] server.cpp:134               LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
-10:03:35.966747489 [26234] server.cpp:134               LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
-10:03:35.966748213 [26234] server.cpp:187               LOG_DEBUG     root         Queued packet to 192.168.1.1, length: 60 bytes, total queued payload: 60 bytes
-10:03:35.966748887 [26234] server.cpp:187               LOG_DEBUG     root         Queued packet to 192.168.1.1, length: 66 bytes, total queued payload: 126 bytes
-10:03:35.966749908 [26234] server.cpp:187               LOG_DEBUG     root         Queued packet to 192.168.1.1, length: 136 bytes, total queued payload: 262 bytes
+12:31:02.925417402 [33093] config.cpp:21                LOG_INFO      root         Successfully read configuration file: ../config.cfg
+12:31:02.936873314 [33096] server.cpp:64                LOG_INFO      root         Successfully applied packet filter: src host 192.168.2.2 and not ether src 04:7c:16:8a:5e:6b
+12:31:11.774757643 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+12:31:11.774775200 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+12:31:11.774784366 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+12:31:11.774793444 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 66 bytes
+12:31:11.774803436 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 136 bytes
+12:31:12.786755223 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 98 bytes
+12:31:13.788750655 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 98 bytes
+12:31:14.790748945 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 98 bytes
+12:31:14.994735419 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 98 bytes
+12:31:16.818740789 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 98 bytes

@@ -6,6 +6,8 @@
 
 #include <utility>
 
+#include "config.h"
+
 quill::Logger *initialize_logger()
 {
     // Start the backend thread
@@ -38,4 +40,51 @@ quill::Logger *initialize_logger()
     logger->set_log_level(quill::LogLevel::TraceL3);
 
     return logger;
+}
+
+void set_log_level(ConfigManager &config, quill::Logger *logger)
+{
+    // Retrieve the log level from the configuration
+    std::string log_level = config.getLogLevel();
+
+    // Check the log level and set it accordingly
+    if (log_level == "TRACE_L1")
+    {
+        logger->set_log_level(quill::LogLevel::TraceL1);
+    }
+    else if (log_level == "TRACE_L2")
+    {
+        logger->set_log_level(quill::LogLevel::TraceL2);
+    }
+    else if (log_level == "TRACE_L3")
+    {
+        logger->set_log_level(quill::LogLevel::TraceL3);
+    }
+    else if (log_level == "DEBUG")
+    {
+        logger->set_log_level(quill::LogLevel::Debug);
+    }
+    else if (log_level == "INFO")
+    {
+        logger->set_log_level(quill::LogLevel::Info);
+    }
+    else if (log_level == "WARNING")
+    {
+        logger->set_log_level(quill::LogLevel::Warning);
+    }
+    else if (log_level == "ERROR")
+    {
+        logger->set_log_level(quill::LogLevel::Error);
+    }
+    else if (log_level == "CRITICAL")
+    {
+        logger->set_log_level(quill::LogLevel::Critical);
+    }
+    else
+    {
+        // Default or invalid log level case
+        logger->set_log_level(quill::LogLevel::Info); // Set default log level
+        // Optionally log a warning for an invalid log level
+        LOG_WARNING(logger, "Invalid log level '{}' specified in configuration. Defaulting to INFO.", log_level);
+    }
 }

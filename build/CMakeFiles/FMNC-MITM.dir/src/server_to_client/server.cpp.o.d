@@ -1,7 +1,7 @@
 CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o: \
  /local/research/research-mitmproxy/src/server_to_client/server.cpp \
  /usr/include/stdc-predef.h \
- /local/research/research-mitmproxy/include/server.h \
+ /local/research/research-mitmproxy/include/server/server.h \
  /local/research/research-mitmproxy/include/general.h /usr/include/pcap.h \
  /usr/include/pcap/pcap.h /usr/include/pcap/funcattrs.h \
  /usr/include/pcap/compiler-tests.h /usr/include/pcap/pcap-inttypes.h \
@@ -350,4 +350,6 @@ CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/xtestintrin.h \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/hresetintrin.h \
  /usr/include/c++/13/chrono \
+ /local/research/research-mitmproxy/include/config.h \
+ /usr/include/libconfig.h++ \
  /local/research/research-mitmproxy/include/logger.h

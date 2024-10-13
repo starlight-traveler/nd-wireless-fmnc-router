@@ -95,69 +95,12 @@ install_linux() {
 
 }
 
-# Function to install dependencies on macOS
-install_macos() {
-
-  echo "${Yellow}================================================================================${Reset}"
-  echo "${BoldBlue}[Install] Installing...${Reset}"
-  echo "${Yellow}================================================================================${Reset}"
-
-  # Install Homebrew if not already installed
-  if ! command -v brew &> /dev/null; then
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-  fi
-
-  # Install dependencies using Homebrew
-  brew install \
-    cmake \
-    git \
-    opencv \
-    gcc \
-    llvm \
-    lcov \
-    doxygen \
-    graphviz \
-    expect \
-    flatbuffers \
-    earthly
-
-  # Set up environment for clang-tidy
-  echo 'export PATH="/opt/homebrew/opt/llvm/bin:$PATH"' >> ~/.zshrc
-  echo 'export LDFLAGS="-L/opt/homebrew/opt/llvm/lib -L/opt/homebrew/opt/llvm/lib/c++ -Wl,-rpath,/opt/homebrew/opt/llvm/lib/c++"' >> ~/.zshrc
-  echo 'export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"' >> ~/.zshrc
-  echo 'export PKG_CONFIG_PATH="/opt/homebrew/opt/opencv/lib/pkgconfig:$PKG_CONFIG_PATH"' >> ~/.zshrc
-  echo "export PKG_CONFIG_PATH=$OPENCV_PATH/lib/pkgconfig:\$PKG_CONFIG_PATH" >> ~/.zshrc
-  
-  echo "${Yellow}================================================================================${Reset}"
-  # Verify installations
-  echo "${BoldBlue}[Install] Verifying installations...${Reset}"
-  echo "${Yellow}================================================================================${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} Unbuffer: $(which unbuffer)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} CMake: $(cmake --version)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} Git: $(git --version)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} OpenCV: $(pkg-config --modversion opencv4)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} GCC: $(gcc --version)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} G++: $(g++ --version)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} Clang: $(clang --version)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} LCOV: $(lcov --version)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} Doxygen: $(doxygen --version)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} Flatc: $(flatc --version)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} Earthly: $(earthly --version)${Reset}"
-  echo "${Yellow}================================================================================${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} All dependencies installed successfully on macOS!${Reset}"
-  echo "${Yellow}================================================================================${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} Remember to source ~/.zshrc and install the Docker Daemon!${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} https://docs.docker.com/get-docker/${Reset}"
-  echo "${Yellow}================================================================================${Reset}"
-
-}
 
 # Function to detect the operating system
 detect_os_for_install() {
   OS="$(uname)"
   case "$OS" in
     Linux*)     install_linux ;;
-    Darwin*)    install_macos ;;
     *)          echo "Unsupported OS: $OS" ; exit 1 ;;
   esac
 }
