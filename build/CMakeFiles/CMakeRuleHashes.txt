@@ -1,2 +1,2 @@
 # Hashes of file build rules.
-40c0445c2a068b497cd63c72dbb53e78 CMakeFiles/check-template
+25b7075b81072636c440d855589e1106 CMakeFiles/check-template

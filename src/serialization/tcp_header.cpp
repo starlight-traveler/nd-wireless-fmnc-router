@@ -57,6 +57,70 @@ std::string get_tcp_option_name(int option_kind)
     }
 }
 
+// Function to dump packet log entries to JSON
+void dump_packet_log(std::shared_ptr<Server::Data> internal)
+{
+    std::unordered_map<std::string, Server::PacketLogEntry> packet_log_copy;
+
+    {
+        std::lock_guard<std::mutex> lock(internal->packet_log_mutex);
+        packet_log_copy = internal->packet_log;
+        internal->packet_log.clear();
+    }
+
+    // Check if there's any data to log
+    if (packet_log_copy.empty())
+    {
+        LOG_DEBUG(internal->logger, "No packet logs to dump.");
+        return; // Exit early to prevent writing empty JSON
+    }
+
+    // Create JSON object
+    nlohmann::json j;
+
+    for (const auto &kv : packet_log_copy)
+    {
+        const std::string &packet_id = kv.first;
+        const Server::PacketLogEntry &entry = kv.second;
+
+        // Convert option kinds to their names if desired
+        std::vector<std::string> option_names;
+        for (const auto &opt_kind : entry.options)
+        {
+            option_names.push_back(get_tcp_option_name(opt_kind));
+        }
+
+        j[packet_id] = {
+            {"status", entry.status},
+            {"timestamp", entry.timestamp},
+            {"flags", entry.flags},
+            {"options", option_names}};
+    }
+
+    // Append to the file to avoid overwriting
+    std::ofstream ofs("packet_log.json", std::ios::app);
+    if (!ofs)
+    {
+        LOG_ERROR(internal->logger, "Failed to open packet_log.json for writing.");
+        return;
+    }
+
+    try
+    {
+        ofs << j.dump(4) << std::endl; // Pretty print with 4 spaces indentation
+    }
+    catch (const std::exception &e)
+    {
+        LOG_ERROR(internal->logger, "Failed to write JSON to file: {}", e.what());
+        ofs.close();
+        return;
+    }
+
+    ofs.close();
+
+    LOG_INFO(internal->logger, "Packet log written to packet_log.json");
+}
+
 void dump_tcp_flag_counts(std::shared_ptr<Server::Data> internal)
 {
     std::unordered_map<std::string, size_t> flag_counts_copy;

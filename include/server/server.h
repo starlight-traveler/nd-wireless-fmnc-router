@@ -3,15 +3,28 @@
 
 #include "general.h"
 
+// server.h
+
 namespace Server
 {
+    struct PacketLogEntry
+    {
+        std::string status;             // "received" or "sent"
+        std::string timestamp;          // Timestamp as a string
+        std::vector<std::string> flags; // Array of TCP flags
+        std::vector<int> options;       // Array of TCP option kinds
+    };
+
     struct PacketData
     {
         std::vector<unsigned char> data;
         size_t length;
         struct sockaddr_ll socket_address;
         char dest_ip[INET_ADDRSTRLEN];
-        unsigned char dest_mac[6]; // Destination MAC address (added this)
+        unsigned char dest_mac[6];
+
+        // Add packet identification fields if needed
+        // These can help in generating unique packet IDs
     };
 
     struct Data
@@ -26,11 +39,14 @@ namespace Server
         std::unordered_map<int, size_t> tcp_option_counts;
         std::mutex counts_mutex;
 
-        // New members for TCP flag counts
+        // Existing members for TCP flag counts
         std::unordered_map<std::string, size_t> tcp_flag_counts;
         std::mutex flags_mutex;
-    };
 
+        // New member for packet tracking
+        std::unordered_map<std::string, PacketLogEntry> packet_log;
+        std::mutex packet_log_mutex;
+    };
 } // namespace Server
 
 void packet_handler_from(u_char *user, const struct pcap_pkthdr *header, const u_char *packet);

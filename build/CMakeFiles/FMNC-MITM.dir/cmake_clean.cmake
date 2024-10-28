@@ -19,6 +19,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o.d"
   "CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o"
   "CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o.d"
+  "CMakeFiles/FMNC-MITM.dir/src/utilities.cpp.o"
+  "CMakeFiles/FMNC-MITM.dir/src/utilities.cpp.o.d"
   "FMNC-MITM"
   "FMNC-MITM.pdb"
 )

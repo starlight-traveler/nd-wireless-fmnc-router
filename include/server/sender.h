@@ -4,6 +4,6 @@
 #include "server.h"
 
 void send_queued_packets(Server::Data *internal);
-void send_packet(const Server::PacketData &pkt, quill::Logger *logger);
+void send_packet(const Server::PacketData &pkt, quill::Logger *logger, std::shared_ptr<Server::Data> internal);
 
 #endif

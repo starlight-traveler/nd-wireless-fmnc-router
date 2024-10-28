@@ -1,0 +1,134 @@
+{
+    "33728704:35528->16885952:5351:1318136": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:20"
+    },
+    "33728704:35528->16885952:5351:711638": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:20"
+    },
+    "33728704:47020->16885952:1900:6707487": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:20"
+    },
+    "33728704:47020->16885952:5351:2157083": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:20"
+    },
+    "33728704:47020->16885952:5351:700146": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:20"
+    },
+    "33728704:8000->671197376:55922:2395128808": {
+        "flags": [
+            "ACK",
+            "SYN"
+        ],
+        "options": [
+            "Maximum Segment Size",
+            "Selective Acknowledgment Permitted",
+            "Timestamp",
+            "No-Operation",
+            "Window Scale"
+        ],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:18"
+    },
+    "33728704:8000->671197376:55922:2395128809": {
+        "flags": [
+            "ACK",
+            "PSH"
+        ],
+        "options": [
+            "No-Operation",
+            "No-Operation",
+            "Timestamp"
+        ],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:20"
+    },
+    "33728704:8000->671197376:55922:2395128964": {
+        "flags": [
+            "ACK",
+            "PSH",
+            "FIN"
+        ],
+        "options": [
+            "No-Operation",
+            "No-Operation",
+            "Timestamp"
+        ],
+        "status": "received",
+        "timestamp": "2024-10-27 19:00:20"
+    }
+}
+{
+    "33728704:8000->671197376:55922:2395128964": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:22"
+    },
+    "33728704:8000->671197376:55922:2395129677": {
+        "flags": [
+            "ACK"
+        ],
+        "options": [
+            "No-Operation",
+            "No-Operation",
+            "Timestamp"
+        ],
+        "status": "received",
+        "timestamp": "2024-10-27 19:00:26"
+    }
+}
+{
+    "33728704:8000->671197376:55922:2395129677": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:43"
+    }
+}
+{
+    "33728704:38809->16885952:1900:6715698": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:49"
+    },
+    "33728704:38809->16885952:5351:2099759": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:49"
+    },
+    "33728704:38809->16885952:5351:708357": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:49"
+    },
+    "33728704:48913->16885952:5351:1370286": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:49"
+    },
+    "33728704:48913->16885952:5351:698253": {
+        "flags": [],
+        "options": [],
+        "status": "sent",
+        "timestamp": "2024-10-27 19:00:49"
+    }
+}

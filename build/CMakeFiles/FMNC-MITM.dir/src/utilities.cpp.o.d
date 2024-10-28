@@ -1,7 +1,7 @@
-CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o: \
- /local/research/research-mitmproxy/src/server_to_client/server.cpp \
+CMakeFiles/FMNC-MITM.dir/src/utilities.cpp.o: \
+ /local/research/research-mitmproxy/src/utilities.cpp \
  /usr/include/stdc-predef.h \
- /local/research/research-mitmproxy/include/server/server.h \
+ /local/research/research-mitmproxy/include/utilities.h \
  /local/research/research-mitmproxy/include/general.h /usr/include/pcap.h \
  /usr/include/pcap/pcap.h /usr/include/pcap/funcattrs.h \
  /usr/include/pcap/compiler-tests.h /usr/include/pcap/pcap-inttypes.h \
@@ -351,16 +351,13 @@ CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/hresetintrin.h \
  /usr/include/c++/13/chrono \
  /local/research/research-mitmproxy/include/config.h \
- /usr/include/libconfig.h++ \
- /local/research/research-mitmproxy/include/logger.h \
- /usr/include/c++/13/sstream /usr/include/c++/13/bits/sstream.tcc \
- /usr/include/c++/13/iomanip /usr/include/c++/13/locale \
+ /usr/include/libconfig.h++ /usr/include/c++/13/sstream \
+ /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/iomanip \
+ /usr/include/c++/13/locale \
  /usr/include/c++/13/bits/locale_facets_nonio.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
  /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
  /usr/include/libintl.h /usr/include/c++/13/bits/codecvt.h \
  /usr/include/c++/13/bits/locale_facets_nonio.tcc \
  /usr/include/c++/13/bits/locale_conv.h \
- /usr/include/c++/13/bits/quoted_string.h \
- /local/research/research-mitmproxy/include/utilities.h \
- /local/research/research-mitmproxy/include/general.h
+ /usr/include/c++/13/bits/quoted_string.h

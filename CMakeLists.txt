@@ -179,6 +179,7 @@ add_executable(${PROJECT_NAME}
     src/server_to_client/sender.cpp
     src/serialization/serialization_manager.cpp
     src/serialization/tcp_header.cpp
+    src/utilities.cpp
 )
 
 # Set include directories for the target. 

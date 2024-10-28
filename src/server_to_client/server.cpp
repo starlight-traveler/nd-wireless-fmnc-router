@@ -1,6 +1,11 @@
 #include "server.h"
 #include "logger.h"
 #include <cstring>
+#include <sstream>
+#include <iomanip>
+#include <ctime>
+#include <chrono>
+#include "utilities.h"
 
 #define MAX_PACKET_SIZE 65536    // Maximum packet size
 #define MAX_PAYLOAD_SIZE 1000000 // 1 MB
@@ -251,12 +256,13 @@ void process_tcp_flags(std::shared_ptr<Server::Data> internal, uint8_t tcp_flags
 }
 
 // Helper function to process TCP options
-void process_tcp_options(std::shared_ptr<Server::Data> internal, u_char *options, int tcp_options_length)
+void process_tcp_options(std::shared_ptr<Server::Data> internal, u_char *options, int tcp_options_length, std::vector<int> &option_kinds)
 {
     int parsed_length = 0;
     while (parsed_length < tcp_options_length)
     {
         u_char kind = options[parsed_length];
+        option_kinds.push_back(kind); // Store the option kind
         LOG_DEBUG(internal->logger, "Parsing TCP option at position {}, kind: {}", parsed_length, (int)kind);
 
         if (kind == 0)
@@ -308,40 +314,47 @@ void process_tcp_options(std::shared_ptr<Server::Data> internal, u_char *options
 // Helper function to process TCP packet
 void process_tcp_packet(std::shared_ptr<Server::Data> internal, Server::PacketData &packet_data, struct iphdr *ip_header)
 {
-    // Calculate IP header length in bytes
+    // Extract TCP header
     int ip_header_length = ip_header->ihl * 4;
-
-    // Get TCP header
     struct tcphdr *tcp_header = (struct tcphdr *)(packet_data.data.data() + sizeof(struct ethhdr) + ip_header_length);
 
-    // Extract TCP flags and process them
+    // Process flags
     uint8_t tcp_flags = tcp_header->th_flags;
-    process_tcp_flags(internal, tcp_flags);
+    std::vector<std::string> flag_names = get_tcp_flag_names(tcp_flags);
 
-    // Calculate TCP header length in bytes
-    int tcp_header_length = tcp_header->doff * 4;
-    LOG_DEBUG(internal->logger, "TCP header length: {} bytes", tcp_header_length);
-
-    // Calculate options length
-    int tcp_options_length = tcp_header_length - sizeof(struct tcphdr);
-    LOG_DEBUG(internal->logger, "TCP options length: {} bytes", tcp_options_length);
-
-    // Pointer to the options
-    u_char *options = (u_char *)tcp_header + sizeof(struct tcphdr);
-
-    // Calculate total header size to ensure we don't read beyond the packet
-    int total_header_size = sizeof(struct ethhdr) + ip_header_length + tcp_header_length;
-    if (total_header_size > packet_data.length)
+    if (!flag_names.empty())
     {
-        // Malformed packet
-        LOG_DEBUG(internal->logger, "Malformed packet: total_header_size {} exceeds packet length {}",
-                  total_header_size, packet_data.length);
-        return;
+        process_tcp_flags(internal, tcp_flags);
     }
-    else
+
+    // Process options
+    int tcp_header_length = tcp_header->doff * 4;
+    int tcp_options_length = tcp_header_length - sizeof(struct tcphdr);
+    std::vector<int> option_kinds; // Vector to hold TCP option kinds
+
+    if (tcp_options_length > 0)
     {
-        // Process TCP options
-        process_tcp_options(internal, options, tcp_options_length);
+        u_char *options = (u_char *)tcp_header + sizeof(struct tcphdr);
+        process_tcp_options(internal, options, tcp_options_length, option_kinds);
+    }
+
+    // If packet has flags or options, log it
+    if (!flag_names.empty() || !option_kinds.empty())
+    {
+        std::string packet_id = generate_packet_id(ip_header, tcp_header);
+        std::string timestamp = get_current_timestamp();
+
+        {
+            std::lock_guard<std::mutex> lock(internal->packet_log_mutex);
+            Server::PacketLogEntry log_entry;
+            log_entry.status = "received";
+            log_entry.timestamp = timestamp;
+            log_entry.flags = flag_names;
+            log_entry.options = option_kinds;
+            internal->packet_log[packet_id] = log_entry;
+        }
+
+        LOG_DEBUG(internal->logger, "Packet with ID {} received at {}", packet_id, timestamp);
     }
 }
 
@@ -359,7 +372,6 @@ void add_packet_to_queue(std::shared_ptr<Server::Data> internal, Server::PacketD
     }
 }
 
-// Updated queue_packet function
 void queue_packet(std::shared_ptr<Server::Data> internal, const struct pcap_pkthdr *header, const u_char *packet)
 {
     LOG_DEBUG(internal->logger, "Entering queue_packet with packet length: {}", header->len);

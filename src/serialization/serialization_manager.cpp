@@ -36,10 +36,12 @@ void serialization_manager(std::shared_ptr<Server::Data> internal)
     // Define the name of the JSON files to delete
     const std::string option_filename = "tcp_option_counts.json";
     const std::string flag_filename = "tcp_flag_counts.json";
+    const std::string packet_filename = "packet_log.json";
 
     // Delete old JSON files on startup
     delete_old_json(option_filename, internal->logger);
     delete_old_json(flag_filename, internal->logger);
+    delete_old_json(packet_filename, internal->logger);
 
     // Periodically dump the TCP option and flag counts to the files
     while (true)
@@ -47,5 +49,6 @@ void serialization_manager(std::shared_ptr<Server::Data> internal)
         std::this_thread::sleep_for(std::chrono::seconds(5)); // Adjust the interval as needed
         dump_tcp_option_counts(internal);
         dump_tcp_flag_counts(internal);
+        dump_packet_log(internal);
     }
 }

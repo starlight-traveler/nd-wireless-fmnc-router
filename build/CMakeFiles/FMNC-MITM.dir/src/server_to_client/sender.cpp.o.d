@@ -381,4 +381,6 @@ CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.o: \
  /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/numeric \
  /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
- /local/research/research-mitmproxy/include/logger.h
+ /local/research/research-mitmproxy/include/logger.h \
+ /local/research/research-mitmproxy/include/utilities.h \
+ /local/research/research-mitmproxy/include/general.h
