@@ -1,12 +1,1343 @@
-12:31:02.925417402 [33093] config.cpp:21                LOG_INFO      root         Successfully read configuration file: ../config.cfg
-12:31:02.936873314 [33096] server.cpp:64                LOG_INFO      root         Successfully applied packet filter: src host 192.168.2.2 and not ether src 04:7c:16:8a:5e:6b
-12:31:11.774757643 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
-12:31:11.774775200 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
-12:31:11.774784366 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
-12:31:11.774793444 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 66 bytes
-12:31:11.774803436 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 136 bytes
-12:31:12.786755223 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 98 bytes
-12:31:13.788750655 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 98 bytes
-12:31:14.790748945 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 98 bytes
-12:31:14.994735419 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 98 bytes
-12:31:16.818740789 [33096] sender.cpp:25                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 98 bytes
+18:16:10.177192104 [25329] config.cpp:21                LOG_INFO      root         Successfully read configuration file: ../config.cfg
+18:16:10.177457611 [25333] serialization_manager.cpp:20 LOG_INFO      root         Deleted old file: tcp_option_counts.json
+18:16:10.177889339 [25333] serialization_manager.cpp:20 LOG_INFO      root         Deleted old file: tcp_flag_counts.json
+18:16:10.189996649 [25332] server.cpp:55                LOG_INFO      root         Successfully applied packet filter: src host 192.168.2.2 and not ether src 04:7c:16:8a:5e:6b
+18:16:15.179120722 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:16:20.180358513 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:16:25.181762430 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:16:27.087649670 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:27.087652898 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:27.087654582 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:16:27.087665170 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:16:27.087667709 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:27.087669441 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:27.087697566 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:16:27.087703017 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:16:27.087864365 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:16:27.087866202 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:27.087866860 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:27.087867672 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:16:27.087874990 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 60
+18:16:27.087876964 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 60 bytes
+18:16:27.087880674 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:27.087881248 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:27.087881813 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:16:27.087884487 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:16:27.087885303 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:27.087886209 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:27.087888051 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:16:27.087889600 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:16:27.087893949 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:16:27.087894632 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:27.087894917 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:27.087895199 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:16:27.087898549 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 2, Total payload length: 120
+18:16:27.087899111 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 120 bytes
+18:16:27.087900004 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:27.087900303 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:27.087900656 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:16:27.087901768 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:16:27.087902165 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:27.087902543 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:27.087904071 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:16:27.087905203 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:16:27.087906626 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:16:27.087907027 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:27.087907311 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:27.087907590 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:16:27.087910393 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 3, Total payload length: 180
+18:16:27.087910914 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 180 bytes
+18:16:27.087911669 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:27.087911974 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:27.087912309 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 66
+18:16:27.087913637 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 66
+18:16:27.087914264 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:27.087914567 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:27.087916059 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:16:27.087917134 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:16:27.087918324 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:16:27.087918689 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:27.087918956 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:27.087919256 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:16:27.087920194 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 4, Total payload length: 246
+18:16:27.087920594 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 66 bytes, total queued payload: 246 bytes
+18:16:27.087921245 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:27.087921515 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:27.087921830 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 136
+18:16:27.087923150 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 136
+18:16:27.087923495 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:27.087923784 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:27.087925304 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:16:27.087926328 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:16:27.087927375 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:16:27.087927752 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:27.087928025 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:27.087928323 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:16:27.087930798 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 5, Total payload length: 382
+18:16:27.087931188 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 136 bytes, total queued payload: 382 bytes
+18:16:30.183175052 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:16:35.184588174 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:16:40.185830791 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:16:44.961080346 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 74 bytes
+18:16:44.961645205 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:44.961648747 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:16:44.961783813 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:16:44.961794543 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:16:44.961800963 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 66 bytes
+18:16:44.961807855 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:16:44.961814773 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 136 bytes
+18:16:44.961818696 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:16:44.961820460 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:16:44.961821033 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:44.961821891 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:16:44.961828470 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:16:44.961830286 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:44.961831571 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:44.961838729 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:16:44.961841669 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:16:44.961943830 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:16:44.961945783 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:44.961946386 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:44.961946806 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:16:44.961983088 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 1
+18:16:44.961986818 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag RST: total count now 1
+18:16:44.961989238 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 20 bytes
+18:16:44.961991082 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 0 bytes
+18:16:44.961993492 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 60
+18:16:44.961995236 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 60 bytes
+18:16:45.187290393 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:16:45.980780521 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 74 bytes
+18:16:45.981653709 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:45.981656923 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:16:45.981739359 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 60 bytes
+18:16:45.981747675 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:16:45.981749342 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:16:45.981749941 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:45.981751302 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:16:45.981759633 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:16:45.981761977 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:45.981763691 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:45.981773164 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:16:45.981776932 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:16:45.981788768 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:16:45.981791036 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:45.981791691 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:45.981792121 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:16:45.981815802 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 1
+18:16:45.981819543 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag RST: total count now 1
+18:16:45.981821661 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 20 bytes
+18:16:45.981822871 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 0 bytes
+18:16:45.981825809 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 60
+18:16:45.981827370 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 60 bytes
+18:16:50.188565941 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:16:51.607725785 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:51.607729029 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:16:51.607804395 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 60 bytes
+18:16:51.607812512 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:16:51.607814195 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:16:51.607814664 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:51.607815833 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:16:51.607822955 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:16:51.607824978 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:51.607826257 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:51.607833196 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:16:51.607835885 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:16:51.607847213 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:16:51.607848933 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:51.607849408 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:51.607849987 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:16:51.607854065 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 60
+18:16:51.607855664 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 60 bytes
+18:16:51.607857695 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:51.607858072 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:51.607858424 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:16:51.607859382 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:16:51.607859778 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:51.607860147 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:51.607861749 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:16:51.607862837 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:16:51.607864705 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:16:51.607865160 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:51.607865495 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:51.607865780 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:16:51.607866718 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 2, Total payload length: 120
+18:16:51.607867213 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 120 bytes
+18:16:51.607868060 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:51.607868339 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:51.607868668 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:16:51.607869577 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:16:51.607869861 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:51.607870162 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:51.607871590 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:16:51.607872635 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:16:51.607874063 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:16:51.607874492 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:51.607874779 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:51.607875055 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:16:51.607875977 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 3, Total payload length: 180
+18:16:51.607876654 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 180 bytes
+18:16:51.607877279 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:51.607877543 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:51.607877857 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 66
+18:16:51.607879809 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 66
+18:16:51.607880359 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:51.607880670 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:51.607882195 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:16:51.607883221 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:16:51.607884504 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:16:51.607884923 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:51.607885203 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:51.607885499 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:16:51.607886550 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 4, Total payload length: 246
+18:16:51.607887214 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 66 bytes, total queued payload: 246 bytes
+18:16:51.607887813 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:16:51.607888094 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:16:51.607888405 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 136
+18:16:51.607889485 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 136
+18:16:51.607889779 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:16:51.607890084 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:16:51.607891526 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:16:51.607892542 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:16:51.607893822 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:16:51.607894168 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:16:51.607894448 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:16:51.607894736 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:16:51.607895560 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 5, Total payload length: 382
+18:16:51.607896154 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 136 bytes, total queued payload: 382 bytes
+18:16:55.189968488 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:00.191377232 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:03.473850338 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 74 bytes
+18:17:03.475720259 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:03.475722678 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:03.475824086 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 66 bytes
+18:17:03.475836514 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:17:03.475843911 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:17:03.475851673 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 136 bytes
+18:17:03.475859126 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:17:03.475863189 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:03.475864702 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:03.475865160 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:03.475866231 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 74
+18:17:03.475872976 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 74
+18:17:03.475874992 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:03.475876298 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:03.475883045 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:03.475885567 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:03.475895625 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:03.475897318 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:03.475897791 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:03.475898112 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:03.475916849 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 1
+18:17:03.475920222 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag SYN: total count now 1
+18:17:03.475922236 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 40 bytes
+18:17:03.475923516 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 20 bytes
+18:17:03.475924336 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 2
+18:17:03.475925800 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 2, length: 4
+18:17:03.475933834 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 2: total count now 1
+18:17:03.475935299 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 4, kind: 4
+18:17:03.475935630 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 4, length: 2
+18:17:03.475937502 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 4: total count now 1
+18:17:03.475937904 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 6, kind: 8
+18:17:03.475938203 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:03.475939589 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 1
+18:17:03.475939988 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 16, kind: 1
+18:17:03.475940435 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:03.475940724 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 17, kind: 3
+18:17:03.475941048 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 3, length: 3
+18:17:03.475942402 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 3: total count now 1
+18:17:03.475944513 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 74
+18:17:03.475946212 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 74 bytes, total queued payload: 74 bytes
+18:17:04.491705352 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:04.491707537 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:04.491774492 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 74 bytes
+18:17:04.491781760 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:04.491783138 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:04.491783599 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:04.491784460 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 74
+18:17:04.491790905 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 74
+18:17:04.491792591 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:04.491793867 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:04.491800487 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:04.491803138 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:04.491812108 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:04.491813767 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:04.491814250 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:04.491814578 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:04.491828528 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 2
+18:17:04.491830937 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag SYN: total count now 2
+18:17:04.491832911 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 40 bytes
+18:17:04.491834163 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 20 bytes
+18:17:04.491834982 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 2
+18:17:04.491836375 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 2, length: 4
+18:17:04.491839459 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 2: total count now 2
+18:17:04.491840671 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 4, kind: 4
+18:17:04.491841037 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 4, length: 2
+18:17:04.491841953 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 4: total count now 2
+18:17:04.491842349 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 6, kind: 8
+18:17:04.491842625 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:04.491843496 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 2
+18:17:04.491843959 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 16, kind: 1
+18:17:04.491844367 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:04.491844696 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 17, kind: 3
+18:17:04.491845013 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 3, length: 3
+18:17:04.491845847 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 3: total count now 2
+18:17:04.491848356 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 74
+18:17:04.491850014 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 74 bytes, total queued payload: 74 bytes
+18:17:04.493820352 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 74 bytes
+18:17:04.493836498 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
+18:17:04.493851561 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 363 bytes
+18:17:04.495719494 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:04.495721859 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:04.495791759 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 74 bytes
+18:17:04.495798378 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:04.495799763 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:04.495800219 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:04.495801106 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 74
+18:17:04.495807062 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 74
+18:17:04.495808957 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:04.495810240 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:04.495816521 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:04.495819191 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:04.495828219 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:04.495829934 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:04.495830415 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:04.495830736 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:04.495842994 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 3
+18:17:04.495845306 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag SYN: total count now 3
+18:17:04.495847311 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 40 bytes
+18:17:04.495848644 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 20 bytes
+18:17:04.495849466 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 2
+18:17:04.495850903 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 2, length: 4
+18:17:04.495853965 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 2: total count now 3
+18:17:04.495855264 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 4, kind: 4
+18:17:04.495855624 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 4, length: 2
+18:17:04.495856647 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 4: total count now 3
+18:17:04.495857049 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 6, kind: 8
+18:17:04.495857322 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:04.495858212 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 3
+18:17:04.495858598 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 16, kind: 1
+18:17:04.495858996 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:04.495859296 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 17, kind: 3
+18:17:04.495859648 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 3, length: 3
+18:17:04.495860494 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 3: total count now 3
+18:17:04.495862864 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 74
+18:17:04.495864447 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 74 bytes, total queued payload: 74 bytes
+18:17:04.495866484 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:04.495866817 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:04.495867177 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 66
+18:17:04.495868384 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 66
+18:17:04.495868866 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:04.495869400 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:04.495871001 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:04.495872241 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:04.495873676 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:04.495874232 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:04.495874536 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:04.495874790 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:04.495877644 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 4
+18:17:04.495878441 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:04.495878757 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:04.495879158 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:04.495879578 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:04.495879869 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:04.495880234 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:04.495880515 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:04.495880897 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:04.495881718 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 4
+18:17:04.495882760 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 2, Total payload length: 140
+18:17:04.495883476 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 66 bytes, total queued payload: 140 bytes
+18:17:04.503642016 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:04.503644237 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:04.503728705 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 66 bytes
+18:17:04.503739830 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 74 bytes
+18:17:04.503743032 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:04.503744409 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:04.503744846 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:04.503745757 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 1457
+18:17:04.503758288 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 1457
+18:17:04.503760028 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:04.503761335 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:04.503767821 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:04.503770724 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:04.503778835 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:04.503780585 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:04.503781147 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:04.503781469 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:04.503793918 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 5
+18:17:04.503800464 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag PSH: total count now 1
+18:17:04.503802443 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:04.503803766 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:04.503804596 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:04.503805769 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:04.503806070 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:04.503806441 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:04.503806726 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:04.503807410 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:04.503810463 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 5
+18:17:04.503813335 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 1457
+18:17:04.503814884 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 1457 bytes, total queued payload: 1457 bytes
+18:17:04.544822865 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
+18:17:05.192778171 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:06.859725353 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:06.859727659 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:06.859802007 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 1457 bytes
+18:17:06.859810209 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:06.859811849 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:06.859812300 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:06.859813516 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 1457
+18:17:06.859822833 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 1457
+18:17:06.859824800 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:06.859826089 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:06.859832919 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:06.859835745 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:06.859844723 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:06.859846458 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:06.859846932 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:06.859847261 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:06.859866663 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 1
+18:17:06.859870261 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag PSH: total count now 1
+18:17:06.859872491 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:06.859873884 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:06.859874741 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:06.859876078 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:06.859876455 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:06.859876783 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:06.859877080 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:06.859877770 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:06.859883246 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 1
+18:17:06.859886176 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 1457
+18:17:06.859887839 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 1457 bytes, total queued payload: 1457 bytes
+18:17:06.890845029 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
+18:17:06.890862824 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 146 bytes
+18:17:06.891705649 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:06.891708001 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:06.891778784 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 1457 bytes
+18:17:06.891785519 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:06.891786982 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:06.891787425 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:06.891788303 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 321
+18:17:06.891794189 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 321
+18:17:06.891796141 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:06.891797425 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:06.891803749 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:06.891806415 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:06.891815484 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:06.891817161 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:06.891817655 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:06.891817990 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:06.891830217 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 2
+18:17:06.891832504 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag PSH: total count now 2
+18:17:06.891834496 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:06.891835764 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:06.891836589 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:06.891837746 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:06.891838112 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:06.891838460 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:06.891838738 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:06.891839426 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:06.891842574 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 2
+18:17:06.891845726 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 321
+18:17:06.891847263 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 321 bytes, total queued payload: 321 bytes
+18:17:06.941817631 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 78 bytes
+18:17:09.134819034 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 102 bytes
+18:17:09.135663971 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:09.135666549 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:09.135742052 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 321 bytes
+18:17:09.135748862 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:09.135750601 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:09.135751029 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:09.135751876 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 357
+18:17:09.135760143 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 357
+18:17:09.135762144 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:09.135763418 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:09.135769944 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:09.135772815 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:09.135782886 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:09.135784618 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:09.135785081 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:09.135785443 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:09.135799455 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 3
+18:17:09.135802027 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag PSH: total count now 3
+18:17:09.135807524 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag FIN: total count now 1
+18:17:09.135809499 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:09.135810801 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:09.135811662 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:09.135812832 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:09.135813205 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:09.135813556 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:09.135813855 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:09.135814534 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:09.135817609 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 3
+18:17:09.135821021 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 357
+18:17:09.135822761 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 357 bytes, total queued payload: 357 bytes
+18:17:09.185817365 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
+18:17:10.194248714 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:12.235720557 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:12.235723043 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:12.235800354 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 357 bytes
+18:17:12.235808582 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:12.235810130 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:12.235810589 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:12.235811751 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 357
+18:17:12.235819092 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 357
+18:17:12.235821117 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:12.235822399 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:12.235829944 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:12.235832564 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:12.235842524 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:12.235844159 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:12.235844633 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:12.235844966 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:12.235865206 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 1
+18:17:12.235868910 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag PSH: total count now 1
+18:17:12.235871125 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag FIN: total count now 1
+18:17:12.235873162 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:12.235874550 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:12.235875357 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:12.235876523 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:12.235876907 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:12.235877254 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:12.235877532 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:12.235878239 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:12.235883680 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 1
+18:17:12.235886569 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 357
+18:17:12.235888436 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 357 bytes, total queued payload: 357 bytes
+18:17:12.296829605 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
+18:17:14.919724170 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:14.919726899 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:14.919807875 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 357 bytes
+18:17:14.919816294 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:14.919817777 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:14.919818227 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:14.919819262 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:17:14.919826355 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:17:14.919828518 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:14.919829794 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:14.919836568 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:14.919839221 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:14.919852152 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:14.919853910 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:14.919854379 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:14.919855045 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:14.919859092 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 60
+18:17:14.919860748 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 60 bytes
+18:17:14.919862667 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:14.919863006 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:14.919863453 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:17:14.919864511 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:17:14.919864842 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:14.919865250 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:14.919867004 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:14.919868129 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:14.919870011 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:14.919870506 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:14.919870793 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:14.919871067 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:14.919872050 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 2, Total payload length: 120
+18:17:14.919872798 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 120 bytes
+18:17:14.919873752 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:14.919874052 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:14.919874370 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:17:14.919875324 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:17:14.919875649 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:14.919875966 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:14.919877478 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:14.919878489 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:14.919880025 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:14.919880475 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:14.919880767 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:14.919881041 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:14.919881951 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 3, Total payload length: 180
+18:17:14.919882647 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 180 bytes
+18:17:14.919883313 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:14.919883592 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:14.919883899 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 66
+18:17:14.919885095 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 66
+18:17:14.919885672 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:14.919885970 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:14.919887381 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:14.919888422 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:14.919889925 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:14.919890383 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:14.919890650 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:14.919890944 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:14.919891827 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 4, Total payload length: 246
+18:17:14.919892506 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 66 bytes, total queued payload: 246 bytes
+18:17:14.919893137 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:14.919893410 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:14.919893719 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 136
+18:17:14.919894795 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 136
+18:17:14.919895090 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:14.919895402 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:14.919896818 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:14.919897824 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:14.919899292 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:14.919899711 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:14.919899980 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:14.919900260 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:14.919901061 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 5, Total payload length: 382
+18:17:14.919901498 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 136 bytes, total queued payload: 382 bytes
+18:17:14.948837143 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 78 bytes
+18:17:15.195861606 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:20.197309868 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:25.199165869 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:30.200655819 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:31.421856606 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
+18:17:31.423724500 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:31.423726875 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:31.423829703 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 66 bytes
+18:17:31.423841061 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 136 bytes
+18:17:31.423849103 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:17:31.423856533 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:17:31.423863622 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:17:31.423868056 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:31.423869658 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:31.423870081 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:31.423871070 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 66
+18:17:31.423877832 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 66
+18:17:31.423879794 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:31.423881099 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:31.423888109 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:31.423890682 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:31.423900805 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:31.423902468 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:31.423902953 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:31.423903284 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:31.423918767 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 1
+18:17:31.423922224 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:31.423923461 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:31.423924280 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:31.423925446 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:31.423925801 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:31.423926140 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:31.423926427 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:31.423927087 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:31.423932425 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 1
+18:17:31.423935316 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 66
+18:17:31.423936983 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 66 bytes, total queued payload: 66 bytes
+18:17:34.073831659 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 74 bytes
+18:17:34.075717755 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:34.075720129 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:34.075795197 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 66 bytes
+18:17:34.075802502 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:34.075804025 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:34.075804487 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:34.075805574 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 74
+18:17:34.075812827 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 74
+18:17:34.075814788 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:34.075816071 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:34.075822978 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:34.075825473 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:34.075834709 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:34.075836408 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:34.075836881 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:34.075837212 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:34.075850804 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 2
+18:17:34.075856560 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag SYN: total count now 1
+18:17:34.075858735 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 40 bytes
+18:17:34.075860224 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 20 bytes
+18:17:34.075861083 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 2
+18:17:34.075862499 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 2, length: 4
+18:17:34.075869203 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 2: total count now 1
+18:17:34.075870478 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 4, kind: 4
+18:17:34.075870900 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 4, length: 2
+18:17:34.075872613 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 4: total count now 1
+18:17:34.075873143 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 6, kind: 8
+18:17:34.075873493 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:34.075874645 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 2
+18:17:34.075875081 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 16, kind: 1
+18:17:34.075875543 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:34.075875875 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 17, kind: 3
+18:17:34.075876183 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 3, length: 3
+18:17:34.075877666 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 3: total count now 1
+18:17:34.075879841 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 74
+18:17:34.075881333 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 74 bytes, total queued payload: 74 bytes
+18:17:35.083726925 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:35.083729231 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:35.083803646 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 74 bytes
+18:17:35.083811776 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:35.083813352 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:35.083813808 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:35.083814996 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 74
+18:17:35.083822247 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 74
+18:17:35.083824037 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:35.083825326 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:35.083832455 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:35.083835048 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:35.083844234 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:35.083845920 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:35.083846389 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:35.083846725 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:35.083861240 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 3
+18:17:35.083863639 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag SYN: total count now 2
+18:17:35.083865593 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 40 bytes
+18:17:35.083866831 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 20 bytes
+18:17:35.083867644 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 2
+18:17:35.083869037 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 2, length: 4
+18:17:35.083872180 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 2: total count now 2
+18:17:35.083873401 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 4, kind: 4
+18:17:35.083873751 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 4, length: 2
+18:17:35.083874897 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 4: total count now 2
+18:17:35.083875280 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 6, kind: 8
+18:17:35.083875575 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:35.083876546 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 3
+18:17:35.083876934 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 16, kind: 1
+18:17:35.083877353 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:35.083877651 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 17, kind: 3
+18:17:35.083878037 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 3, length: 3
+18:17:35.083878961 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 3: total count now 2
+18:17:35.083881591 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 74
+18:17:35.083883401 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 74 bytes, total queued payload: 74 bytes
+18:17:35.093838488 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 74 bytes
+18:17:35.093855202 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
+18:17:35.093870921 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 363 bytes
+18:17:35.095707680 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:35.095710069 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:35.095780911 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 74 bytes
+18:17:35.095787842 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:35.095789256 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:35.095789741 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:35.095790667 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 74
+18:17:35.095796637 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 74
+18:17:35.095798607 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:35.095799887 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:35.095806276 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:35.095808936 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:35.095818246 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:35.095819943 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:35.095820412 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:35.095820821 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:35.095832687 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 4
+18:17:35.095834984 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag SYN: total count now 3
+18:17:35.095836976 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 40 bytes
+18:17:35.095838247 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 20 bytes
+18:17:35.095839098 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 2
+18:17:35.095840517 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 2, length: 4
+18:17:35.095843616 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 2: total count now 3
+18:17:35.095844858 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 4, kind: 4
+18:17:35.095845187 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 4, length: 2
+18:17:35.095846104 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 4: total count now 3
+18:17:35.095846480 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 6, kind: 8
+18:17:35.095846787 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:35.095847668 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 4
+18:17:35.095848057 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 16, kind: 1
+18:17:35.095848466 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:35.095848812 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 17, kind: 3
+18:17:35.095849129 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 3, length: 3
+18:17:35.095849906 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 3: total count now 3
+18:17:35.095852470 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 74
+18:17:35.095854111 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 74 bytes, total queued payload: 74 bytes
+18:17:35.095856090 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:35.095856723 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:35.095857257 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 66
+18:17:35.095858526 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 66
+18:17:35.095859054 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:35.095859391 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:35.095861009 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:35.095862158 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:35.095863448 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:35.095863934 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:35.095864267 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:35.095864529 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:35.095867270 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 5
+18:17:35.095867935 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:35.095868218 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:35.095868595 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:35.095869011 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:35.095869307 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:35.095869728 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:35.095870010 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:35.095870427 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:35.095871281 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 5
+18:17:35.095872389 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 2, Total payload length: 140
+18:17:35.095872817 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 66 bytes, total queued payload: 140 bytes
+18:17:35.101645097 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:35.101647159 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:35.101734886 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 66 bytes
+18:17:35.101746931 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 74 bytes
+18:17:35.101750004 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:35.101751462 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:35.101751908 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:35.101752790 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 1457
+18:17:35.101760162 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 1457
+18:17:35.101761939 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:35.101763219 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:35.101769448 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:35.101771988 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:35.101780104 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:35.101781745 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:35.101782208 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:35.101782538 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:35.101794857 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 6
+18:17:35.101800872 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag PSH: total count now 1
+18:17:35.101802800 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:35.101804057 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:35.101804896 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:35.101806060 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:35.101806435 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:35.101806766 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:35.101807058 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:35.101807740 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:35.101810637 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 6
+18:17:35.101813516 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 1457
+18:17:35.101815111 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 1457 bytes, total queued payload: 1457 bytes
+18:17:35.144767832 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
+18:17:35.202448465 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:37.579720945 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:37.579723437 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:37.579801517 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 1457 bytes
+18:17:37.579812614 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:37.579814267 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:37.579814713 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:37.579815941 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 1457
+18:17:37.579825297 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 1457
+18:17:37.579827368 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:37.579828656 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:37.579837089 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:37.579839699 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:37.579849770 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:37.579851462 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:37.579851946 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:37.579852276 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:37.579871281 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 1
+18:17:37.579875238 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag PSH: total count now 1
+18:17:37.579877751 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:37.579879099 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:37.579879951 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:37.579881124 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:37.579881497 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:37.579881881 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:37.579882139 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:37.579882863 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:37.579888952 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 1
+18:17:37.579891994 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 1457
+18:17:37.579893636 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 1457 bytes, total queued payload: 1457 bytes
+18:17:37.592685876 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
+18:17:37.592692246 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 146 bytes
+18:17:37.593657887 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:37.593660168 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:37.593681680 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 1457 bytes
+18:17:37.593683280 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:37.593683547 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:37.593683626 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:37.593683952 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 321
+18:17:37.593685366 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 321
+18:17:37.593685707 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:37.593685935 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:37.593687724 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:37.593688248 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:37.593689807 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:37.593690110 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:37.593690196 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:37.593690254 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:37.593692790 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 2
+18:17:37.593693360 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag PSH: total count now 2
+18:17:37.593693754 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:37.593694069 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:37.593694218 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:37.593694424 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:37.593694494 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:37.593694559 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:37.593694613 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:37.593694737 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:37.593695360 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 2
+18:17:37.593695915 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 321
+18:17:37.593696199 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 321 bytes, total queued payload: 321 bytes
+18:17:37.644670179 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 78 bytes
+18:17:37.713663762 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:37.713666006 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:37.713738174 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 321 bytes
+18:17:37.713746638 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:37.713748142 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:37.713748604 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:37.713749705 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:17:37.713757105 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:17:37.713758945 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:37.713760240 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:37.713768625 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:37.713771293 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:37.713912893 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:37.713914956 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:37.713915493 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:37.713916180 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:37.713920216 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 60
+18:17:37.713921952 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 60 bytes
+18:17:37.713924070 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:37.713924499 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:37.713924999 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 66
+18:17:37.713926792 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 66
+18:17:37.713927434 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:37.713928107 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:37.713929930 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:37.713931518 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:37.713933731 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:37.713934219 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:37.713934519 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:37.713934813 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:37.713935803 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 2, Total payload length: 126
+18:17:37.713936565 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 66 bytes, total queued payload: 126 bytes
+18:17:37.713937314 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:37.713937581 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:37.713937917 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 136
+18:17:37.713939044 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 136
+18:17:37.713939383 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:37.713939677 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:37.713941145 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:37.713942214 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:37.713943446 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:37.713943812 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:37.713944087 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:37.713944375 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:37.713945204 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 3, Total payload length: 262
+18:17:37.713945666 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 136 bytes, total queued payload: 262 bytes
+18:17:37.713946324 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:37.713946610 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:37.713946917 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:17:37.713947925 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:17:37.713948218 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:37.713948524 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:37.713949951 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:37.713951024 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:37.713952125 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:37.713952494 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:37.713952769 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:37.713953061 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:37.713953828 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 4, Total payload length: 322
+18:17:37.713954217 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 322 bytes
+18:17:37.713954825 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:37.713955087 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:37.713955399 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:17:37.713956232 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:17:37.713956554 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:37.713956960 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:37.713958374 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:37.713959410 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:37.713960446 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:37.713960815 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:37.713961082 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:37.713961372 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:37.713962204 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 5, Total payload length: 382
+18:17:37.713962638 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 382 bytes
+18:17:37.746779566 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 102 bytes
+18:17:37.747702750 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:37.747704997 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:37.747798654 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:17:37.747809191 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 66 bytes
+18:17:37.747819733 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:17:37.747827473 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:17:37.747834401 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 136 bytes
+18:17:37.747838427 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:37.747839822 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:37.747840251 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:37.747841096 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 321
+18:17:37.747846718 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 321
+18:17:37.747848567 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:37.747849848 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:37.747856250 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:37.747858758 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:37.747867883 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:37.747869548 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:37.747870017 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:37.747870356 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:37.747883023 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 3
+18:17:37.747885416 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag PSH: total count now 3
+18:17:37.747887254 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:37.747888608 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:37.747889427 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:37.747890599 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:37.747890985 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:37.747891319 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:37.747891598 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:37.747892349 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:37.747895521 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 3
+18:17:37.747898450 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 321
+18:17:37.747900130 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 321 bytes, total queued payload: 321 bytes
+18:17:37.747902202 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:37.747902721 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:37.747903055 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 102
+18:17:37.747905998 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 102
+18:17:37.747906445 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:37.747906811 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:37.747908555 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:37.747909695 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:37.747911225 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:37.747911714 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:37.747912062 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:37.747912318 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:37.747916675 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 4
+18:17:37.747917683 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag PSH: total count now 4
+18:17:37.747922794 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag FIN: total count now 1
+18:17:37.747923803 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 32 bytes
+18:17:37.747924122 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 12 bytes
+18:17:37.747924506 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:37.747925031 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:37.747925477 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:37.747925898 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:37.747926178 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:37.747926566 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:37.747927570 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 4
+18:17:37.747928985 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 2, Total payload length: 423
+18:17:37.747929639 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 102 bytes, total queued payload: 423 bytes
+18:17:39.582792725 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 102 bytes
+18:17:39.583641032 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:39.583642755 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:39.583714861 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 321 bytes
+18:17:39.583727356 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 102 bytes
+18:17:39.583731919 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:39.583733346 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:39.583733854 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:39.583734817 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 78
+18:17:39.583742809 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 78
+18:17:39.583744817 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:39.583746379 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:39.583756230 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:39.583760214 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:39.583765331 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:39.583767319 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:39.583768083 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:39.583768631 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:39.583782942 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag ACK: total count now 5
+18:17:39.583787005 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 44 bytes
+18:17:39.583788416 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 24 bytes
+18:17:39.583789524 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 0, kind: 1
+18:17:39.583790730 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:39.583791127 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 1, kind: 1
+18:17:39.583791607 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:39.583792007 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 2, kind: 8
+18:17:39.583792766 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 8, length: 10
+18:17:39.583796020 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 8: total count now 5
+18:17:39.583797290 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 12, kind: 1
+18:17:39.583797834 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:39.583798118 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 13, kind: 1
+18:17:39.583798418 [25332] server.cpp:272               LOG_DEBUG     root         TCP No-Operation (NOP) option encountered
+18:17:39.583798696 [25332] server.cpp:260               LOG_DEBUG     root         Parsing TCP option at position 14, kind: 5
+18:17:39.583799112 [25332] server.cpp:286               LOG_DEBUG     root         TCP option kind: 5, length: 10
+18:17:39.583803916 [25332] server.cpp:299               LOG_DEBUG     root         Incremented count for TCP option kind 5: total count now 1
+18:17:39.583806169 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 78
+18:17:39.583807889 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 78 bytes, total queued payload: 78 bytes
+18:17:39.633747297 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 66 bytes
+18:17:39.633758968 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 90 bytes
+18:17:40.204514363 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:43.255778898 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 90 bytes
+18:17:43.257727968 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:43.257730403 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:43.257800756 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 78 bytes
+18:17:43.257807565 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:43.257809222 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:43.257809655 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:43.257810787 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:17:43.257818256 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:17:43.257820209 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:43.257821484 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:43.257829239 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:43.257831817 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:43.257841270 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:43.257843113 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:43.257843582 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:43.257843915 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:43.257859681 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag RST: total count now 1
+18:17:43.257863433 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 20 bytes
+18:17:43.257864681 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 0 bytes
+18:17:43.257867649 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 60
+18:17:43.257869453 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 60 bytes
+18:17:45.206328973 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:50.208060065 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:50.599944189 [25331] client.cpp:95                LOG_DEBUG     root         Forwarded packet, length: 90 bytes
+18:17:50.601719683 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:50.601722016 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:50.601791654 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 60 bytes
+18:17:50.601798693 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:50.601800279 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:50.601800739 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:50.601801783 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:17:50.601808655 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:17:50.601810525 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:50.601811808 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:50.601819172 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.40, protocol: 6
+18:17:50.601821827 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.40
+18:17:50.601950221 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 2c:cf:67:04:45:14
+18:17:50.601952252 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:50.601952918 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:50.601953315 [25332] server.cpp:407               LOG_DEBUG     root         Processing TCP packet
+18:17:50.601967565 [25332] server.cpp:248               LOG_DEBUG     root         Incremented count for TCP flag RST: total count now 1
+18:17:50.601971388 [25332] server.cpp:323               LOG_DEBUG     root         TCP header length: 20 bytes
+18:17:50.601972742 [25332] server.cpp:327               LOG_DEBUG     root         TCP options length: 0 bytes
+18:17:50.601976103 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 60
+18:17:50.601977775 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 60 bytes
+18:17:55.209861818 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:17:59.339721764 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:59.339723890 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:17:59.339794934 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.40, length: 60 bytes
+18:17:59.339802703 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:17:59.339804096 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:17:59.339804541 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:59.339805661 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:17:59.339813036 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:17:59.339814877 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:59.339816162 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:59.339823510 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:59.339826227 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:59.339837035 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:59.339838706 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:59.339839191 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:59.339839783 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:59.339843754 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 60
+18:17:59.339845322 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 60 bytes
+18:17:59.339847321 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:59.339847685 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:59.339848032 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:17:59.339849014 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:17:59.339849391 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:59.339849814 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:59.339851350 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:59.339852452 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:59.339854135 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:59.339854589 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:59.339854883 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:59.339855166 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:59.339856230 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 2, Total payload length: 120
+18:17:59.339856736 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 120 bytes
+18:17:59.339857520 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:59.339857785 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:59.339858134 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:17:59.339859053 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:17:59.339859340 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:59.339859634 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:59.339861176 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:59.339862212 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:59.339863657 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:59.339864124 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:59.339864397 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:59.339864678 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:59.339865508 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 3, Total payload length: 180
+18:17:59.339865923 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 180 bytes
+18:17:59.339866532 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:59.339866795 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:59.339867118 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 66
+18:17:59.339868268 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 66
+18:17:59.339868656 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:59.339868969 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:59.339870401 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:59.339871410 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:59.339872920 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:59.339873316 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:59.339873761 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:59.339874040 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:59.339874930 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 4, Total payload length: 246
+18:17:59.339875324 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 66 bytes, total queued payload: 246 bytes
+18:17:59.339875968 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:17:59.339876237 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:17:59.339876545 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 136
+18:17:59.339877582 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 136
+18:17:59.339877882 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:17:59.339878191 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:17:59.339879639 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:17:59.339880629 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:17:59.339882009 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:17:59.339882504 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:17:59.339882772 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:17:59.339883057 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:17:59.339883917 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 5, Total payload length: 382
+18:17:59.339884327 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 136 bytes, total queued payload: 382 bytes
+18:18:00.211296504 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:18:05.213041560 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:18:10.214049726 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:18:15.215677494 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:18:19.765652608 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:18:19.765655840 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:18:19.765776602 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:18:19.765791566 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:18:19.765798741 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:18:19.765805411 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 66 bytes
+18:18:19.765812894 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 136 bytes
+18:18:19.765817225 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:18:19.765818797 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:18:19.765819236 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:18:19.765820242 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:18:19.765827444 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:18:19.765829307 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:18:19.765830584 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:18:19.765837543 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:18:19.765840307 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:18:19.765851129 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:18:19.765852830 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:18:19.765853299 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:18:19.765853884 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:18:19.765856636 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 60
+18:18:19.765858351 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 60 bytes
+18:18:19.765860624 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:18:19.765861007 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:18:19.765861372 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:18:19.765862387 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:18:19.765862783 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:18:19.765863213 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:18:19.765864843 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:18:19.765865974 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:18:19.765867592 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:18:19.765868077 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:18:19.765868384 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:18:19.765868658 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:18:19.765869666 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 2, Total payload length: 120
+18:18:19.765870350 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 120 bytes
+18:18:19.765871124 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:18:19.765871431 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:18:19.765871787 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:18:19.765872717 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:18:19.765873037 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:18:19.765873384 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:18:19.765874798 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:18:19.765875850 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:18:19.765877205 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:18:19.765877640 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:18:19.765877921 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:18:19.765878215 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:18:19.765879126 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 3, Total payload length: 180
+18:18:19.765879805 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 180 bytes
+18:18:19.765880416 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:18:19.765880700 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:18:19.765881007 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 66
+18:18:19.765882175 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 66
+18:18:19.765882466 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:18:19.765882823 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:18:19.765884333 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:18:19.765885368 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:18:19.765886673 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:18:19.765887075 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:18:19.765887328 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:18:19.765887629 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:18:19.765888522 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 4, Total payload length: 246
+18:18:19.765889110 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 66 bytes, total queued payload: 246 bytes
+18:18:19.765889713 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:18:19.765889993 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:18:19.765890293 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 136
+18:18:19.765891372 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 136
+18:18:19.765891678 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:18:19.765891984 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:18:19.765893456 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:18:19.765894501 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:18:19.765895894 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:18:19.765896283 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:18:19.765896554 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:18:19.765896842 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:18:19.765897535 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 5, Total payload length: 382
+18:18:19.765897947 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 136 bytes, total queued payload: 382 bytes
+18:18:20.217324198 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:18:25.218956832 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:18:30.220523141 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:18:35.222165790 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:18:40.223774735 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:18:42.881642804 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:18:42.881646297 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:18:42.881760269 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:18:42.881773817 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 136 bytes
+18:18:42.881784677 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:18:42.881793349 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 66 bytes
+18:18:42.881802236 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:18:42.881807950 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:18:42.881810003 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:18:42.881810602 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:18:42.881811826 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:18:42.881820331 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:18:42.881822670 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:18:42.881824400 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:18:42.881833167 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:18:42.881837119 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:18:42.881959457 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:18:42.881961253 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:18:42.881961853 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:18:42.881962597 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:18:42.881965388 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 1, Total payload length: 60
+18:18:42.881967121 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 60 bytes
+18:18:42.881969538 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:18:42.881970043 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:18:42.881970475 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:18:42.881972291 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:18:42.881973215 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:18:42.881973936 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:18:42.881975866 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:18:42.881977578 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:18:42.881980124 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:18:42.881980637 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:18:42.881980942 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:18:42.881981227 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:18:42.881982233 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 2, Total payload length: 120
+18:18:42.881982949 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 120 bytes
+18:18:42.881983741 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:18:42.881984030 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:18:42.881984401 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:18:42.881985338 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:18:42.881985684 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:18:42.881986059 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:18:42.881987571 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:18:42.881988663 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:18:42.881989873 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:18:42.881990280 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:18:42.881990542 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:18:42.881990837 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:18:42.881991773 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 3, Total payload length: 180
+18:18:42.881992467 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 60 bytes, total queued payload: 180 bytes
+18:18:42.881993125 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:18:42.881993392 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:18:42.881993710 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 66
+18:18:42.881994967 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 66
+18:18:42.881995279 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:18:42.881995637 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:18:42.881997044 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:18:42.881998067 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:18:42.881999299 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:18:42.881999664 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:18:42.881999934 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:18:42.882000238 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:18:42.882001010 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 4, Total payload length: 246
+18:18:42.882001437 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 66 bytes, total queued payload: 246 bytes
+18:18:42.882002044 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:18:42.882002309 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:18:42.882002637 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 136
+18:18:42.882003735 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 136
+18:18:42.882004040 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:18:42.882004341 [25332] server.cpp:175               LOG_DEBUG     root         IP packet received
+18:18:42.882005768 [25332] server.cpp:187               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.1.1, protocol: 17
+18:18:42.882006749 [25332] server.cpp:202               LOG_DEBUG     root         Destination IP address: 192.168.1.1
+18:18:42.882007881 [25332] server.cpp:216               LOG_DEBUG     root         Destination MAC address obtained: 00:00:00:00:00:00
+18:18:42.882008255 [25332] server.cpp:226               LOG_DEBUG     root         Ethernet header updated
+18:18:42.882008540 [25332] server.cpp:402               LOG_DEBUG     root         Prepared socket address for sending
+18:18:42.882008841 [25332] server.cpp:412               LOG_DEBUG     root         Non-TCP packet, protocol: 17
+18:18:42.882009577 [25332] server.cpp:357               LOG_DEBUG     root         Packet added to queue. Queue size: 5, Total payload length: 382
+18:18:42.882010015 [25332] server.cpp:419               LOG_DEBUG     root         Queued packet, length: 136 bytes, total queued payload: 382 bytes
+18:18:45.225194552 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:18:47.979643521 [25332] server.cpp:90                LOG_INFO      root         Got time difference...
+18:18:47.979646567 [25332] server.cpp:111               LOG_INFO      root         Sending packet...
+18:18:47.979758021 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:18:47.979768282 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 66 bytes
+18:18:47.979775256 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 136 bytes
+18:18:47.979781902 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:18:47.979788737 [25332] sender.cpp:61                LOG_INFO      root         Forwarded packet to 192.168.1.1, length: 60 bytes
+18:18:47.979792788 [25332] sender.cpp:43                LOG_INFO      root         All queued packets have been sent and the queue is now cleared.
+18:18:47.979794342 [25332] server.cpp:113               LOG_INFO      root         Done sending packets...
+18:18:47.979794767 [25332] server.cpp:120               LOG_INFO      root         Packet queue...
+18:18:47.979795673 [25332] server.cpp:365               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:18:47.979802345 [25332] server.cpp:156               LOG_DEBUG     root         Packet data copied, length: 60
+18:18:47.979804084 [25332] server.cpp:163               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0806
+18:18:47.979805500 [25332] server.cpp:172               LOG_DEBUG     root         Non-IP packet received, protocol: 0x0806
+18:18:50.226813094 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:18:55.228403848 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:00.230021136 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:05.231721772 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:10.233221822 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:15.234756074 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:20.236406361 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:25.238147410 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:30.239865422 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:35.241384853 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:40.242942107 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:45.244531152 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:50.246146389 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:19:55.247799415 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:20:00.249482463 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:20:05.250369609 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:20:10.251266746 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:20:15.252179207 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:20:20.253102728 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:20:25.254001211 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:20:30.254904804 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json
+18:20:35.255820654 [25333] tcp_header.cpp:133           LOG_INFO      root         TCP flag counts appended to tcp_flag_counts.json

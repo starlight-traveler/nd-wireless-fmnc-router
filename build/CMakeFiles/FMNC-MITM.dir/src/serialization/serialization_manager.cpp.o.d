@@ -1,7 +1,7 @@
-CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.o: \
- /local/research/research-mitmproxy/src/server_to_client/sender.cpp \
+CMakeFiles/FMNC-MITM.dir/src/serialization/serialization_manager.cpp.o: \
+ /local/research/research-mitmproxy/src/serialization/serialization_manager.cpp \
  /usr/include/stdc-predef.h \
- /local/research/research-mitmproxy/include/server/sender.h \
+ /local/research/research-mitmproxy/include/serialization/serialization_manager.h \
  /local/research/research-mitmproxy/include/server/server.h \
  /local/research/research-mitmproxy/include/general.h /usr/include/pcap.h \
  /usr/include/pcap/pcap.h /usr/include/pcap/funcattrs.h \
@@ -352,9 +352,21 @@ CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.o: \
  /usr/lib/gcc/x86_64-linux-gnu/13/include/hresetintrin.h \
  /usr/include/c++/13/chrono \
  /local/research/research-mitmproxy/include/config.h \
- /usr/include/libconfig.h++ /usr/include/c++/13/algorithm \
+ /usr/include/libconfig.h++ \
+ /local/research/research-mitmproxy/include/logger.h \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/json.hpp \
+ /usr/include/c++/13/algorithm \
  /usr/include/c++/13/pstl/glue_algorithm_defs.h \
- /usr/include/c++/13/random /usr/include/c++/13/cmath /usr/include/math.h \
+ /usr/include/c++/13/iterator /usr/include/c++/13/bits/stream_iterator.h \
+ /usr/include/c++/13/utility /usr/include/c++/13/bits/stl_relops.h \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/adl_serializer.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/abi_macros.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/conversions/from_json.hpp \
+ /usr/include/c++/13/forward_list /usr/include/c++/13/bits/forward_list.h \
+ /usr/include/c++/13/bits/forward_list.tcc /usr/include/c++/13/map \
+ /usr/include/c++/13/bits/stl_tree.h /usr/include/c++/13/bits/stl_map.h \
+ /usr/include/c++/13/bits/stl_multimap.h /usr/include/c++/13/valarray \
+ /usr/include/c++/13/cmath /usr/include/math.h \
  /usr/include/x86_64-linux-gnu/bits/math-vector.h \
  /usr/include/x86_64-linux-gnu/bits/libm-simd-decl-stubs.h \
  /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h \
@@ -376,9 +388,72 @@ CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.o: \
  /usr/include/c++/13/tr1/poly_hermite.tcc \
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc \
- /usr/include/c++/13/bits/random.h \
- /usr/include/x86_64-linux-gnu/c++/13/bits/opt_random.h \
- /usr/include/c++/13/bits/random.tcc /usr/include/c++/13/numeric \
- /usr/include/c++/13/bits/stl_numeric.h \
+ /usr/include/c++/13/bits/valarray_array.h \
+ /usr/include/c++/13/bits/valarray_array.tcc \
+ /usr/include/c++/13/bits/valarray_before.h \
+ /usr/include/c++/13/bits/slice_array.h \
+ /usr/include/c++/13/bits/valarray_after.h \
+ /usr/include/c++/13/bits/gslice.h \
+ /usr/include/c++/13/bits/gslice_array.h \
+ /usr/include/c++/13/bits/mask_array.h \
+ /usr/include/c++/13/bits/indirect_array.h \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/exceptions.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/value_t.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/macro_scope.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/meta/detected.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/meta/void_t.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/thirdparty/hedley/hedley.hpp \
+ /usr/include/c++/13/version \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/string_escape.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/input/position_t.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/meta/cpp_future.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/meta/type_traits.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/iterators/iterator_traits.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/meta/call_std/begin.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/meta/call_std/end.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/json_fwd.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/string_concat.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/meta/identity_tag.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/meta/std_fs.hpp \
+ /usr/include/c++/13/filesystem /usr/include/c++/13/bits/fs_fwd.h \
+ /usr/include/c++/13/bits/fs_path.h /usr/include/c++/13/locale \
+ /usr/include/c++/13/bits/locale_facets_nonio.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/time_members.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/messages_members.h \
+ /usr/include/libintl.h /usr/include/c++/13/bits/codecvt.h \
+ /usr/include/c++/13/bits/locale_facets_nonio.tcc \
+ /usr/include/c++/13/bits/locale_conv.h /usr/include/c++/13/iomanip \
+ /usr/include/c++/13/bits/quoted_string.h /usr/include/c++/13/sstream \
+ /usr/include/c++/13/bits/sstream.tcc /usr/include/c++/13/codecvt \
+ /usr/include/c++/13/bits/fs_dir.h /usr/include/c++/13/bits/fs_ops.h \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/conversions/to_json.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/iterators/iteration_proxy.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/byte_container_with_subtype.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/hash.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/input/binary_reader.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/input/input_adapters.hpp \
+ /usr/include/c++/13/numeric /usr/include/c++/13/bits/stl_numeric.h \
  /usr/include/c++/13/pstl/glue_numeric_defs.h \
- /local/research/research-mitmproxy/include/logger.h
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/input/json_sax.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/input/lexer.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/meta/is_sax.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/input/parser.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/iterators/internal_iterator.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/iterators/primitive_iterator.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/iterators/iter_impl.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/iterators/json_reverse_iterator.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/json_custom_base_class.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/json_pointer.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/json_ref.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/output/binary_writer.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/output/output_adapters.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/output/serializer.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/conversions/to_chars.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/ordered_map.hpp \
+ /usr/include/c++/13/any \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/detail/macro_unscope.hpp \
+ /local/research/research-mitmproxy/lib/json/include/nlohmann/thirdparty/hedley/hedley_undef.hpp \
+ /usr/include/c++/13/fstream \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h \
+ /usr/include/x86_64-linux-gnu/c++/13/bits/c++io.h \
+ /usr/include/c++/13/bits/fstream.tcc

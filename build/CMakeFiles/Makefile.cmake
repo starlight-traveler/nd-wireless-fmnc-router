@@ -26,6 +26,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/local/research/research-mitmproxy/cmake/GetGitRevisionDescription.cmake"
   "/local/research/research-mitmproxy/cmake/GetGitRevisionDescription.cmake.in"
   "/local/research/research-mitmproxy/cmake/HealthCheck.cmake"
+  "/local/research/research-mitmproxy/lib/json/CMakeLists.txt"
+  "/local/research/research-mitmproxy/lib/json/cmake/config.cmake.in"
+  "/local/research/research-mitmproxy/lib/json/cmake/nlohmann_jsonConfigVersion.cmake.in"
+  "/local/research/research-mitmproxy/lib/json/cmake/pkg-config.pc.in"
   "/local/research/research-mitmproxy/lib/quill/CMakeLists.txt"
   "/local/research/research-mitmproxy/lib/quill/cmake/QuillUtils.cmake"
   "/local/research/research-mitmproxy/version.h.in"
@@ -37,6 +41,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/CMakeGenericSystem.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake"
+  "/usr/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake"
   "/usr/share/cmake-3.28/Modules/CheckCCompilerFlag.cmake"
@@ -51,12 +56,15 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/Compiler/GNU-C.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake"
   "/usr/share/cmake-3.28/Modules/Compiler/GNU.cmake"
+  "/usr/share/cmake-3.28/Modules/ExternalProject.cmake"
+  "/usr/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake"
   "/usr/share/cmake-3.28/Modules/FindDoxygen.cmake"
   "/usr/share/cmake-3.28/Modules/FindOpenSSL.cmake"
   "/usr/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/share/cmake-3.28/Modules/FindPackageMessage.cmake"
   "/usr/share/cmake-3.28/Modules/FindPkgConfig.cmake"
   "/usr/share/cmake-3.28/Modules/FindThreads.cmake"
+  "/usr/share/cmake-3.28/Modules/GNUInstallDirs.cmake"
   "/usr/share/cmake-3.28/Modules/GenerateExportHeader.cmake"
   "/usr/share/cmake-3.28/Modules/Internal/CheckCompilerFlag.cmake"
   "/usr/share/cmake-3.28/Modules/Internal/CheckFlagCommonConfig.cmake"
@@ -67,6 +75,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/Linux.cmake"
   "/usr/share/cmake-3.28/Modules/Platform/UnixPaths.cmake"
+  "/usr/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake"
   "/usr/share/cmake-3.28/Modules/WriteCompilerDetectionHeader.cmake"
   )
 
@@ -84,6 +93,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "version.h"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "lib/quill/CMakeFiles/CMakeDirectoryInformation.cmake"
+  "lib/json/nlohmann_json.pc"
+  "lib/json/nlohmann_jsonConfigVersion.cmake"
+  "lib/json/nlohmann_jsonConfig.cmake"
+  "lib/json/CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 
 # Dependency information for all targets:

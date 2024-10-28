@@ -4,3 +4,6 @@
 [submodule "lib/raw_tcp"]
 	path = lib/raw_tcp
 	url = https://github.com/h3xduck/RawTCP_Lib.git
+[submodule "lib/json"]
+	path = lib/json
+	url = https://github.com/nlohmann/json.git

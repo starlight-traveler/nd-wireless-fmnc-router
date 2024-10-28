@@ -13,6 +13,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/local/research/research-mitmproxy/src/config.cpp" "CMakeFiles/FMNC-MITM.dir/src/config.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/config.cpp.o.d"
   "/local/research/research-mitmproxy/src/logger.cpp" "CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o.d"
   "/local/research/research-mitmproxy/src/main.cpp" "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o.d"
+  "/local/research/research-mitmproxy/src/serialization/serialization_manager.cpp" "CMakeFiles/FMNC-MITM.dir/src/serialization/serialization_manager.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/serialization/serialization_manager.cpp.o.d"
+  "/local/research/research-mitmproxy/src/serialization/tcp_header.cpp" "CMakeFiles/FMNC-MITM.dir/src/serialization/tcp_header.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/serialization/tcp_header.cpp.o.d"
   "/local/research/research-mitmproxy/src/server_to_client/sender.cpp" "CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.o.d"
   "/local/research/research-mitmproxy/src/server_to_client/server.cpp" "CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o.d"
   "/local/research/research-mitmproxy/src/sockets.cpp" "CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/sockets.cpp.o.d"

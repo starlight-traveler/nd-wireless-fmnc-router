@@ -5,3 +5,5 @@
 /local/research/research-mitmproxy/build/lib/quill/CMakeFiles/quill.dir
 /local/research/research-mitmproxy/build/lib/quill/CMakeFiles/edit_cache.dir
 /local/research/research-mitmproxy/build/lib/quill/CMakeFiles/rebuild_cache.dir
+/local/research/research-mitmproxy/build/lib/json/CMakeFiles/edit_cache.dir
+/local/research/research-mitmproxy/build/lib/json/CMakeFiles/rebuild_cache.dir

@@ -13,6 +13,7 @@ cmake_policy(SET CMP0120 OLD) # The WriteCompilerDetectionHeader module is remov
 set(CMAKE_BUILD_TYPE Debug)
 set(CMAKE_CXX_STANDARD 17)  # You can choose 11, 14, or 17 depending on your needs
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(JSON_BuildTests OFF CACHE INTERNAL "")
 
 # Add message color headers
 
@@ -149,6 +150,7 @@ pkg_check_modules(LIBCONFIG REQUIRED libconfig++)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/client)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/server)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/serialization)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${OPENSSL_INCLUDE_DIR})
@@ -157,12 +159,12 @@ include_directories(${LIBCONFIG_INCLUDE_DIRS})
 # Quill 
 
 add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/quill)
+add_subdirectory(${CMAKE_CURRENT_LIST_DIR}/lib/json)
 
 # Pcap
 
 # Project declaration must be after the Hunter Cmake build system.
 project(FMNC-MITM LANGUAGES CXX)
-
 
 # Define the executable target. 
 # Add new source files to this list to compile them as part of the project.
@@ -175,6 +177,8 @@ add_executable(${PROJECT_NAME}
     src/server_to_client/server.cpp
     src/config.cpp
     src/server_to_client/sender.cpp
+    src/serialization/serialization_manager.cpp
+    src/serialization/tcp_header.cpp
 )
 
 # Set include directories for the target. 
@@ -193,6 +197,7 @@ target_link_libraries(${PROJECT_NAME}
     OpenSSL::Crypto
     quill::quill
     pcap
+    nlohmann_json::nlohmann_json
     ${OPENSSL_LIBRARIES}
     ${LIBCONFIG_LIBRARIES}
 )

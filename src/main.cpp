@@ -3,6 +3,7 @@
 #include "client.h"
 #include "server.h"
 #include "logger.h"
+#include "serialization_manager.h"
 
 void signalHandler(int signum)
 {
@@ -32,12 +33,22 @@ int main()
     // Setup raw socket for packet forwarding
     setup_raw_socket();
 
+    // Allocate shared Server::Data
+    std::shared_ptr<Server::Data> internal = std::make_shared<Server::Data>();
+    internal->logger = logger;
+    internal->prev_timestamp.tv_sec = 0;
+    internal->prev_timestamp.tv_usec = 0;
+    internal->total_payload_length = 0;
+
     // Threaded functions using custom variables from config
     std::thread thread_client_to_server([&]()
                                         { threaded(logger, 5, 3, capture_packets_to, logger); });
 
     std::thread thread_server_to_client([&]()
-                                        { threaded(logger, 5, 3, capture_packets_from, logger, config); });
+                                        { threaded(logger, 5, 3, capture_packets_from, internal, logger, config); });
+
+    std::thread thread_serialization([&]()
+                                        { threaded(logger, 5, 3, serialization_manager, internal); });
 
     // Just suspend until CTRL-C is called
     while (true)

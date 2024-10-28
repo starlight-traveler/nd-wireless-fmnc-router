@@ -61,12 +61,12 @@ install_linux() {
       graphviz \
       python3.10 \
       python3.10-dev \
+      libconfig++-dev \
+      libssl-dev \
+      net-tools \
 
   # Install unbuffer (comes with expect-dev package)
   sudo apt-get install -y expect-dev
-
-  # Install OpenCV (libopencv-dev)
-  sudo apt-get install -y libopencv-dev
 
   # Install Doxygen and Graphviz for generating documentation
   sudo apt-get install -y doxygen graphviz
@@ -76,16 +76,13 @@ install_linux() {
   # Verify installations
   echo "${BoldBlue}[Install] Verifying installations...${Reset}"
   echo "${Yellow}================================================================================${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} Unbuffer: $(which unbuffer)${Reset}"
   echo "${BoldBlue}[Install]${Reset}${Green} CMake: $(cmake --version)${Reset}"
   echo "${BoldBlue}[Install]${Reset}${Green} Git: $(git --version)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} OpenCV: $(pkg-config --modversion opencv4)${Reset}"
   echo "${BoldBlue}[Install]${Reset}${Green} GCC: $(gcc --version)${Reset}"
   echo "${BoldBlue}[Install]${Reset}${Green} G++: $(g++ --version)${Reset}"
   echo "${BoldBlue}[Install]${Reset}${Green} Clang: $(clang --version)${Reset}"
   echo "${BoldBlue}[Install]${Reset}${Green} LCOV: $(lcov --version)${Reset}"
   echo "${BoldBlue}[Install]${Reset}${Green} Doxygen: $(doxygen --version)${Reset}"
-  echo "${BoldBlue}[Install]${Reset}${Green} Flatc: $(flatc --version)${Reset}"
   echo "${Yellow}================================================================================${Reset}"
   echo "${BoldBlue}[Install]${Reset}${Green} All dependencies installed successfully on Linux!${Reset}"
   echo "${Yellow}================================================================================${Reset}"

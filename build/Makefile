@@ -275,6 +275,54 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/serialization/serialization_manager.o: src/serialization/serialization_manager.cpp.o
+.PHONY : src/serialization/serialization_manager.o
+
+# target to build an object file
+src/serialization/serialization_manager.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/serialization/serialization_manager.cpp.o
+.PHONY : src/serialization/serialization_manager.cpp.o
+
+src/serialization/serialization_manager.i: src/serialization/serialization_manager.cpp.i
+.PHONY : src/serialization/serialization_manager.i
+
+# target to preprocess a source file
+src/serialization/serialization_manager.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/serialization/serialization_manager.cpp.i
+.PHONY : src/serialization/serialization_manager.cpp.i
+
+src/serialization/serialization_manager.s: src/serialization/serialization_manager.cpp.s
+.PHONY : src/serialization/serialization_manager.s
+
+# target to generate assembly for a file
+src/serialization/serialization_manager.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/serialization/serialization_manager.cpp.s
+.PHONY : src/serialization/serialization_manager.cpp.s
+
+src/serialization/tcp_header.o: src/serialization/tcp_header.cpp.o
+.PHONY : src/serialization/tcp_header.o
+
+# target to build an object file
+src/serialization/tcp_header.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/serialization/tcp_header.cpp.o
+.PHONY : src/serialization/tcp_header.cpp.o
+
+src/serialization/tcp_header.i: src/serialization/tcp_header.cpp.i
+.PHONY : src/serialization/tcp_header.i
+
+# target to preprocess a source file
+src/serialization/tcp_header.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/serialization/tcp_header.cpp.i
+.PHONY : src/serialization/tcp_header.cpp.i
+
+src/serialization/tcp_header.s: src/serialization/tcp_header.cpp.s
+.PHONY : src/serialization/tcp_header.s
+
+# target to generate assembly for a file
+src/serialization/tcp_header.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/serialization/tcp_header.cpp.s
+.PHONY : src/serialization/tcp_header.cpp.s
+
 src/server_to_client/sender.o: src/server_to_client/sender.cpp.o
 .PHONY : src/server_to_client/sender.o
 
@@ -373,6 +421,12 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/serialization/serialization_manager.o"
+	@echo "... src/serialization/serialization_manager.i"
+	@echo "... src/serialization/serialization_manager.s"
+	@echo "... src/serialization/tcp_header.o"
+	@echo "... src/serialization/tcp_header.i"
+	@echo "... src/serialization/tcp_header.s"
 	@echo "... src/server_to_client/sender.o"
 	@echo "... src/server_to_client/sender.i"
 	@echo "... src/server_to_client/sender.s"
