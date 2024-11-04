@@ -1,21 +1,26 @@
 [
     {
-        "count": 3,
+        "count": 19,
         "kind": 2,
         "name": "Maximum Segment Size"
     },
     {
-        "count": 3,
+        "count": 19,
         "kind": 3,
         "name": "Window Scale"
     },
     {
-        "count": 3,
+        "count": 19,
         "kind": 4,
         "name": "Selective Acknowledgment Permitted"
     },
     {
-        "count": 9,
+        "count": 1,
+        "kind": 5,
+        "name": "Selective Acknowledgment (SACK)"
+    },
+    {
+        "count": 59,
         "kind": 8,
         "name": "Timestamp"
     }
