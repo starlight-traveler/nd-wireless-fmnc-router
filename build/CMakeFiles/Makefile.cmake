@@ -26,6 +26,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/local/research/research-mitmproxy/cmake/GetGitRevisionDescription.cmake"
   "/local/research/research-mitmproxy/cmake/GetGitRevisionDescription.cmake.in"
   "/local/research/research-mitmproxy/cmake/HealthCheck.cmake"
+  "/local/research/research-mitmproxy/docs/Doxyfile.in"
   "/local/research/research-mitmproxy/lib/json/CMakeLists.txt"
   "/local/research/research-mitmproxy/lib/json/cmake/config.cmake.in"
   "/local/research/research-mitmproxy/lib/json/cmake/nlohmann_jsonConfigVersion.cmake.in"
@@ -91,6 +92,7 @@ set(CMAKE_MAKEFILE_PRODUCTS
   "CMakeFiles/git-data/grabRef.cmake"
   "CMakeFiles/git-data/head-ref"
   "version.h"
+  "Doxyfile"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   "lib/quill/CMakeFiles/CMakeDirectoryInformation.cmake"
   "lib/json/nlohmann_json.pc"
@@ -103,5 +105,6 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/check-template.dir/DependInfo.cmake"
   "CMakeFiles/FMNC-MITM.dir/DependInfo.cmake"
+  "CMakeFiles/doc_doxygen.dir/DependInfo.cmake"
   "lib/quill/CMakeFiles/quill.dir/DependInfo.cmake"
   )

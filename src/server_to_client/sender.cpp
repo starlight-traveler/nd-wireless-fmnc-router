@@ -11,13 +11,9 @@
 extern int raw_socket;
 extern std::mutex raw_socket_mutex;
 
-// Function to shuffle and send queued packets
+// Function to reverse and send queued packets
 void send_queued_packets(std::shared_ptr<Server::Data> internal)
 {
-    // Create a random number generator
-    std::random_device rd;
-    std::mt19937 g(rd());
-
     // Lock the queue to safely access and modify it
     {
         std::lock_guard<std::mutex> lock(internal->queue_mutex);
@@ -28,10 +24,10 @@ void send_queued_packets(std::shared_ptr<Server::Data> internal)
             return;
         }
 
-        // Shuffle the packet queue to send packets out of order
-        std::shuffle(internal->packet_queue.begin(), internal->packet_queue.end(), g);
+        // Reverse the packet queue to flip the order of packets
+        std::reverse(internal->packet_queue.begin(), internal->packet_queue.end());
 
-        // Iterate over the shuffled packets and send each one
+        // Iterate over the reversed packets and send each one
         for (const auto &pkt : internal->packet_queue)
         {
             send_packet(pkt, internal->logger, internal);

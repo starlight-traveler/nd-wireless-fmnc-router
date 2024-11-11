@@ -1,0 +1,11 @@
+<map id="update_ethernet_header" name="update_ethernet_header">
+<area shape="rect" id="Node000001" title=" " alt="" coords="689,5,871,31"/>
+<area shape="rect" id="Node000002" href="$a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,5,641,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="675,21,641,21,641,15,675,15"/>
+<area shape="rect" id="Node000003" href="$a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,5,481,31"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="516,21,482,21,482,15,516,15"/>
+<area shape="rect" id="Node000004" href="$a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" id="edge3_Node000003_Node000004" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" id="Node000005" href="$a00020.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>

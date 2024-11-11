@@ -424,10 +424,127 @@ void queue_packet(std::shared_ptr<Server::Data> internal, const struct pcap_pkth
         LOG_DEBUG(internal->logger, "Non-TCP packet, protocol: {}", ip_header->protocol);
     }
 
-    // Step 10: Add packet to the queue
+    // Step 10: Remove SACK options if present and recompute checksums
+    if (ip_header->protocol == IPPROTO_TCP)
+    {
+        LOG_DEBUG(internal->logger, "Checking for SACK options to remove");
+
+        // Extract TCP header again if not already available
+        int ip_header_length = ip_header->ihl * 4;
+        struct tcphdr *tcp_header = (struct tcphdr *)(packet_data.data.data() + sizeof(struct ethhdr) + ip_header_length);
+
+        // Get the original TCP header length
+        int original_tcp_header_length = tcp_header->doff * 4;
+
+        // Calculate TCP options length
+        int tcp_options_length = original_tcp_header_length - sizeof(struct tcphdr);
+
+        if (tcp_options_length > 0)
+        {
+            u_char *options = (u_char *)tcp_header + sizeof(struct tcphdr);
+            int parsed_length = 0;
+            bool sack_option_found = false;
+
+            // Create a new options buffer to store modified options
+            std::vector<u_char> new_options;
+
+            while (parsed_length < tcp_options_length)
+            {
+                u_char kind = options[parsed_length];
+
+                if (kind == 0)
+                {
+                    // End of options list
+                    new_options.push_back(0);
+                    parsed_length++;
+                    break;
+                }
+                else if (kind == 1)
+                {
+                    // No-Operation (NOP), 1 byte
+                    new_options.push_back(1);
+                    parsed_length++;
+                    continue;
+                }
+                else
+                {
+                    // Other options with kind and length
+                    if (parsed_length + 1 >= tcp_options_length)
+                    {
+                        // Malformed option
+                        LOG_DEBUG(internal->logger, "Malformed TCP option at position {}", parsed_length);
+                        break;
+                    }
+
+                    u_char length = options[parsed_length + 1];
+
+                    if (length < 2 || parsed_length + length > tcp_options_length)
+                    {
+                        // Invalid length
+                        LOG_DEBUG(internal->logger, "Invalid TCP option length at position {}", parsed_length);
+                        break;
+                    }
+                    else
+                    {
+                        // Copy other options
+                        new_options.insert(new_options.end(), &options[parsed_length], &options[parsed_length + length]);
+                    }
+
+                    parsed_length += length;
+                }
+            }
+
+            if (sack_option_found)
+            {
+                // Calculate the new TCP header length
+                int new_tcp_options_length = new_options.size();
+                int new_tcp_header_length = sizeof(struct tcphdr) + new_tcp_options_length;
+
+                // Update the data buffer to reflect the new TCP options
+                int tcp_header_offset = sizeof(struct ethhdr) + ip_header_length;
+
+                // Create a new packet data buffer
+                std::vector<u_char> new_data(packet_data.data.size() - tcp_options_length + new_tcp_options_length);
+
+                // Copy data before TCP options
+                memcpy(new_data.data(), packet_data.data.data(), tcp_header_offset + sizeof(struct tcphdr));
+
+                // Copy new TCP options
+                memcpy(new_data.data() + tcp_header_offset + sizeof(struct tcphdr), new_options.data(), new_tcp_options_length);
+
+                // Copy data after original TCP header
+                int data_after_tcp_header = packet_data.data.size() - (tcp_header_offset + original_tcp_header_length);
+                memcpy(new_data.data() + tcp_header_offset + new_tcp_header_length,
+                       packet_data.data.data() + tcp_header_offset + original_tcp_header_length,
+                       data_after_tcp_header);
+
+                // Update packet data
+                packet_data.data = std::move(new_data);
+                packet_data.length = packet_data.data.size();
+
+                // Update TCP header length
+                tcp_header = (struct tcphdr *)(packet_data.data.data() + tcp_header_offset);
+                tcp_header->doff = new_tcp_header_length / 4;
+
+                // Recompute checksums
+                // Recompute TCP checksum
+                tcp_header->th_sum = 0;
+                compute_tcp_checksum(ip_header, tcp_header);
+
+                // Recompute IP checksum
+                ip_header = (struct iphdr *)(packet_data.data.data() + sizeof(struct ethhdr));
+                ip_header->check = 0;
+                compute_ip_checksum(ip_header);
+
+                LOG_DEBUG(internal->logger, "Removed SACK options and recomputed checksums");
+            }
+        }
+    }
+
+    // Step 11: Add packet to the queue
     add_packet_to_queue(internal, packet_data, header);
 
-    // Step 11: Log the queuing action
+    // Step 12: Log the queuing action
     LOG_DEBUG(internal->logger, "Queued packet, length: {} bytes, total queued payload: {} bytes",
               header->len, internal->total_payload_length);
 }

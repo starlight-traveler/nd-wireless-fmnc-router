@@ -64,6 +64,7 @@ CMAKE_BINARY_DIR = /local/research/research-mitmproxy/build
 
 # The main recursive "all" target.
 all: CMakeFiles/FMNC-MITM.dir/all
+all: CMakeFiles/doc_doxygen.dir/all
 all: lib/quill/all
 all: lib/json/all
 .PHONY : all
@@ -76,6 +77,7 @@ preinstall: lib/json/preinstall
 # The main recursive "clean" target.
 clean: CMakeFiles/check-template.dir/clean
 clean: CMakeFiles/FMNC-MITM.dir/clean
+clean: CMakeFiles/doc_doxygen.dir/clean
 clean: lib/quill/clean
 clean: lib/json/clean
 .PHONY : clean
@@ -161,6 +163,32 @@ FMNC-MITM: CMakeFiles/FMNC-MITM.dir/rule
 CMakeFiles/FMNC-MITM.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/clean
 .PHONY : CMakeFiles/FMNC-MITM.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/doc_doxygen.dir
+
+# All Build rule for target.
+CMakeFiles/doc_doxygen.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doc_doxygen.dir/build.make CMakeFiles/doc_doxygen.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doc_doxygen.dir/build.make CMakeFiles/doc_doxygen.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=13 "Built target doc_doxygen"
+.PHONY : CMakeFiles/doc_doxygen.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/doc_doxygen.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /local/research/research-mitmproxy/build/CMakeFiles 1
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/doc_doxygen.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /local/research/research-mitmproxy/build/CMakeFiles 0
+.PHONY : CMakeFiles/doc_doxygen.dir/rule
+
+# Convenience name for target.
+doc_doxygen: CMakeFiles/doc_doxygen.dir/rule
+.PHONY : doc_doxygen
+
+# clean rule for target.
+CMakeFiles/doc_doxygen.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/doc_doxygen.dir/build.make CMakeFiles/doc_doxygen.dir/clean
+.PHONY : CMakeFiles/doc_doxygen.dir/clean
 
 #=============================================================================
 # Target rules for target lib/quill/CMakeFiles/quill.dir

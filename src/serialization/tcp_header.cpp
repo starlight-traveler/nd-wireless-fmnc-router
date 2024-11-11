@@ -194,7 +194,7 @@ void dump_tcp_flag_counts(std::shared_ptr<Server::Data> internal)
 
     ofs.close();
 
-    LOG_INFO(internal->logger, "TCP flag counts appended to tcp_flag_counts.json");
+    // LOG_INFO(internal->logger, "TCP flag counts appended to tcp_flag_counts.json");
 }
 
 // Function to dump TCP option counts to a JSON file with option names
