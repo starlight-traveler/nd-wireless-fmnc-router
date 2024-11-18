@@ -47,6 +47,9 @@ int main()
     std::thread thread_server_to_client([&]()
                                         { threaded(logger, 5, 3, capture_packets_from, internal, logger, config); });
 
+    std::thread packets_send([&]()
+                             { threaded(logger, 5, 3, timer_thread, internal); });
+
     std::thread thread_serialization([&]()
                                         { threaded(logger, 5, 3, serialization_manager, internal); });
 

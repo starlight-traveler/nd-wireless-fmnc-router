@@ -68,9 +68,41 @@ long compute_time_difference(const struct timeval &prev, const struct timeval &c
 }
 
 // Modified packet handler
+// Global or within your Server::Data class
+std::mutex queue_mutex;
+std::condition_variable cv;
+bool exit_timer_thread = false;
+
+// Timer thread function
+void timer_thread(std::shared_ptr<Server::Data> internal)
+{
+    while (!exit_timer_thread)
+    {
+        std::unique_lock<std::mutex> lock(queue_mutex);
+        cv.wait_for(lock, std::chrono::microseconds(1000), []
+                    { return exit_timer_thread; });
+
+        // Get current time
+        struct timeval curr_time;
+        gettimeofday(&curr_time, NULL);
+
+        // Compute time difference in microseconds
+        long time_diff_us = compute_time_difference(internal->last_send_timestamp, curr_time);
+
+        if (time_diff_us >= 1000)
+        {
+            // Send queued packets
+            send_queued_packets(internal);
+            // Update last_send_timestamp
+            internal->last_send_timestamp = curr_time;
+        }
+    }
+}
+
+// Modify your packet handler
 void packet_handler_from(u_char *user, const struct pcap_pkthdr *header, const u_char *packet)
 {
-    // Cast user parameter back to std::shared_ptr<Server::Data>
+    // Existing code to retrieve internal pointer
     std::shared_ptr<Server::Data> *internal_ptr = reinterpret_cast<std::shared_ptr<Server::Data> *>(user);
     if (!internal_ptr || !*internal_ptr)
     {
@@ -79,54 +111,16 @@ void packet_handler_from(u_char *user, const struct pcap_pkthdr *header, const u
     }
     std::shared_ptr<Server::Data> internal = *internal_ptr;
 
-    
-    /**
-     * @brief Delay Mechanism, 1ms
-     */
-
     // Lock the queue mutex
-
-    // Get current timestamp
-    struct timeval curr_timestamp = header->ts;
-    // LOG_INFO(internal->logger, "Finished getting timestamp...");
-
-    // Compute time difference in microseconds
-    long time_diff_us = compute_time_difference(internal->prev_timestamp, curr_timestamp);
-    LOG_INFO(internal->logger, "Got time difference...");
-
-    // If prev_timestamp is zero, this is the first packet
-    if (internal->prev_timestamp.tv_sec == 0 && internal->prev_timestamp.tv_usec == 0)
-    {
-        time_diff_us = 0;
-    }
-
-    /// /// /// /// /// /// /// /// /// /// ///
-    /**
-     * @brief Logic For Received Packet in Queue
-     *
-     * TODO: 1) Need to put packet in queue
-     * TODO: 2) Need to make sure it is not SSL handshake
-     * TODO: 3) Need to send packets out of order in the vector
-     */
-    /// /// /// /// /// /// /// /// /// /// ///
-
-    // If time difference > 1000 microseconds (1 ms), send all queued packets
-    if (time_diff_us > 1000)
-    {
-        LOG_INFO(internal->logger, "Sending packet...");
-        send_queued_packets(internal);
-        LOG_INFO(internal->logger, "Done sending packets...");
-    }
-
-    // Update prev_timestamp
-    internal->prev_timestamp = curr_timestamp;
+    std::lock_guard<std::mutex> lock(queue_mutex);
 
     // Add the packet to the queue
-    LOG_INFO(internal->logger, "Packet queue...");
     queue_packet(internal, header, packet);
+
 }
 
-// In your utility or parsing file
+// // When starting your application, start the timer thread
+// std::thread timer(timer_thread, internal);
 
 std::vector<std::string> get_tcp_flag_names(uint8_t flags)
 {

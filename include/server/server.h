@@ -21,10 +21,7 @@ namespace Server
         size_t length;
         struct sockaddr_ll socket_address;
         char dest_ip[INET_ADDRSTRLEN];
-        unsigned char dest_mac[6];
-
-        // Add packet identification fields if needed
-        // These can help in generating unique packet IDs
+        unsigned char dest_mac[6];s
     };
 
     struct Data
@@ -56,4 +53,6 @@ long compute_time_difference(const struct timeval &prev, const struct timeval &c
 void send_queued_packets(std::shared_ptr<Server::Data> internal);
 void send_packet(const Server::PacketData &pkt, quill::Logger *logger);
 void queue_packet(std::shared_ptr<Server::Data> internal, const struct pcap_pkthdr *header, const u_char *packet);
+void timer_thread(std::shared_ptr<Server::Data> internal);
+
 #endif

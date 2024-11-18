@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "*.m": "matlab",
+        "*.svelte": "scss",
+        "ios": "cpp",
+        "condition_variable": "cpp"
+    }
+}
