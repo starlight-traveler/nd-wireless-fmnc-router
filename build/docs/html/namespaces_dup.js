@@ -1,5 +1,5 @@
 var namespaces_dup =
 [
-    [ "Client", "a00068.html", "a00068" ],
-    [ "Server", "a00069.html", "a00069" ]
+    [ "Client", "a00083.html", "a00083" ],
+    [ "Server", "a00084.html", "a00084" ]
 ];

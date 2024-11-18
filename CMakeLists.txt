@@ -151,6 +151,7 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/client)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/server)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/serialization)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/include/manipulation)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${OPENSSL_INCLUDE_DIR})
@@ -180,6 +181,11 @@ add_executable(${PROJECT_NAME}
     src/serialization/serialization_manager.cpp
     src/serialization/tcp_header.cpp
     src/utilities.cpp
+    src/manipulation/window.cpp
+    src/manipulation/timing.cpp
+    src/manipulation/sending.cpp
+    src/manipulation/packeting.cpp
+
 )
 
 # Set include directories for the target. 

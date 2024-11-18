@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FMNC-MITM: sender.h Source File</title>
+<title>FMNC-MITM: general.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -94,29 +94,68 @@ $(document).ready(function(){initNavTree('a00065_source.html',''); initResizable
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">sender.h</div></div>
+  <div class="headertitle"><div class="title">general.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="a00065.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SENDER</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SENDER</span></div>
+<a href="a00065.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef GENERAL</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define GENERAL</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="a00062.html">server.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="a00065.html#a29508c2f3c9cae6ce442671e32bd96f3">    6</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="a00065.html#a29508c2f3c9cae6ce442671e32bd96f3">send_queued_packets</a>(<a class="code hl_struct" href="a00093.html">Server::Data</a> *internal);</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="keywordtype">void</span> <a class="code hl_function" href="a00065.html#a60773435d027e71a67dd3070a065961c">send_packet</a>(<span class="keyword">const</span> <a class="code hl_struct" href="a00089.html">Server::PacketData</a> &amp;pkt, quill::Logger *logger, std::shared_ptr&lt;Server::Data&gt; internal);</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00062_html"><div class="ttname"><a href="a00062.html">server.h</a></div></div>
-<div class="ttc" id="aa00065_html_a29508c2f3c9cae6ce442671e32bd96f3"><div class="ttname"><a href="a00065.html#a29508c2f3c9cae6ce442671e32bd96f3">send_queued_packets</a></div><div class="ttdeci">void send_queued_packets(Server::Data *internal)</div></div>
-<div class="ttc" id="aa00065_html_a60773435d027e71a67dd3070a065961c"><div class="ttname"><a href="a00065.html#a60773435d027e71a67dd3070a065961c">send_packet</a></div><div class="ttdeci">void send_packet(const Server::PacketData &amp;pkt, quill::Logger *logger, std::shared_ptr&lt; Server::Data &gt; internal)</div><div class="ttdef"><b>Definition</b> <a href="a00011_source.html#l00049">sender.cpp:49</a></div></div>
-<div class="ttc" id="aa00089_html"><div class="ttname"><a href="a00089.html">Server::PacketData</a></div><div class="ttdef"><b>Definition</b> <a href="a00062_source.html#l00018">server.h:19</a></div></div>
-<div class="ttc" id="aa00093_html"><div class="ttname"><a href="a00093.html">Server::Data</a></div><div class="ttdef"><b>Definition</b> <a href="a00062_source.html#l00030">server.h:31</a></div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;pcap.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cstdio&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;unistd.h&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;sys/socket.h&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;netinet/ip.h&gt;</span>      <span class="comment">// For iphdr</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;netinet/tcp.h&gt;</span>     <span class="comment">// For tcphdr</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &lt;netinet/udp.h&gt;</span>     <span class="comment">// For udphdr</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;netinet/ip_icmp.h&gt;</span> <span class="comment">// For icmphdr</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;net/ethernet.h&gt;</span>    <span class="comment">// For Ethernet header</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;net/if.h&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;arpa/inet.h&gt;</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;sys/ioctl.h&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;linux/if_packet.h&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;net/if_arp.h&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;mutex&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#include &lt;unordered_map&gt;</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#include &lt;array&gt;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">#include &lt;csignal&gt;</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &quot;threading.tpp&quot;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &quot;<a class="code" href="a00053.html">logger.h</a>&quot;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="a00065.html#a879456c3b8e2853f7044d764e9c180d4">   30</a></span><span class="preprocessor">#define MAX_PACKET_SIZE 65536</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keywordtype">void</span> <a class="code hl_function" href="a00065.html#adf1a1b6666f7a6f364bcca7d27a79442">setup_raw_socket</a>();</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="a00065.html#a91a4e24d46900f2d4c78a5e062e0608d">get_mac_address</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *ip_address, quill::Logger *logger);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keywordtype">void</span> <a class="code hl_function" href="a00065.html#afb9a7e2259f89937c5e626e6ef4c2b94">packet_handler_to</a>(u_char *args, <span class="keyword">const</span> <span class="keyword">struct</span> pcap_pkthdr *header, <span class="keyword">const</span> u_char *packet);</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keywordtype">void</span> <a class="code hl_function" href="a00065.html#a1358d8e3c960a25b196ae1f1733ac5c7">packet_handler_from</a>(u_char *args, <span class="keyword">const</span> <span class="keyword">struct</span> pcap_pkthdr *header, <span class="keyword">const</span> u_char *packet);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">// Global variables</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">   39</a></span><span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="a00065.html#a268d42a17b51dd418ffc6825d69d45b4">   40</a></span><span class="keyword">inline</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="a00065.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a>;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">   41</a></span><span class="keyword">inline</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[6];</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="a00065.html#a4dcae56eb6645becdd38c6a852ba7055">   42</a></span><span class="keyword">inline</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<span class="keyword">interface </span>= &quot;enp3s0<span class="stringliteral">&quot;;</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="a00065.html#a2b3b87e06ade0ff4cdee803fc15e5428">   43</a></span><span class="stringliteral">inline std::mutex raw_socket_mutex;</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="stringliteral"></span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="stringliteral">#endif</span></div>
+<div class="ttc" id="aa00053_html"><div class="ttname"><a href="a00053.html">logger.h</a></div></div>
+<div class="ttc" id="aa00065_html_a08923b3f7d62077d55fd2a500eb00163"><div class="ttname"><a href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a></div><div class="ttdeci">int raw_socket</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00039">general.h:39</a></div></div>
+<div class="ttc" id="aa00065_html_a1358d8e3c960a25b196ae1f1733ac5c7"><div class="ttname"><a href="a00065.html#a1358d8e3c960a25b196ae1f1733ac5c7">packet_handler_from</a></div><div class="ttdeci">void packet_handler_from(u_char *args, const struct pcap_pkthdr *header, const u_char *packet)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00072">server.cpp:72</a></div></div>
+<div class="ttc" id="aa00065_html_a268d42a17b51dd418ffc6825d69d45b4"><div class="ttname"><a href="a00065.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a></div><div class="ttdeci">int if_index</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00040">general.h:40</a></div></div>
+<div class="ttc" id="aa00065_html_a4303343d28e43fc8a393ecd6bc01e739"><div class="ttname"><a href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a></div><div class="ttdeci">unsigned char src_mac[6]</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00041">general.h:41</a></div></div>
+<div class="ttc" id="aa00065_html_a91a4e24d46900f2d4c78a5e062e0608d"><div class="ttname"><a href="a00065.html#a91a4e24d46900f2d4c78a5e062e0608d">get_mac_address</a></div><div class="ttdeci">unsigned char * get_mac_address(const char *ip_address, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00038_source.html#l00010">arp.cpp:10</a></div></div>
+<div class="ttc" id="aa00065_html_adf1a1b6666f7a6f364bcca7d27a79442"><div class="ttname"><a href="a00065.html#adf1a1b6666f7a6f364bcca7d27a79442">setup_raw_socket</a></div><div class="ttdeci">void setup_raw_socket()</div><div class="ttdef"><b>Definition</b> <a href="a00005_source.html#l00004">sockets.cpp:4</a></div></div>
+<div class="ttc" id="aa00065_html_afb9a7e2259f89937c5e626e6ef4c2b94"><div class="ttname"><a href="a00065.html#afb9a7e2259f89937c5e626e6ef4c2b94">packet_handler_to</a></div><div class="ttdeci">void packet_handler_to(u_char *args, const struct pcap_pkthdr *header, const u_char *packet)</div><div class="ttdef"><b>Definition</b> <a href="a00035_source.html#l00050">client.cpp:50</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9802b4c1251697bb7aa87f8aabca2719.html">server</a></li><li class="navelem"><a class="el" href="a00065.html">sender.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="a00065.html">general.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

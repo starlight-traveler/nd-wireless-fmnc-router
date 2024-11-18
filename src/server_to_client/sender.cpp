@@ -7,40 +7,6 @@
 #include "logger.h"
 #include "utilities.h"
 
-// External variables (Assumed to be defined elsewhere)
-extern int raw_socket;
-extern std::mutex raw_socket_mutex;
-
-// Function to reverse and send queued packets
-void send_queued_packets(std::shared_ptr<Server::Data> internal)
-{
-    // Lock the queue to safely access and modify it
-    {
-        std::lock_guard<std::mutex> lock(internal->queue_mutex);
-
-        if (internal->packet_queue.empty())
-        {
-            LOG_DEBUG(internal->logger, "Packet queue is empty. Nothing to send.");
-            return;
-        }
-
-        // Reverse the packet queue to flip the order of packets
-        std::reverse(internal->packet_queue.begin(), internal->packet_queue.end());
-
-        // Iterate over the reversed packets and send each one
-        for (const auto &pkt : internal->packet_queue)
-        {
-            send_packet(pkt, internal->logger, internal);
-        }
-
-        // Clear the queue and reset total payload length
-        internal->packet_queue.clear();
-        internal->total_payload_length = 0;
-
-        LOG_INFO(internal->logger, "All queued packets have been sent and the queue is now cleared.");
-    }
-}
-
 // Function to send a single packet
 void send_packet(const Server::PacketData &pkt, quill::Logger *logger, std::shared_ptr<Server::Data> internal)
 {

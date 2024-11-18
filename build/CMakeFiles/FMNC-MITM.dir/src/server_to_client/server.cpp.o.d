@@ -363,4 +363,5 @@ CMakeFiles/FMNC-MITM.dir/src/server_to_client/server.cpp.o: \
  /usr/include/c++/13/bits/locale_conv.h \
  /usr/include/c++/13/bits/quoted_string.h \
  /local/research/research-mitmproxy/include/utilities.h \
- /local/research/research-mitmproxy/include/general.h
+ /local/research/research-mitmproxy/include/general.h \
+ /local/research/research-mitmproxy/include/manipulation/window.h

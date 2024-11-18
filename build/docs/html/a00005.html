@@ -94,7 +94,7 @@ $(document).ready(function(){initNavTree('a00005.html',''); initResizable(); });
   <div class="headertitle"><div class="title">sockets.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00047_source.html">sockets.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00059_source.html">sockets.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for sockets.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
@@ -103,9 +103,9 @@ $(document).ready(function(){initNavTree('a00005.html',''); initResizable(); });
 <div class="center"><img src="a00006.png" border="0" usemap="#asockets_8cpp" alt=""/></div>
 <map name="asockets_8cpp" id="asockets_8cpp">
 <area shape="rect" title=" " alt="" coords="1245,5,1343,31"/>
-<area shape="rect" href="a00047.html" title=" " alt="" coords="1253,79,1335,104"/>
+<area shape="rect" href="a00059.html" title=" " alt="" coords="1253,79,1335,104"/>
 <area shape="poly" title=" " alt="" coords="1297,31,1297,65,1291,65,1291,31"/>
-<area shape="rect" href="a00050.html" title=" " alt="" coords="1253,152,1335,177"/>
+<area shape="rect" href="a00065.html" title=" " alt="" coords="1253,152,1335,177"/>
 <area shape="poly" title=" " alt="" coords="1297,104,1297,138,1291,138,1291,104"/>
 <area shape="rect" title=" " alt="" coords="5,225,71,251"/>
 <area shape="poly" title=" " alt="" coords="1252,170,697,187,350,205,201,216,85,228,84,223,201,210,350,199,697,182,1252,164"/>
@@ -153,13 +153,13 @@ $(document).ready(function(){initNavTree('a00005.html',''); initResizable(); });
 <area shape="poly" title=" " alt="" coords="1336,163,1491,164,1728,172,2011,190,2159,204,2305,223,2305,228,2159,210,2011,195,1728,177,1491,170,1336,168"/>
 <area shape="rect" title=" " alt="" coords="2411,225,2521,251"/>
 <area shape="poly" title=" " alt="" coords="1336,164,1503,168,1762,177,2074,195,2398,223,2397,228,2073,200,1762,182,1503,173,1336,169"/>
-<area shape="rect" href="a00041.html" title=" " alt="" coords="2545,225,2619,251"/>
+<area shape="rect" href="a00053.html" title=" " alt="" coords="2545,225,2619,251"/>
 <area shape="poly" title=" " alt="" coords="1335,164,1904,183,2259,200,2412,211,2531,223,2531,228,2411,216,2259,205,1903,188,1335,170"/>
 <area shape="rect" title=" " alt="" coords="2251,299,2387,324"/>
 <area shape="poly" title=" " alt="" coords="2545,252,2375,298,2374,293,2544,247"/>
 <area shape="rect" title=" " alt="" coords="2411,299,2521,324"/>
 <area shape="poly" title=" " alt="" coords="2565,253,2498,294,2495,289,2562,248"/>
-<area shape="rect" href="a00038.html" title=" " alt="" coords="2545,299,2619,324"/>
+<area shape="rect" href="a00050.html" title=" " alt="" coords="2545,299,2619,324"/>
 <area shape="poly" title=" " alt="" coords="2578,251,2576,285,2571,285,2572,251"/>
 <area shape="poly" title=" " alt="" coords="2545,325,2533,327,2386,345,2235,359,1943,377,1693,385,1523,386,1523,381,1693,379,1942,372,2235,354,2385,340,2532,321,2545,319"/>
 <area shape="poly" title=" " alt="" coords="2586,298,2588,264,2593,265,2592,299"/>
@@ -196,8 +196,8 @@ Functions</h2></td></tr>
 <p class="definition">Definition at line <a class="el" href="a00005_source.html#l00004">4</a> of file <a class="el" href="a00005_source.html">sockets.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">    5</span>{</div>
 <div class="line"><span class="lineno">    6</span>    <span class="comment">// Create a raw socket</span></div>
-<div class="line"><span class="lineno">    7</span>    <a class="code hl_variable" href="a00011.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a> = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));</div>
-<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00011.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a> == -1)</div>
+<div class="line"><span class="lineno">    7</span>    <a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a> = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));</div>
+<div class="line"><span class="lineno">    8</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a> == -1)</div>
 <div class="line"><span class="lineno">    9</span>    {</div>
 <div class="line"><span class="lineno">   10</span>        perror(<span class="stringliteral">&quot;Failed to create raw socket&quot;</span>);</div>
 <div class="line"><span class="lineno">   11</span>        exit(EXIT_FAILURE);</div>
@@ -207,28 +207,28 @@ Functions</h2></td></tr>
 <div class="line"><span class="lineno">   15</span>    <span class="keyword">struct </span>ifreq ifr</div>
 <div class="line"><span class="lineno">   16</span>    {</div>
 <div class="line"><span class="lineno">   17</span>    };</div>
-<div class="line"><span class="lineno">   18</span>    strncpy(ifr.ifr_name, <a class="code hl_variable" href="a00050.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a>, IFNAMSIZ - 1);</div>
-<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (ioctl(<a class="code hl_variable" href="a00011.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>, SIOCGIFINDEX, &amp;ifr) == -1)</div>
+<div class="line"><span class="lineno">   18</span>    strncpy(ifr.ifr_name, <a class="code hl_variable" href="a00065.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a>, IFNAMSIZ - 1);</div>
+<div class="line"><span class="lineno">   19</span>    <span class="keywordflow">if</span> (ioctl(<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>, SIOCGIFINDEX, &amp;ifr) == -1)</div>
 <div class="line"><span class="lineno">   20</span>    {</div>
 <div class="line"><span class="lineno">   21</span>        perror(<span class="stringliteral">&quot;Failed to get interface index&quot;</span>);</div>
-<div class="line"><span class="lineno">   22</span>        close(<a class="code hl_variable" href="a00011.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>);</div>
+<div class="line"><span class="lineno">   22</span>        close(<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>);</div>
 <div class="line"><span class="lineno">   23</span>        exit(EXIT_FAILURE);</div>
 <div class="line"><span class="lineno">   24</span>    }</div>
-<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="a00050.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a> = ifr.ifr_ifindex;</div>
+<div class="line"><span class="lineno">   25</span>    <a class="code hl_variable" href="a00065.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a> = ifr.ifr_ifindex;</div>
 <div class="line"><span class="lineno">   26</span> </div>
 <div class="line"><span class="lineno">   27</span>    <span class="comment">// Get the source MAC address</span></div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (ioctl(<a class="code hl_variable" href="a00011.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>, SIOCGIFHWADDR, &amp;ifr) == -1)</div>
+<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">if</span> (ioctl(<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>, SIOCGIFHWADDR, &amp;ifr) == -1)</div>
 <div class="line"><span class="lineno">   29</span>    {</div>
 <div class="line"><span class="lineno">   30</span>        perror(<span class="stringliteral">&quot;Failed to get MAC address&quot;</span>);</div>
-<div class="line"><span class="lineno">   31</span>        close(<a class="code hl_variable" href="a00011.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>);</div>
+<div class="line"><span class="lineno">   31</span>        close(<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>);</div>
 <div class="line"><span class="lineno">   32</span>        exit(EXIT_FAILURE);</div>
 <div class="line"><span class="lineno">   33</span>    }</div>
-<div class="line"><span class="lineno">   34</span>    memcpy(<a class="code hl_variable" href="a00050.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>, ifr.ifr_hwaddr.sa_data, 6);</div>
+<div class="line"><span class="lineno">   34</span>    memcpy(<a class="code hl_variable" href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>, ifr.ifr_hwaddr.sa_data, 6);</div>
 <div class="line"><span class="lineno">   35</span>}</div>
-<div class="ttc" id="aa00011_html_a08923b3f7d62077d55fd2a500eb00163"><div class="ttname"><a href="a00011.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a></div><div class="ttdeci">int raw_socket</div><div class="ttdef"><b>Definition</b> <a href="a00050_source.html#l00039">general.h:39</a></div></div>
-<div class="ttc" id="aa00050_html_a268d42a17b51dd418ffc6825d69d45b4"><div class="ttname"><a href="a00050.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a></div><div class="ttdeci">int if_index</div><div class="ttdef"><b>Definition</b> <a href="a00050_source.html#l00040">general.h:40</a></div></div>
-<div class="ttc" id="aa00050_html_a4303343d28e43fc8a393ecd6bc01e739"><div class="ttname"><a href="a00050.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a></div><div class="ttdeci">unsigned char src_mac[6]</div><div class="ttdef"><b>Definition</b> <a href="a00050_source.html#l00041">general.h:41</a></div></div>
-<div class="ttc" id="aa00050_html_a4dcae56eb6645becdd38c6a852ba7055"><div class="ttname"><a href="a00050.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a></div><div class="ttdeci">const char * interface</div><div class="ttdef"><b>Definition</b> <a href="a00050_source.html#l00042">general.h:42</a></div></div>
+<div class="ttc" id="aa00065_html_a08923b3f7d62077d55fd2a500eb00163"><div class="ttname"><a href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a></div><div class="ttdeci">int raw_socket</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00039">general.h:39</a></div></div>
+<div class="ttc" id="aa00065_html_a268d42a17b51dd418ffc6825d69d45b4"><div class="ttname"><a href="a00065.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a></div><div class="ttdeci">int if_index</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00040">general.h:40</a></div></div>
+<div class="ttc" id="aa00065_html_a4303343d28e43fc8a393ecd6bc01e739"><div class="ttname"><a href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a></div><div class="ttdeci">unsigned char src_mac[6]</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00041">general.h:41</a></div></div>
+<div class="ttc" id="aa00065_html_a4dcae56eb6645becdd38c6a852ba7055"><div class="ttname"><a href="a00065.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a></div><div class="ttdeci">const char * interface</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00042">general.h:42</a></div></div>
 </div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
@@ -237,7 +237,7 @@ Functions</h2></td></tr>
 <div class="center"><img src="a00005_adf1a1b6666f7a6f364bcca7d27a79442_icgraph.png" border="0" usemap="#aa00005_adf1a1b6666f7a6f364bcca7d27a79442_icgraph" alt=""/></div>
 <map name="aa00005_adf1a1b6666f7a6f364bcca7d27a79442_icgraph" id="aa00005_adf1a1b6666f7a6f364bcca7d27a79442_icgraph">
 <area shape="rect" title=" " alt="" coords="108,5,247,31"/>
-<area shape="rect" href="a00020.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
 <area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>
 </div>

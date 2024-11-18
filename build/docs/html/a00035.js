@@ -1,5 +1,5 @@
 var a00035 =
 [
-    [ "initialize_logger", "a00035.html#a5612e7039d064556accc794105a7397b", null ],
-    [ "set_log_level", "a00035.html#a5b287b1f24cc9c79ac82e75e84994244", null ]
+    [ "capture_packets_to", "a00035.html#a8c6c08e6430364d394b8113ac986c5ab", null ],
+    [ "packet_handler_to", "a00035.html#a1210b9f2d376d05583d5804cc44fb583", null ]
 ];

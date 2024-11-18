@@ -288,6 +288,102 @@ src/main.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/main.cpp.s
 .PHONY : src/main.cpp.s
 
+src/manipulation/packeting.o: src/manipulation/packeting.cpp.o
+.PHONY : src/manipulation/packeting.o
+
+# target to build an object file
+src/manipulation/packeting.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o
+.PHONY : src/manipulation/packeting.cpp.o
+
+src/manipulation/packeting.i: src/manipulation/packeting.cpp.i
+.PHONY : src/manipulation/packeting.i
+
+# target to preprocess a source file
+src/manipulation/packeting.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.i
+.PHONY : src/manipulation/packeting.cpp.i
+
+src/manipulation/packeting.s: src/manipulation/packeting.cpp.s
+.PHONY : src/manipulation/packeting.s
+
+# target to generate assembly for a file
+src/manipulation/packeting.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.s
+.PHONY : src/manipulation/packeting.cpp.s
+
+src/manipulation/sending.o: src/manipulation/sending.cpp.o
+.PHONY : src/manipulation/sending.o
+
+# target to build an object file
+src/manipulation/sending.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o
+.PHONY : src/manipulation/sending.cpp.o
+
+src/manipulation/sending.i: src/manipulation/sending.cpp.i
+.PHONY : src/manipulation/sending.i
+
+# target to preprocess a source file
+src/manipulation/sending.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.i
+.PHONY : src/manipulation/sending.cpp.i
+
+src/manipulation/sending.s: src/manipulation/sending.cpp.s
+.PHONY : src/manipulation/sending.s
+
+# target to generate assembly for a file
+src/manipulation/sending.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.s
+.PHONY : src/manipulation/sending.cpp.s
+
+src/manipulation/timing.o: src/manipulation/timing.cpp.o
+.PHONY : src/manipulation/timing.o
+
+# target to build an object file
+src/manipulation/timing.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o
+.PHONY : src/manipulation/timing.cpp.o
+
+src/manipulation/timing.i: src/manipulation/timing.cpp.i
+.PHONY : src/manipulation/timing.i
+
+# target to preprocess a source file
+src/manipulation/timing.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.i
+.PHONY : src/manipulation/timing.cpp.i
+
+src/manipulation/timing.s: src/manipulation/timing.cpp.s
+.PHONY : src/manipulation/timing.s
+
+# target to generate assembly for a file
+src/manipulation/timing.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.s
+.PHONY : src/manipulation/timing.cpp.s
+
+src/manipulation/window.o: src/manipulation/window.cpp.o
+.PHONY : src/manipulation/window.o
+
+# target to build an object file
+src/manipulation/window.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o
+.PHONY : src/manipulation/window.cpp.o
+
+src/manipulation/window.i: src/manipulation/window.cpp.i
+.PHONY : src/manipulation/window.i
+
+# target to preprocess a source file
+src/manipulation/window.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.i
+.PHONY : src/manipulation/window.cpp.i
+
+src/manipulation/window.s: src/manipulation/window.cpp.s
+.PHONY : src/manipulation/window.s
+
+# target to generate assembly for a file
+src/manipulation/window.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.s
+.PHONY : src/manipulation/window.cpp.s
+
 src/serialization/serialization_manager.o: src/serialization/serialization_manager.cpp.o
 .PHONY : src/serialization/serialization_manager.o
 
@@ -459,6 +555,18 @@ help:
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
+	@echo "... src/manipulation/packeting.o"
+	@echo "... src/manipulation/packeting.i"
+	@echo "... src/manipulation/packeting.s"
+	@echo "... src/manipulation/sending.o"
+	@echo "... src/manipulation/sending.i"
+	@echo "... src/manipulation/sending.s"
+	@echo "... src/manipulation/timing.o"
+	@echo "... src/manipulation/timing.i"
+	@echo "... src/manipulation/timing.s"
+	@echo "... src/manipulation/window.o"
+	@echo "... src/manipulation/window.i"
+	@echo "... src/manipulation/window.s"
 	@echo "... src/serialization/serialization_manager.o"
 	@echo "... src/serialization/serialization_manager.i"
 	@echo "... src/serialization/serialization_manager.s"

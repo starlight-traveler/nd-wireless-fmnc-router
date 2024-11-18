@@ -21,7 +21,7 @@ namespace Server
         size_t length;
         struct sockaddr_ll socket_address;
         char dest_ip[INET_ADDRSTRLEN];
-        unsigned char dest_mac[6];s
+        unsigned char dest_mac[6];
     };
 
     struct Data
@@ -43,6 +43,11 @@ namespace Server
         // New member for packet tracking
         std::unordered_map<std::string, PacketLogEntry> packet_log;
         std::mutex packet_log_mutex;
+
+        // Window size and payload buffering
+        std::vector<unsigned char> payload_buffer;
+        std::mutex payload_buffer_mutex;
+        size_t window_size; // Configurable window size in bytes
     };
 } // namespace Server
 
@@ -51,7 +56,7 @@ void capture_packets_from(std::shared_ptr<Server::Data> internal, quill::Logger 
 bool apply_filter(pcap_t *handle, quill::Logger *logger);
 long compute_time_difference(const struct timeval &prev, const struct timeval &curr);
 void send_queued_packets(std::shared_ptr<Server::Data> internal);
-void send_packet(const Server::PacketData &pkt, quill::Logger *logger);
+void send_packet(const Server::PacketData &pkt, quill::Logger *logger, std::shared_ptr<Server::Data> internal);
 void queue_packet(std::shared_ptr<Server::Data> internal, const struct pcap_pkthdr *header, const u_char *packet);
 void timer_thread(std::shared_ptr<Server::Data> internal);
 

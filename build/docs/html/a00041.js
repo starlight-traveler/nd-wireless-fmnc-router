@@ -1,5 +1,5 @@
 var a00041 =
 [
-    [ "initialize_logger", "a00041.html#a5612e7039d064556accc794105a7397b", null ],
-    [ "set_log_level", "a00041.html#a5b287b1f24cc9c79ac82e75e84994244", null ]
+    [ "delete_old_json", "a00041.html#a79bde9ae362b9bce0cdd8d061ebc954f", null ],
+    [ "serialization_manager", "a00041.html#a3ed11d498018f0e7e5496194b4a757f7", null ]
 ];

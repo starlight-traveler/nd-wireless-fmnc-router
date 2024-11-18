@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FMNC-MITM: utilities.h Source File</title>
+<title>FMNC-MITM: mac_arp.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -94,31 +94,40 @@ $(document).ready(function(){initNavTree('a00056_source.html',''); initResizable
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">utilities.h</div></div>
+  <div class="headertitle"><div class="title">mac_arp.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="a00056.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef UTILITIES</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define UTILITIES</span></div>
+<a href="a00056.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef MAC_ARP</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define MAC_ARP</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="a00050.html">general.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="a00065.html">general.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>std::string <a class="code hl_function" href="a00056.html#a2e8c16b72b01132d58ef8e9e6fd7f101">generate_packet_id</a>(<span class="keyword">const</span> <span class="keyword">struct</span> iphdr *ip_header, <span class="keyword">const</span> <span class="keyword">struct</span> tcphdr *tcp_header);</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>std::string <a class="code hl_function" href="a00056.html#ae2cacf1859fb0b54c2a8c98def76b9e6">get_current_timestamp</a>();</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keywordtype">void</span> <a class="code hl_function" href="a00056.html#a1d919e8ec4fa73e99303ca26f1a24188">compute_ip_checksum</a>(<span class="keyword">struct</span> iphdr *ip_header);</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="keywordtype">void</span> <a class="code hl_function" href="a00056.html#a33bdbedcf6fc6cc7f29ca20db5bbf485">compute_tcp_checksum</a>(<span class="keyword">struct</span> iphdr *ip_header, <span class="keyword">struct</span> tcphdr *tcp_header);</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00050_html"><div class="ttname"><a href="a00050.html">general.h</a></div></div>
-<div class="ttc" id="aa00056_html_a1d919e8ec4fa73e99303ca26f1a24188"><div class="ttname"><a href="a00056.html#a1d919e8ec4fa73e99303ca26f1a24188">compute_ip_checksum</a></div><div class="ttdeci">void compute_ip_checksum(struct iphdr *ip_header)</div><div class="ttdef"><b>Definition</b> <a href="a00017_source.html#l00034">utilities.cpp:34</a></div></div>
-<div class="ttc" id="aa00056_html_a2e8c16b72b01132d58ef8e9e6fd7f101"><div class="ttname"><a href="a00056.html#a2e8c16b72b01132d58ef8e9e6fd7f101">generate_packet_id</a></div><div class="ttdeci">std::string generate_packet_id(const struct iphdr *ip_header, const struct tcphdr *tcp_header)</div><div class="ttdef"><b>Definition</b> <a href="a00017_source.html#l00009">utilities.cpp:9</a></div></div>
-<div class="ttc" id="aa00056_html_a33bdbedcf6fc6cc7f29ca20db5bbf485"><div class="ttname"><a href="a00056.html#a33bdbedcf6fc6cc7f29ca20db5bbf485">compute_tcp_checksum</a></div><div class="ttdeci">void compute_tcp_checksum(struct iphdr *ip_header, struct tcphdr *tcp_header)</div><div class="ttdef"><b>Definition</b> <a href="a00017_source.html#l00049">utilities.cpp:49</a></div></div>
-<div class="ttc" id="aa00056_html_ae2cacf1859fb0b54c2a8c98def76b9e6"><div class="ttname"><a href="a00056.html#ae2cacf1859fb0b54c2a8c98def76b9e6">get_current_timestamp</a></div><div class="ttdeci">std::string get_current_timestamp()</div><div class="ttdef"><b>Definition</b> <a href="a00017_source.html#l00019">utilities.cpp:19</a></div></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment">// Define a structure for cache entries</span></div>
+<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="a00096.html">    7</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a00096.html">MacCacheEntry</a></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno"><a class="line" href="a00096.html#ad1b5559f6673ae72936932c5acb20a81">    9</a></span>    std::array&lt;unsigned char, 6&gt; <a class="code hl_variable" href="a00096.html#ad1b5559f6673ae72936932c5acb20a81">mac</a>;</div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="a00096.html#a720e9778070249fdf22d1320507db7d5">   10</a></span>    std::chrono::steady_clock::time_point <a class="code hl_variable" href="a00096.html#a720e9778070249fdf22d1320507db7d5">timestamp</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>};</div>
+</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment">// Global MAC address cache and mutex</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="a00056.html#a1fa7a255d437df566293d8578cb49122">   14</a></span>std::unordered_map&lt;std::string, MacCacheEntry&gt; <a class="code hl_variable" href="a00056.html#a1fa7a255d437df566293d8578cb49122">mac_cache</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="a00056.html#a8992c39e04f6c7f3f7da55d6fd0f0f73">   15</a></span>std::mutex <a class="code hl_variable" href="a00056.html#a8992c39e04f6c7f3f7da55d6fd0f0f73">mac_cache_mutex</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00056_html_a1fa7a255d437df566293d8578cb49122"><div class="ttname"><a href="a00056.html#a1fa7a255d437df566293d8578cb49122">mac_cache</a></div><div class="ttdeci">std::unordered_map&lt; std::string, MacCacheEntry &gt; mac_cache</div><div class="ttdef"><b>Definition</b> <a href="a00056_source.html#l00014">mac_arp.h:14</a></div></div>
+<div class="ttc" id="aa00056_html_a8992c39e04f6c7f3f7da55d6fd0f0f73"><div class="ttname"><a href="a00056.html#a8992c39e04f6c7f3f7da55d6fd0f0f73">mac_cache_mutex</a></div><div class="ttdeci">std::mutex mac_cache_mutex</div><div class="ttdef"><b>Definition</b> <a href="a00056_source.html#l00015">mac_arp.h:15</a></div></div>
+<div class="ttc" id="aa00065_html"><div class="ttname"><a href="a00065.html">general.h</a></div></div>
+<div class="ttc" id="aa00096_html"><div class="ttname"><a href="a00096.html">MacCacheEntry</a></div><div class="ttdef"><b>Definition</b> <a href="a00056_source.html#l00007">mac_arp.h:8</a></div></div>
+<div class="ttc" id="aa00096_html_a720e9778070249fdf22d1320507db7d5"><div class="ttname"><a href="a00096.html#a720e9778070249fdf22d1320507db7d5">MacCacheEntry::timestamp</a></div><div class="ttdeci">std::chrono::steady_clock::time_point timestamp</div><div class="ttdef"><b>Definition</b> <a href="a00056_source.html#l00010">mac_arp.h:10</a></div></div>
+<div class="ttc" id="aa00096_html_ad1b5559f6673ae72936932c5acb20a81"><div class="ttname"><a href="a00096.html#ad1b5559f6673ae72936932c5acb20a81">MacCacheEntry::mac</a></div><div class="ttdeci">std::array&lt; unsigned char, 6 &gt; mac</div><div class="ttdef"><b>Definition</b> <a href="a00056_source.html#l00009">mac_arp.h:9</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="a00056.html">utilities.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="a00056.html">mac_arp.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

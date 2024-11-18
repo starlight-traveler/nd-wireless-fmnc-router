@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FMNC-MITM: ConfigManager Class Reference</title>
+<title>FMNC-MITM: server.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,46 +90,164 @@ $(document).ready(function(){initNavTree('a00077.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="a00074.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ConfigManager Class Reference</div></div>
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">server.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
-<p><code>#include &lt;<a class="el" href="a00038_source.html">config.h</a>&gt;</code></p>
+<div class="textblock"><code>#include &quot;<a class="el" href="a00065_source.html">general.h</a>&quot;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for server.h:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00078.png" border="0" usemap="#aserver_8h" alt=""/></div>
+<map name="aserver_8h" id="aserver_8h">
+<area shape="rect" title=" " alt="" coords="1257,5,1331,31"/>
+<area shape="rect" href="a00065.html" title=" " alt="" coords="1253,79,1335,104"/>
+<area shape="poly" title=" " alt="" coords="1297,31,1297,65,1291,65,1291,31"/>
+<area shape="rect" title=" " alt="" coords="5,152,71,177"/>
+<area shape="poly" title=" " alt="" coords="1252,96,697,114,350,131,201,142,85,155,84,150,201,137,350,126,697,109,1252,91"/>
+<area shape="rect" title=" " alt="" coords="95,152,157,177"/>
+<area shape="poly" title=" " alt="" coords="1252,96,736,114,416,132,279,143,171,155,170,150,278,137,416,126,736,109,1252,91"/>
+<area shape="rect" title=" " alt="" coords="181,152,247,177"/>
+<area shape="poly" title=" " alt="" coords="1252,95,1094,96,851,103,561,121,410,136,261,155,260,150,409,130,561,115,851,97,1094,90,1252,90"/>
+<area shape="rect" title=" " alt="" coords="271,152,338,177"/>
+<area shape="poly" title=" " alt="" coords="1252,95,1106,97,886,105,624,123,487,137,352,155,351,149,487,131,623,117,886,100,1106,92,1252,90"/>
+<area shape="rect" title=" " alt="" coords="362,152,437,177"/>
+<area shape="poly" title=" " alt="" coords="1252,96,922,111,691,129,456,155,451,155,450,150,455,149,691,123,922,106,1252,91"/>
+<area shape="rect" title=" " alt="" coords="1429,299,1509,324"/>
+<area shape="poly" title=" " alt="" coords="1252,95,1076,97,837,104,719,111,617,122,541,136,516,145,501,154,496,165,501,176,519,188,549,200,641,223,764,243,907,261,1198,288,1415,304,1414,309,1197,294,906,266,764,248,640,228,547,205,516,192,497,179,491,165,497,150,513,140,539,131,616,117,719,106,836,99,1076,91,1252,90"/>
+<area shape="rect" title=" " alt="" coords="512,152,615,177"/>
+<area shape="poly" title=" " alt="" coords="1253,98,994,117,815,133,629,155,628,149,814,128,993,111,1252,92"/>
+<area shape="rect" title=" " alt="" coords="639,152,735,177"/>
+<area shape="poly" title=" " alt="" coords="1253,99,1041,119,750,155,749,149,1040,113,1252,93"/>
+<area shape="rect" title=" " alt="" coords="759,152,863,177"/>
+<area shape="poly" title=" " alt="" coords="1253,101,877,155,876,149,1252,95"/>
+<area shape="rect" title=" " alt="" coords="888,152,996,177"/>
+<area shape="poly" title=" " alt="" coords="1253,104,1010,152,1009,147,1252,98"/>
+<area shape="rect" title=" " alt="" coords="1020,152,1155,177"/>
+<area shape="poly" title=" " alt="" coords="1262,107,1135,150,1133,145,1260,101"/>
+<area shape="rect" title=" " alt="" coords="1179,152,1294,177"/>
+<area shape="poly" title=" " alt="" coords="1287,106,1257,143,1253,139,1282,103"/>
+<area shape="rect" title=" " alt="" coords="1318,152,1385,177"/>
+<area shape="poly" title=" " alt="" coords="1306,103,1335,139,1331,143,1301,106"/>
+<area shape="rect" title=" " alt="" coords="1409,152,1501,177"/>
+<area shape="poly" title=" " alt="" coords="1321,102,1418,144,1415,149,1319,106"/>
+<area shape="rect" title=" " alt="" coords="1526,152,1614,177"/>
+<area shape="poly" title=" " alt="" coords="1337,101,1513,146,1512,151,1335,106"/>
+<area shape="rect" title=" " alt="" coords="1639,152,1768,177"/>
+<area shape="poly" title=" " alt="" coords="1336,97,1626,147,1625,152,1335,102"/>
+<area shape="rect" title=" " alt="" coords="1793,152,1857,177"/>
+<area shape="poly" title=" " alt="" coords="1336,93,1528,113,1654,129,1780,149,1780,149,1779,155,1779,155,1653,134,1528,118,1336,99"/>
+<area shape="rect" title=" " alt="" coords="1881,152,1977,177"/>
+<area shape="poly" title=" " alt="" coords="1336,93,1559,113,1867,149,1866,155,1558,118,1335,98"/>
+<area shape="rect" title=" " alt="" coords="2001,152,2065,177"/>
+<area shape="poly" title=" " alt="" coords="1336,91,1606,106,1793,123,1988,150,1987,155,1793,128,1606,111,1335,96"/>
+<area shape="rect" title=" " alt="" coords="2089,152,2213,177"/>
+<area shape="poly" title=" " alt="" coords="1336,92,1640,111,1853,127,2076,149,2075,155,1853,133,1639,116,1336,97"/>
+<area shape="rect" title=" " alt="" coords="2238,152,2294,177"/>
+<area shape="poly" title=" " alt="" coords="1336,90,1480,91,1698,98,1956,116,2091,131,2225,150,2224,155,2091,136,1956,121,1697,103,1480,96,1336,95"/>
+<area shape="rect" title=" " alt="" coords="2319,152,2387,177"/>
+<area shape="poly" title=" " alt="" coords="1336,90,1491,91,1728,99,2011,117,2159,131,2305,150,2305,155,2159,136,2011,122,1728,104,1491,96,1336,95"/>
+<area shape="rect" title=" " alt="" coords="2411,152,2521,177"/>
+<area shape="poly" title=" " alt="" coords="1336,91,1503,94,1762,104,2074,121,2398,149,2397,155,2073,127,1762,109,1503,100,1336,96"/>
+<area shape="rect" href="a00053.html" title=" " alt="" coords="2545,152,2619,177"/>
+<area shape="poly" title=" " alt="" coords="1335,91,1904,109,2259,127,2412,137,2531,150,2531,155,2411,143,2259,132,1903,115,1335,96"/>
+<area shape="rect" title=" " alt="" coords="2251,225,2387,251"/>
+<area shape="poly" title=" " alt="" coords="2545,179,2375,224,2374,219,2544,174"/>
+<area shape="rect" title=" " alt="" coords="2411,225,2521,251"/>
+<area shape="poly" title=" " alt="" coords="2565,180,2498,220,2495,216,2562,175"/>
+<area shape="rect" href="a00050.html" title=" " alt="" coords="2545,225,2619,251"/>
+<area shape="poly" title=" " alt="" coords="2578,178,2576,212,2571,212,2572,178"/>
+<area shape="poly" title=" " alt="" coords="2545,251,2533,253,2386,272,2235,286,1943,303,1693,311,1523,313,1523,308,1693,306,1942,298,2235,280,2385,266,2532,248,2545,246"/>
+<area shape="poly" title=" " alt="" coords="2586,225,2588,191,2593,191,2592,225"/>
+<area shape="rect" title=" " alt="" coords="2472,299,2583,324"/>
+<area shape="poly" title=" " alt="" coords="2575,253,2547,289,2542,286,2571,249"/>
+<area shape="rect" title=" " alt="" coords="2607,299,2666,324"/>
+<area shape="poly" title=" " alt="" coords="2593,249,2622,286,2617,289,2589,253"/>
+</map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00079.png" border="0" usemap="#aserver_8hdep" alt=""/></div>
+<map name="aserver_8hdep" id="aserver_8hdep">
+<area shape="rect" title=" " alt="" coords="431,5,506,31"/>
+<area shape="rect" href="a00032.html" title=" " alt="" coords="122,152,205,177"/>
+<area shape="poly" title=" " alt="" coords="418,29,338,47,294,61,253,81,228,98,206,117,174,153,170,150,203,114,225,94,250,76,292,56,336,41,417,23"/>
+<area shape="rect" href="a00080.html" title=" " alt="" coords="58,79,135,104"/>
+<area shape="poly" title=" " alt="" coords="419,32,136,85,135,80,418,26"/>
+<area shape="rect" href="a00068.html" title=" " alt="" coords="263,79,442,104"/>
+<area shape="poly" title=" " alt="" coords="440,40,373,81,370,76,437,35"/>
+<area shape="rect" href="a00008.html" title=" " alt="" coords="592,152,681,177"/>
+<area shape="poly" title=" " alt="" coords="495,38,625,150,621,154,491,42"/>
+<area shape="rect" href="a00023.html" title=" " alt="" coords="706,152,805,177"/>
+<area shape="poly" title=" " alt="" coords="520,21,604,38,649,54,691,76,712,94,729,114,752,150,747,153,725,117,708,97,689,81,647,59,602,43,519,26"/>
+<area shape="rect" href="a00062.html" title=" " alt="" coords="595,79,678,104"/>
+<area shape="poly" title=" " alt="" coords="509,34,610,76,608,81,507,38"/>
+<area shape="rect" href="a00011.html" title=" " alt="" coords="5,152,97,177"/>
+<area shape="poly" title=" " alt="" coords="84,117,61,153,56,150,80,114"/>
+<area shape="poly" title=" " alt="" coords="310,111,195,154,193,149,309,106"/>
+<area shape="rect" href="a00041.html" title=" " alt="" coords="229,152,423,177"/>
+<area shape="poly" title=" " alt="" coords="346,118,333,153,328,151,341,116"/>
+<area shape="rect" href="a00044.html" title=" " alt="" coords="447,152,567,177"/>
+<area shape="poly" title=" " alt="" coords="391,107,483,149,481,154,389,112"/>
+<area shape="poly" title=" " alt="" coords="639,118,639,152,634,152,634,118"/>
+<area shape="poly" title=" " alt="" coords="669,109,737,149,735,154,666,113"/>
+</map>
+</div>
+</div>
+<p><a href="a00077_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
-Public Member Functions</h2></td></tr>
-<tr class="memitem:a1e6ff2314655623acc0ebdb45cc8c730" id="r_a1e6ff2314655623acc0ebdb45cc8c730"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#a1e6ff2314655623acc0ebdb45cc8c730">ConfigManager</a> (const std::string &amp;filename, quill::Logger *logger)</td></tr>
-<tr class="separator:a1e6ff2314655623acc0ebdb45cc8c730"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a51406b8b2a22f1744b10414eb67f5c93" id="r_a51406b8b2a22f1744b10414eb67f5c93"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#a51406b8b2a22f1744b10414eb67f5c93">loadConfig</a> ()</td></tr>
-<tr class="separator:a51406b8b2a22f1744b10414eb67f5c93"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad6ebe707ef655c67a7a3091a4e87cc19" id="r_ad6ebe707ef655c67a7a3091a4e87cc19"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#ad6ebe707ef655c67a7a3091a4e87cc19">getLogLevel</a> () const</td></tr>
-<tr class="separator:ad6ebe707ef655c67a7a3091a4e87cc19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adf2a1456feeecb034886aadb0df0e146" id="r_adf2a1456feeecb034886aadb0df0e146"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#adf2a1456feeecb034886aadb0df0e146">getLogDirectory</a> () const</td></tr>
-<tr class="separator:adf2a1456feeecb034886aadb0df0e146"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeeb5b1b6229ea527d70431119f46ddab" id="r_aeeb5b1b6229ea527d70431119f46ddab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#aeeb5b1b6229ea527d70431119f46ddab">getTimeWait</a> () const</td></tr>
-<tr class="separator:aeeb5b1b6229ea527d70431119f46ddab"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6f090eaad2a3fc904b23061066ed0c49" id="r_a6f090eaad2a3fc904b23061066ed0c49"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#a6f090eaad2a3fc904b23061066ed0c49">getReorderPackets</a> () const</td></tr>
-<tr class="separator:a6f090eaad2a3fc904b23061066ed0c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a072697ca2c74224a1e0b276a10251c44" id="r_a072697ca2c74224a1e0b276a10251c44"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#a072697ca2c74224a1e0b276a10251c44">getManageSSL</a> () const</td></tr>
-<tr class="separator:a072697ca2c74224a1e0b276a10251c44"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00100.html">Server::PacketLogEntry</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00104.html">Server::PacketData</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00108.html">Server::Data</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:a00084" id="r_a00084"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00084.html">Server</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:af872b12da3814bf0d060951d001617da" id="r_af872b12da3814bf0d060951d001617da"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#af872b12da3814bf0d060951d001617da">packet_handler_from</a> (u_char *user, const struct pcap_pkthdr *header, const u_char *packet)</td></tr>
+<tr class="separator:af872b12da3814bf0d060951d001617da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7acc69663649862e9f231cfe98fd80f9" id="r_a7acc69663649862e9f231cfe98fd80f9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#a7acc69663649862e9f231cfe98fd80f9">capture_packets_from</a> (std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt; internal, quill::Logger *logger, <a class="el" href="a00092.html">ConfigManager</a> &amp;config)</td></tr>
+<tr class="separator:a7acc69663649862e9f231cfe98fd80f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5862a336df52c7bf4f4cdb88ca673416" id="r_a5862a336df52c7bf4f4cdb88ca673416"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#a5862a336df52c7bf4f4cdb88ca673416">apply_filter</a> (pcap_t *handle, quill::Logger *logger)</td></tr>
+<tr class="separator:a5862a336df52c7bf4f4cdb88ca673416"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aece2f6220225ce85e3a9100e78428a57" id="r_aece2f6220225ce85e3a9100e78428a57"><td class="memItemLeft" align="right" valign="top">long&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#aece2f6220225ce85e3a9100e78428a57">compute_time_difference</a> (const struct timeval &amp;prev, const struct timeval &amp;curr)</td></tr>
+<tr class="separator:aece2f6220225ce85e3a9100e78428a57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dc7bb89f1211db6f17081cf908b7b13" id="r_a0dc7bb89f1211db6f17081cf908b7b13"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#a0dc7bb89f1211db6f17081cf908b7b13">send_queued_packets</a> (std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt; internal)</td></tr>
+<tr class="separator:a0dc7bb89f1211db6f17081cf908b7b13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60773435d027e71a67dd3070a065961c" id="r_a60773435d027e71a67dd3070a065961c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#a60773435d027e71a67dd3070a065961c">send_packet</a> (const <a class="el" href="a00104.html">Server::PacketData</a> &amp;pkt, quill::Logger *logger, std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt; internal)</td></tr>
+<tr class="separator:a60773435d027e71a67dd3070a065961c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca814acf6586fc323ecb3ae699ca6bc0" id="r_aca814acf6586fc323ecb3ae699ca6bc0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#aca814acf6586fc323ecb3ae699ca6bc0">queue_packet</a> (std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt; internal, const struct pcap_pkthdr *header, const u_char *packet)</td></tr>
+<tr class="separator:aca814acf6586fc323ecb3ae699ca6bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:affca795d04111c98c58b53ce02ad4f07" id="r_affca795d04111c98c58b53ce02ad4f07"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00077.html#affca795d04111c98c58b53ce02ad4f07">timer_thread</a> (std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt; internal)</td></tr>
+<tr class="separator:affca795d04111c98c58b53ce02ad4f07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="a00038_source.html#l00010">10</a> of file <a class="el" href="a00038_source.html">config.h</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a1e6ff2314655623acc0ebdb45cc8c730" name="a1e6ff2314655623acc0ebdb45cc8c730"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1e6ff2314655623acc0ebdb45cc8c730">&#9670;&#160;</a></span>ConfigManager()</h2>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a5862a336df52c7bf4f4cdb88ca673416" name="a5862a336df52c7bf4f4cdb88ca673416"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5862a336df52c7bf4f4cdb88ca673416">&#9670;&#160;</a></span>apply_filter()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">ConfigManager::ConfigManager </td>
+          <td class="memname">bool apply_filter </td>
           <td>(</td>
-          <td class="paramtype">const std::string &amp;&#160;</td>
-          <td class="paramname"><em>filename</em>, </td>
+          <td class="paramtype">pcap_t *&#160;</td>
+          <td class="paramname"><em>handle</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -145,211 +263,713 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00002_source.html#l00013">13</a> of file <a class="el" href="a00002_source.html">config.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   14</span>    : filename(filename), logLevel(<span class="stringliteral">&quot;TRACE_L3&quot;</span>), logDirectory(<span class="stringliteral">&quot;.&quot;</span>), timeWait(1), reorderPackets(<span class="keyword">false</span>), manageSSL(<span class="keyword">true</span>), logger(logger) {}</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="a00008_source.html#l00042">42</a> of file <a class="el" href="a00008_source.html">server.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>{</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keyword">struct </span>bpf_program filter;</div>
+<div class="line"><span class="lineno">   45</span>    <span class="keywordtype">char</span> filter_exp_from[150];</div>
+<div class="line"><span class="lineno">   46</span>    snprintf(filter_exp_from, <span class="keyword">sizeof</span>(filter_exp_from),</div>
+<div class="line"><span class="lineno">   47</span>             <span class="stringliteral">&quot;src host 192.168.2.2 and not ether src %02x:%02x:%02x:%02x:%02x:%02x&quot;</span>,</div>
+<div class="line"><span class="lineno">   48</span>             <a class="code hl_variable" href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[0], <a class="code hl_variable" href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[1], <a class="code hl_variable" href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[2], <a class="code hl_variable" href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[3], <a class="code hl_variable" href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[4], <a class="code hl_variable" href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[5]);</div>
+<div class="line"><span class="lineno">   49</span> </div>
+<div class="line"><span class="lineno">   50</span>    <span class="keywordflow">if</span> (pcap_compile(handle, &amp;filter, filter_exp_from, 0, PCAP_NETMASK_UNKNOWN) == -1)</div>
+<div class="line"><span class="lineno">   51</span>    {</div>
+<div class="line"><span class="lineno">   52</span>        LOG_ERROR(logger, <span class="stringliteral">&quot;Bad filter: {}&quot;</span>, pcap_geterr(handle));</div>
+<div class="line"><span class="lineno">   53</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   54</span>    }</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">if</span> (pcap_setfilter(handle, &amp;filter) == -1)</div>
+<div class="line"><span class="lineno">   56</span>    {</div>
+<div class="line"><span class="lineno">   57</span>        LOG_ERROR(logger, <span class="stringliteral">&quot;Error setting filter: {}&quot;</span>, pcap_geterr(handle));</div>
+<div class="line"><span class="lineno">   58</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">   59</span>    }</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   61</span>    LOG_INFO(logger, <span class="stringliteral">&quot;Successfully applied packet filter: {}&quot;</span>, filter_exp_from);</div>
+<div class="line"><span class="lineno">   62</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">   63</span>}</div>
+<div class="ttc" id="aa00065_html_a4303343d28e43fc8a393ecd6bc01e739"><div class="ttname"><a href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a></div><div class="ttdeci">unsigned char src_mac[6]</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00041">general.h:41</a></div></div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
-<a id="adf2a1456feeecb034886aadb0df0e146" name="adf2a1456feeecb034886aadb0df0e146"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adf2a1456feeecb034886aadb0df0e146">&#9670;&#160;</a></span>getLogDirectory()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string ConfigManager::getLogDirectory </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00002_source.html#l00057">57</a> of file <a class="el" href="a00002_source.html">config.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   58</span>{</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">return</span> logDirectory;</div>
-<div class="line"><span class="lineno">   60</span>}</div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="ad6ebe707ef655c67a7a3091a4e87cc19" name="ad6ebe707ef655c67a7a3091a4e87cc19"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad6ebe707ef655c67a7a3091a4e87cc19">&#9670;&#160;</a></span>getLogLevel()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::string ConfigManager::getLogLevel </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00002_source.html#l00052">52</a> of file <a class="el" href="a00002_source.html">config.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
-<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">return</span> logLevel;</div>
-<div class="line"><span class="lineno">   55</span>}</div>
-</div><!-- fragment --><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00077_ad6ebe707ef655c67a7a3091a4e87cc19_icgraph.png" border="0" usemap="#aa00077_ad6ebe707ef655c67a7a3091a4e87cc19_icgraph" alt=""/></div>
-<map name="aa00077_ad6ebe707ef655c67a7a3091a4e87cc19_icgraph" id="aa00077_ad6ebe707ef655c67a7a3091a4e87cc19_icgraph">
-<area shape="rect" title=" " alt="" coords="264,5,471,31"/>
-<area shape="rect" href="a00035.html#a5b287b1f24cc9c79ac82e75e84994244" title=" " alt="" coords="108,5,216,31"/>
-<area shape="poly" title=" " alt="" coords="250,21,216,21,216,15,250,15"/>
-<area shape="rect" href="a00020.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00077_a5862a336df52c7bf4f4cdb88ca673416_icgraph.png" border="0" usemap="#aa00077_a5862a336df52c7bf4f4cdb88ca673416_icgraph" alt=""/></div>
+<map name="aa00077_a5862a336df52c7bf4f4cdb88ca673416_icgraph" id="aa00077_a5862a336df52c7bf4f4cdb88ca673416_icgraph">
+<area shape="rect" title=" " alt="" coords="323,5,417,31"/>
+<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
 <area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a072697ca2c74224a1e0b276a10251c44" name="a072697ca2c74224a1e0b276a10251c44"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a072697ca2c74224a1e0b276a10251c44">&#9670;&#160;</a></span>getManageSSL()</h2>
+<a id="a7acc69663649862e9f231cfe98fd80f9" name="a7acc69663649862e9f231cfe98fd80f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7acc69663649862e9f231cfe98fd80f9">&#9670;&#160;</a></span>capture_packets_from()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ConfigManager::getManageSSL </td>
+          <td class="memname">void capture_packets_from </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt;&#160;</td>
+          <td class="paramname"><em>internal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">quill::Logger *&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="a00092.html">ConfigManager</a> &amp;&#160;</td>
+          <td class="paramname"><em>config</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00002_source.html#l00072">72</a> of file <a class="el" href="a00002_source.html">config.cpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="a00008_source.html#l00014">14</a> of file <a class="el" href="a00008_source.html">server.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   15</span>{</div>
+<div class="line"><span class="lineno">   16</span> </div>
+<div class="line"><span class="lineno">   17</span>    <span class="keywordtype">char</span> error_buffer[PCAP_ERRBUF_SIZE];</div>
+<div class="line"><span class="lineno">   18</span>    pcap_t *handle;</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>    <span class="comment">// Open the device for packet capture with a timeout of 1 ms</span></div>
+<div class="line"><span class="lineno">   21</span>    handle = pcap_open_live(<a class="code hl_variable" href="a00065.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a>, BUFSIZ, 1, 1, error_buffer);</div>
+<div class="line"><span class="lineno">   22</span>    <span class="keywordflow">if</span> (handle == <span class="keyword">nullptr</span>)</div>
+<div class="line"><span class="lineno">   23</span>    {</div>
+<div class="line"><span class="lineno">   24</span>        LOG_ERROR(logger, <span class="stringliteral">&quot;Could not open device {}: {}&quot;</span>, <a class="code hl_variable" href="a00065.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a>, error_buffer);</div>
+<div class="line"><span class="lineno">   25</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   26</span>    }</div>
+<div class="line"><span class="lineno">   27</span> </div>
+<div class="line"><span class="lineno">   28</span>    <span class="comment">// Compile and apply the filter with MAC exclusion</span></div>
+<div class="line"><span class="lineno">   29</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="a00008.html#a5862a336df52c7bf4f4cdb88ca673416">apply_filter</a>(handle, logger))</div>
+<div class="line"><span class="lineno">   30</span>    {</div>
+<div class="line"><span class="lineno">   31</span>        pcap_close(handle);</div>
+<div class="line"><span class="lineno">   32</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   33</span>    }</div>
+<div class="line"><span class="lineno">   34</span> </div>
+<div class="line"><span class="lineno">   35</span>    <span class="comment">// Start packet capture loop</span></div>
+<div class="line"><span class="lineno">   36</span>    pcap_loop(handle, 0, <a class="code hl_function" href="a00008.html#af872b12da3814bf0d060951d001617da">packet_handler_from</a>, <span class="keyword">reinterpret_cast&lt;</span>u_char *<span class="keyword">&gt;</span>(&amp;internal));</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    <span class="comment">// Cleanup</span></div>
+<div class="line"><span class="lineno">   39</span>    pcap_close(handle);</div>
+<div class="line"><span class="lineno">   40</span>}</div>
+<div class="ttc" id="aa00008_html_a5862a336df52c7bf4f4cdb88ca673416"><div class="ttname"><a href="a00008.html#a5862a336df52c7bf4f4cdb88ca673416">apply_filter</a></div><div class="ttdeci">bool apply_filter(pcap_t *handle, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00042">server.cpp:42</a></div></div>
+<div class="ttc" id="aa00008_html_af872b12da3814bf0d060951d001617da"><div class="ttname"><a href="a00008.html#af872b12da3814bf0d060951d001617da">packet_handler_from</a></div><div class="ttdeci">void packet_handler_from(u_char *user, const struct pcap_pkthdr *header, const u_char *packet)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00072">server.cpp:72</a></div></div>
+<div class="ttc" id="aa00065_html_a4dcae56eb6645becdd38c6a852ba7055"><div class="ttname"><a href="a00065.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a></div><div class="ttdeci">const char * interface</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00042">general.h:42</a></div></div>
+</div><!-- fragment --><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00077_a7acc69663649862e9f231cfe98fd80f9_cgraph.png" border="0" usemap="#aa00077_a7acc69663649862e9f231cfe98fd80f9_cgraph" alt=""/></div>
+<map name="aa00077_a7acc69663649862e9f231cfe98fd80f9_cgraph" id="aa00077_a7acc69663649862e9f231cfe98fd80f9_cgraph">
+<area shape="rect" title=" " alt="" coords="5,253,172,279"/>
+<area shape="rect" href="a00008.html#a5862a336df52c7bf4f4cdb88ca673416" title=" " alt="" coords="252,228,347,253"/>
+<area shape="poly" title=" " alt="" coords="172,253,238,245,238,251,173,259"/>
+<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="220,277,379,303"/>
+<area shape="poly" title=" " alt="" coords="173,273,207,277,206,282,172,278"/>
+<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="427,277,539,303"/>
+<area shape="poly" title=" " alt="" coords="379,287,413,287,413,293,379,293"/>
+<area shape="rect" href="a00008.html#a0175e149bc973fc0744f254bc93231a4" title=" " alt="" coords="596,5,759,31"/>
+<area shape="poly" title=" " alt="" coords="483,276,490,231,507,168,538,99,559,68,585,40,591,36,594,40,588,44,563,71,542,102,512,169,496,233,488,277"/>
+<area shape="rect" href="a00008.html#abd15d0f6b961a3f9608b79be75f93f6b" title=" " alt="" coords="608,55,747,80"/>
+<area shape="poly" title=" " alt="" coords="484,276,495,239,514,189,544,135,563,111,585,89,594,83,597,88,588,93,567,114,548,138,519,191,500,241,489,278"/>
+<area shape="rect" href="a00008.html#aa1bc425b1a57cabd0126dbdad3ad22da" title=" " alt="" coords="606,104,749,129"/>
+<area shape="poly" title=" " alt="" coords="487,276,521,210,550,171,585,139,594,133,597,137,588,143,553,175,526,213,492,278"/>
+<area shape="rect" href="a00008.html#a2149cd2b6d56a6561d1fe96bbd24f960" title=" " alt="" coords="598,153,757,179"/>
+<area shape="poly" title=" " alt="" coords="492,275,529,232,556,208,585,188,598,181,601,186,588,192,559,212,533,236,496,279"/>
+<area shape="rect" href="a00008.html#a22eb1a4cd683c6aa5e856ccaafd48178" title=" " alt="" coords="626,203,729,228"/>
+<area shape="poly" title=" " alt="" coords="506,275,586,237,612,228,614,233,588,242,508,280"/>
+<area shape="rect" href="a00008.html#a3090c51cd1c041f25d090b287c1cc57a" title=" " alt="" coords="591,252,763,277"/>
+<area shape="poly" title=" " alt="" coords="539,280,578,275,578,280,539,285"/>
+<area shape="rect" href="a00008.html#aa5641a1f50835eb1a6c4d7b712c64528" title=" " alt="" coords="613,301,742,327"/>
+<area shape="poly" title=" " alt="" coords="539,294,599,302,599,307,539,300"/>
+<area shape="rect" href="a00008.html#a3bd0c340f8deab1bb579fcd1ec6ff17a" title=" " alt="" coords="588,351,767,376"/>
+<area shape="poly" title=" " alt="" coords="510,300,588,336,614,344,612,349,586,340,507,305"/>
+<area shape="rect" href="a00008.html#a6ef922dfbc7b51bfd8c18ab752e8e2fd" title=" " alt="" coords="831,377,980,403"/>
+<area shape="poly" title=" " alt="" coords="495,301,531,345,558,368,588,385,648,402,711,408,772,408,827,402,828,407,773,413,711,414,647,407,586,390,554,372,527,349,491,305"/>
+<area shape="rect" href="a00008.html#a706ee73268db25870f26e074c69d84cb" title=" " alt="" coords="595,501,759,527"/>
+<area shape="poly" title=" " alt="" coords="489,302,500,339,519,390,548,443,567,467,588,488,595,493,592,497,585,492,563,471,543,446,514,392,495,341,484,304"/>
+<area shape="rect" href="a00008.html#a18c76aca92495fd5bc9b9520b2f30362" title=" " alt="" coords="587,551,768,576"/>
+<area shape="poly" title=" " alt="" coords="488,303,495,348,512,411,525,446,542,479,563,510,588,537,594,542,591,546,585,541,559,514,538,482,521,448,507,413,490,349,483,304"/>
+<area shape="rect" href="a00023.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="641,452,713,477"/>
+<area shape="poly" title=" " alt="" coords="492,302,527,363,555,399,588,431,608,442,629,451,627,456,605,447,585,435,551,403,523,366,488,304"/>
+<area shape="rect" href="a00038.html#a91a4e24d46900f2d4c78a5e062e0608d" title=" " alt="" coords="837,153,973,179"/>
+<area shape="poly" title=" " alt="" coords="757,163,823,163,823,169,757,169"/>
+<area shape="rect" href="a00029.html#a2e8c16b72b01132d58ef8e9e6fd7f101" title=" " alt="" coords="1055,427,1205,452"/>
+<area shape="poly" title=" " alt="" coords="964,400,1059,421,1058,426,963,405"/>
+<area shape="rect" href="a00029.html#ae2cacf1859fb0b54c2a8c98def76b9e6" title=" " alt="" coords="1043,476,1217,501"/>
+<area shape="poly" title=" " alt="" coords="971,400,996,412,1012,425,1021,438,1030,450,1044,462,1056,469,1053,473,1041,467,1026,454,1016,441,1008,428,993,416,969,405"/>
+<area shape="rect" href="a00008.html#aecacb419c1bf41572f0c8edc6b94092e" title=" " alt="" coords="1265,301,1417,327"/>
+<area shape="poly" title=" " alt="" coords="973,375,1042,362,1251,326,1252,331,1043,367,974,380"/>
+<area shape="rect" href="a00008.html#a4d02a66e48a2a8974d5fe398d49b791a" title=" " alt="" coords="1061,276,1199,301"/>
+<area shape="poly" title=" " alt="" coords="929,375,1042,318,1078,304,1080,309,1044,323,931,380"/>
+<area shape="rect" href="a00008.html#a8364cd6dd9fd67102cb24a8fe003cf65" title=" " alt="" coords="1053,377,1207,403"/>
+<area shape="poly" title=" " alt="" coords="981,387,1039,387,1039,393,981,393"/>
+<area shape="poly" title=" " alt="" coords="1199,294,1252,301,1251,306,1199,300"/>
+<area shape="rect" href="a00029.html#a1d919e8ec4fa73e99303ca26f1a24188" title=" " alt="" coords="820,525,991,551"/>
+<area shape="poly" title=" " alt="" coords="760,520,806,525,806,530,759,525"/>
+<area shape="rect" href="a00029.html#a33bdbedcf6fc6cc7f29ca20db5bbf485" title=" " alt="" coords="816,476,995,501"/>
+<area shape="poly" title=" " alt="" coords="759,502,802,497,802,503,760,508"/>
+<area shape="poly" title=" " alt="" coords="714,470,769,488,817,512,839,519,837,524,815,516,767,492,713,475"/>
+<area shape="poly" title=" " alt="" coords="714,466,802,475,802,480,713,471"/>
+<area shape="rect" href="a00011.html#a60773435d027e71a67dd3070a065961c" title=" " alt="" coords="854,427,957,452"/>
+<area shape="poly" title=" " alt="" coords="713,458,840,444,841,449,714,463"/>
+<area shape="poly" title=" " alt="" coords="957,437,1042,437,1042,442,957,442"/>
+<area shape="poly" title=" " alt="" coords="958,448,1059,470,1058,476,956,453"/>
+</map>
+</div>
+<div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00077_a7acc69663649862e9f231cfe98fd80f9_icgraph.png" border="0" usemap="#aa00077_a7acc69663649862e9f231cfe98fd80f9_icgraph" alt=""/></div>
+<map name="aa00077_a7acc69663649862e9f231cfe98fd80f9_icgraph" id="aa00077_a7acc69663649862e9f231cfe98fd80f9_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,275,31"/>
+<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aece2f6220225ce85e3a9100e78428a57" name="aece2f6220225ce85e3a9100e78428a57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aece2f6220225ce85e3a9100e78428a57">&#9670;&#160;</a></span>compute_time_difference()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">long compute_time_difference </td>
+          <td>(</td>
+          <td class="paramtype">const struct timeval &amp;&#160;</td>
+          <td class="paramname"><em>prev</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct timeval &amp;&#160;</td>
+          <td class="paramname"><em>curr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00008_source.html#l00065">65</a> of file <a class="el" href="a00008_source.html">server.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span>    </div>
+<div class="line"><span class="lineno">   68</span>    <span class="keywordflow">return</span> (curr.tv_sec - prev.tv_sec) * 1000000 + (curr.tv_usec - prev.tv_usec);</div>
+<div class="line"><span class="lineno">   69</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af872b12da3814bf0d060951d001617da" name="af872b12da3814bf0d060951d001617da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af872b12da3814bf0d060951d001617da">&#9670;&#160;</a></span>packet_handler_from()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void packet_handler_from </td>
+          <td>(</td>
+          <td class="paramtype">u_char *&#160;</td>
+          <td class="paramname"><em>user</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct pcap_pkthdr *&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const u_char *&#160;</td>
+          <td class="paramname"><em>packet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00008_source.html#l00072">72</a> of file <a class="el" href="a00008_source.html">server.cpp</a>.</p>
 <div class="fragment"><div class="line"><span class="lineno">   73</span>{</div>
-<div class="line"><span class="lineno">   74</span>    <span class="keywordflow">return</span> manageSSL;</div>
-<div class="line"><span class="lineno">   75</span>}</div>
-</div><!-- fragment -->
+<div class="line"><span class="lineno">   74</span>    <span class="comment">// Existing code to retrieve internal pointer</span></div>
+<div class="line"><span class="lineno">   75</span>    std::shared_ptr&lt;Server::Data&gt; *internal_ptr = <span class="keyword">reinterpret_cast&lt;</span>std::shared_ptr&lt;Server::Data&gt; *<span class="keyword">&gt;</span>(user);</div>
+<div class="line"><span class="lineno">   76</span>    <span class="keywordflow">if</span> (!internal_ptr || !*internal_ptr)</div>
+<div class="line"><span class="lineno">   77</span>    {</div>
+<div class="line"><span class="lineno">   78</span>        std::cout &lt;&lt; <span class="stringliteral">&quot;Internal pointer failure&quot;</span>;</div>
+<div class="line"><span class="lineno">   79</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">   80</span>    }</div>
+<div class="line"><span class="lineno">   81</span>    std::shared_ptr&lt;Server::Data&gt; internal = *internal_ptr;</div>
+<div class="line"><span class="lineno">   82</span> </div>
+<div class="line"><span class="lineno">   83</span>    <span class="comment">// Lock the queue mutex</span></div>
+<div class="line"><span class="lineno">   84</span>    <span class="comment">// Add the packet to the queue</span></div>
+<div class="line"><span class="lineno">   85</span>    <a class="code hl_function" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0">queue_packet</a>(internal, header, packet);</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>}</div>
+<div class="ttc" id="aa00008_html_aca814acf6586fc323ecb3ae699ca6bc0"><div class="ttname"><a href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0">queue_packet</a></div><div class="ttdeci">void queue_packet(std::shared_ptr&lt; Server::Data &gt; internal, const struct pcap_pkthdr *header, const u_char *packet)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00459">server.cpp:459</a></div></div>
+</div><!-- fragment --><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00077_af872b12da3814bf0d060951d001617da_cgraph.png" border="0" usemap="#aa00077_af872b12da3814bf0d060951d001617da_cgraph" alt=""/></div>
+<map name="aa00077_af872b12da3814bf0d060951d001617da_cgraph" id="aa00077_af872b12da3814bf0d060951d001617da_cgraph">
+<area shape="rect" title=" " alt="" coords="5,277,164,303"/>
+<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="212,277,324,303"/>
+<area shape="poly" title=" " alt="" coords="164,287,198,287,198,293,164,293"/>
+<area shape="rect" href="a00008.html#a0175e149bc973fc0744f254bc93231a4" title=" " alt="" coords="381,5,544,31"/>
+<area shape="poly" title=" " alt="" coords="268,276,276,231,293,168,323,99,344,68,370,40,376,36,379,40,374,44,349,71,328,102,298,169,281,233,273,277"/>
+<area shape="rect" href="a00008.html#abd15d0f6b961a3f9608b79be75f93f6b" title=" " alt="" coords="393,55,532,80"/>
+<area shape="poly" title=" " alt="" coords="270,276,280,239,299,189,329,135,348,111,370,89,379,83,382,88,374,93,352,114,333,138,304,191,285,241,275,278"/>
+<area shape="rect" href="a00008.html#aa1bc425b1a57cabd0126dbdad3ad22da" title=" " alt="" coords="391,104,534,129"/>
+<area shape="poly" title=" " alt="" coords="272,276,306,210,335,171,370,139,379,133,382,137,374,143,339,175,311,213,277,278"/>
+<area shape="rect" href="a00008.html#a2149cd2b6d56a6561d1fe96bbd24f960" title=" " alt="" coords="383,153,542,179"/>
+<area shape="poly" title=" " alt="" coords="277,275,315,232,341,208,371,188,384,181,386,186,373,192,344,212,318,236,281,279"/>
+<area shape="rect" href="a00008.html#a22eb1a4cd683c6aa5e856ccaafd48178" title=" " alt="" coords="411,203,514,228"/>
+<area shape="poly" title=" " alt="" coords="291,275,371,237,397,228,399,233,373,242,293,280"/>
+<area shape="rect" href="a00008.html#a3090c51cd1c041f25d090b287c1cc57a" title=" " alt="" coords="377,252,549,277"/>
+<area shape="poly" title=" " alt="" coords="324,280,363,275,364,280,325,285"/>
+<area shape="rect" href="a00008.html#aa5641a1f50835eb1a6c4d7b712c64528" title=" " alt="" coords="398,301,527,327"/>
+<area shape="poly" title=" " alt="" coords="325,294,385,302,384,307,324,300"/>
+<area shape="rect" href="a00008.html#a3bd0c340f8deab1bb579fcd1ec6ff17a" title=" " alt="" coords="373,351,552,376"/>
+<area shape="poly" title=" " alt="" coords="295,300,373,336,399,344,397,349,371,340,293,305"/>
+<area shape="rect" href="a00008.html#a6ef922dfbc7b51bfd8c18ab752e8e2fd" title=" " alt="" coords="616,377,765,403"/>
+<area shape="poly" title=" " alt="" coords="280,301,317,345,343,368,373,385,433,402,497,408,558,408,612,402,613,407,558,413,496,414,432,407,371,390,340,372,313,349,276,305"/>
+<area shape="rect" href="a00008.html#a706ee73268db25870f26e074c69d84cb" title=" " alt="" coords="381,501,545,527"/>
+<area shape="poly" title=" " alt="" coords="275,302,285,339,304,390,333,443,352,467,374,488,380,493,377,497,370,492,348,471,329,446,299,392,280,341,270,304"/>
+<area shape="rect" href="a00008.html#a18c76aca92495fd5bc9b9520b2f30362" title=" " alt="" coords="372,551,553,576"/>
+<area shape="poly" title=" " alt="" coords="273,303,281,348,298,411,311,446,328,479,348,510,374,537,379,542,376,546,370,541,344,514,323,482,306,448,293,413,276,349,268,304"/>
+<area shape="rect" href="a00023.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="427,452,499,477"/>
+<area shape="poly" title=" " alt="" coords="278,302,313,363,340,399,374,431,393,442,415,451,413,456,391,447,370,435,336,403,308,366,273,304"/>
+<area shape="rect" href="a00038.html#a91a4e24d46900f2d4c78a5e062e0608d" title=" " alt="" coords="623,153,759,179"/>
+<area shape="poly" title=" " alt="" coords="542,163,609,163,609,169,542,169"/>
+<area shape="rect" href="a00029.html#a2e8c16b72b01132d58ef8e9e6fd7f101" title=" " alt="" coords="841,427,990,452"/>
+<area shape="poly" title=" " alt="" coords="750,400,844,421,843,426,749,405"/>
+<area shape="rect" href="a00029.html#ae2cacf1859fb0b54c2a8c98def76b9e6" title=" " alt="" coords="828,476,1003,501"/>
+<area shape="poly" title=" " alt="" coords="756,400,781,412,797,425,806,438,815,450,829,462,841,469,839,473,827,467,811,454,802,441,793,428,779,416,754,405"/>
+<area shape="rect" href="a00008.html#aecacb419c1bf41572f0c8edc6b94092e" title=" " alt="" coords="1051,301,1203,327"/>
+<area shape="poly" title=" " alt="" coords="759,375,828,362,1036,326,1037,331,828,367,760,380"/>
+<area shape="rect" href="a00008.html#a4d02a66e48a2a8974d5fe398d49b791a" title=" " alt="" coords="847,276,984,301"/>
+<area shape="poly" title=" " alt="" coords="714,375,827,318,863,304,865,309,829,323,716,380"/>
+<area shape="rect" href="a00008.html#a8364cd6dd9fd67102cb24a8fe003cf65" title=" " alt="" coords="838,377,993,403"/>
+<area shape="poly" title=" " alt="" coords="766,387,824,387,824,393,766,393"/>
+<area shape="poly" title=" " alt="" coords="985,294,1037,301,1037,306,984,300"/>
+<area shape="rect" href="a00029.html#a1d919e8ec4fa73e99303ca26f1a24188" title=" " alt="" coords="605,525,776,551"/>
+<area shape="poly" title=" " alt="" coords="545,520,592,525,591,530,544,525"/>
+<area shape="rect" href="a00029.html#a33bdbedcf6fc6cc7f29ca20db5bbf485" title=" " alt="" coords="601,476,780,501"/>
+<area shape="poly" title=" " alt="" coords="544,502,587,497,588,503,545,508"/>
+<area shape="poly" title=" " alt="" coords="500,470,554,488,602,512,624,519,622,524,600,516,552,492,498,475"/>
+<area shape="poly" title=" " alt="" coords="499,466,588,475,587,480,498,471"/>
+<area shape="rect" href="a00011.html#a60773435d027e71a67dd3070a065961c" title=" " alt="" coords="639,427,742,452"/>
+<area shape="poly" title=" " alt="" coords="498,458,625,444,626,449,499,463"/>
+<area shape="poly" title=" " alt="" coords="742,437,827,437,827,442,742,442"/>
+<area shape="poly" title=" " alt="" coords="743,448,844,470,843,476,742,453"/>
+</map>
+</div>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00077_af872b12da3814bf0d060951d001617da_icgraph.png" border="0" usemap="#aa00077_af872b12da3814bf0d060951d001617da_icgraph" alt=""/></div>
+<map name="aa00077_af872b12da3814bf0d060951d001617da_icgraph" id="aa00077_af872b12da3814bf0d060951d001617da_icgraph">
+<area shape="rect" title=" " alt="" coords="323,5,481,31"/>
+<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
 </div>
 </div>
-<a id="a6f090eaad2a3fc904b23061066ed0c49" name="a6f090eaad2a3fc904b23061066ed0c49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6f090eaad2a3fc904b23061066ed0c49">&#9670;&#160;</a></span>getReorderPackets()</h2>
+<a id="aca814acf6586fc323ecb3ae699ca6bc0" name="aca814acf6586fc323ecb3ae699ca6bc0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca814acf6586fc323ecb3ae699ca6bc0">&#9670;&#160;</a></span>queue_packet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ConfigManager::getReorderPackets </td>
+          <td class="memname">void queue_packet </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt;&#160;</td>
+          <td class="paramname"><em>internal</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const struct pcap_pkthdr *&#160;</td>
+          <td class="paramname"><em>header</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const u_char *&#160;</td>
+          <td class="paramname"><em>packet</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00002_source.html#l00067">67</a> of file <a class="el" href="a00002_source.html">config.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   68</span>{</div>
-<div class="line"><span class="lineno">   69</span>    <span class="keywordflow">return</span> reorderPackets;</div>
-<div class="line"><span class="lineno">   70</span>}</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="a00008_source.html#l00459">459</a> of file <a class="el" href="a00008_source.html">server.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  460</span>{</div>
+<div class="line"><span class="lineno">  461</span>    LOG_DEBUG(internal-&gt;logger, <span class="stringliteral">&quot;Entering queue_packet with packet length: {}&quot;</span>, header-&gt;len);</div>
+<div class="line"><span class="lineno">  462</span> </div>
+<div class="line"><span class="lineno">  463</span>    <span class="comment">// Create a PacketData object</span></div>
+<div class="line"><span class="lineno">  464</span>    <a class="code hl_struct" href="a00104.html">Server::PacketData</a> packet_data;</div>
+<div class="line"><span class="lineno">  465</span> </div>
+<div class="line"><span class="lineno">  466</span>    <span class="comment">// Step 1: Copy the packet data</span></div>
+<div class="line"><span class="lineno">  467</span>    <a class="code hl_function" href="a00008.html#abd15d0f6b961a3f9608b79be75f93f6b">copy_packet_data</a>(packet_data, header, packet, internal-&gt;logger);</div>
+<div class="line"><span class="lineno">  468</span> </div>
+<div class="line"><span class="lineno">  469</span>    <span class="comment">// Step 2: Parse Ethernet header</span></div>
+<div class="line"><span class="lineno">  470</span>    <span class="keyword">struct </span>ethhdr *eth = <a class="code hl_function" href="a00008.html#a3090c51cd1c041f25d090b287c1cc57a">parse_ethernet_header</a>(packet_data, internal-&gt;logger);</div>
+<div class="line"><span class="lineno">  471</span> </div>
+<div class="line"><span class="lineno">  472</span>    <span class="comment">// Step 3: Only process IP packets</span></div>
+<div class="line"><span class="lineno">  473</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="a00008.html#a22eb1a4cd683c6aa5e856ccaafd48178">is_ip_packet</a>(eth, internal-&gt;logger))</div>
+<div class="line"><span class="lineno">  474</span>    {</div>
+<div class="line"><span class="lineno">  475</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  476</span>    }</div>
+<div class="line"><span class="lineno">  477</span> </div>
+<div class="line"><span class="lineno">  478</span>    <span class="comment">// Step 4: Get IP header</span></div>
+<div class="line"><span class="lineno">  479</span>    <span class="keyword">struct </span>iphdr *ip_header = <a class="code hl_function" href="a00008.html#aa5641a1f50835eb1a6c4d7b712c64528">parse_ip_header</a>(packet_data, internal-&gt;logger);</div>
+<div class="line"><span class="lineno">  480</span> </div>
+<div class="line"><span class="lineno">  481</span>    <span class="comment">// Step 5: Get destination IP address</span></div>
+<div class="line"><span class="lineno">  482</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="a00008.html#aa1bc425b1a57cabd0126dbdad3ad22da">get_destination_ip</a>(ip_header, packet_data, internal-&gt;logger))</div>
+<div class="line"><span class="lineno">  483</span>    {</div>
+<div class="line"><span class="lineno">  484</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  485</span>    }</div>
+<div class="line"><span class="lineno">  486</span> </div>
+<div class="line"><span class="lineno">  487</span>    <span class="comment">// Step 6: Get the MAC address of the destination IP</span></div>
+<div class="line"><span class="lineno">  488</span>    <span class="keywordflow">if</span> (!<a class="code hl_function" href="a00008.html#a2149cd2b6d56a6561d1fe96bbd24f960">get_destination_mac</a>(packet_data, internal-&gt;logger))</div>
+<div class="line"><span class="lineno">  489</span>    {</div>
+<div class="line"><span class="lineno">  490</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  491</span>    }</div>
+<div class="line"><span class="lineno">  492</span> </div>
+<div class="line"><span class="lineno">  493</span>    <span class="comment">// Step 7: Update Ethernet header</span></div>
+<div class="line"><span class="lineno">  494</span>    <a class="code hl_function" href="a00008.html#a18c76aca92495fd5bc9b9520b2f30362">update_ethernet_header</a>(eth, packet_data, internal-&gt;logger);</div>
+<div class="line"><span class="lineno">  495</span> </div>
+<div class="line"><span class="lineno">  496</span>    <span class="comment">// Step 8: Prepare socket_address for sending</span></div>
+<div class="line"><span class="lineno">  497</span>    <a class="code hl_function" href="a00008.html#a3bd0c340f8deab1bb579fcd1ec6ff17a">prepare_socket_address</a>(packet_data);</div>
+<div class="line"><span class="lineno">  498</span>    LOG_DEBUG(internal-&gt;logger, <span class="stringliteral">&quot;Prepared socket address for sending&quot;</span>);</div>
+<div class="line"><span class="lineno">  499</span> </div>
+<div class="line"><span class="lineno">  500</span>    <span class="comment">// Step 9: Process TCP packet if applicable</span></div>
+<div class="line"><span class="lineno">  501</span>    <span class="keywordflow">if</span> (ip_header-&gt;protocol == IPPROTO_TCP)</div>
+<div class="line"><span class="lineno">  502</span>    {</div>
+<div class="line"><span class="lineno">  503</span>        LOG_DEBUG(internal-&gt;logger, <span class="stringliteral">&quot;Processing TCP packet&quot;</span>);</div>
+<div class="line"><span class="lineno">  504</span>        <a class="code hl_function" href="a00008.html#a6ef922dfbc7b51bfd8c18ab752e8e2fd">process_tcp_packet</a>(internal, packet_data, ip_header);</div>
+<div class="line"><span class="lineno">  505</span> </div>
+<div class="line"><span class="lineno">  506</span>        <span class="comment">// Step 10: Remove SACK options if present and recompute checksums</span></div>
+<div class="line"><span class="lineno">  507</span>        <a class="code hl_function" href="a00008.html#a706ee73268db25870f26e074c69d84cb">remove_sack_options</a>(internal, packet_data, ip_header);</div>
+<div class="line"><span class="lineno">  508</span> </div>
+<div class="line"><span class="lineno">  509</span>        <span class="comment">// New code to extract and store payload data</span></div>
+<div class="line"><span class="lineno">  510</span>        <span class="keywordtype">size_t</span> ip_header_length = ip_header-&gt;ihl * 4;</div>
+<div class="line"><span class="lineno">  511</span>        <span class="keyword">struct </span>tcphdr *tcp_header = (<span class="keyword">struct </span>tcphdr *)(packet_data.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr) + ip_header_length);</div>
+<div class="line"><span class="lineno">  512</span>        <span class="keywordtype">size_t</span> tcp_header_length = tcp_header-&gt;doff * 4;</div>
+<div class="line"><span class="lineno">  513</span>        <span class="keywordtype">size_t</span> total_header_length = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr) + ip_header_length + tcp_header_length;</div>
+<div class="line"><span class="lineno">  514</span> </div>
+<div class="line"><span class="lineno">  515</span>        <span class="keywordflow">if</span> (packet_data.<a class="code hl_variable" href="a00104.html#a6fcfbe21641ddcfd5cd38ef7ab7998db">length</a> &gt; total_header_length)</div>
+<div class="line"><span class="lineno">  516</span>        {</div>
+<div class="line"><span class="lineno">  517</span>            <span class="keywordtype">size_t</span> payload_length = packet_data.<a class="code hl_variable" href="a00104.html#a6fcfbe21641ddcfd5cd38ef7ab7998db">length</a> - total_header_length;</div>
+<div class="line"><span class="lineno">  518</span>            <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *payload = packet_data.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + total_header_length;</div>
+<div class="line"><span class="lineno">  519</span> </div>
+<div class="line"><span class="lineno">  520</span>            <span class="comment">// Append payload to the payload buffer</span></div>
+<div class="line"><span class="lineno">  521</span>            {</div>
+<div class="line"><span class="lineno">  522</span>                std::lock_guard&lt;std::mutex&gt; lock(internal-&gt;payload_buffer_mutex);</div>
+<div class="line"><span class="lineno">  523</span>                internal-&gt;payload_buffer.insert(internal-&gt;payload_buffer.end(), payload, payload + payload_length);</div>
+<div class="line"><span class="lineno">  524</span> </div>
+<div class="line"><span class="lineno">  525</span>                <span class="comment">// Check if we have reached the window size</span></div>
+<div class="line"><span class="lineno">  526</span>                <span class="keywordflow">if</span> (internal-&gt;payload_buffer.size() &gt;= internal-&gt;window_size)</div>
+<div class="line"><span class="lineno">  527</span>                {</div>
+<div class="line"><span class="lineno">  528</span>                    <span class="comment">// Call function to send new packets</span></div>
+<div class="line"><span class="lineno">  529</span>                    <a class="code hl_function" href="a00023.html#a063a58ec9acd8e3e2fd505cce47a65ba">window</a>(internal, packet_data);</div>
+<div class="line"><span class="lineno">  530</span>                }</div>
+<div class="line"><span class="lineno">  531</span>            }</div>
+<div class="line"><span class="lineno">  532</span>        }</div>
+<div class="line"><span class="lineno">  533</span>    }</div>
+<div class="line"><span class="lineno">  534</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  535</span>    {</div>
+<div class="line"><span class="lineno">  536</span>        LOG_DEBUG(internal-&gt;logger, <span class="stringliteral">&quot;Non-TCP packet, protocol: {}&quot;</span>, ip_header-&gt;protocol);</div>
+<div class="line"><span class="lineno">  537</span>    }</div>
+<div class="line"><span class="lineno">  538</span> </div>
+<div class="line"><span class="lineno">  539</span>    <span class="comment">// Step 11: Add packet to the queue</span></div>
+<div class="line"><span class="lineno">  540</span>    <a class="code hl_function" href="a00008.html#a0175e149bc973fc0744f254bc93231a4">add_packet_to_queue</a>(internal, packet_data, header);</div>
+<div class="line"><span class="lineno">  541</span> </div>
+<div class="line"><span class="lineno">  542</span>    <span class="comment">// Step 12: Log the queuing action</span></div>
+<div class="line"><span class="lineno">  543</span>    LOG_DEBUG(internal-&gt;logger, <span class="stringliteral">&quot;Queued packet, length: {} bytes, total queued payload: {} bytes&quot;</span>,</div>
+<div class="line"><span class="lineno">  544</span>              header-&gt;len, internal-&gt;total_payload_length);</div>
+<div class="line"><span class="lineno">  545</span>}</div>
+<div class="ttc" id="aa00008_html_a0175e149bc973fc0744f254bc93231a4"><div class="ttname"><a href="a00008.html#a0175e149bc973fc0744f254bc93231a4">add_packet_to_queue</a></div><div class="ttdeci">void add_packet_to_queue(std::shared_ptr&lt; Server::Data &gt; internal, Server::PacketData &amp;packet_data, const struct pcap_pkthdr *header)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00323">server.cpp:323</a></div></div>
+<div class="ttc" id="aa00008_html_a18c76aca92495fd5bc9b9520b2f30362"><div class="ttname"><a href="a00008.html#a18c76aca92495fd5bc9b9520b2f30362">update_ethernet_header</a></div><div class="ttdeci">void update_ethernet_header(struct ethhdr *eth, Server::PacketData &amp;packet_data, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00188">server.cpp:188</a></div></div>
+<div class="ttc" id="aa00008_html_a2149cd2b6d56a6561d1fe96bbd24f960"><div class="ttname"><a href="a00008.html#a2149cd2b6d56a6561d1fe96bbd24f960">get_destination_mac</a></div><div class="ttdeci">bool get_destination_mac(Server::PacketData &amp;packet_data, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00173">server.cpp:173</a></div></div>
+<div class="ttc" id="aa00008_html_a22eb1a4cd683c6aa5e856ccaafd48178"><div class="ttname"><a href="a00008.html#a22eb1a4cd683c6aa5e856ccaafd48178">is_ip_packet</a></div><div class="ttdeci">bool is_ip_packet(struct ethhdr *eth, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00134">server.cpp:134</a></div></div>
+<div class="ttc" id="aa00008_html_a3090c51cd1c041f25d090b287c1cc57a"><div class="ttname"><a href="a00008.html#a3090c51cd1c041f25d090b287c1cc57a">parse_ethernet_header</a></div><div class="ttdeci">struct ethhdr * parse_ethernet_header(Server::PacketData &amp;packet_data, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00126">server.cpp:126</a></div></div>
+<div class="ttc" id="aa00008_html_a3bd0c340f8deab1bb579fcd1ec6ff17a"><div class="ttname"><a href="a00008.html#a3bd0c340f8deab1bb579fcd1ec6ff17a">prepare_socket_address</a></div><div class="ttdeci">void prepare_socket_address(Server::PacketData &amp;packet_data)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00196">server.cpp:196</a></div></div>
+<div class="ttc" id="aa00008_html_a6ef922dfbc7b51bfd8c18ab752e8e2fd"><div class="ttname"><a href="a00008.html#a6ef922dfbc7b51bfd8c18ab752e8e2fd">process_tcp_packet</a></div><div class="ttdeci">void process_tcp_packet(std::shared_ptr&lt; Server::Data &gt; internal, Server::PacketData &amp;packet_data, struct iphdr *ip_header)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00276">server.cpp:276</a></div></div>
+<div class="ttc" id="aa00008_html_a706ee73268db25870f26e074c69d84cb"><div class="ttname"><a href="a00008.html#a706ee73268db25870f26e074c69d84cb">remove_sack_options</a></div><div class="ttdeci">void remove_sack_options(std::shared_ptr&lt; Server::Data &gt; internal, Server::PacketData &amp;packet_data, struct iphdr *ip_header)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00336">server.cpp:336</a></div></div>
+<div class="ttc" id="aa00008_html_aa1bc425b1a57cabd0126dbdad3ad22da"><div class="ttname"><a href="a00008.html#aa1bc425b1a57cabd0126dbdad3ad22da">get_destination_ip</a></div><div class="ttdeci">bool get_destination_ip(struct iphdr *ip_header, Server::PacketData &amp;packet_data, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00159">server.cpp:159</a></div></div>
+<div class="ttc" id="aa00008_html_aa5641a1f50835eb1a6c4d7b712c64528"><div class="ttname"><a href="a00008.html#aa5641a1f50835eb1a6c4d7b712c64528">parse_ip_header</a></div><div class="ttdeci">struct iphdr * parse_ip_header(Server::PacketData &amp;packet_data, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00146">server.cpp:146</a></div></div>
+<div class="ttc" id="aa00008_html_abd15d0f6b961a3f9608b79be75f93f6b"><div class="ttname"><a href="a00008.html#abd15d0f6b961a3f9608b79be75f93f6b">copy_packet_data</a></div><div class="ttdeci">void copy_packet_data(Server::PacketData &amp;packet_data, const struct pcap_pkthdr *header, const u_char *packet, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00117">server.cpp:117</a></div></div>
+<div class="ttc" id="aa00023_html_a063a58ec9acd8e3e2fd505cce47a65ba"><div class="ttname"><a href="a00023.html#a063a58ec9acd8e3e2fd505cce47a65ba">window</a></div><div class="ttdeci">void window(std::shared_ptr&lt; Server::Data &gt; internal, const Server::PacketData &amp;original_packet)</div><div class="ttdef"><b>Definition</b> <a href="a00023_source.html#l00012">window.cpp:12</a></div></div>
+<div class="ttc" id="aa00104_html"><div class="ttname"><a href="a00104.html">Server::PacketData</a></div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00018">server.h:19</a></div></div>
+<div class="ttc" id="aa00104_html_a6fcfbe21641ddcfd5cd38ef7ab7998db"><div class="ttname"><a href="a00104.html#a6fcfbe21641ddcfd5cd38ef7ab7998db">Server::PacketData::length</a></div><div class="ttdeci">size_t length</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00021">server.h:21</a></div></div>
+<div class="ttc" id="aa00104_html_aeb6bac334d85cdc98af145dc5e4e3b40"><div class="ttname"><a href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">Server::PacketData::data</a></div><div class="ttdeci">std::vector&lt; unsigned char &gt; data</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00020">server.h:20</a></div></div>
+</div><!-- fragment --><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00077_aca814acf6586fc323ecb3ae699ca6bc0_cgraph.png" border="0" usemap="#aa00077_aca814acf6586fc323ecb3ae699ca6bc0_cgraph" alt=""/></div>
+<map name="aa00077_aca814acf6586fc323ecb3ae699ca6bc0_cgraph" id="aa00077_aca814acf6586fc323ecb3ae699ca6bc0_cgraph">
+<area shape="rect" title=" " alt="" coords="5,277,117,303"/>
+<area shape="rect" href="a00008.html#a0175e149bc973fc0744f254bc93231a4" title=" " alt="" coords="175,5,337,31"/>
+<area shape="poly" title=" " alt="" coords="61,276,69,231,86,168,116,99,138,68,164,40,169,36,173,40,167,44,142,71,121,102,91,169,74,233,67,277"/>
+<area shape="rect" href="a00008.html#abd15d0f6b961a3f9608b79be75f93f6b" title=" " alt="" coords="187,55,325,80"/>
+<area shape="poly" title=" " alt="" coords="63,276,73,239,93,189,122,135,141,111,164,89,173,83,176,88,167,93,145,114,127,138,97,191,78,241,68,278"/>
+<area shape="rect" href="a00008.html#aa1bc425b1a57cabd0126dbdad3ad22da" title=" " alt="" coords="185,104,327,129"/>
+<area shape="poly" title=" " alt="" coords="66,276,100,210,128,171,164,139,173,133,176,137,167,143,132,175,104,213,70,278"/>
+<area shape="rect" href="a00008.html#a2149cd2b6d56a6561d1fe96bbd24f960" title=" " alt="" coords="177,153,335,179"/>
+<area shape="poly" title=" " alt="" coords="70,275,108,232,134,208,164,188,177,181,179,186,167,192,138,212,112,236,74,279"/>
+<area shape="rect" href="a00008.html#a22eb1a4cd683c6aa5e856ccaafd48178" title=" " alt="" coords="205,203,307,228"/>
+<area shape="poly" title=" " alt="" coords="84,275,164,237,191,228,192,233,166,242,86,280"/>
+<area shape="rect" href="a00008.html#a3090c51cd1c041f25d090b287c1cc57a" title=" " alt="" coords="170,252,342,277"/>
+<area shape="poly" title=" " alt="" coords="117,280,156,275,157,280,118,285"/>
+<area shape="rect" href="a00008.html#aa5641a1f50835eb1a6c4d7b712c64528" title=" " alt="" coords="191,301,321,327"/>
+<area shape="poly" title=" " alt="" coords="118,294,178,302,177,307,117,300"/>
+<area shape="rect" href="a00008.html#a3bd0c340f8deab1bb579fcd1ec6ff17a" title=" " alt="" coords="167,351,345,376"/>
+<area shape="poly" title=" " alt="" coords="88,300,166,336,193,344,191,349,164,340,86,305"/>
+<area shape="rect" href="a00008.html#a6ef922dfbc7b51bfd8c18ab752e8e2fd" title=" " alt="" coords="409,377,559,403"/>
+<area shape="poly" title=" " alt="" coords="73,301,110,345,136,368,166,385,227,402,290,408,351,408,406,402,406,407,351,413,290,414,226,407,164,390,133,372,106,349,69,305"/>
+<area shape="rect" href="a00008.html#a706ee73268db25870f26e074c69d84cb" title=" " alt="" coords="174,501,338,527"/>
+<area shape="poly" title=" " alt="" coords="68,302,78,339,97,390,126,443,145,467,167,488,174,493,170,497,164,492,141,471,122,446,92,392,73,341,63,304"/>
+<area shape="rect" href="a00008.html#a18c76aca92495fd5bc9b9520b2f30362" title=" " alt="" coords="165,551,347,576"/>
+<area shape="poly" title=" " alt="" coords="67,303,74,348,91,411,104,446,121,479,142,510,167,537,173,542,169,546,164,541,138,514,116,482,99,448,86,413,69,349,61,304"/>
+<area shape="rect" href="a00023.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="220,452,292,477"/>
+<area shape="poly" title=" " alt="" coords="71,302,106,363,134,399,167,431,187,442,208,451,206,456,184,447,164,435,130,403,102,366,66,304"/>
+<area shape="rect" href="a00038.html#a91a4e24d46900f2d4c78a5e062e0608d" title=" " alt="" coords="416,153,552,179"/>
+<area shape="poly" title=" " alt="" coords="336,163,402,163,402,169,336,169"/>
+<area shape="rect" href="a00029.html#a2e8c16b72b01132d58ef8e9e6fd7f101" title=" " alt="" coords="634,427,783,452"/>
+<area shape="poly" title=" " alt="" coords="543,400,637,421,636,426,542,405"/>
+<area shape="rect" href="a00029.html#ae2cacf1859fb0b54c2a8c98def76b9e6" title=" " alt="" coords="621,476,796,501"/>
+<area shape="poly" title=" " alt="" coords="550,400,575,412,590,425,600,438,608,450,623,462,634,469,632,473,620,467,604,454,595,441,586,428,572,416,548,405"/>
+<area shape="rect" href="a00008.html#aecacb419c1bf41572f0c8edc6b94092e" title=" " alt="" coords="844,301,996,327"/>
+<area shape="poly" title=" " alt="" coords="552,375,621,362,830,326,830,331,622,367,553,380"/>
+<area shape="rect" href="a00008.html#a4d02a66e48a2a8974d5fe398d49b791a" title=" " alt="" coords="640,276,777,301"/>
+<area shape="poly" title=" " alt="" coords="507,375,620,318,657,304,659,309,622,323,510,380"/>
+<area shape="rect" href="a00008.html#a8364cd6dd9fd67102cb24a8fe003cf65" title=" " alt="" coords="631,377,786,403"/>
+<area shape="poly" title=" " alt="" coords="559,387,617,387,617,393,559,393"/>
+<area shape="poly" title=" " alt="" coords="778,294,831,301,830,306,777,300"/>
+<area shape="rect" href="a00029.html#a1d919e8ec4fa73e99303ca26f1a24188" title=" " alt="" coords="399,525,569,551"/>
+<area shape="poly" title=" " alt="" coords="338,520,385,525,384,530,338,525"/>
+<area shape="rect" href="a00029.html#a33bdbedcf6fc6cc7f29ca20db5bbf485" title=" " alt="" coords="395,476,573,501"/>
+<area shape="poly" title=" " alt="" coords="338,502,381,497,381,503,338,508"/>
+<area shape="poly" title=" " alt="" coords="293,470,348,488,396,512,417,519,415,524,394,516,346,492,291,475"/>
+<area shape="poly" title=" " alt="" coords="292,466,381,475,381,480,292,471"/>
+<area shape="rect" href="a00011.html#a60773435d027e71a67dd3070a065961c" title=" " alt="" coords="433,427,535,452"/>
+<area shape="poly" title=" " alt="" coords="292,458,419,444,419,449,292,463"/>
+<area shape="poly" title=" " alt="" coords="536,437,621,437,621,442,536,442"/>
+<area shape="poly" title=" " alt="" coords="536,448,637,470,636,476,535,453"/>
+</map>
+</div>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00077_aca814acf6586fc323ecb3ae699ca6bc0_icgraph.png" border="0" usemap="#aa00077_aca814acf6586fc323ecb3ae699ca6bc0_icgraph" alt=""/></div>
+<map name="aa00077_aca814acf6586fc323ecb3ae699ca6bc0_icgraph" id="aa00077_aca814acf6586fc323ecb3ae699ca6bc0_icgraph">
+<area shape="rect" title=" " alt="" coords="529,5,641,31"/>
+<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,5,481,31"/>
+<area shape="poly" title=" " alt="" coords="516,21,482,21,482,15,516,15"/>
+<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
 </div>
 </div>
-<a id="aeeb5b1b6229ea527d70431119f46ddab" name="aeeb5b1b6229ea527d70431119f46ddab"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aeeb5b1b6229ea527d70431119f46ddab">&#9670;&#160;</a></span>getTimeWait()</h2>
+<a id="a60773435d027e71a67dd3070a065961c" name="a60773435d027e71a67dd3070a065961c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a60773435d027e71a67dd3070a065961c">&#9670;&#160;</a></span>send_packet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int ConfigManager::getTimeWait </td>
+          <td class="memname">void send_packet </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td class="paramtype">const <a class="el" href="a00104.html">Server::PacketData</a> &amp;&#160;</td>
+          <td class="paramname"><em>pkt</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">quill::Logger *&#160;</td>
+          <td class="paramname"><em>logger</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt;&#160;</td>
+          <td class="paramname"><em>internal</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00002_source.html#l00062">62</a> of file <a class="el" href="a00002_source.html">config.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   63</span>{</div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordflow">return</span> timeWait;</div>
-<div class="line"><span class="lineno">   65</span>}</div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="a00011_source.html#l00011">11</a> of file <a class="el" href="a00011_source.html">sender.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   12</span>{</div>
+<div class="line"><span class="lineno">   13</span>    <span class="comment">// Generate packet ID</span></div>
+<div class="line"><span class="lineno">   14</span>    <span class="keyword">struct </span>iphdr *ip_header = (<span class="keyword">struct </span>iphdr *)(pkt.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr));</div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordtype">int</span> ip_header_length = ip_header-&gt;ihl * 4;</div>
+<div class="line"><span class="lineno">   16</span>    <span class="keyword">struct </span>tcphdr *tcp_header = (<span class="keyword">struct </span>tcphdr *)(pkt.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr) + ip_header_length);</div>
+<div class="line"><span class="lineno">   17</span> </div>
+<div class="line"><span class="lineno">   18</span>    std::string packet_id = <a class="code hl_function" href="a00029.html#a2e8c16b72b01132d58ef8e9e6fd7f101">generate_packet_id</a>(ip_header, tcp_header);</div>
+<div class="line"><span class="lineno">   19</span>    std::string timestamp = <a class="code hl_function" href="a00029.html#ae2cacf1859fb0b54c2a8c98def76b9e6">get_current_timestamp</a>();</div>
+<div class="line"><span class="lineno">   20</span> </div>
+<div class="line"><span class="lineno">   21</span>    {</div>
+<div class="line"><span class="lineno">   22</span>        std::lock_guard&lt;std::mutex&gt; lock(internal-&gt;packet_log_mutex);</div>
+<div class="line"><span class="lineno">   23</span>        <span class="keyword">auto</span> it = internal-&gt;packet_log.find(packet_id);</div>
+<div class="line"><span class="lineno">   24</span>        <span class="keywordflow">if</span> (it != internal-&gt;packet_log.end())</div>
+<div class="line"><span class="lineno">   25</span>        {</div>
+<div class="line"><span class="lineno">   26</span>            it-&gt;second.status = <span class="stringliteral">&quot;sent&quot;</span>;</div>
+<div class="line"><span class="lineno">   27</span>            it-&gt;second.timestamp = timestamp;</div>
+<div class="line"><span class="lineno">   28</span>        }</div>
+<div class="line"><span class="lineno">   29</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   30</span>        {</div>
+<div class="line"><span class="lineno">   31</span>            <span class="comment">// If packet wasn&#39;t logged when received, log it now</span></div>
+<div class="line"><span class="lineno">   32</span>            internal-&gt;packet_log[packet_id] = {<span class="stringliteral">&quot;sent&quot;</span>, timestamp};</div>
+<div class="line"><span class="lineno">   33</span>        }</div>
+<div class="line"><span class="lineno">   34</span>    }</div>
+<div class="line"><span class="lineno">   35</span> </div>
+<div class="line"><span class="lineno">   36</span>    LOG_DEBUG(logger, <span class="stringliteral">&quot;Packet with ID {} sent at {}&quot;</span>, packet_id, timestamp);</div>
+<div class="line"><span class="lineno">   37</span> </div>
+<div class="line"><span class="lineno">   38</span>    <span class="comment">// Existing code to send the packet...</span></div>
+<div class="line"><span class="lineno">   39</span>    std::lock_guard&lt;std::mutex&gt; raw_lock(<a class="code hl_variable" href="a00065.html#a2b3b87e06ade0ff4cdee803fc15e5428">raw_socket_mutex</a>);</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    ssize_t sent = sendto(<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>, pkt.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data(), pkt.<a class="code hl_variable" href="a00104.html#a6fcfbe21641ddcfd5cd38ef7ab7998db">length</a>, 0,</div>
+<div class="line"><span class="lineno">   42</span>                          (<span class="keyword">struct</span> sockaddr *)&amp;pkt.<a class="code hl_variable" href="a00104.html#aa286310eace6844779ed02bc0aeed9dd">socket_address</a>, <span class="keyword">sizeof</span>(pkt.<a class="code hl_variable" href="a00104.html#aa286310eace6844779ed02bc0aeed9dd">socket_address</a>));</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">if</span> (sent == -1)</div>
+<div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>        LOG_CRITICAL(logger, <span class="stringliteral">&quot;Failed to send packet to {}&quot;</span>, pkt.<a class="code hl_variable" href="a00104.html#a10fb13276ff1506719f751981b41e771">dest_ip</a>);</div>
+<div class="line"><span class="lineno">   46</span>    }</div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">   48</span>    {</div>
+<div class="line"><span class="lineno">   49</span>        LOG_INFO(logger, <span class="stringliteral">&quot;Forwarded packet to {}, length: {} bytes&quot;</span>, pkt.<a class="code hl_variable" href="a00104.html#a10fb13276ff1506719f751981b41e771">dest_ip</a>, sent);</div>
+<div class="line"><span class="lineno">   50</span>    }</div>
+<div class="line"><span class="lineno">   51</span>}</div>
+<div class="ttc" id="aa00029_html_a2e8c16b72b01132d58ef8e9e6fd7f101"><div class="ttname"><a href="a00029.html#a2e8c16b72b01132d58ef8e9e6fd7f101">generate_packet_id</a></div><div class="ttdeci">std::string generate_packet_id(const struct iphdr *ip_header, const struct tcphdr *tcp_header)</div><div class="ttdef"><b>Definition</b> <a href="a00029_source.html#l00009">utilities.cpp:9</a></div></div>
+<div class="ttc" id="aa00029_html_ae2cacf1859fb0b54c2a8c98def76b9e6"><div class="ttname"><a href="a00029.html#ae2cacf1859fb0b54c2a8c98def76b9e6">get_current_timestamp</a></div><div class="ttdeci">std::string get_current_timestamp()</div><div class="ttdef"><b>Definition</b> <a href="a00029_source.html#l00019">utilities.cpp:19</a></div></div>
+<div class="ttc" id="aa00065_html_a08923b3f7d62077d55fd2a500eb00163"><div class="ttname"><a href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a></div><div class="ttdeci">int raw_socket</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00039">general.h:39</a></div></div>
+<div class="ttc" id="aa00065_html_a2b3b87e06ade0ff4cdee803fc15e5428"><div class="ttname"><a href="a00065.html#a2b3b87e06ade0ff4cdee803fc15e5428">raw_socket_mutex</a></div><div class="ttdeci">std::mutex raw_socket_mutex</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00043">general.h:43</a></div></div>
+<div class="ttc" id="aa00104_html_a10fb13276ff1506719f751981b41e771"><div class="ttname"><a href="a00104.html#a10fb13276ff1506719f751981b41e771">Server::PacketData::dest_ip</a></div><div class="ttdeci">char dest_ip[INET_ADDRSTRLEN]</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00023">server.h:23</a></div></div>
+<div class="ttc" id="aa00104_html_aa286310eace6844779ed02bc0aeed9dd"><div class="ttname"><a href="a00104.html#aa286310eace6844779ed02bc0aeed9dd">Server::PacketData::socket_address</a></div><div class="ttdeci">struct sockaddr_ll socket_address</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00022">server.h:22</a></div></div>
+</div><!-- fragment --><div id="dynsection-9" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-9-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-9-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-9-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00077_a60773435d027e71a67dd3070a065961c_cgraph.png" border="0" usemap="#aa00077_a60773435d027e71a67dd3070a065961c_cgraph" alt=""/></div>
+<map name="aa00077_a60773435d027e71a67dd3070a065961c_cgraph" id="aa00077_a60773435d027e71a67dd3070a065961c_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,108,56"/>
+<area shape="rect" href="a00029.html#a2e8c16b72b01132d58ef8e9e6fd7f101" title=" " alt="" coords="169,5,318,31"/>
+<area shape="poly" title=" " alt="" coords="108,34,155,27,155,33,109,39"/>
+<area shape="rect" href="a00029.html#ae2cacf1859fb0b54c2a8c98def76b9e6" title=" " alt="" coords="156,55,331,80"/>
+<area shape="poly" title=" " alt="" coords="109,47,143,52,142,57,108,53"/>
+</map>
+</div>
+<div id="dynsection-10" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-10-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-10-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-10-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00077_a60773435d027e71a67dd3070a065961c_icgraph.png" border="0" usemap="#aa00077_a60773435d027e71a67dd3070a065961c_icgraph" alt=""/></div>
+<map name="aa00077_a60773435d027e71a67dd3070a065961c_icgraph" id="aa00077_a60773435d027e71a67dd3070a065961c_icgraph">
+<area shape="rect" title=" " alt="" coords="809,5,912,31"/>
+<area shape="rect" href="a00023.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="689,5,761,31"/>
+<area shape="poly" title=" " alt="" coords="796,21,762,21,762,15,796,15"/>
+<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,5,641,31"/>
+<area shape="poly" title=" " alt="" coords="676,21,641,21,641,15,676,15"/>
+<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,5,481,31"/>
+<area shape="poly" title=" " alt="" coords="516,21,482,21,482,15,516,15"/>
+<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
 </div>
 </div>
-<a id="a51406b8b2a22f1744b10414eb67f5c93" name="a51406b8b2a22f1744b10414eb67f5c93"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a51406b8b2a22f1744b10414eb67f5c93">&#9670;&#160;</a></span>loadConfig()</h2>
+<a id="a0dc7bb89f1211db6f17081cf908b7b13" name="a0dc7bb89f1211db6f17081cf908b7b13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0dc7bb89f1211db6f17081cf908b7b13">&#9670;&#160;</a></span>send_queued_packets()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">bool ConfigManager::loadConfig </td>
+          <td class="memname">void send_queued_packets </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt;&#160;</td>
+          <td class="paramname"><em>internal</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00002_source.html#l00016">16</a> of file <a class="el" href="a00002_source.html">config.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   17</span>{</div>
-<div class="line"><span class="lineno">   18</span>    <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   19</span>    {</div>
-<div class="line"><span class="lineno">   20</span>        cfg.readFile(filename.c_str());</div>
-<div class="line"><span class="lineno">   21</span>        LOG_INFO(logger, <span class="stringliteral">&quot;Successfully read configuration file: {}&quot;</span>, filename);</div>
-<div class="line"><span class="lineno">   22</span>    }</div>
-<div class="line"><span class="lineno">   23</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> libconfig::FileIOException &amp;fioex)</div>
-<div class="line"><span class="lineno">   24</span>    {</div>
-<div class="line"><span class="lineno">   25</span>        LOG_ERROR(logger, <span class="stringliteral">&quot;I/O error while reading file: {}&quot;</span>, filename);</div>
-<div class="line"><span class="lineno">   26</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   27</span>    }</div>
-<div class="line"><span class="lineno">   28</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> libconfig::ParseException &amp;pex)</div>
-<div class="line"><span class="lineno">   29</span>    {</div>
-<div class="line"><span class="lineno">   30</span>        LOG_ERROR(logger, <span class="stringliteral">&quot;Parse error at {}:{} - {}&quot;</span>, pex.getFile(), pex.getLine(), pex.getError());</div>
-<div class="line"><span class="lineno">   31</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   32</span>    }</div>
-<div class="line"><span class="lineno">   33</span> </div>
-<div class="line"><span class="lineno">   34</span>    <span class="comment">// Retrieve settings from the config file</span></div>
-<div class="line"><span class="lineno">   35</span>    <span class="keywordflow">try</span></div>
-<div class="line"><span class="lineno">   36</span>    {</div>
-<div class="line"><span class="lineno">   37</span>        logLevel = cfg.lookup(<span class="stringliteral">&quot;log_level&quot;</span>).c_str();</div>
-<div class="line"><span class="lineno">   38</span>        logDirectory = cfg.lookup(<span class="stringliteral">&quot;log_directory&quot;</span>).c_str(); <span class="comment">// Cast to string</span></div>
-<div class="line"><span class="lineno">   39</span>        timeWait = cfg.lookup(<span class="stringliteral">&quot;time_wait_ms&quot;</span>);</div>
-<div class="line"><span class="lineno">   40</span>        reorderPackets = cfg.lookup(<span class="stringliteral">&quot;reorder_packets&quot;</span>);</div>
-<div class="line"><span class="lineno">   41</span>        manageSSL = cfg.lookup(<span class="stringliteral">&quot;manage_ssl&quot;</span>);</div>
-<div class="line"><span class="lineno">   42</span>    }</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> libconfig::SettingNotFoundException &amp;nfex)</div>
-<div class="line"><span class="lineno">   44</span>    {</div>
-<div class="line"><span class="lineno">   45</span>        LOG_ERROR(logger, <span class="stringliteral">&quot;Setting not found in configuration file: {}&quot;</span>, filename);</div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line"><span class="lineno">   47</span>    }</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
-<div class="line"><span class="lineno">   50</span>}</div>
-</div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00077_a51406b8b2a22f1744b10414eb67f5c93_icgraph.png" border="0" usemap="#aa00077_a51406b8b2a22f1744b10414eb67f5c93_icgraph" alt=""/></div>
-<map name="aa00077_a51406b8b2a22f1744b10414eb67f5c93_icgraph" id="aa00077_a51406b8b2a22f1744b10414eb67f5c93_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,305,31"/>
-<area shape="rect" href="a00020.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
-</map>
 </div>
+<a id="affca795d04111c98c58b53ce02ad4f07" name="affca795d04111c98c58b53ce02ad4f07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#affca795d04111c98c58b53ce02ad4f07">&#9670;&#160;</a></span>timer_thread()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void timer_thread </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt;&#160;</td>
+          <td class="paramname"><em>internal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following files:<ul>
-<li><a class="el" href="a00038_source.html">config.h</a></li>
-<li><a class="el" href="a00002_source.html">config.cpp</a></li>
-</ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="a00077.html">ConfigManager</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_9802b4c1251697bb7aa87f8aabca2719.html">server</a></li><li class="navelem"><a class="el" href="a00077.html">server.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

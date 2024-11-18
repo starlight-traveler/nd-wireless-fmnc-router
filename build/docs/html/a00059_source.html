@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FMNC-MITM: client.h Source File</title>
+<title>FMNC-MITM: sockets.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -94,47 +94,26 @@ $(document).ready(function(){initNavTree('a00059_source.html',''); initResizable
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">client.h</div></div>
+  <div class="headertitle"><div class="title">sockets.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="a00059.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef CLIENT</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define CLIENT</span></div>
+<a href="a00059.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SOCKETS_MITM</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SOCKETS_MITM</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="a00050.html">general.h</a>&quot;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="a00065.html">general.h</a>&quot;</span></div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="a00059.html#a879456c3b8e2853f7044d764e9c180d4">    6</a></span><span class="preprocessor">#define MAX_PACKET_SIZE 65536</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keywordtype">void</span> <a class="code hl_function" href="a00059.html#adf1a1b6666f7a6f364bcca7d27a79442">setup_raw_socket</a>();</div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="a00068.html">    8</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="a00068.html">Client</a></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="comment">// Configuration</span></div>
-<div class="foldopen" id="foldopen00011" data-start="{" data-end="};">
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno"><a class="line" href="a00073.html">   11</a></span>    <span class="keyword">typedef</span> <span class="keyword">struct</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    {</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="a00073.html#a67d2018b2848ac33ff318ea2bd3eac28">   13</a></span>        quill::Logger *<a class="code hl_variable" href="a00073.html#a67d2018b2848ac33ff318ea2bd3eac28">logger</a>;</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    } <a class="code hl_struct" href="a00073.html">Configuration</a>;</div>
-</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>}</div>
-</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="a00059.html#a8c6c08e6430364d394b8113ac986c5ab">capture_packets_to</a>(quill::Logger *logger);</div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="a00059.html#aaa9b57f7648f54c1911058e4b8e94ef5">   20</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="a00059.html#aaa9b57f7648f54c1911058e4b8e94ef5">packet_handler_to</a>(<a class="code hl_struct" href="a00073.html">Client::Configuration</a> args[], <span class="keyword">const</span> <span class="keyword">struct</span> pcap_pkthdr *header, <span class="keyword">const</span> u_char *packet);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00050_html"><div class="ttname"><a href="a00050.html">general.h</a></div></div>
-<div class="ttc" id="aa00059_html_a8c6c08e6430364d394b8113ac986c5ab"><div class="ttname"><a href="a00059.html#a8c6c08e6430364d394b8113ac986c5ab">capture_packets_to</a></div><div class="ttdeci">void capture_packets_to(quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00023_source.html#l00006">client.cpp:6</a></div></div>
-<div class="ttc" id="aa00059_html_aaa9b57f7648f54c1911058e4b8e94ef5"><div class="ttname"><a href="a00059.html#aaa9b57f7648f54c1911058e4b8e94ef5">packet_handler_to</a></div><div class="ttdeci">void packet_handler_to(Client::Configuration args[], const struct pcap_pkthdr *header, const u_char *packet)</div></div>
-<div class="ttc" id="aa00068_html"><div class="ttname"><a href="a00068.html">Client</a></div><div class="ttdef"><b>Definition</b> <a href="a00059_source.html#l00008">client.h:9</a></div></div>
-<div class="ttc" id="aa00073_html"><div class="ttname"><a href="a00073.html">Client::Configuration</a></div><div class="ttdef"><b>Definition</b> <a href="a00059_source.html#l00011">client.h:12</a></div></div>
-<div class="ttc" id="aa00073_html_a67d2018b2848ac33ff318ea2bd3eac28"><div class="ttname"><a href="a00073.html#a67d2018b2848ac33ff318ea2bd3eac28">Client::Configuration::logger</a></div><div class="ttdeci">quill::Logger * logger</div><div class="ttdef"><b>Definition</b> <a href="a00059_source.html#l00013">client.h:13</a></div></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
+<div class="ttc" id="aa00059_html_adf1a1b6666f7a6f364bcca7d27a79442"><div class="ttname"><a href="a00059.html#adf1a1b6666f7a6f364bcca7d27a79442">setup_raw_socket</a></div><div class="ttdeci">void setup_raw_socket()</div><div class="ttdef"><b>Definition</b> <a href="a00005_source.html#l00004">sockets.cpp:4</a></div></div>
+<div class="ttc" id="aa00065_html"><div class="ttname"><a href="a00065.html">general.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_eca4379131abe55f66c454f8d4bf8fd2.html">client</a></li><li class="navelem"><a class="el" href="a00059.html">client.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="a00059.html">sockets.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

@@ -1,6 +1,7 @@
 var a00044 =
 [
-    [ "MacCacheEntry", "a00081.html", "a00081" ],
-    [ "mac_cache", "a00044.html#a1fa7a255d437df566293d8578cb49122", null ],
-    [ "mac_cache_mutex", "a00044.html#a8992c39e04f6c7f3f7da55d6fd0f0f73", null ]
+    [ "dump_packet_log", "a00044.html#a46ba20af6c21d2dca8a1ac3b1aeaf937", null ],
+    [ "dump_tcp_flag_counts", "a00044.html#afcb35109e8b74daefc9e9130c5cd4d9a", null ],
+    [ "dump_tcp_option_counts", "a00044.html#ae5ed28b7d469288895f4e51339355df7", null ],
+    [ "get_tcp_option_name", "a00044.html#a5c8bc944cf715bce438eaca3705ad329", null ]
 ];

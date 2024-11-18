@@ -223,6 +223,62 @@ CMakeFiles/FMNC-MITM.dir/src/utilities.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FMNC-MITM.dir/src/utilities.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /local/research/research-mitmproxy/src/utilities.cpp -o CMakeFiles/FMNC-MITM.dir/src/utilities.cpp.s
 
+CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o: CMakeFiles/FMNC-MITM.dir/flags.make
+CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o: /local/research/research-mitmproxy/src/manipulation/window.cpp
+CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o: CMakeFiles/FMNC-MITM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o -MF CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o.d -o CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o -c /local/research/research-mitmproxy/src/manipulation/window.cpp
+
+CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /local/research/research-mitmproxy/src/manipulation/window.cpp > CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.i
+
+CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /local/research/research-mitmproxy/src/manipulation/window.cpp -o CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.s
+
+CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o: CMakeFiles/FMNC-MITM.dir/flags.make
+CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o: /local/research/research-mitmproxy/src/manipulation/timing.cpp
+CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o: CMakeFiles/FMNC-MITM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o -MF CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o.d -o CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o -c /local/research/research-mitmproxy/src/manipulation/timing.cpp
+
+CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /local/research/research-mitmproxy/src/manipulation/timing.cpp > CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.i
+
+CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /local/research/research-mitmproxy/src/manipulation/timing.cpp -o CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.s
+
+CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o: CMakeFiles/FMNC-MITM.dir/flags.make
+CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o: /local/research/research-mitmproxy/src/manipulation/sending.cpp
+CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o: CMakeFiles/FMNC-MITM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o -MF CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o.d -o CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o -c /local/research/research-mitmproxy/src/manipulation/sending.cpp
+
+CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /local/research/research-mitmproxy/src/manipulation/sending.cpp > CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.i
+
+CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /local/research/research-mitmproxy/src/manipulation/sending.cpp -o CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.s
+
+CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o: CMakeFiles/FMNC-MITM.dir/flags.make
+CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o: /local/research/research-mitmproxy/src/manipulation/packeting.cpp
+CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o: CMakeFiles/FMNC-MITM.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o -MF CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o.d -o CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o -c /local/research/research-mitmproxy/src/manipulation/packeting.cpp
+
+CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /local/research/research-mitmproxy/src/manipulation/packeting.cpp > CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.i
+
+CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /local/research/research-mitmproxy/src/manipulation/packeting.cpp -o CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.s
+
 # Object files for target FMNC-MITM
 FMNC__MITM_OBJECTS = \
 "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o" \
@@ -235,7 +291,11 @@ FMNC__MITM_OBJECTS = \
 "CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.o" \
 "CMakeFiles/FMNC-MITM.dir/src/serialization/serialization_manager.cpp.o" \
 "CMakeFiles/FMNC-MITM.dir/src/serialization/tcp_header.cpp.o" \
-"CMakeFiles/FMNC-MITM.dir/src/utilities.cpp.o"
+"CMakeFiles/FMNC-MITM.dir/src/utilities.cpp.o" \
+"CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o" \
+"CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o" \
+"CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o" \
+"CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o"
 
 # External object files for target FMNC-MITM
 FMNC__MITM_EXTERNAL_OBJECTS =
@@ -251,13 +311,17 @@ FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/server_to_client/sender.cpp.o
 FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/serialization/serialization_manager.cpp.o
 FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/serialization/tcp_header.cpp.o
 FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/utilities.cpp.o
+FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o
+FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o
+FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o
+FMNC-MITM: CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o
 FMNC-MITM: CMakeFiles/FMNC-MITM.dir/build.make
 FMNC-MITM: /usr/lib/x86_64-linux-gnu/libssl.so
 FMNC-MITM: /usr/lib/x86_64-linux-gnu/libcrypto.so
 FMNC-MITM: /usr/lib/x86_64-linux-gnu/libssl.so
 FMNC-MITM: /usr/lib/x86_64-linux-gnu/libcrypto.so
 FMNC-MITM: CMakeFiles/FMNC-MITM.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Linking CXX executable FMNC-MITM"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/local/research/research-mitmproxy/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking CXX executable FMNC-MITM"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FMNC-MITM.dir/link.txt --verbose=$(VERBOSE)
 	/usr/bin/cmake -E env bash /local/research/research-mitmproxy/scripts/post_build_script.sh
 

@@ -19,5 +19,6 @@ var a00008 =
     [ "process_tcp_options", "a00008.html#a8364cd6dd9fd67102cb24a8fe003cf65", null ],
     [ "process_tcp_packet", "a00008.html#a6ef922dfbc7b51bfd8c18ab752e8e2fd", null ],
     [ "queue_packet", "a00008.html#aca814acf6586fc323ecb3ae699ca6bc0", null ],
+    [ "remove_sack_options", "a00008.html#a706ee73268db25870f26e074c69d84cb", null ],
     [ "update_ethernet_header", "a00008.html#a18c76aca92495fd5bc9b9520b2f30362", null ]
 ];

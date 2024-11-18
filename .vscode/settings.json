@@ -3,6 +3,8 @@
         "*.m": "matlab",
         "*.svelte": "scss",
         "ios": "cpp",
-        "condition_variable": "cpp"
+        "condition_variable": "cpp",
+        "*.tpp": "cpp",
+        "random": "cpp"
     }
 }
