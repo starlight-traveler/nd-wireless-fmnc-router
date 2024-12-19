@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FMNC-MITM: window.cpp File Reference</title>
+<title>FMNC-MITM: packeting.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,147 +90,161 @@ $(document).ready(function(){initNavTree('a00023.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#define-members">Macros</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">window.cpp File Reference</div></div>
+  <div class="headertitle"><div class="title">packeting.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00062_source.html">window.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00077_source.html">server.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="a00071_source.html">utilities.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00059_source.html">packeting.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00074_source.html">utilities.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00080_source.html">server.h</a>&quot;</code><br />
 <code>#include &lt;random&gt;</code><br />
+<code>#include &lt;algorithm&gt;</code><br />
+<code>#include &lt;cstring&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00050_source.html">logger.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for window.cpp:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for packeting.cpp:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00024.png" border="0" usemap="#awindow_8cpp" alt=""/></div>
-<map name="awindow_8cpp" id="awindow_8cpp">
-<area shape="rect" title=" " alt="" coords="1277,5,1375,31"/>
-<area shape="rect" href="a00062.html" title=" " alt="" coords="1246,79,1329,104"/>
-<area shape="poly" title=" " alt="" coords="1322,32,1302,68,1298,65,1317,30"/>
-<area shape="rect" href="a00077.html" title=" " alt="" coords="1155,152,1230,177"/>
-<area shape="poly" title=" " alt="" coords="1302,33,1268,53,1236,80,1216,110,1203,140,1198,138,1212,107,1232,77,1265,49,1299,29"/>
-<area shape="rect" href="a00071.html" title=" " alt="" coords="1355,152,1438,177"/>
-<area shape="poly" title=" " alt="" coords="1334,30,1387,138,1383,141,1329,32"/>
-<area shape="rect" title=" " alt="" coords="1403,79,1475,104"/>
-<area shape="poly" title=" " alt="" coords="1346,28,1411,69,1408,74,1343,33"/>
-<area shape="poly" title=" " alt="" coords="1274,106,1221,146,1218,141,1271,102"/>
-<area shape="rect" title=" " alt="" coords="1254,152,1331,177"/>
-<area shape="poly" title=" " alt="" coords="1291,104,1293,138,1288,139,1286,105"/>
-<area shape="rect" href="a00065.html" title=" " alt="" coords="1253,225,1335,251"/>
-<area shape="poly" title=" " alt="" coords="1210,175,1268,215,1265,219,1207,180"/>
+<div class="center"><img src="a00024.png" border="0" usemap="#apacketing_8cpp" alt=""/></div>
+<map name="apacketing_8cpp" id="apacketing_8cpp">
+<area shape="rect" title=" " alt="" coords="2047,5,2159,31"/>
+<area shape="rect" href="a00059.html" title=" " alt="" coords="1751,79,1848,104"/>
+<area shape="poly" title=" " alt="" coords="2055,33,1862,78,1861,73,2054,28"/>
+<area shape="rect" href="a00080.html" title=" " alt="" coords="1909,152,1983,177"/>
+<area shape="poly" title=" " alt="" coords="2054,33,2011,51,1991,64,1973,80,1958,108,1951,138,1945,137,1953,107,1969,77,1988,60,2009,47,2052,28"/>
+<area shape="rect" title=" " alt="" coords="2453,299,2519,324"/>
+<area shape="poly" title=" " alt="" coords="2103,31,2097,73,2095,131,2098,163,2106,195,2118,224,2137,248,2440,300,2439,305,2134,253,2114,226,2101,196,2093,164,2090,132,2092,72,2098,31"/>
+<area shape="rect" href="a00050.html" title=" " alt="" coords="2543,299,2618,324"/>
+<area shape="poly" title=" " alt="" coords="2114,29,2142,64,2181,102,2275,165,2374,219,2466,262,2538,291,2536,296,2464,267,2372,224,2272,170,2178,106,2138,68,2109,33"/>
+<area shape="rect" href="a00074.html" title=" " alt="" coords="1983,79,2066,104"/>
+<area shape="poly" title=" " alt="" coords="2092,33,2049,71,2046,68,2089,29"/>
+<area shape="rect" title=" " alt="" coords="2191,79,2263,104"/>
+<area shape="poly" title=" " alt="" coords="2125,28,2197,69,2194,74,2122,33"/>
+<area shape="rect" title=" " alt="" coords="2287,79,2373,104"/>
+<area shape="poly" title=" " alt="" coords="2141,28,2281,72,2279,77,2139,33"/>
+<area shape="rect" title=" " alt="" coords="1534,152,1601,177"/>
+<area shape="poly" title=" " alt="" coords="1763,107,1614,152,1613,147,1761,101"/>
+<area shape="rect" title=" " alt="" coords="1625,152,1696,177"/>
+<area shape="poly" title=" " alt="" coords="1778,106,1697,148,1694,143,1776,102"/>
+<area shape="rect" title=" " alt="" coords="1720,152,1783,177"/>
+<area shape="poly" title=" " alt="" coords="1794,106,1769,142,1764,139,1789,103"/>
+<area shape="rect" title=" " alt="" coords="1807,152,1885,177"/>
+<area shape="poly" title=" " alt="" coords="1809,103,1833,139,1829,142,1805,106"/>
+<area shape="poly" title=" " alt="" coords="1824,102,1911,144,1909,148,1822,106"/>
+<area shape="rect" href="a00068.html" title=" " alt="" coords="1522,225,1605,251"/>
+<area shape="poly" title=" " alt="" coords="1909,177,1897,180,1619,230,1618,225,1896,175,1908,172"/>
 <area shape="rect" title=" " alt="" coords="5,299,71,324"/>
-<area shape="poly" title=" " alt="" coords="1252,243,697,261,350,278,201,289,85,302,84,296,201,284,350,273,697,255,1252,238"/>
-<area shape="rect" title=" " alt="" coords="95,299,157,324"/>
-<area shape="poly" title=" " alt="" coords="1252,243,736,261,416,278,279,289,171,302,170,296,278,284,416,273,736,256,1252,238"/>
-<area shape="rect" title=" " alt="" coords="181,299,247,324"/>
-<area shape="poly" title=" " alt="" coords="1252,242,1094,242,851,249,561,267,410,282,261,302,260,296,409,277,561,262,851,244,1094,237,1252,236"/>
-<area shape="rect" title=" " alt="" coords="271,299,338,324"/>
-<area shape="poly" title=" " alt="" coords="1252,242,1106,244,886,252,624,269,487,283,352,301,351,296,487,278,623,264,886,246,1106,238,1252,237"/>
-<area shape="rect" title=" " alt="" coords="362,299,437,324"/>
-<area shape="poly" title=" " alt="" coords="1252,243,922,258,691,275,456,301,451,302,450,297,455,296,691,270,922,253,1252,238"/>
-<area shape="rect" title=" " alt="" coords="1429,445,1509,471"/>
-<area shape="poly" title=" " alt="" coords="1252,242,1076,243,837,251,719,258,617,269,541,283,516,291,501,300,496,311,501,322,519,334,549,347,641,369,764,390,907,407,1198,435,1415,451,1414,456,1197,440,906,413,764,395,640,374,547,352,516,339,497,326,491,311,497,297,513,286,539,278,616,263,719,253,836,245,1076,238,1252,237"/>
-<area shape="rect" title=" " alt="" coords="512,299,615,324"/>
-<area shape="poly" title=" " alt="" coords="1253,244,994,263,815,280,629,301,628,296,814,275,993,258,1252,239"/>
-<area shape="rect" title=" " alt="" coords="639,299,735,324"/>
-<area shape="poly" title=" " alt="" coords="1253,245,1041,265,750,301,749,296,1040,260,1252,240"/>
-<area shape="rect" title=" " alt="" coords="759,299,863,324"/>
-<area shape="poly" title=" " alt="" coords="1253,247,877,301,876,296,1252,242"/>
-<area shape="rect" title=" " alt="" coords="888,299,996,324"/>
-<area shape="poly" title=" " alt="" coords="1253,250,1010,299,1009,294,1252,245"/>
-<area shape="rect" title=" " alt="" coords="1020,299,1155,324"/>
-<area shape="poly" title=" " alt="" coords="1262,253,1135,297,1133,292,1260,248"/>
-<area shape="rect" title=" " alt="" coords="1179,299,1294,324"/>
-<area shape="poly" title=" " alt="" coords="1287,253,1257,290,1253,286,1282,249"/>
-<area shape="rect" title=" " alt="" coords="1318,299,1385,324"/>
-<area shape="poly" title=" " alt="" coords="1306,249,1335,286,1331,290,1301,253"/>
-<area shape="rect" title=" " alt="" coords="1409,299,1501,324"/>
-<area shape="poly" title=" " alt="" coords="1321,248,1418,291,1415,295,1319,253"/>
-<area shape="rect" title=" " alt="" coords="1526,299,1614,324"/>
-<area shape="poly" title=" " alt="" coords="1337,247,1513,293,1512,298,1335,253"/>
-<area shape="rect" title=" " alt="" coords="1639,299,1768,324"/>
-<area shape="poly" title=" " alt="" coords="1336,244,1626,294,1625,299,1335,249"/>
-<area shape="rect" title=" " alt="" coords="1793,299,1857,324"/>
-<area shape="poly" title=" " alt="" coords="1336,240,1524,259,1650,275,1780,296,1779,301,1649,280,1524,264,1336,245"/>
-<area shape="rect" title=" " alt="" coords="1881,299,1977,324"/>
-<area shape="poly" title=" " alt="" coords="1336,240,1559,259,1867,296,1866,301,1558,265,1335,245"/>
-<area shape="rect" title=" " alt="" coords="2001,299,2065,324"/>
-<area shape="poly" title=" " alt="" coords="1336,238,1606,252,1793,270,1988,296,1987,301,1793,275,1606,258,1335,243"/>
-<area shape="rect" title=" " alt="" coords="2089,299,2213,324"/>
-<area shape="poly" title=" " alt="" coords="1336,239,1640,257,1853,274,2076,296,2075,301,1853,279,1639,263,1336,244"/>
-<area shape="rect" title=" " alt="" coords="2238,299,2294,324"/>
-<area shape="poly" title=" " alt="" coords="1336,236,1480,237,1698,244,1957,262,2092,277,2225,296,2224,302,2091,282,1956,267,1698,249,1480,242,1336,242"/>
-<area shape="rect" title=" " alt="" coords="2319,299,2387,324"/>
-<area shape="poly" title=" " alt="" coords="1336,236,1491,238,1728,245,2011,263,2159,278,2305,296,2305,302,2159,283,2011,269,1728,251,1491,243,1336,242"/>
-<area shape="rect" title=" " alt="" coords="2411,299,2521,324"/>
-<area shape="poly" title=" " alt="" coords="1336,237,1504,241,1763,250,2074,268,2398,296,2397,301,2074,273,1763,255,1503,246,1336,243"/>
-<area shape="rect" href="a00053.html" title=" " alt="" coords="2545,299,2619,324"/>
-<area shape="poly" title=" " alt="" coords="1335,238,1904,256,2259,273,2412,284,2531,296,2531,302,2411,289,2259,279,1903,261,1335,243"/>
-<area shape="rect" title=" " alt="" coords="2251,372,2387,397"/>
-<area shape="poly" title=" " alt="" coords="2545,325,2375,371,2374,366,2544,320"/>
-<area shape="rect" title=" " alt="" coords="2411,372,2521,397"/>
-<area shape="poly" title=" " alt="" coords="2565,326,2498,367,2495,362,2562,322"/>
-<area shape="rect" href="a00050.html" title=" " alt="" coords="2545,372,2619,397"/>
-<area shape="poly" title=" " alt="" coords="2578,324,2576,359,2571,358,2572,324"/>
-<area shape="poly" title=" " alt="" coords="2545,398,2533,400,2386,418,2235,432,1943,450,1693,458,1523,460,1523,454,1693,453,1942,445,2235,427,2385,413,2532,395,2545,393"/>
-<area shape="poly" title=" " alt="" coords="2586,372,2588,338,2593,338,2592,372"/>
-<area shape="rect" title=" " alt="" coords="2472,445,2583,471"/>
-<area shape="poly" title=" " alt="" coords="2575,399,2547,436,2542,433,2571,396"/>
-<area shape="rect" title=" " alt="" coords="2607,445,2666,471"/>
-<area shape="poly" title=" " alt="" coords="2593,396,2622,433,2617,436,2589,399"/>
-<area shape="poly" title=" " alt="" coords="1382,180,1324,219,1321,215,1379,175"/>
+<area shape="poly" title=" " alt="" coords="1522,242,1254,247,844,257,413,274,228,287,85,301,84,296,228,281,412,269,843,251,1254,241,1522,237"/>
+<area shape="rect" title=" " alt="" coords="2127,299,2189,324"/>
+<area shape="poly" title=" " alt="" coords="1605,239,1819,256,1964,273,2114,296,2113,301,1963,278,1819,261,1605,244"/>
+<area shape="rect" title=" " alt="" coords="2213,299,2279,324"/>
+<area shape="poly" title=" " alt="" coords="1605,238,1853,254,2023,271,2200,296,2199,301,2023,277,1853,260,1605,244"/>
+<area shape="poly" title=" " alt="" coords="1605,237,1743,241,1948,251,2189,268,2434,296,2440,297,2439,302,2434,301,2188,273,1947,256,1743,247,1605,243"/>
+<area shape="rect" title=" " alt="" coords="2303,299,2378,324"/>
+<area shape="poly" title=" " alt="" coords="1605,238,1888,253,2085,270,2290,296,2289,301,2085,276,1888,259,1605,243"/>
+<area shape="rect" title=" " alt="" coords="2375,445,2455,471"/>
+<area shape="poly" title=" " alt="" coords="1605,237,1787,239,2036,246,2158,254,2266,264,2347,278,2374,287,2392,297,2404,311,2413,328,2423,364,2425,401,2422,432,2417,432,2420,401,2418,365,2408,330,2400,314,2388,301,2372,292,2345,283,2265,270,2158,259,2035,252,1787,244,1605,242"/>
+<area shape="rect" title=" " alt="" coords="95,299,197,324"/>
+<area shape="poly" title=" " alt="" coords="1522,242,1321,243,1001,250,614,268,412,283,211,301,211,296,411,277,614,263,1001,245,1321,238,1522,237"/>
+<area shape="rect" title=" " alt="" coords="222,299,318,324"/>
+<area shape="poly" title=" " alt="" coords="1522,242,1337,244,1046,251,696,269,513,283,332,301,331,296,512,278,696,264,1046,246,1337,238,1522,237"/>
+<area shape="rect" title=" " alt="" coords="342,299,446,324"/>
+<area shape="poly" title=" " alt="" coords="1522,242,1354,246,1095,255,784,272,460,301,460,296,783,267,1094,249,1354,240,1521,237"/>
+<area shape="rect" title=" " alt="" coords="471,299,579,324"/>
+<area shape="poly" title=" " alt="" coords="1522,243,1145,257,874,275,593,301,592,296,874,269,1145,252,1522,238"/>
+<area shape="rect" title=" " alt="" coords="603,299,737,324"/>
+<area shape="poly" title=" " alt="" coords="1522,244,1206,263,983,280,751,301,751,296,983,274,1206,258,1522,239"/>
+<area shape="rect" title=" " alt="" coords="762,299,877,324"/>
+<area shape="poly" title=" " alt="" coords="1522,245,1260,264,1079,280,890,301,890,296,1078,275,1260,259,1522,239"/>
+<area shape="rect" title=" " alt="" coords="901,299,967,324"/>
+<area shape="poly" title=" " alt="" coords="1522,244,1295,261,1141,278,981,301,980,296,1140,273,1295,256,1522,239"/>
+<area shape="rect" title=" " alt="" coords="992,299,1084,324"/>
+<area shape="poly" title=" " alt="" coords="1522,246,1342,267,1098,301,1097,296,1341,262,1521,241"/>
+<area shape="rect" title=" " alt="" coords="1109,299,1197,324"/>
+<area shape="poly" title=" " alt="" coords="1522,248,1211,301,1210,296,1521,243"/>
+<area shape="rect" title=" " alt="" coords="1221,299,1351,324"/>
+<area shape="poly" title=" " alt="" coords="1522,252,1344,298,1343,293,1521,247"/>
+<area shape="rect" title=" " alt="" coords="1375,299,1439,324"/>
+<area shape="poly" title=" " alt="" coords="1539,253,1446,295,1444,290,1537,248"/>
+<area shape="rect" title=" " alt="" coords="1463,299,1559,324"/>
+<area shape="poly" title=" " alt="" coords="1557,253,1530,289,1526,286,1553,249"/>
+<area shape="rect" title=" " alt="" coords="1583,299,1647,324"/>
+<area shape="poly" title=" " alt="" coords="1574,249,1601,286,1597,289,1570,253"/>
+<area shape="rect" title=" " alt="" coords="1672,299,1796,324"/>
+<area shape="poly" title=" " alt="" coords="1592,248,1695,291,1693,296,1590,253"/>
+<area shape="rect" title=" " alt="" coords="1821,299,1877,324"/>
+<area shape="poly" title=" " alt="" coords="1606,246,1808,296,1808,296,1807,301,1807,301,1604,252"/>
+<area shape="rect" title=" " alt="" coords="1901,299,1969,324"/>
+<area shape="poly" title=" " alt="" coords="1606,244,1728,265,1888,296,1887,301,1727,270,1605,249"/>
+<area shape="rect" title=" " alt="" coords="1994,299,2103,324"/>
+<area shape="poly" title=" " alt="" coords="1605,242,1981,296,1980,301,1604,248"/>
+<area shape="poly" title=" " alt="" coords="1605,237,1755,239,1981,247,2250,265,2391,279,2530,296,2529,301,2390,284,2250,270,1980,253,1754,244,1605,242"/>
+<area shape="rect" title=" " alt="" coords="2570,372,2706,397"/>
+<area shape="poly" title=" " alt="" coords="2592,323,2622,359,2618,363,2588,326"/>
+<area shape="rect" title=" " alt="" coords="2730,372,2839,397"/>
+<area shape="poly" title=" " alt="" coords="2614,322,2740,365,2738,370,2613,327"/>
+<area shape="rect" href="a00047.html" title=" " alt="" coords="2472,372,2545,397"/>
+<area shape="poly" title=" " alt="" coords="2564,326,2524,363,2521,359,2560,322"/>
+<area shape="poly" title=" " alt="" coords="2495,399,2443,439,2440,435,2492,395"/>
+<area shape="poly" title=" " alt="" coords="2525,370,2565,333,2568,337,2529,374"/>
+<area shape="rect" title=" " alt="" coords="2563,445,2673,471"/>
+<area shape="poly" title=" " alt="" coords="2528,395,2590,435,2587,440,2525,400"/>
+<area shape="rect" title=" " alt="" coords="2479,445,2538,471"/>
+<area shape="poly" title=" " alt="" coords="2511,398,2511,432,2506,432,2506,398"/>
+<area shape="poly" title=" " alt="" coords="2027,105,2020,142,2011,162,1997,179,1968,196,1928,208,1825,226,1713,235,1619,239,1619,233,1713,230,1824,221,1927,203,1966,191,1994,175,2007,159,2015,140,2022,104"/>
 </map>
 </div>
 </div>
 <p><a href="a00023_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
-Macros</h2></td></tr>
-<tr class="memitem:a3b92e236e8fc6f03d721ca6c6ffba179" id="r_a3b92e236e8fc6f03d721ca6c6ffba179"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a3b92e236e8fc6f03d721ca6c6ffba179">MIN_PAYLOAD_SIZE</a>&#160;&#160;&#160;1</td></tr>
-<tr class="separator:a3b92e236e8fc6f03d721ca6c6ffba179"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a063a58ec9acd8e3e2fd505cce47a65ba" id="r_a063a58ec9acd8e3e2fd505cce47a65ba"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a063a58ec9acd8e3e2fd505cce47a65ba">window</a> (std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt; internal, const <a class="el" href="a00104.html">Server::PacketData</a> &amp;original_packet)</td></tr>
-<tr class="separator:a063a58ec9acd8e3e2fd505cce47a65ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97a1c530b088c2ffb8be58f89cb45806" id="r_a97a1c530b088c2ffb8be58f89cb45806"><td class="memItemLeft" align="right" valign="top">std::vector&lt; size_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a97a1c530b088c2ffb8be58f89cb45806">split_payload_randomly</a> (size_t total_payload_size, size_t min_size)</td></tr>
+<tr class="separator:a97a1c530b088c2ffb8be58f89cb45806"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c79ce064adef7b04e4c752fc11a0532" id="r_a7c79ce064adef7b04e4c752fc11a0532"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="a00111.html">PacketInfo</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a7c79ce064adef7b04e4c752fc11a0532">create_packet_info</a> (const std::vector&lt; size_t &gt; &amp;chunk_sizes)</td></tr>
+<tr class="separator:a7c79ce064adef7b04e4c752fc11a0532"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0050fb3743958b2ef32b6b458863cd89" id="r_a0050fb3743958b2ef32b6b458863cd89"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a0050fb3743958b2ef32b6b458863cd89">reorder_packets</a> (std::vector&lt; <a class="el" href="a00111.html">PacketInfo</a> &gt; &amp;packets_info)</td></tr>
+<tr class="separator:a0050fb3743958b2ef32b6b458863cd89"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9e36c5483158e406c83220049f214a99" id="r_a9e36c5483158e406c83220049f214a99"><td class="memItemLeft" align="right" valign="top"><a class="el" href="a00123.html">Server::PacketData</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00023.html#a9e36c5483158e406c83220049f214a99">build_packet</a> (const <a class="el" href="a00123.html">Server::PacketData</a> &amp;original_packet, const std::vector&lt; uint8_t &gt; &amp;payload_buffer, size_t payload_offset, size_t chunk_size, uint32_t seq_offset)</td></tr>
+<tr class="separator:a9e36c5483158e406c83220049f214a99"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a3b92e236e8fc6f03d721ca6c6ffba179" name="a3b92e236e8fc6f03d721ca6c6ffba179"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3b92e236e8fc6f03d721ca6c6ffba179">&#9670;&#160;</a></span>MIN_PAYLOAD_SIZE</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define MIN_PAYLOAD_SIZE&#160;&#160;&#160;1</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00009">9</a> of file <a class="el" href="a00023_source.html">window.cpp</a>.</p>
-
-</div>
-</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a063a58ec9acd8e3e2fd505cce47a65ba" name="a063a58ec9acd8e3e2fd505cce47a65ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a063a58ec9acd8e3e2fd505cce47a65ba">&#9670;&#160;</a></span>window()</h2>
+<a id="a9e36c5483158e406c83220049f214a99" name="a9e36c5483158e406c83220049f214a99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e36c5483158e406c83220049f214a99">&#9670;&#160;</a></span>build_packet()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void window </td>
+          <td class="memname"><a class="el" href="a00123.html">Server::PacketData</a> build_packet </td>
           <td>(</td>
-          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00108.html">Server::Data</a> &gt;&#160;</td>
-          <td class="paramname"><em>internal</em>, </td>
+          <td class="paramtype">const <a class="el" href="a00123.html">Server::PacketData</a> &amp;&#160;</td>
+          <td class="paramname"><em>original_packet</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const <a class="el" href="a00104.html">Server::PacketData</a> &amp;&#160;</td>
-          <td class="paramname"><em>original_packet</em>&#160;</td>
+          <td class="paramtype">const std::vector&lt; uint8_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>payload_buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>payload_offset</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>chunk_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t&#160;</td>
+          <td class="paramname"><em>seq_offset</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -240,150 +254,87 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00012">12</a> of file <a class="el" href="a00023_source.html">window.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   13</span>{</div>
-<div class="line"><span class="lineno">   14</span>    <span class="comment">// Copy the TCP/IP headers from &#39;original_packet&#39;</span></div>
-<div class="line"><span class="lineno">   15</span>    <span class="keywordtype">size_t</span> ip_header_length = 0;</div>
-<div class="line"><span class="lineno">   16</span>    <span class="keywordtype">size_t</span> tcp_header_length = 0;</div>
-<div class="line"><span class="lineno">   17</span>    {</div>
-<div class="line"><span class="lineno">   18</span>        <span class="keyword">struct </span>iphdr *ip_header = (<span class="keyword">struct </span>iphdr *)(original_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr));</div>
-<div class="line"><span class="lineno">   19</span>        ip_header_length = ip_header-&gt;ihl * 4;</div>
-<div class="line"><span class="lineno">   20</span>        <span class="keyword">struct </span>tcphdr *tcp_header = (<span class="keyword">struct </span>tcphdr *)(original_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr) + ip_header_length);</div>
-<div class="line"><span class="lineno">   21</span>        tcp_header_length = tcp_header-&gt;doff * 4;</div>
-<div class="line"><span class="lineno">   22</span>    }</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>    <span class="keywordtype">size_t</span> total_header_length = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr) + ip_header_length + tcp_header_length;</div>
-<div class="line"><span class="lineno">   25</span> </div>
-<div class="line"><span class="lineno">   26</span>    <span class="comment">// Lock the payload buffer</span></div>
-<div class="line"><span class="lineno">   27</span>    std::lock_guard&lt;std::mutex&gt; lock(internal-&gt;payload_buffer_mutex);</div>
-<div class="line"><span class="lineno">   28</span> </div>
-<div class="line"><span class="lineno">   29</span>    <span class="comment">// Get the total payload size</span></div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordtype">size_t</span> total_payload_size = internal-&gt;payload_buffer.size();</div>
-<div class="line"><span class="lineno">   31</span> </div>
-<div class="line"><span class="lineno">   32</span>    <span class="comment">// Decide how many packets to send (send more than we received)</span></div>
-<div class="line"><span class="lineno">   33</span>    <span class="keywordtype">size_t</span> num_packets = total_payload_size / <a class="code hl_define" href="a00023.html#a3b92e236e8fc6f03d721ca6c6ffba179">MIN_PAYLOAD_SIZE</a> + 1;</div>
-<div class="line"><span class="lineno">   34</span> </div>
-<div class="line"><span class="lineno">   35</span>    <span class="comment">// Split the payload buffer into &#39;num_packets&#39; chunks with random sizes</span></div>
-<div class="line"><span class="lineno">   36</span>    std::vector&lt;size_t&gt; chunk_sizes(num_packets, 0);</div>
-<div class="line"><span class="lineno">   37</span> </div>
-<div class="line"><span class="lineno">   38</span>    <span class="comment">// Use random number generator</span></div>
-<div class="line"><span class="lineno">   39</span>    std::random_device rd;</div>
-<div class="line"><span class="lineno">   40</span>    std::mt19937 gen(rd());</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordtype">size_t</span> remaining_size = total_payload_size;</div>
-<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; num_packets - 1; ++i)</div>
-<div class="line"><span class="lineno">   44</span>    {</div>
-<div class="line"><span class="lineno">   45</span>        <span class="comment">// Generate a random size between MIN_PAYLOAD_SIZE and remaining_size / (num_packets - i)</span></div>
-<div class="line"><span class="lineno">   46</span>        <span class="keywordtype">size_t</span> max_size = remaining_size - <a class="code hl_define" href="a00023.html#a3b92e236e8fc6f03d721ca6c6ffba179">MIN_PAYLOAD_SIZE</a> * (num_packets - i - 1);</div>
-<div class="line"><span class="lineno">   47</span>        std::uniform_int_distribution&lt;size_t&gt; dis(<a class="code hl_define" href="a00023.html#a3b92e236e8fc6f03d721ca6c6ffba179">MIN_PAYLOAD_SIZE</a>, max_size);</div>
-<div class="line"><span class="lineno">   48</span> </div>
-<div class="line"><span class="lineno">   49</span>        <span class="keywordtype">size_t</span> chunk_size = dis(gen);</div>
-<div class="line"><span class="lineno">   50</span>        chunk_sizes[i] = chunk_size;</div>
-<div class="line"><span class="lineno">   51</span>        remaining_size -= chunk_size;</div>
-<div class="line"><span class="lineno">   52</span>    }</div>
-<div class="line"><span class="lineno">   53</span>    <span class="comment">// Last chunk gets the remaining size</span></div>
-<div class="line"><span class="lineno">   54</span>    chunk_sizes[num_packets - 1] = remaining_size;</div>
-<div class="line"><span class="lineno">   55</span> </div>
-<div class="line"><span class="lineno">   56</span>    <span class="comment">// Get the original TCP sequence number</span></div>
-<div class="line"><span class="lineno">   57</span>    <span class="keyword">struct </span>iphdr *orig_ip_header = (<span class="keyword">struct </span>iphdr *)(original_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr));</div>
-<div class="line"><span class="lineno">   58</span>    <span class="keywordtype">size_t</span> orig_ip_header_length = orig_ip_header-&gt;ihl * 4;</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keyword">struct </span>tcphdr *orig_tcp_header = (<span class="keyword">struct </span>tcphdr *)(original_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr) + orig_ip_header_length);</div>
-<div class="line"><span class="lineno">   60</span> </div>
-<div class="line"><span class="lineno">   61</span>    uint32_t orig_seq = ntohl(orig_tcp_header-&gt;seq);</div>
-<div class="line"><span class="lineno">   62</span> </div>
-<div class="line"><span class="lineno">   63</span>    <span class="comment">// Now construct and send the new packets</span></div>
-<div class="line"><span class="lineno">   64</span>    <span class="keywordtype">size_t</span> payload_offset = 0;</div>
-<div class="line"><span class="lineno">   65</span>    uint32_t seq_offset = 0;</div>
-<div class="line"><span class="lineno">   66</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; num_packets; ++i)</div>
-<div class="line"><span class="lineno">   67</span>    {</div>
-<div class="line"><span class="lineno">   68</span>        <span class="keywordtype">size_t</span> chunk_size = chunk_sizes[i];</div>
-<div class="line"><span class="lineno">   69</span> </div>
-<div class="line"><span class="lineno">   70</span>        <span class="comment">// Create new packet data</span></div>
-<div class="line"><span class="lineno">   71</span>        <a class="code hl_struct" href="a00104.html">Server::PacketData</a> new_packet;</div>
-<div class="line"><span class="lineno">   72</span>        new_packet.<a class="code hl_variable" href="a00104.html#a6fcfbe21641ddcfd5cd38ef7ab7998db">length</a> = total_header_length + chunk_size;</div>
-<div class="line"><span class="lineno">   73</span>        new_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.resize(new_packet.<a class="code hl_variable" href="a00104.html#a6fcfbe21641ddcfd5cd38ef7ab7998db">length</a>);</div>
+<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00061">61</a> of file <a class="el" href="a00023_source.html">packeting.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>{</div>
+<div class="line"><span class="lineno">   67</span>    <span class="comment">// Determine header lengths</span></div>
+<div class="line"><span class="lineno">   68</span>    <span class="keyword">struct </span>iphdr *orig_ip_header = (<span class="keyword">struct </span>iphdr *)(original_packet.<a class="code hl_variable" href="a00123.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr));</div>
+<div class="line"><span class="lineno">   69</span>    <span class="keywordtype">size_t</span> orig_ip_header_length = orig_ip_header-&gt;ihl * 4;</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keyword">struct </span>tcphdr *orig_tcp_header = (<span class="keyword">struct </span>tcphdr *)(original_packet.<a class="code hl_variable" href="a00123.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr) + orig_ip_header_length);</div>
+<div class="line"><span class="lineno">   71</span>    <span class="keywordtype">size_t</span> orig_tcp_header_length = orig_tcp_header-&gt;doff * 4;</div>
+<div class="line"><span class="lineno">   72</span> </div>
+<div class="line"><span class="lineno">   73</span>    <span class="keywordtype">size_t</span> total_header_length = <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr) + orig_ip_header_length + orig_tcp_header_length;</div>
 <div class="line"><span class="lineno">   74</span> </div>
-<div class="line"><span class="lineno">   75</span>        <span class="comment">// Copy Ethernet header</span></div>
-<div class="line"><span class="lineno">   76</span>        memcpy(new_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data(), original_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data(), <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr));</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>        <span class="comment">// Copy IP header</span></div>
-<div class="line"><span class="lineno">   79</span>        memcpy(new_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr),</div>
-<div class="line"><span class="lineno">   80</span>               original_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr),</div>
-<div class="line"><span class="lineno">   81</span>               ip_header_length);</div>
+<div class="line"><span class="lineno">   75</span>    <span class="comment">// Create new packet data</span></div>
+<div class="line"><span class="lineno">   76</span>    <a class="code hl_struct" href="a00123.html">Server::PacketData</a> new_packet;</div>
+<div class="line"><span class="lineno">   77</span>    new_packet.<a class="code hl_variable" href="a00123.html#a6fcfbe21641ddcfd5cd38ef7ab7998db">length</a> = total_header_length + chunk_size;</div>
+<div class="line"><span class="lineno">   78</span>    new_packet.data.resize(new_packet.length);</div>
+<div class="line"><span class="lineno">   79</span> </div>
+<div class="line"><span class="lineno">   80</span>    <span class="comment">// Copy Ethernet header</span></div>
+<div class="line"><span class="lineno">   81</span>    memcpy(new_packet.data.data(), original_packet.<a class="code hl_variable" href="a00123.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data(), <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr));</div>
 <div class="line"><span class="lineno">   82</span> </div>
-<div class="line"><span class="lineno">   83</span>        <span class="comment">// Copy TCP header</span></div>
-<div class="line"><span class="lineno">   84</span>        memcpy(new_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr) + ip_header_length,</div>
-<div class="line"><span class="lineno">   85</span>               original_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr) + ip_header_length,</div>
-<div class="line"><span class="lineno">   86</span>               tcp_header_length);</div>
+<div class="line"><span class="lineno">   83</span>    <span class="comment">// Copy IP header</span></div>
+<div class="line"><span class="lineno">   84</span>    memcpy(new_packet.data.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr),</div>
+<div class="line"><span class="lineno">   85</span>           original_packet.<a class="code hl_variable" href="a00123.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr),</div>
+<div class="line"><span class="lineno">   86</span>           orig_ip_header_length);</div>
 <div class="line"><span class="lineno">   87</span> </div>
-<div class="line"><span class="lineno">   88</span>        <span class="comment">// Copy payload</span></div>
-<div class="line"><span class="lineno">   89</span>        memcpy(new_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + total_header_length,</div>
-<div class="line"><span class="lineno">   90</span>               internal-&gt;payload_buffer.data() + payload_offset,</div>
-<div class="line"><span class="lineno">   91</span>               chunk_size);</div>
+<div class="line"><span class="lineno">   88</span>    <span class="comment">// Copy TCP header</span></div>
+<div class="line"><span class="lineno">   89</span>    memcpy(new_packet.data.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr) + orig_ip_header_length,</div>
+<div class="line"><span class="lineno">   90</span>           original_packet.<a class="code hl_variable" href="a00123.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr) + orig_ip_header_length,</div>
+<div class="line"><span class="lineno">   91</span>           orig_tcp_header_length);</div>
 <div class="line"><span class="lineno">   92</span> </div>
-<div class="line"><span class="lineno">   93</span>        <span class="comment">// Update payload offset</span></div>
-<div class="line"><span class="lineno">   94</span>        payload_offset += chunk_size;</div>
-<div class="line"><span class="lineno">   95</span> </div>
-<div class="line"><span class="lineno">   96</span>        <span class="comment">// Update IP header (total length)</span></div>
-<div class="line"><span class="lineno">   97</span>        <span class="keyword">struct </span>iphdr *ip_header = (<span class="keyword">struct </span>iphdr *)(new_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr));</div>
-<div class="line"><span class="lineno">   98</span>        ip_header-&gt;tot_len = htons(new_packet.<a class="code hl_variable" href="a00104.html#a6fcfbe21641ddcfd5cd38ef7ab7998db">length</a> - <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr)); <span class="comment">// Total length excluding Ethernet header</span></div>
-<div class="line"><span class="lineno">   99</span> </div>
-<div class="line"><span class="lineno">  100</span>        <span class="comment">// Update TCP header (sequence number)</span></div>
-<div class="line"><span class="lineno">  101</span>        <span class="keyword">struct </span>tcphdr *tcp_header = (<span class="keyword">struct </span>tcphdr *)(new_packet.<a class="code hl_variable" href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">data</a>.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr) + ip_header_length);</div>
-<div class="line"><span class="lineno">  102</span>        tcp_header-&gt;seq = htonl(orig_seq + seq_offset);</div>
-<div class="line"><span class="lineno">  103</span> </div>
-<div class="line"><span class="lineno">  104</span>        <span class="comment">// Update sequence offset for the next packet</span></div>
-<div class="line"><span class="lineno">  105</span>        seq_offset += chunk_size;</div>
-<div class="line"><span class="lineno">  106</span> </div>
-<div class="line"><span class="lineno">  107</span>        <span class="comment">// Compute IP checksum using your existing function</span></div>
-<div class="line"><span class="lineno">  108</span>        <a class="code hl_function" href="a00029.html#a1d919e8ec4fa73e99303ca26f1a24188">compute_ip_checksum</a>(ip_header);</div>
-<div class="line"><span class="lineno">  109</span> </div>
-<div class="line"><span class="lineno">  110</span>        <span class="comment">// Compute TCP checksum using your existing function</span></div>
-<div class="line"><span class="lineno">  111</span>        <a class="code hl_function" href="a00029.html#a33bdbedcf6fc6cc7f29ca20db5bbf485">compute_tcp_checksum</a>(ip_header, tcp_header);</div>
-<div class="line"><span class="lineno">  112</span> </div>
-<div class="line"><span class="lineno">  113</span>        <span class="comment">// Copy socket_address and destination info</span></div>
-<div class="line"><span class="lineno">  114</span>        new_packet.<a class="code hl_variable" href="a00104.html#aa286310eace6844779ed02bc0aeed9dd">socket_address</a> = original_packet.<a class="code hl_variable" href="a00104.html#aa286310eace6844779ed02bc0aeed9dd">socket_address</a>;</div>
-<div class="line"><span class="lineno">  115</span>        strcpy(new_packet.<a class="code hl_variable" href="a00104.html#a10fb13276ff1506719f751981b41e771">dest_ip</a>, original_packet.<a class="code hl_variable" href="a00104.html#a10fb13276ff1506719f751981b41e771">dest_ip</a>);</div>
-<div class="line"><span class="lineno">  116</span>        memcpy(new_packet.<a class="code hl_variable" href="a00104.html#a430a1d5a7b0ff437dff2eae57402f283">dest_mac</a>, original_packet.<a class="code hl_variable" href="a00104.html#a430a1d5a7b0ff437dff2eae57402f283">dest_mac</a>, 6);</div>
-<div class="line"><span class="lineno">  117</span> </div>
-<div class="line"><span class="lineno">  118</span>        <span class="comment">// Send the packet</span></div>
-<div class="line"><span class="lineno">  119</span>        <a class="code hl_function" href="a00011.html#a60773435d027e71a67dd3070a065961c">send_packet</a>(new_packet, internal-&gt;logger, internal);</div>
-<div class="line"><span class="lineno">  120</span> </div>
-<div class="line"><span class="lineno">  121</span>        <span class="comment">// Wait for specified time interval (e.g., 10ms)</span></div>
-<div class="line"><span class="lineno">  122</span>        std::this_thread::sleep_for(std::chrono::milliseconds(10));</div>
-<div class="line"><span class="lineno">  123</span>    }</div>
-<div class="line"><span class="lineno">  124</span> </div>
-<div class="line"><span class="lineno">  125</span>    <span class="comment">// Clear the payload buffer</span></div>
-<div class="line"><span class="lineno">  126</span>    internal-&gt;payload_buffer.clear();</div>
-<div class="line"><span class="lineno">  127</span>}</div>
-<div class="ttc" id="aa00011_html_a60773435d027e71a67dd3070a065961c"><div class="ttname"><a href="a00011.html#a60773435d027e71a67dd3070a065961c">send_packet</a></div><div class="ttdeci">void send_packet(const Server::PacketData &amp;pkt, quill::Logger *logger, std::shared_ptr&lt; Server::Data &gt; internal)</div><div class="ttdef"><b>Definition</b> <a href="a00011_source.html#l00011">sender.cpp:11</a></div></div>
-<div class="ttc" id="aa00023_html_a3b92e236e8fc6f03d721ca6c6ffba179"><div class="ttname"><a href="a00023.html#a3b92e236e8fc6f03d721ca6c6ffba179">MIN_PAYLOAD_SIZE</a></div><div class="ttdeci">#define MIN_PAYLOAD_SIZE</div><div class="ttdef"><b>Definition</b> <a href="a00023_source.html#l00009">window.cpp:9</a></div></div>
-<div class="ttc" id="aa00029_html_a1d919e8ec4fa73e99303ca26f1a24188"><div class="ttname"><a href="a00029.html#a1d919e8ec4fa73e99303ca26f1a24188">compute_ip_checksum</a></div><div class="ttdeci">void compute_ip_checksum(struct iphdr *ip_header)</div><div class="ttdef"><b>Definition</b> <a href="a00029_source.html#l00034">utilities.cpp:34</a></div></div>
-<div class="ttc" id="aa00029_html_a33bdbedcf6fc6cc7f29ca20db5bbf485"><div class="ttname"><a href="a00029.html#a33bdbedcf6fc6cc7f29ca20db5bbf485">compute_tcp_checksum</a></div><div class="ttdeci">void compute_tcp_checksum(struct iphdr *ip_header, struct tcphdr *tcp_header)</div><div class="ttdef"><b>Definition</b> <a href="a00029_source.html#l00049">utilities.cpp:49</a></div></div>
-<div class="ttc" id="aa00104_html"><div class="ttname"><a href="a00104.html">Server::PacketData</a></div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00018">server.h:19</a></div></div>
-<div class="ttc" id="aa00104_html_a10fb13276ff1506719f751981b41e771"><div class="ttname"><a href="a00104.html#a10fb13276ff1506719f751981b41e771">Server::PacketData::dest_ip</a></div><div class="ttdeci">char dest_ip[INET_ADDRSTRLEN]</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00023">server.h:23</a></div></div>
-<div class="ttc" id="aa00104_html_a430a1d5a7b0ff437dff2eae57402f283"><div class="ttname"><a href="a00104.html#a430a1d5a7b0ff437dff2eae57402f283">Server::PacketData::dest_mac</a></div><div class="ttdeci">unsigned char dest_mac[6]</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00024">server.h:24</a></div></div>
-<div class="ttc" id="aa00104_html_a6fcfbe21641ddcfd5cd38ef7ab7998db"><div class="ttname"><a href="a00104.html#a6fcfbe21641ddcfd5cd38ef7ab7998db">Server::PacketData::length</a></div><div class="ttdeci">size_t length</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00021">server.h:21</a></div></div>
-<div class="ttc" id="aa00104_html_aa286310eace6844779ed02bc0aeed9dd"><div class="ttname"><a href="a00104.html#aa286310eace6844779ed02bc0aeed9dd">Server::PacketData::socket_address</a></div><div class="ttdeci">struct sockaddr_ll socket_address</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00022">server.h:22</a></div></div>
-<div class="ttc" id="aa00104_html_aeb6bac334d85cdc98af145dc5e4e3b40"><div class="ttname"><a href="a00104.html#aeb6bac334d85cdc98af145dc5e4e3b40">Server::PacketData::data</a></div><div class="ttdeci">std::vector&lt; unsigned char &gt; data</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00020">server.h:20</a></div></div>
+<div class="line"><span class="lineno">   93</span>    <span class="comment">// Copy payload</span></div>
+<div class="line"><span class="lineno">   94</span>    memcpy(new_packet.data.data() + total_header_length,</div>
+<div class="line"><span class="lineno">   95</span>           payload_buffer.data() + payload_offset,</div>
+<div class="line"><span class="lineno">   96</span>           chunk_size);</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="comment">// Update IP total length</span></div>
+<div class="line"><span class="lineno">   99</span>    <span class="keyword">struct </span>iphdr *ip_header = (<span class="keyword">struct </span>iphdr *)(new_packet.data.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr));</div>
+<div class="line"><span class="lineno">  100</span>    ip_header-&gt;tot_len = htons(new_packet.length - <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr));</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <span class="comment">// Update TCP header</span></div>
+<div class="line"><span class="lineno">  103</span>    <span class="keyword">struct </span>tcphdr *tcp_header = (<span class="keyword">struct </span>tcphdr *)(new_packet.data.data() + <span class="keyword">sizeof</span>(<span class="keyword">struct </span>ethhdr) + orig_ip_header_length);</div>
+<div class="line"><span class="lineno">  104</span>    tcp_header-&gt;seq = htonl(seq_offset);</div>
+<div class="line"><span class="lineno">  105</span> </div>
+<div class="line"><span class="lineno">  106</span>    <span class="comment">// Zero out TCP options if necessary</span></div>
+<div class="line"><span class="lineno">  107</span>    <span class="keywordflow">if</span> (tcp_header-&gt;doff &gt; 5)</div>
+<div class="line"><span class="lineno">  108</span>    {</div>
+<div class="line"><span class="lineno">  109</span>        uint8_t *options_start = (uint8_t *)tcp_header + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> tcphdr);</div>
+<div class="line"><span class="lineno">  110</span>        <span class="keywordtype">size_t</span> options_length = (tcp_header-&gt;doff * 4) - <span class="keyword">sizeof</span>(<span class="keyword">struct</span> tcphdr);</div>
+<div class="line"><span class="lineno">  111</span>        memset(options_start, 0, options_length);</div>
+<div class="line"><span class="lineno">  112</span>        tcp_header-&gt;doff = 5;</div>
+<div class="line"><span class="lineno">  113</span>    }</div>
+<div class="line"><span class="lineno">  114</span> </div>
+<div class="line"><span class="lineno">  115</span>    <span class="comment">// Compute checksums</span></div>
+<div class="line"><span class="lineno">  116</span>    <a class="code hl_function" href="a00026.html#a1d919e8ec4fa73e99303ca26f1a24188">compute_ip_checksum</a>(ip_header);</div>
+<div class="line"><span class="lineno">  117</span>    <a class="code hl_function" href="a00026.html#a33bdbedcf6fc6cc7f29ca20db5bbf485">compute_tcp_checksum</a>(ip_header, tcp_header);</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    <span class="comment">// Copy socket_address and destination info</span></div>
+<div class="line"><span class="lineno">  120</span>    new_packet.socket_address = original_packet.<a class="code hl_variable" href="a00123.html#aa286310eace6844779ed02bc0aeed9dd">socket_address</a>;</div>
+<div class="line"><span class="lineno">  121</span>    strcpy(new_packet.dest_ip, original_packet.<a class="code hl_variable" href="a00123.html#a10fb13276ff1506719f751981b41e771">dest_ip</a>);</div>
+<div class="line"><span class="lineno">  122</span>    memcpy(new_packet.dest_mac, original_packet.<a class="code hl_variable" href="a00123.html#a430a1d5a7b0ff437dff2eae57402f283">dest_mac</a>, 6);</div>
+<div class="line"><span class="lineno">  123</span> </div>
+<div class="line"><span class="lineno">  124</span>    <span class="keywordflow">return</span> new_packet;</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+<div class="ttc" id="aa00026_html_a1d919e8ec4fa73e99303ca26f1a24188"><div class="ttname"><a href="a00026.html#a1d919e8ec4fa73e99303ca26f1a24188">compute_ip_checksum</a></div><div class="ttdeci">void compute_ip_checksum(struct iphdr *ip_header)</div><div class="ttdef"><b>Definition</b> <a href="a00026_source.html#l00034">utilities.cpp:34</a></div></div>
+<div class="ttc" id="aa00026_html_a33bdbedcf6fc6cc7f29ca20db5bbf485"><div class="ttname"><a href="a00026.html#a33bdbedcf6fc6cc7f29ca20db5bbf485">compute_tcp_checksum</a></div><div class="ttdeci">void compute_tcp_checksum(struct iphdr *ip_header, struct tcphdr *tcp_header)</div><div class="ttdef"><b>Definition</b> <a href="a00026_source.html#l00049">utilities.cpp:49</a></div></div>
+<div class="ttc" id="aa00123_html"><div class="ttname"><a href="a00123.html">Server::PacketData</a></div><div class="ttdef"><b>Definition</b> <a href="a00080_source.html#l00018">server.h:19</a></div></div>
+<div class="ttc" id="aa00123_html_a10fb13276ff1506719f751981b41e771"><div class="ttname"><a href="a00123.html#a10fb13276ff1506719f751981b41e771">Server::PacketData::dest_ip</a></div><div class="ttdeci">char dest_ip[INET_ADDRSTRLEN]</div><div class="ttdef"><b>Definition</b> <a href="a00080_source.html#l00023">server.h:23</a></div></div>
+<div class="ttc" id="aa00123_html_a430a1d5a7b0ff437dff2eae57402f283"><div class="ttname"><a href="a00123.html#a430a1d5a7b0ff437dff2eae57402f283">Server::PacketData::dest_mac</a></div><div class="ttdeci">unsigned char dest_mac[6]</div><div class="ttdef"><b>Definition</b> <a href="a00080_source.html#l00024">server.h:24</a></div></div>
+<div class="ttc" id="aa00123_html_a6fcfbe21641ddcfd5cd38ef7ab7998db"><div class="ttname"><a href="a00123.html#a6fcfbe21641ddcfd5cd38ef7ab7998db">Server::PacketData::length</a></div><div class="ttdeci">size_t length</div><div class="ttdef"><b>Definition</b> <a href="a00080_source.html#l00021">server.h:21</a></div></div>
+<div class="ttc" id="aa00123_html_aa286310eace6844779ed02bc0aeed9dd"><div class="ttname"><a href="a00123.html#aa286310eace6844779ed02bc0aeed9dd">Server::PacketData::socket_address</a></div><div class="ttdeci">struct sockaddr_ll socket_address</div><div class="ttdef"><b>Definition</b> <a href="a00080_source.html#l00022">server.h:22</a></div></div>
+<div class="ttc" id="aa00123_html_aeb6bac334d85cdc98af145dc5e4e3b40"><div class="ttname"><a href="a00123.html#aeb6bac334d85cdc98af145dc5e4e3b40">Server::PacketData::data</a></div><div class="ttdeci">std::vector&lt; unsigned char &gt; data</div><div class="ttdef"><b>Definition</b> <a href="a00080_source.html#l00020">server.h:20</a></div></div>
 </div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00023_a063a58ec9acd8e3e2fd505cce47a65ba_cgraph.png" border="0" usemap="#aa00023_a063a58ec9acd8e3e2fd505cce47a65ba_cgraph" alt=""/></div>
-<map name="aa00023_a063a58ec9acd8e3e2fd505cce47a65ba_cgraph" id="aa00023_a063a58ec9acd8e3e2fd505cce47a65ba_cgraph">
-<area shape="rect" title=" " alt="" coords="5,55,77,80"/>
-<area shape="rect" href="a00029.html#a1d919e8ec4fa73e99303ca26f1a24188" title=" " alt="" coords="129,5,300,31"/>
-<area shape="poly" title=" " alt="" coords="77,54,125,39,152,32,153,37,126,45,78,59"/>
-<area shape="rect" href="a00029.html#a33bdbedcf6fc6cc7f29ca20db5bbf485" title=" " alt="" coords="125,55,304,80"/>
-<area shape="poly" title=" " alt="" coords="78,65,112,65,112,70,78,70"/>
-<area shape="rect" href="a00011.html#a60773435d027e71a67dd3070a065961c" title=" " alt="" coords="163,104,266,129"/>
-<area shape="poly" title=" " alt="" coords="78,75,126,89,157,98,155,103,125,94,77,80"/>
-<area shape="rect" href="a00029.html#a2e8c16b72b01132d58ef8e9e6fd7f101" title=" " alt="" coords="365,79,514,104"/>
-<area shape="poly" title=" " alt="" coords="266,108,351,99,352,104,267,114"/>
-<area shape="rect" href="a00029.html#ae2cacf1859fb0b54c2a8c98def76b9e6" title=" " alt="" coords="352,128,527,153"/>
-<area shape="poly" title=" " alt="" coords="267,119,339,127,338,133,266,125"/>
+<div class="center"><img src="a00023_a9e36c5483158e406c83220049f214a99_cgraph.png" border="0" usemap="#aa00023_a9e36c5483158e406c83220049f214a99_cgraph" alt=""/></div>
+<map name="aa00023_a9e36c5483158e406c83220049f214a99_cgraph" id="aa00023_a9e36c5483158e406c83220049f214a99_cgraph">
+<area shape="rect" title=" " alt="" coords="5,31,109,56"/>
+<area shape="rect" href="a00026.html#a1d919e8ec4fa73e99303ca26f1a24188" title=" " alt="" coords="161,5,332,31"/>
+<area shape="poly" title=" " alt="" coords="109,34,147,29,148,34,110,39"/>
+<area shape="rect" href="a00026.html#a33bdbedcf6fc6cc7f29ca20db5bbf485" title=" " alt="" coords="157,55,336,80"/>
+<area shape="poly" title=" " alt="" coords="110,47,144,52,143,57,109,53"/>
 </map>
 </div>
 <div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -391,16 +342,194 @@ Functions</h2></td></tr>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00023_a063a58ec9acd8e3e2fd505cce47a65ba_icgraph.png" border="0" usemap="#aa00023_a063a58ec9acd8e3e2fd505cce47a65ba_icgraph" alt=""/></div>
-<map name="aa00023_a063a58ec9acd8e3e2fd505cce47a65ba_icgraph" id="aa00023_a063a58ec9acd8e3e2fd505cce47a65ba_icgraph">
-<area shape="rect" title=" " alt="" coords="689,5,761,31"/>
+<div class="center"><img src="a00023_a9e36c5483158e406c83220049f214a99_icgraph.png" border="0" usemap="#aa00023_a9e36c5483158e406c83220049f214a99_icgraph" alt=""/></div>
+<map name="aa00023_a9e36c5483158e406c83220049f214a99_icgraph" id="aa00023_a9e36c5483158e406c83220049f214a99_icgraph">
+<area shape="rect" title=" " alt="" coords="809,5,913,31"/>
+<area shape="rect" href="a00020.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="689,5,761,31"/>
+<area shape="poly" title=" " alt="" coords="796,21,762,21,762,15,796,15"/>
 <area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,5,641,31"/>
 <area shape="poly" title=" " alt="" coords="676,21,641,21,641,15,676,15"/>
 <area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,5,481,31"/>
 <area shape="poly" title=" " alt="" coords="516,21,482,21,482,15,516,15"/>
 <area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,5,275,31"/>
 <area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
-<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="rect" href="a00029.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a7c79ce064adef7b04e4c752fc11a0532" name="a7c79ce064adef7b04e4c752fc11a0532"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c79ce064adef7b04e4c752fc11a0532">&#9670;&#160;</a></span>create_packet_info()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="a00111.html">PacketInfo</a> &gt; create_packet_info </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; size_t &gt; &amp;&#160;</td>
+          <td class="paramname"><em>chunk_sizes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00037">37</a> of file <a class="el" href="a00023_source.html">packeting.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   38</span>{</div>
+<div class="line"><span class="lineno">   39</span>    std::vector&lt;PacketInfo&gt; packets_info;</div>
+<div class="line"><span class="lineno">   40</span>    packets_info.reserve(chunk_sizes.size());</div>
+<div class="line"><span class="lineno">   41</span> </div>
+<div class="line"><span class="lineno">   42</span>    <span class="keywordtype">size_t</span> offset = 0;</div>
+<div class="line"><span class="lineno">   43</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> csize : chunk_sizes)</div>
+<div class="line"><span class="lineno">   44</span>    {</div>
+<div class="line"><span class="lineno">   45</span>        packets_info.push_back({offset, csize});</div>
+<div class="line"><span class="lineno">   46</span>        offset += csize;</div>
+<div class="line"><span class="lineno">   47</span>    }</div>
+<div class="line"><span class="lineno">   48</span> </div>
+<div class="line"><span class="lineno">   49</span>    <span class="keywordflow">return</span> packets_info;</div>
+<div class="line"><span class="lineno">   50</span>}</div>
+</div><!-- fragment --><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-3-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00023_a7c79ce064adef7b04e4c752fc11a0532_icgraph.png" border="0" usemap="#aa00023_a7c79ce064adef7b04e4c752fc11a0532_icgraph" alt=""/></div>
+<map name="aa00023_a7c79ce064adef7b04e4c752fc11a0532_icgraph" id="aa00023_a7c79ce064adef7b04e4c752fc11a0532_icgraph">
+<area shape="rect" title=" " alt="" coords="809,5,955,31"/>
+<area shape="rect" href="a00020.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="689,5,761,31"/>
+<area shape="poly" title=" " alt="" coords="796,21,762,21,762,15,796,15"/>
+<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,5,641,31"/>
+<area shape="poly" title=" " alt="" coords="676,21,641,21,641,15,676,15"/>
+<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,5,481,31"/>
+<area shape="poly" title=" " alt="" coords="516,21,482,21,482,15,516,15"/>
+<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00029.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a0050fb3743958b2ef32b6b458863cd89" name="a0050fb3743958b2ef32b6b458863cd89"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0050fb3743958b2ef32b6b458863cd89">&#9670;&#160;</a></span>reorder_packets()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void reorder_packets </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="a00111.html">PacketInfo</a> &gt; &amp;&#160;</td>
+          <td class="paramname"><em>packets_info</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00052">52</a> of file <a class="el" href="a00023_source.html">packeting.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{</div>
+<div class="line"><span class="lineno">   54</span>    <span class="keywordflow">if</span> (packets_info.size() &gt; 1)</div>
+<div class="line"><span class="lineno">   55</span>    {</div>
+<div class="line"><span class="lineno">   56</span>        <span class="comment">// Reverse the entire order of packets</span></div>
+<div class="line"><span class="lineno">   57</span>        std::reverse(packets_info.begin(), packets_info.end());</div>
+<div class="line"><span class="lineno">   58</span>    }</div>
+<div class="line"><span class="lineno">   59</span>}</div>
+</div><!-- fragment --><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-4-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-4-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00023_a0050fb3743958b2ef32b6b458863cd89_icgraph.png" border="0" usemap="#aa00023_a0050fb3743958b2ef32b6b458863cd89_icgraph" alt=""/></div>
+<map name="aa00023_a0050fb3743958b2ef32b6b458863cd89_icgraph" id="aa00023_a0050fb3743958b2ef32b6b458863cd89_icgraph">
+<area shape="rect" title=" " alt="" coords="809,5,936,31"/>
+<area shape="rect" href="a00020.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="689,5,761,31"/>
+<area shape="poly" title=" " alt="" coords="796,21,762,21,762,15,796,15"/>
+<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,5,641,31"/>
+<area shape="poly" title=" " alt="" coords="676,21,641,21,641,15,676,15"/>
+<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,5,481,31"/>
+<area shape="poly" title=" " alt="" coords="516,21,482,21,482,15,516,15"/>
+<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00029.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a97a1c530b088c2ffb8be58f89cb45806" name="a97a1c530b088c2ffb8be58f89cb45806"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97a1c530b088c2ffb8be58f89cb45806">&#9670;&#160;</a></span>split_payload_randomly()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; size_t &gt; split_payload_randomly </td>
+          <td>(</td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>total_payload_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>min_size</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00023_source.html#l00009">9</a> of file <a class="el" href="a00023_source.html">packeting.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   10</span>{</div>
+<div class="line"><span class="lineno">   11</span>    <span class="comment">// Decide how many packets to send</span></div>
+<div class="line"><span class="lineno">   12</span>    <span class="keywordtype">size_t</span> num_packets = total_payload_size / min_size + 1;</div>
+<div class="line"><span class="lineno">   13</span>    std::vector&lt;size_t&gt; chunk_sizes(num_packets, 0);</div>
+<div class="line"><span class="lineno">   14</span> </div>
+<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">if</span> (num_packets == 0)</div>
+<div class="line"><span class="lineno">   16</span>    {</div>
+<div class="line"><span class="lineno">   17</span>        <span class="keywordflow">return</span> chunk_sizes;</div>
+<div class="line"><span class="lineno">   18</span>    }</div>
+<div class="line"><span class="lineno">   19</span> </div>
+<div class="line"><span class="lineno">   20</span>    std::random_device rd;</div>
+<div class="line"><span class="lineno">   21</span>    std::mt19937 gen(rd());</div>
+<div class="line"><span class="lineno">   22</span> </div>
+<div class="line"><span class="lineno">   23</span>    <span class="keywordtype">size_t</span> remaining_size = total_payload_size;</div>
+<div class="line"><span class="lineno">   24</span>    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; num_packets - 1; ++i)</div>
+<div class="line"><span class="lineno">   25</span>    {</div>
+<div class="line"><span class="lineno">   26</span>        <span class="keywordtype">size_t</span> max_size = remaining_size - min_size * (num_packets - i - 1);</div>
+<div class="line"><span class="lineno">   27</span>        std::uniform_int_distribution&lt;size_t&gt; dis(min_size, max_size);</div>
+<div class="line"><span class="lineno">   28</span>        <span class="keywordtype">size_t</span> chunk_size = dis(gen);</div>
+<div class="line"><span class="lineno">   29</span>        chunk_sizes[i] = chunk_size;</div>
+<div class="line"><span class="lineno">   30</span>        remaining_size -= chunk_size;</div>
+<div class="line"><span class="lineno">   31</span>    }</div>
+<div class="line"><span class="lineno">   32</span>    <span class="comment">// Last chunk gets the remaining size</span></div>
+<div class="line"><span class="lineno">   33</span>    chunk_sizes[num_packets - 1] = remaining_size;</div>
+<div class="line"><span class="lineno">   34</span>    <span class="keywordflow">return</span> chunk_sizes;</div>
+<div class="line"><span class="lineno">   35</span>}</div>
+</div><!-- fragment --><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-5-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-5-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00023_a97a1c530b088c2ffb8be58f89cb45806_icgraph.png" border="0" usemap="#aa00023_a97a1c530b088c2ffb8be58f89cb45806_icgraph" alt=""/></div>
+<map name="aa00023_a97a1c530b088c2ffb8be58f89cb45806_icgraph" id="aa00023_a97a1c530b088c2ffb8be58f89cb45806_icgraph">
+<area shape="rect" title=" " alt="" coords="809,5,988,31"/>
+<area shape="rect" href="a00020.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="689,5,761,31"/>
+<area shape="poly" title=" " alt="" coords="796,21,761,21,761,15,796,15"/>
+<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,5,641,31"/>
+<area shape="poly" title=" " alt="" coords="676,21,641,21,641,15,676,15"/>
+<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,5,481,31"/>
+<area shape="poly" title=" " alt="" coords="516,21,482,21,482,15,516,15"/>
+<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00029.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
 <area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>
 </div>
@@ -412,7 +541,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1b8c89d3abd0c0683d2ba66e75d0c0d7.html">manipulation</a></li><li class="navelem"><a class="el" href="a00023.html">window.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1b8c89d3abd0c0683d2ba66e75d0c0d7.html">manipulation</a></li><li class="navelem"><a class="el" href="a00023.html">packeting.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

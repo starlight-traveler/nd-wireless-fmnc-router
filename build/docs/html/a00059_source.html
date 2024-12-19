@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FMNC-MITM: sockets.h Source File</title>
+<title>FMNC-MITM: packeting.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -94,26 +94,55 @@ $(document).ready(function(){initNavTree('a00059_source.html',''); initResizable
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">sockets.h</div></div>
+  <div class="headertitle"><div class="title">packeting.h</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="a00059.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef SOCKETS_MITM</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define SOCKETS_MITM</span></div>
+<a href="a00059.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#ifndef PACKETING_H</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#define PACKETING_H</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="a00065.html">general.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="keywordtype">void</span> <a class="code hl_function" href="a00059.html#adf1a1b6666f7a6f364bcca7d27a79442">setup_raw_socket</a>();</div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span> </div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#endif</span></div>
-<div class="ttc" id="aa00059_html_adf1a1b6666f7a6f364bcca7d27a79442"><div class="ttname"><a href="a00059.html#adf1a1b6666f7a6f364bcca7d27a79442">setup_raw_socket</a></div><div class="ttdeci">void setup_raw_socket()</div><div class="ttdef"><b>Definition</b> <a href="a00005_source.html#l00004">sockets.cpp:4</a></div></div>
-<div class="ttc" id="aa00065_html"><div class="ttname"><a href="a00065.html">general.h</a></div></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cstdint&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;memory&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="a00080.html">server.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="a00059.html#a3b92e236e8fc6f03d721ca6c6ffba179">   10</a></span><span class="preprocessor">#define MIN_PAYLOAD_SIZE 1</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="foldopen" id="foldopen00012" data-start="{" data-end="};">
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno"><a class="line" href="a00111.html">   12</a></span><span class="keyword">struct </span><a class="code hl_struct" href="a00111.html">PacketInfo</a></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>{</div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="a00111.html#a11c14a8a43bec03ef864bf18cf9cdfd8">   14</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a00111.html#a11c14a8a43bec03ef864bf18cf9cdfd8">offset</a>;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="a00111.html#ae79665c997c8f554c8df211075e18f43">   15</a></span>    <span class="keywordtype">size_t</span> <a class="code hl_variable" href="a00111.html#ae79665c997c8f554c8df211075e18f43">size</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>};</div>
+</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>std::vector&lt;size_t&gt; <a class="code hl_function" href="a00059.html#aada1d43d01b23c78793b0fa6440ee038">split_payload_randomly</a>(<span class="keywordtype">size_t</span> total_payload_size, <span class="keywordtype">size_t</span> min_size = 1);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>std::vector&lt;PacketInfo&gt; <a class="code hl_function" href="a00059.html#a7c79ce064adef7b04e4c752fc11a0532">create_packet_info</a>(<span class="keyword">const</span> std::vector&lt;size_t&gt; &amp;chunk_sizes);</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keywordtype">void</span> <a class="code hl_function" href="a00059.html#a0050fb3743958b2ef32b6b458863cd89">reorder_packets</a>(std::vector&lt;PacketInfo&gt; &amp;packets_info);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><a class="code hl_struct" href="a00123.html">Server::PacketData</a> <a class="code hl_function" href="a00059.html#a9e36c5483158e406c83220049f214a99">build_packet</a>(<span class="keyword">const</span> <a class="code hl_struct" href="a00123.html">Server::PacketData</a> &amp;original_packet,</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>                                <span class="keyword">const</span> std::vector&lt;uint8_t&gt; &amp;payload_buffer,</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>                                <span class="keywordtype">size_t</span> payload_offset,</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>                                <span class="keywordtype">size_t</span> chunk_size,</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>                                uint32_t seq_offset);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif </span><span class="comment">// PACKETING_H</span></div>
+<div class="ttc" id="aa00059_html_a0050fb3743958b2ef32b6b458863cd89"><div class="ttname"><a href="a00059.html#a0050fb3743958b2ef32b6b458863cd89">reorder_packets</a></div><div class="ttdeci">void reorder_packets(std::vector&lt; PacketInfo &gt; &amp;packets_info)</div><div class="ttdef"><b>Definition</b> <a href="a00023_source.html#l00052">packeting.cpp:52</a></div></div>
+<div class="ttc" id="aa00059_html_a7c79ce064adef7b04e4c752fc11a0532"><div class="ttname"><a href="a00059.html#a7c79ce064adef7b04e4c752fc11a0532">create_packet_info</a></div><div class="ttdeci">std::vector&lt; PacketInfo &gt; create_packet_info(const std::vector&lt; size_t &gt; &amp;chunk_sizes)</div><div class="ttdef"><b>Definition</b> <a href="a00023_source.html#l00037">packeting.cpp:37</a></div></div>
+<div class="ttc" id="aa00059_html_a9e36c5483158e406c83220049f214a99"><div class="ttname"><a href="a00059.html#a9e36c5483158e406c83220049f214a99">build_packet</a></div><div class="ttdeci">Server::PacketData build_packet(const Server::PacketData &amp;original_packet, const std::vector&lt; uint8_t &gt; &amp;payload_buffer, size_t payload_offset, size_t chunk_size, uint32_t seq_offset)</div><div class="ttdef"><b>Definition</b> <a href="a00023_source.html#l00061">packeting.cpp:61</a></div></div>
+<div class="ttc" id="aa00059_html_aada1d43d01b23c78793b0fa6440ee038"><div class="ttname"><a href="a00059.html#aada1d43d01b23c78793b0fa6440ee038">split_payload_randomly</a></div><div class="ttdeci">std::vector&lt; size_t &gt; split_payload_randomly(size_t total_payload_size, size_t min_size=1)</div><div class="ttdef"><b>Definition</b> <a href="a00023_source.html#l00009">packeting.cpp:9</a></div></div>
+<div class="ttc" id="aa00080_html"><div class="ttname"><a href="a00080.html">server.h</a></div></div>
+<div class="ttc" id="aa00111_html"><div class="ttname"><a href="a00111.html">PacketInfo</a></div><div class="ttdef"><b>Definition</b> <a href="a00059_source.html#l00012">packeting.h:13</a></div></div>
+<div class="ttc" id="aa00111_html_a11c14a8a43bec03ef864bf18cf9cdfd8"><div class="ttname"><a href="a00111.html#a11c14a8a43bec03ef864bf18cf9cdfd8">PacketInfo::offset</a></div><div class="ttdeci">size_t offset</div><div class="ttdef"><b>Definition</b> <a href="a00059_source.html#l00014">packeting.h:14</a></div></div>
+<div class="ttc" id="aa00111_html_ae79665c997c8f554c8df211075e18f43"><div class="ttname"><a href="a00111.html#ae79665c997c8f554c8df211075e18f43">PacketInfo::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition</b> <a href="a00059_source.html#l00015">packeting.h:15</a></div></div>
+<div class="ttc" id="aa00123_html"><div class="ttname"><a href="a00123.html">Server::PacketData</a></div><div class="ttdef"><b>Definition</b> <a href="a00080_source.html#l00018">server.h:19</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="a00059.html">sockets.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_cd4de306cfa88c5ea3cf6e87cee9342d.html">manipulation</a></li><li class="navelem"><a class="el" href="a00059.html">packeting.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

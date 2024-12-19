@@ -97,7 +97,7 @@ $(document).ready(function(){initNavTree('a00002_source.html',''); initResizable
   <div class="headertitle"><div class="title">config.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="a00002.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="a00050.html">config.h</a>&quot;</span></div>
+<a href="a00002.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="a00047.html">config.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment">// Adding a new variable to config, add fields hereby:</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
@@ -110,12 +110,12 @@ $(document).ready(function(){initNavTree('a00002_source.html',''); initResizable
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">// int packetCaptureTime = config.getPacketCaptureTime();</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
 <div class="foldopen" id="foldopen00013" data-start="{" data-end="}">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="a00092.html#a1e6ff2314655623acc0ebdb45cc8c730">   13</a></span><a class="code hl_function" href="a00092.html#a1e6ff2314655623acc0ebdb45cc8c730">ConfigManager::ConfigManager</a>(<span class="keyword">const</span> std::string &amp;filename, quill::Logger *logger)</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="a00103.html#a1e6ff2314655623acc0ebdb45cc8c730">   13</a></span><a class="code hl_function" href="a00103.html#a1e6ff2314655623acc0ebdb45cc8c730">ConfigManager::ConfigManager</a>(<span class="keyword">const</span> std::string &amp;filename, quill::Logger *logger)</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>    : filename(filename), logLevel(<span class="stringliteral">&quot;TRACE_L3&quot;</span>), logDirectory(<span class="stringliteral">&quot;.&quot;</span>), timeWait(1), reorderPackets(false), manageSSL(true), logger(logger) {}</div>
 </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
 <div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="a00092.html#a51406b8b2a22f1744b10414eb67f5c93">   16</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="a00092.html#a51406b8b2a22f1744b10414eb67f5c93">ConfigManager::loadConfig</a>()</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="a00103.html#a51406b8b2a22f1744b10414eb67f5c93">   16</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="a00103.html#a51406b8b2a22f1744b10414eb67f5c93">ConfigManager::loadConfig</a>()</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordflow">try</span></div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    {</div>
@@ -153,47 +153,47 @@ $(document).ready(function(){initNavTree('a00002_source.html',''); initResizable
 </div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
 <div class="foldopen" id="foldopen00052" data-start="{" data-end="}">
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="a00092.html#ad6ebe707ef655c67a7a3091a4e87cc19">   52</a></span>std::string <a class="code hl_function" href="a00092.html#ad6ebe707ef655c67a7a3091a4e87cc19">ConfigManager::getLogLevel</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="a00103.html#ad6ebe707ef655c67a7a3091a4e87cc19">   52</a></span>std::string <a class="code hl_function" href="a00103.html#ad6ebe707ef655c67a7a3091a4e87cc19">ConfigManager::getLogLevel</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">return</span> logLevel;</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>}</div>
 </div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
 <div class="foldopen" id="foldopen00057" data-start="{" data-end="}">
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="a00092.html#adf2a1456feeecb034886aadb0df0e146">   57</a></span>std::string <a class="code hl_function" href="a00092.html#adf2a1456feeecb034886aadb0df0e146">ConfigManager::getLogDirectory</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="a00103.html#adf2a1456feeecb034886aadb0df0e146">   57</a></span>std::string <a class="code hl_function" href="a00103.html#adf2a1456feeecb034886aadb0df0e146">ConfigManager::getLogDirectory</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="keywordflow">return</span> logDirectory;</div>
 <div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
 </div>
 <div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
 <div class="foldopen" id="foldopen00062" data-start="{" data-end="}">
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="a00092.html#aeeb5b1b6229ea527d70431119f46ddab">   62</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="a00092.html#aeeb5b1b6229ea527d70431119f46ddab">ConfigManager::getTimeWait</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="a00103.html#aeeb5b1b6229ea527d70431119f46ddab">   62</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="a00103.html#aeeb5b1b6229ea527d70431119f46ddab">ConfigManager::getTimeWait</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordflow">return</span> timeWait;</div>
 <div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
 </div>
 <div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
 <div class="foldopen" id="foldopen00067" data-start="{" data-end="}">
-<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="a00092.html#a6f090eaad2a3fc904b23061066ed0c49">   67</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="a00092.html#a6f090eaad2a3fc904b23061066ed0c49">ConfigManager::getReorderPackets</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="a00103.html#a6f090eaad2a3fc904b23061066ed0c49">   67</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="a00103.html#a6f090eaad2a3fc904b23061066ed0c49">ConfigManager::getReorderPackets</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    <span class="keywordflow">return</span> reorderPackets;</div>
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>}</div>
 </div>
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
 <div class="foldopen" id="foldopen00072" data-start="{" data-end="}">
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="a00092.html#a072697ca2c74224a1e0b276a10251c44">   72</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="a00092.html#a072697ca2c74224a1e0b276a10251c44">ConfigManager::getManageSSL</a>()<span class="keyword"> const</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="a00103.html#a072697ca2c74224a1e0b276a10251c44">   72</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="a00103.html#a072697ca2c74224a1e0b276a10251c44">ConfigManager::getManageSSL</a>()<span class="keyword"> const</span></div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="keyword"></span>{</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">return</span> manageSSL;</div>
 <div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>}</div>
 </div>
-<div class="ttc" id="aa00050_html"><div class="ttname"><a href="a00050.html">config.h</a></div></div>
-<div class="ttc" id="aa00092_html_a072697ca2c74224a1e0b276a10251c44"><div class="ttname"><a href="a00092.html#a072697ca2c74224a1e0b276a10251c44">ConfigManager::getManageSSL</a></div><div class="ttdeci">bool getManageSSL() const</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00072">config.cpp:72</a></div></div>
-<div class="ttc" id="aa00092_html_a1e6ff2314655623acc0ebdb45cc8c730"><div class="ttname"><a href="a00092.html#a1e6ff2314655623acc0ebdb45cc8c730">ConfigManager::ConfigManager</a></div><div class="ttdeci">ConfigManager(const std::string &amp;filename, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00013">config.cpp:13</a></div></div>
-<div class="ttc" id="aa00092_html_a51406b8b2a22f1744b10414eb67f5c93"><div class="ttname"><a href="a00092.html#a51406b8b2a22f1744b10414eb67f5c93">ConfigManager::loadConfig</a></div><div class="ttdeci">bool loadConfig()</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00016">config.cpp:16</a></div></div>
-<div class="ttc" id="aa00092_html_a6f090eaad2a3fc904b23061066ed0c49"><div class="ttname"><a href="a00092.html#a6f090eaad2a3fc904b23061066ed0c49">ConfigManager::getReorderPackets</a></div><div class="ttdeci">bool getReorderPackets() const</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00067">config.cpp:67</a></div></div>
-<div class="ttc" id="aa00092_html_ad6ebe707ef655c67a7a3091a4e87cc19"><div class="ttname"><a href="a00092.html#ad6ebe707ef655c67a7a3091a4e87cc19">ConfigManager::getLogLevel</a></div><div class="ttdeci">std::string getLogLevel() const</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00052">config.cpp:52</a></div></div>
-<div class="ttc" id="aa00092_html_adf2a1456feeecb034886aadb0df0e146"><div class="ttname"><a href="a00092.html#adf2a1456feeecb034886aadb0df0e146">ConfigManager::getLogDirectory</a></div><div class="ttdeci">std::string getLogDirectory() const</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00057">config.cpp:57</a></div></div>
-<div class="ttc" id="aa00092_html_aeeb5b1b6229ea527d70431119f46ddab"><div class="ttname"><a href="a00092.html#aeeb5b1b6229ea527d70431119f46ddab">ConfigManager::getTimeWait</a></div><div class="ttdeci">int getTimeWait() const</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00062">config.cpp:62</a></div></div>
+<div class="ttc" id="aa00047_html"><div class="ttname"><a href="a00047.html">config.h</a></div></div>
+<div class="ttc" id="aa00103_html_a072697ca2c74224a1e0b276a10251c44"><div class="ttname"><a href="a00103.html#a072697ca2c74224a1e0b276a10251c44">ConfigManager::getManageSSL</a></div><div class="ttdeci">bool getManageSSL() const</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00072">config.cpp:72</a></div></div>
+<div class="ttc" id="aa00103_html_a1e6ff2314655623acc0ebdb45cc8c730"><div class="ttname"><a href="a00103.html#a1e6ff2314655623acc0ebdb45cc8c730">ConfigManager::ConfigManager</a></div><div class="ttdeci">ConfigManager(const std::string &amp;filename, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00013">config.cpp:13</a></div></div>
+<div class="ttc" id="aa00103_html_a51406b8b2a22f1744b10414eb67f5c93"><div class="ttname"><a href="a00103.html#a51406b8b2a22f1744b10414eb67f5c93">ConfigManager::loadConfig</a></div><div class="ttdeci">bool loadConfig()</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00016">config.cpp:16</a></div></div>
+<div class="ttc" id="aa00103_html_a6f090eaad2a3fc904b23061066ed0c49"><div class="ttname"><a href="a00103.html#a6f090eaad2a3fc904b23061066ed0c49">ConfigManager::getReorderPackets</a></div><div class="ttdeci">bool getReorderPackets() const</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00067">config.cpp:67</a></div></div>
+<div class="ttc" id="aa00103_html_ad6ebe707ef655c67a7a3091a4e87cc19"><div class="ttname"><a href="a00103.html#ad6ebe707ef655c67a7a3091a4e87cc19">ConfigManager::getLogLevel</a></div><div class="ttdeci">std::string getLogLevel() const</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00052">config.cpp:52</a></div></div>
+<div class="ttc" id="aa00103_html_adf2a1456feeecb034886aadb0df0e146"><div class="ttname"><a href="a00103.html#adf2a1456feeecb034886aadb0df0e146">ConfigManager::getLogDirectory</a></div><div class="ttdeci">std::string getLogDirectory() const</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00057">config.cpp:57</a></div></div>
+<div class="ttc" id="aa00103_html_aeeb5b1b6229ea527d70431119f46ddab"><div class="ttname"><a href="a00103.html#aeeb5b1b6229ea527d70431119f46ddab">ConfigManager::getTimeWait</a></div><div class="ttdeci">int getTimeWait() const</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00062">config.cpp:62</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

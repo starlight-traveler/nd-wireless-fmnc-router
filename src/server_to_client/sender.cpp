@@ -35,9 +35,10 @@ void send_packet(const Server::PacketData &pkt, quill::Logger *logger, std::shar
 
     LOG_DEBUG(logger, "Packet with ID {} sent at {}", packet_id, timestamp);
 
-    // Existing code to send the packet...
     std::lock_guard<std::mutex> raw_lock(raw_socket_mutex);
 
+    // Sendto is not at network adpater layer and pcap_inject
+    
     ssize_t sent = sendto(raw_socket, pkt.data.data(), pkt.length, 0,
                           (struct sockaddr *)&pkt.socket_address, sizeof(pkt.socket_address));
     if (sent == -1)

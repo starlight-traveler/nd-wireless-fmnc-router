@@ -1,5 +1,4 @@
 var a00035 =
 [
-    [ "capture_packets_to", "a00035.html#a8c6c08e6430364d394b8113ac986c5ab", null ],
-    [ "packet_handler_to", "a00035.html#a1210b9f2d376d05583d5804cc44fb583", null ]
+    [ "get_mac_address", "a00035.html#a91a4e24d46900f2d4c78a5e062e0608d", null ]
 ];

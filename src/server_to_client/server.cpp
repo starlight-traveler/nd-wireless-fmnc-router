@@ -536,10 +536,10 @@ void queue_packet(std::shared_ptr<Server::Data> internal, const struct pcap_pkth
         LOG_DEBUG(internal->logger, "Non-TCP packet, protocol: {}", ip_header->protocol);
     }
 
-    // Step 11: Add packet to the queue
-    add_packet_to_queue(internal, packet_data, header);
+    // // Step 11: Add packet to the queue
+    // add_packet_to_queue(internal, packet_data, header);
 
-    // Step 12: Log the queuing action
-    LOG_DEBUG(internal->logger, "Queued packet, length: {} bytes, total queued payload: {} bytes",
-              header->len, internal->total_payload_length);
+    // // Step 12: Log the queuing action
+    // LOG_DEBUG(internal->logger, "Queued packet, length: {} bytes, total queued payload: {} bytes",
+    //           header->len, internal->total_payload_length);
 }

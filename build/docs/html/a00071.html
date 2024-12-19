@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FMNC-MITM: utilities.h File Reference</title>
+<title>FMNC-MITM: serialization_manager.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -91,80 +91,87 @@ $(document).ready(function(){initNavTree('a00071.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">utilities.h File Reference</div></div>
+  <div class="headertitle"><div class="title">serialization_manager.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="a00065_source.html">general.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &quot;<a class="el" href="a00080_source.html">server.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="a00050_source.html">logger.h</a>&quot;</code><br />
+<code>#include &lt;memory&gt;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for utilities.h:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for serialization_manager.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00072.png" border="0" usemap="#autilities_8h" alt=""/></div>
-<map name="autilities_8h" id="autilities_8h">
-<area shape="rect" title=" " alt="" coords="1253,5,1335,31"/>
-<area shape="rect" href="a00065.html" title=" " alt="" coords="1253,79,1335,104"/>
-<area shape="poly" title=" " alt="" coords="1297,31,1297,65,1291,65,1291,31"/>
-<area shape="rect" title=" " alt="" coords="5,152,71,177"/>
-<area shape="poly" title=" " alt="" coords="1252,96,697,114,350,131,201,142,85,155,84,150,201,137,350,126,697,109,1252,91"/>
-<area shape="rect" title=" " alt="" coords="95,152,157,177"/>
-<area shape="poly" title=" " alt="" coords="1252,96,736,114,416,132,279,143,171,155,170,150,278,137,416,126,736,109,1252,91"/>
-<area shape="rect" title=" " alt="" coords="181,152,247,177"/>
-<area shape="poly" title=" " alt="" coords="1252,95,1094,96,851,103,561,121,410,136,261,155,260,150,409,130,561,115,851,97,1094,90,1252,90"/>
-<area shape="rect" title=" " alt="" coords="271,152,338,177"/>
-<area shape="poly" title=" " alt="" coords="1252,95,1106,97,886,105,624,123,487,137,352,155,351,149,487,131,623,117,886,100,1106,92,1252,90"/>
-<area shape="rect" title=" " alt="" coords="362,152,437,177"/>
-<area shape="poly" title=" " alt="" coords="1252,96,922,111,691,129,456,155,451,155,450,150,455,149,691,123,922,106,1252,91"/>
-<area shape="rect" title=" " alt="" coords="1429,299,1509,324"/>
-<area shape="poly" title=" " alt="" coords="1252,95,1076,97,837,104,719,111,617,122,541,136,516,145,501,154,496,165,501,176,519,188,549,200,641,223,764,243,907,261,1198,288,1415,304,1414,309,1197,294,906,266,764,248,640,228,547,205,516,192,497,179,491,165,497,150,513,140,539,131,616,117,719,106,836,99,1076,91,1252,90"/>
-<area shape="rect" title=" " alt="" coords="512,152,615,177"/>
-<area shape="poly" title=" " alt="" coords="1253,98,994,117,815,133,629,155,628,149,814,128,993,111,1252,92"/>
-<area shape="rect" title=" " alt="" coords="639,152,735,177"/>
-<area shape="poly" title=" " alt="" coords="1253,99,1041,119,750,155,749,149,1040,113,1252,93"/>
-<area shape="rect" title=" " alt="" coords="759,152,863,177"/>
-<area shape="poly" title=" " alt="" coords="1253,101,877,155,876,149,1252,95"/>
-<area shape="rect" title=" " alt="" coords="888,152,996,177"/>
-<area shape="poly" title=" " alt="" coords="1253,104,1010,152,1009,147,1252,98"/>
-<area shape="rect" title=" " alt="" coords="1020,152,1155,177"/>
-<area shape="poly" title=" " alt="" coords="1262,107,1135,150,1133,145,1260,101"/>
-<area shape="rect" title=" " alt="" coords="1179,152,1294,177"/>
-<area shape="poly" title=" " alt="" coords="1287,106,1257,143,1253,139,1282,103"/>
-<area shape="rect" title=" " alt="" coords="1318,152,1385,177"/>
-<area shape="poly" title=" " alt="" coords="1306,103,1335,139,1331,143,1301,106"/>
-<area shape="rect" title=" " alt="" coords="1409,152,1501,177"/>
-<area shape="poly" title=" " alt="" coords="1321,102,1418,144,1415,149,1319,106"/>
-<area shape="rect" title=" " alt="" coords="1526,152,1614,177"/>
-<area shape="poly" title=" " alt="" coords="1337,101,1513,146,1512,151,1335,106"/>
-<area shape="rect" title=" " alt="" coords="1639,152,1768,177"/>
-<area shape="poly" title=" " alt="" coords="1336,97,1626,147,1625,152,1335,102"/>
-<area shape="rect" title=" " alt="" coords="1793,152,1857,177"/>
-<area shape="poly" title=" " alt="" coords="1336,93,1528,113,1654,129,1780,149,1780,149,1779,155,1779,155,1653,134,1528,118,1336,99"/>
-<area shape="rect" title=" " alt="" coords="1881,152,1977,177"/>
-<area shape="poly" title=" " alt="" coords="1336,93,1559,113,1867,149,1866,155,1558,118,1335,98"/>
-<area shape="rect" title=" " alt="" coords="2001,152,2065,177"/>
-<area shape="poly" title=" " alt="" coords="1336,91,1606,106,1793,123,1988,150,1987,155,1793,128,1606,111,1335,96"/>
-<area shape="rect" title=" " alt="" coords="2089,152,2213,177"/>
-<area shape="poly" title=" " alt="" coords="1336,92,1640,111,1853,127,2076,149,2075,155,1853,133,1639,116,1336,97"/>
-<area shape="rect" title=" " alt="" coords="2238,152,2294,177"/>
-<area shape="poly" title=" " alt="" coords="1336,90,1480,91,1698,98,1956,116,2091,131,2225,150,2224,155,2091,136,1956,121,1697,103,1480,96,1336,95"/>
-<area shape="rect" title=" " alt="" coords="2319,152,2387,177"/>
-<area shape="poly" title=" " alt="" coords="1336,90,1491,91,1728,99,2011,117,2159,131,2305,150,2305,155,2159,136,2011,122,1728,104,1491,96,1336,95"/>
-<area shape="rect" title=" " alt="" coords="2411,152,2521,177"/>
-<area shape="poly" title=" " alt="" coords="1336,91,1503,94,1762,104,2074,121,2398,149,2397,155,2073,127,1762,109,1503,100,1336,96"/>
-<area shape="rect" href="a00053.html" title=" " alt="" coords="2545,152,2619,177"/>
-<area shape="poly" title=" " alt="" coords="1335,91,1904,109,2259,127,2412,137,2531,150,2531,155,2411,143,2259,132,1903,115,1335,96"/>
-<area shape="rect" title=" " alt="" coords="2251,225,2387,251"/>
-<area shape="poly" title=" " alt="" coords="2545,179,2375,224,2374,219,2544,174"/>
-<area shape="rect" title=" " alt="" coords="2411,225,2521,251"/>
-<area shape="poly" title=" " alt="" coords="2565,180,2498,220,2495,216,2562,175"/>
+<div class="center"><img src="a00072.png" border="0" usemap="#aserialization__manager_8h" alt=""/></div>
+<map name="aserialization__manager_8h" id="aserialization__manager_8h">
+<area shape="rect" title=" " alt="" coords="1917,5,2095,31"/>
+<area shape="rect" href="a00080.html" title=" " alt="" coords="1893,79,1967,104"/>
+<area shape="poly" title=" " alt="" coords="1996,33,1954,71,1951,67,1992,29"/>
 <area shape="rect" href="a00050.html" title=" " alt="" coords="2545,225,2619,251"/>
-<area shape="poly" title=" " alt="" coords="2578,178,2576,212,2571,212,2572,178"/>
-<area shape="poly" title=" " alt="" coords="2545,251,2533,253,2386,272,2235,286,1943,303,1693,311,1523,313,1523,308,1693,306,1942,298,2235,280,2385,266,2532,248,2545,246"/>
-<area shape="poly" title=" " alt="" coords="2586,225,2588,191,2593,191,2592,225"/>
-<area shape="rect" title=" " alt="" coords="2472,299,2583,324"/>
-<area shape="poly" title=" " alt="" coords="2575,253,2547,289,2542,286,2571,249"/>
-<area shape="rect" title=" " alt="" coords="2607,299,2666,324"/>
-<area shape="poly" title=" " alt="" coords="2593,249,2622,286,2617,289,2589,253"/>
+<area shape="poly" title=" " alt="" coords="2009,31,2014,66,2021,86,2033,102,2233,152,2532,222,2531,227,2232,157,2030,106,2016,88,2009,68,2003,31"/>
+<area shape="rect" title=" " alt="" coords="2043,79,2121,104"/>
+<area shape="poly" title=" " alt="" coords="2020,29,2061,67,2058,71,2016,33"/>
+<area shape="rect" href="a00068.html" title=" " alt="" coords="1310,152,1393,177"/>
+<area shape="poly" title=" " alt="" coords="1893,100,1407,159,1406,154,1892,95"/>
+<area shape="rect" title=" " alt="" coords="5,225,71,251"/>
+<area shape="poly" title=" " alt="" coords="1310,170,728,187,363,204,207,215,85,228,84,223,206,210,363,199,728,181,1310,164"/>
+<area shape="rect" title=" " alt="" coords="95,225,157,251"/>
+<area shape="poly" title=" " alt="" coords="1310,170,768,187,430,204,285,215,171,228,170,223,284,210,429,199,767,181,1310,164"/>
+<area shape="rect" title=" " alt="" coords="181,225,247,251"/>
+<area shape="poly" title=" " alt="" coords="1310,168,1144,168,887,175,580,193,419,208,261,228,260,223,419,203,579,187,887,169,1144,163,1310,163"/>
+<area shape="rect" title=" " alt="" coords="271,225,338,251"/>
+<area shape="poly" title=" " alt="" coords="1310,168,1156,170,921,177,642,195,496,209,352,228,351,223,495,204,641,189,921,172,1155,164,1310,163"/>
+<area shape="rect" title=" " alt="" coords="362,225,437,251"/>
+<area shape="poly" title=" " alt="" coords="1310,169,957,183,709,201,456,228,451,229,450,223,455,223,709,195,957,178,1309,164"/>
+<area shape="rect" title=" " alt="" coords="1429,372,1509,397"/>
+<area shape="poly" title=" " alt="" coords="1310,168,1122,169,865,175,738,183,627,193,544,208,517,217,501,227,496,238,501,249,519,261,549,273,641,296,764,316,907,334,1198,362,1415,377,1414,383,1197,367,906,339,764,322,640,301,547,278,516,266,497,252,491,238,497,224,515,212,543,203,626,188,737,177,864,170,1122,164,1310,163"/>
+<area shape="rect" title=" " alt="" coords="512,225,615,251"/>
+<area shape="poly" title=" " alt="" coords="1310,171,1029,189,833,205,629,228,628,223,832,200,1029,183,1310,165"/>
+<area shape="rect" title=" " alt="" coords="639,225,735,251"/>
+<area shape="poly" title=" " alt="" coords="1310,171,1076,191,916,207,750,228,749,223,915,202,1075,185,1310,166"/>
+<area shape="rect" title=" " alt="" coords="759,225,863,251"/>
+<area shape="poly" title=" " alt="" coords="1310,173,1127,194,877,228,877,223,1126,189,1310,168"/>
+<area shape="rect" title=" " alt="" coords="888,225,996,251"/>
+<area shape="poly" title=" " alt="" coords="1310,176,1010,228,1009,222,1309,171"/>
+<area shape="rect" title=" " alt="" coords="1020,225,1155,251"/>
+<area shape="poly" title=" " alt="" coords="1310,180,1144,224,1143,219,1309,175"/>
+<area shape="rect" title=" " alt="" coords="1179,225,1294,251"/>
+<area shape="poly" title=" " alt="" coords="1334,180,1268,220,1266,216,1332,175"/>
+<area shape="rect" title=" " alt="" coords="1318,225,1385,251"/>
+<area shape="poly" title=" " alt="" coords="1354,178,1354,212,1349,212,1349,178"/>
+<area shape="rect" title=" " alt="" coords="1409,225,1501,251"/>
+<area shape="poly" title=" " alt="" coords="1370,175,1428,215,1425,219,1367,180"/>
+<area shape="rect" title=" " alt="" coords="1526,225,1614,251"/>
+<area shape="poly" title=" " alt="" coords="1387,175,1522,218,1521,224,1386,180"/>
+<area shape="rect" title=" " alt="" coords="1639,225,1768,251"/>
+<area shape="poly" title=" " alt="" coords="1393,172,1633,220,1632,225,1392,177"/>
+<area shape="rect" title=" " alt="" coords="1793,225,1857,251"/>
+<area shape="poly" title=" " alt="" coords="1393,168,1563,188,1780,223,1780,223,1779,228,1779,228,1562,193,1393,173"/>
+<area shape="rect" title=" " alt="" coords="1881,225,1977,251"/>
+<area shape="poly" title=" " alt="" coords="1393,167,1593,187,1867,223,1867,228,1593,193,1392,172"/>
+<area shape="rect" title=" " alt="" coords="2001,225,2065,251"/>
+<area shape="poly" title=" " alt="" coords="1393,165,1641,181,1811,198,1988,223,1987,228,1811,203,1641,186,1393,170"/>
+<area shape="rect" title=" " alt="" coords="2089,225,2213,251"/>
+<area shape="poly" title=" " alt="" coords="1393,166,1675,185,1871,202,2076,223,2075,228,1871,207,1674,190,1393,171"/>
+<area shape="rect" title=" " alt="" coords="2238,225,2294,251"/>
+<area shape="poly" title=" " alt="" coords="1393,163,1529,165,1733,172,1975,190,2100,204,2225,223,2224,228,2100,210,1974,195,1733,178,1529,170,1393,168"/>
+<area shape="rect" title=" " alt="" coords="2319,225,2387,251"/>
+<area shape="poly" title=" " alt="" coords="1393,163,1541,165,1764,173,2030,191,2169,205,2306,223,2305,228,2168,210,2029,197,1764,179,1541,171,1393,169"/>
+<area shape="rect" title=" " alt="" coords="2411,225,2521,251"/>
+<area shape="poly" title=" " alt="" coords="1393,164,1798,178,2092,195,2398,223,2397,228,2092,201,1798,183,1393,169"/>
+<area shape="poly" title=" " alt="" coords="1393,163,1571,163,1849,169,2184,187,2359,202,2531,223,2531,228,2358,208,2184,193,1849,174,1571,168,1393,168"/>
+<area shape="rect" title=" " alt="" coords="2251,299,2387,324"/>
+<area shape="poly" title=" " alt="" coords="2545,252,2375,298,2374,293,2544,247"/>
+<area shape="rect" title=" " alt="" coords="2411,299,2521,324"/>
+<area shape="poly" title=" " alt="" coords="2565,253,2498,294,2495,289,2562,248"/>
+<area shape="rect" href="a00047.html" title=" " alt="" coords="2545,299,2619,324"/>
+<area shape="poly" title=" " alt="" coords="2578,251,2576,285,2571,285,2572,251"/>
+<area shape="poly" title=" " alt="" coords="2545,325,2533,327,2386,345,2235,359,1943,377,1693,385,1523,386,1523,381,1693,379,1942,372,2235,354,2385,340,2532,321,2545,319"/>
+<area shape="poly" title=" " alt="" coords="2586,298,2588,264,2593,265,2592,299"/>
+<area shape="rect" title=" " alt="" coords="2472,372,2583,397"/>
+<area shape="poly" title=" " alt="" coords="2575,326,2547,363,2542,360,2571,323"/>
+<area shape="rect" title=" " alt="" coords="2607,372,2666,397"/>
+<area shape="poly" title=" " alt="" coords="2593,323,2622,360,2617,363,2589,326"/>
 </map>
 </div>
 </div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
@@ -172,17 +179,15 @@ $(document).ready(function(){initNavTree('a00071.html',''); initResizable(); });
 <div id="dynsection-1-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00073.png" border="0" usemap="#autilities_8hdep" alt=""/></div>
-<map name="autilities_8hdep" id="autilities_8hdep">
-<area shape="rect" title=" " alt="" coords="183,5,266,31"/>
-<area shape="rect" href="a00011.html" title=" " alt="" coords="5,79,97,104"/>
-<area shape="poly" title=" " alt="" coords="185,38,81,81,79,76,183,33"/>
-<area shape="rect" href="a00008.html" title=" " alt="" coords="121,79,211,104"/>
-<area shape="poly" title=" " alt="" coords="208,43,178,80,173,77,204,40"/>
-<area shape="rect" href="a00029.html" title=" " alt="" coords="235,79,334,104"/>
-<area shape="poly" title=" " alt="" coords="245,40,277,77,273,80,241,43"/>
-<area shape="rect" href="a00023.html" title=" " alt="" coords="358,79,457,104"/>
-<area shape="poly" title=" " alt="" coords="268,33,378,76,376,81,266,38"/>
+<div class="center"><img src="a00073.png" border="0" usemap="#aserialization__manager_8hdep" alt=""/></div>
+<map name="aserialization__manager_8hdep" id="aserialization__manager_8hdep">
+<area shape="rect" title=" " alt="" coords="120,5,299,31"/>
+<area shape="rect" href="a00029.html" title=" " alt="" coords="5,79,88,104"/>
+<area shape="poly" title=" " alt="" coords="172,39,74,81,72,76,170,34"/>
+<area shape="rect" href="a00038.html" title=" " alt="" coords="113,79,306,104"/>
+<area shape="poly" title=" " alt="" coords="212,44,212,79,207,79,207,44"/>
+<area shape="rect" href="a00041.html" title=" " alt="" coords="331,79,451,104"/>
+<area shape="poly" title=" " alt="" coords="252,33,362,76,360,81,250,38"/>
 </map>
 </div>
 </div>
@@ -190,283 +195,445 @@ $(document).ready(function(){initNavTree('a00071.html',''); initResizable(); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2e8c16b72b01132d58ef8e9e6fd7f101" id="r_a2e8c16b72b01132d58ef8e9e6fd7f101"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00071.html#a2e8c16b72b01132d58ef8e9e6fd7f101">generate_packet_id</a> (const struct iphdr *ip_header, const struct tcphdr *tcp_header)</td></tr>
-<tr class="separator:a2e8c16b72b01132d58ef8e9e6fd7f101"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae2cacf1859fb0b54c2a8c98def76b9e6" id="r_ae2cacf1859fb0b54c2a8c98def76b9e6"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00071.html#ae2cacf1859fb0b54c2a8c98def76b9e6">get_current_timestamp</a> ()</td></tr>
-<tr class="separator:ae2cacf1859fb0b54c2a8c98def76b9e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1d919e8ec4fa73e99303ca26f1a24188" id="r_a1d919e8ec4fa73e99303ca26f1a24188"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00071.html#a1d919e8ec4fa73e99303ca26f1a24188">compute_ip_checksum</a> (struct iphdr *ip_header)</td></tr>
-<tr class="separator:a1d919e8ec4fa73e99303ca26f1a24188"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a33bdbedcf6fc6cc7f29ca20db5bbf485" id="r_a33bdbedcf6fc6cc7f29ca20db5bbf485"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00071.html#a33bdbedcf6fc6cc7f29ca20db5bbf485">compute_tcp_checksum</a> (struct iphdr *ip_header, struct tcphdr *tcp_header)</td></tr>
-<tr class="separator:a33bdbedcf6fc6cc7f29ca20db5bbf485"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ed11d498018f0e7e5496194b4a757f7" id="r_a3ed11d498018f0e7e5496194b4a757f7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00071.html#a3ed11d498018f0e7e5496194b4a757f7">serialization_manager</a> (std::shared_ptr&lt; <a class="el" href="a00127.html">Server::Data</a> &gt; internal)</td></tr>
+<tr class="separator:a3ed11d498018f0e7e5496194b4a757f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5ed28b7d469288895f4e51339355df7" id="r_ae5ed28b7d469288895f4e51339355df7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00071.html#ae5ed28b7d469288895f4e51339355df7">dump_tcp_option_counts</a> (std::shared_ptr&lt; <a class="el" href="a00127.html">Server::Data</a> &gt; internal)</td></tr>
+<tr class="separator:ae5ed28b7d469288895f4e51339355df7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afcb35109e8b74daefc9e9130c5cd4d9a" id="r_afcb35109e8b74daefc9e9130c5cd4d9a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00071.html#afcb35109e8b74daefc9e9130c5cd4d9a">dump_tcp_flag_counts</a> (std::shared_ptr&lt; <a class="el" href="a00127.html">Server::Data</a> &gt; internal)</td></tr>
+<tr class="separator:afcb35109e8b74daefc9e9130c5cd4d9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46ba20af6c21d2dca8a1ac3b1aeaf937" id="r_a46ba20af6c21d2dca8a1ac3b1aeaf937"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00071.html#a46ba20af6c21d2dca8a1ac3b1aeaf937">dump_packet_log</a> (std::shared_ptr&lt; <a class="el" href="a00127.html">Server::Data</a> &gt; internal)</td></tr>
+<tr class="separator:a46ba20af6c21d2dca8a1ac3b1aeaf937"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a1d919e8ec4fa73e99303ca26f1a24188" name="a1d919e8ec4fa73e99303ca26f1a24188"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1d919e8ec4fa73e99303ca26f1a24188">&#9670;&#160;</a></span>compute_ip_checksum()</h2>
+<a id="a46ba20af6c21d2dca8a1ac3b1aeaf937" name="a46ba20af6c21d2dca8a1ac3b1aeaf937"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46ba20af6c21d2dca8a1ac3b1aeaf937">&#9670;&#160;</a></span>dump_packet_log()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void compute_ip_checksum </td>
+          <td class="memname">void dump_packet_log </td>
           <td>(</td>
-          <td class="paramtype">struct iphdr *&#160;</td>
-          <td class="paramname"><em>ip_header</em></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00127.html">Server::Data</a> &gt;&#160;</td>
+          <td class="paramname"><em>internal</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00029_source.html#l00034">34</a> of file <a class="el" href="a00029_source.html">utilities.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
-<div class="line"><span class="lineno">   36</span>    ip_header-&gt;check = 0;</div>
-<div class="line"><span class="lineno">   37</span>    uint16_t *header = (uint16_t *)ip_header;</div>
-<div class="line"><span class="lineno">   38</span>    uint32_t checksum = 0;</div>
-<div class="line"><span class="lineno">   39</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (ip_header-&gt;ihl * 2); i++)</div>
-<div class="line"><span class="lineno">   40</span>    {</div>
-<div class="line"><span class="lineno">   41</span>        checksum += ntohs(header[i]);</div>
-<div class="line"><span class="lineno">   42</span>    }</div>
-<div class="line"><span class="lineno">   43</span>    checksum = (checksum &amp; 0xFFFF) + (checksum &gt;&gt; 16);</div>
-<div class="line"><span class="lineno">   44</span>    checksum = ~checksum &amp; 0xFFFF;</div>
-<div class="line"><span class="lineno">   45</span>    ip_header-&gt;check = htons((uint16_t)checksum);</div>
-<div class="line"><span class="lineno">   46</span>}</div>
+<p class="definition">Definition at line <a class="el" href="a00041_source.html#l00061">61</a> of file <a class="el" href="a00041_source.html">tcp_header.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>{</div>
+<div class="line"><span class="lineno">   63</span>    std::unordered_map&lt;std::string, Server::PacketLogEntry&gt; packet_log_copy;</div>
+<div class="line"><span class="lineno">   64</span> </div>
+<div class="line"><span class="lineno">   65</span>    {</div>
+<div class="line"><span class="lineno">   66</span>        std::lock_guard&lt;std::mutex&gt; lock(internal-&gt;packet_log_mutex);</div>
+<div class="line"><span class="lineno">   67</span>        packet_log_copy = internal-&gt;packet_log;</div>
+<div class="line"><span class="lineno">   68</span>        internal-&gt;packet_log.clear();</div>
+<div class="line"><span class="lineno">   69</span>    }</div>
+<div class="line"><span class="lineno">   70</span> </div>
+<div class="line"><span class="lineno">   71</span>    <span class="comment">// Check if there&#39;s any data to log</span></div>
+<div class="line"><span class="lineno">   72</span>    <span class="keywordflow">if</span> (packet_log_copy.empty())</div>
+<div class="line"><span class="lineno">   73</span>    {</div>
+<div class="line"><span class="lineno">   74</span>        LOG_DEBUG(internal-&gt;logger, <span class="stringliteral">&quot;No packet logs to dump.&quot;</span>);</div>
+<div class="line"><span class="lineno">   75</span>        <span class="keywordflow">return</span>; <span class="comment">// Exit early to prevent writing empty JSON</span></div>
+<div class="line"><span class="lineno">   76</span>    }</div>
+<div class="line"><span class="lineno">   77</span> </div>
+<div class="line"><span class="lineno">   78</span>    <span class="comment">// Create JSON object</span></div>
+<div class="line"><span class="lineno">   79</span>    nlohmann::json j;</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;kv : packet_log_copy)</div>
+<div class="line"><span class="lineno">   82</span>    {</div>
+<div class="line"><span class="lineno">   83</span>        <span class="keyword">const</span> std::string &amp;packet_id = kv.first;</div>
+<div class="line"><span class="lineno">   84</span>        <span class="keyword">const</span> <a class="code hl_struct" href="a00119.html">Server::PacketLogEntry</a> &amp;entry = kv.second;</div>
+<div class="line"><span class="lineno">   85</span> </div>
+<div class="line"><span class="lineno">   86</span>        <span class="comment">// Convert option kinds to their names if desired</span></div>
+<div class="line"><span class="lineno">   87</span>        std::vector&lt;std::string&gt; option_names;</div>
+<div class="line"><span class="lineno">   88</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;opt_kind : entry.options)</div>
+<div class="line"><span class="lineno">   89</span>        {</div>
+<div class="line"><span class="lineno">   90</span>            option_names.push_back(<a class="code hl_function" href="a00041.html#a5c8bc944cf715bce438eaca3705ad329">get_tcp_option_name</a>(opt_kind));</div>
+<div class="line"><span class="lineno">   91</span>        }</div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span>        j[packet_id] = {</div>
+<div class="line"><span class="lineno">   94</span>            {<span class="stringliteral">&quot;status&quot;</span>, entry.<a class="code hl_variable" href="a00119.html#a60177e7554074ccadf535a85bd32b60e">status</a>},</div>
+<div class="line"><span class="lineno">   95</span>            {<span class="stringliteral">&quot;timestamp&quot;</span>, entry.<a class="code hl_variable" href="a00119.html#a1f4b70a664af5588acb13c250229a9b8">timestamp</a>},</div>
+<div class="line"><span class="lineno">   96</span>            {<span class="stringliteral">&quot;flags&quot;</span>, entry.<a class="code hl_variable" href="a00119.html#aa70042804b189aa9d44ba6fa7671d3af">flags</a>},</div>
+<div class="line"><span class="lineno">   97</span>            {<span class="stringliteral">&quot;options&quot;</span>, option_names}};</div>
+<div class="line"><span class="lineno">   98</span>    }</div>
+<div class="line"><span class="lineno">   99</span> </div>
+<div class="line"><span class="lineno">  100</span>    <span class="comment">// Append to the file to avoid overwriting</span></div>
+<div class="line"><span class="lineno">  101</span>    std::ofstream ofs(<span class="stringliteral">&quot;packet_log.json&quot;</span>, std::ios::app);</div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">if</span> (!ofs)</div>
+<div class="line"><span class="lineno">  103</span>    {</div>
+<div class="line"><span class="lineno">  104</span>        LOG_ERROR(internal-&gt;logger, <span class="stringliteral">&quot;Failed to open packet_log.json for writing.&quot;</span>);</div>
+<div class="line"><span class="lineno">  105</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  106</span>    }</div>
+<div class="line"><span class="lineno">  107</span> </div>
+<div class="line"><span class="lineno">  108</span>    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  109</span>    {</div>
+<div class="line"><span class="lineno">  110</span>        ofs &lt;&lt; j.dump(4) &lt;&lt; std::endl; <span class="comment">// Pretty print with 4 spaces indentation</span></div>
+<div class="line"><span class="lineno">  111</span>    }</div>
+<div class="line"><span class="lineno">  112</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  113</span>    {</div>
+<div class="line"><span class="lineno">  114</span>        LOG_ERROR(internal-&gt;logger, <span class="stringliteral">&quot;Failed to write JSON to file: {}&quot;</span>, e.what());</div>
+<div class="line"><span class="lineno">  115</span>        ofs.close();</div>
+<div class="line"><span class="lineno">  116</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  117</span>    }</div>
+<div class="line"><span class="lineno">  118</span> </div>
+<div class="line"><span class="lineno">  119</span>    ofs.close();</div>
+<div class="line"><span class="lineno">  120</span> </div>
+<div class="line"><span class="lineno">  121</span>    LOG_INFO(internal-&gt;logger, <span class="stringliteral">&quot;Packet log written to packet_log.json&quot;</span>);</div>
+<div class="line"><span class="lineno">  122</span>}</div>
+<div class="ttc" id="aa00041_html_a5c8bc944cf715bce438eaca3705ad329"><div class="ttname"><a href="a00041.html#a5c8bc944cf715bce438eaca3705ad329">get_tcp_option_name</a></div><div class="ttdeci">std::string get_tcp_option_name(int option_kind)</div><div class="ttdef"><b>Definition</b> <a href="a00041_source.html#l00013">tcp_header.cpp:13</a></div></div>
+<div class="ttc" id="aa00119_html"><div class="ttname"><a href="a00119.html">Server::PacketLogEntry</a></div><div class="ttdef"><b>Definition</b> <a href="a00080_source.html#l00010">server.h:11</a></div></div>
+<div class="ttc" id="aa00119_html_a1f4b70a664af5588acb13c250229a9b8"><div class="ttname"><a href="a00119.html#a1f4b70a664af5588acb13c250229a9b8">Server::PacketLogEntry::timestamp</a></div><div class="ttdeci">std::string timestamp</div><div class="ttdef"><b>Definition</b> <a href="a00080_source.html#l00013">server.h:13</a></div></div>
+<div class="ttc" id="aa00119_html_a60177e7554074ccadf535a85bd32b60e"><div class="ttname"><a href="a00119.html#a60177e7554074ccadf535a85bd32b60e">Server::PacketLogEntry::status</a></div><div class="ttdeci">std::string status</div><div class="ttdef"><b>Definition</b> <a href="a00080_source.html#l00012">server.h:12</a></div></div>
+<div class="ttc" id="aa00119_html_aa70042804b189aa9d44ba6fa7671d3af"><div class="ttname"><a href="a00119.html#aa70042804b189aa9d44ba6fa7671d3af">Server::PacketLogEntry::flags</a></div><div class="ttdeci">std::vector&lt; std::string &gt; flags</div><div class="ttdef"><b>Definition</b> <a href="a00080_source.html#l00014">server.h:14</a></div></div>
 </div><!-- fragment --><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-2-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00071_a1d919e8ec4fa73e99303ca26f1a24188_icgraph.png" border="0" usemap="#aa00071_a1d919e8ec4fa73e99303ca26f1a24188_icgraph" alt=""/></div>
-<map name="aa00071_a1d919e8ec4fa73e99303ca26f1a24188_icgraph" id="aa00071_a1d919e8ec4fa73e99303ca26f1a24188_icgraph">
-<area shape="rect" title=" " alt="" coords="901,31,1072,56"/>
-<area shape="rect" href="a00008.html#a706ee73268db25870f26e074c69d84cb" title=" " alt="" coords="689,5,853,31"/>
-<area shape="poly" title=" " alt="" coords="888,34,853,30,854,25,888,29"/>
-<area shape="rect" href="a00023.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="735,55,807,80"/>
-<area shape="poly" title=" " alt="" coords="888,57,808,66,807,61,887,52"/>
-<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,31,641,56"/>
-<area shape="poly" title=" " alt="" coords="676,34,642,38,641,33,675,28"/>
-<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,31,481,56"/>
-<area shape="poly" title=" " alt="" coords="516,46,482,46,482,41,516,41"/>
-<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,31,275,56"/>
-<area shape="poly" title=" " alt="" coords="309,46,275,46,275,41,309,41"/>
-<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,56"/>
-<area shape="poly" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
-<area shape="poly" title=" " alt="" coords="721,64,641,53,642,48,722,58"/>
+<div class="center"><img src="a00071_a46ba20af6c21d2dca8a1ac3b1aeaf937_cgraph.png" border="0" usemap="#aa00071_a46ba20af6c21d2dca8a1ac3b1aeaf937_cgraph" alt=""/></div>
+<map name="aa00071_a46ba20af6c21d2dca8a1ac3b1aeaf937_cgraph" id="aa00071_a46ba20af6c21d2dca8a1ac3b1aeaf937_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,141,31"/>
+<area shape="rect" href="a00041.html#a5c8bc944cf715bce438eaca3705ad329" title=" " alt="" coords="189,5,352,31"/>
+<area shape="poly" title=" " alt="" coords="142,15,176,15,176,21,142,21"/>
 </map>
 </div>
-
-</div>
-</div>
-<a id="a33bdbedcf6fc6cc7f29ca20db5bbf485" name="a33bdbedcf6fc6cc7f29ca20db5bbf485"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a33bdbedcf6fc6cc7f29ca20db5bbf485">&#9670;&#160;</a></span>compute_tcp_checksum()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void compute_tcp_checksum </td>
-          <td>(</td>
-          <td class="paramtype">struct iphdr *&#160;</td>
-          <td class="paramname"><em>ip_header</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">struct tcphdr *&#160;</td>
-          <td class="paramname"><em>tcp_header</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00029_source.html#l00049">49</a> of file <a class="el" href="a00029_source.html">utilities.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>{</div>
-<div class="line"><span class="lineno">   51</span>    uint16_t *tcp_segment;</div>
-<div class="line"><span class="lineno">   52</span>    uint32_t checksum = 0;</div>
-<div class="line"><span class="lineno">   53</span>    uint16_t tcp_length = ntohs(ip_header-&gt;tot_len) - ip_header-&gt;ihl * 4;</div>
-<div class="line"><span class="lineno">   54</span> </div>
-<div class="line"><span class="lineno">   55</span>    <span class="comment">// Pseudo-header fields</span></div>
-<div class="line"><span class="lineno">   56</span>    <span class="keyword">struct</span></div>
-<div class="line"><span class="lineno">   57</span>    {</div>
-<div class="line"><span class="lineno">   58</span>        uint32_t src_addr;</div>
-<div class="line"><span class="lineno">   59</span>        uint32_t dest_addr;</div>
-<div class="line"><span class="lineno">   60</span>        uint8_t zero;</div>
-<div class="line"><span class="lineno">   61</span>        uint8_t protocol;</div>
-<div class="line"><span class="lineno">   62</span>        uint16_t tcp_length;</div>
-<div class="line"><span class="lineno">   63</span>    } pseudo_header;</div>
-<div class="line"><span class="lineno">   64</span> </div>
-<div class="line"><span class="lineno">   65</span>    pseudo_header.src_addr = ip_header-&gt;saddr;</div>
-<div class="line"><span class="lineno">   66</span>    pseudo_header.dest_addr = ip_header-&gt;daddr;</div>
-<div class="line"><span class="lineno">   67</span>    pseudo_header.zero = 0;</div>
-<div class="line"><span class="lineno">   68</span>    pseudo_header.protocol = IPPROTO_TCP;</div>
-<div class="line"><span class="lineno">   69</span>    pseudo_header.tcp_length = htons(tcp_length);</div>
-<div class="line"><span class="lineno">   70</span> </div>
-<div class="line"><span class="lineno">   71</span>    <span class="comment">// Calculate checksum over pseudo-header</span></div>
-<div class="line"><span class="lineno">   72</span>    uint16_t *pseudo_header_ptr = (uint16_t *)&amp;pseudo_header;</div>
-<div class="line"><span class="lineno">   73</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <span class="keyword">sizeof</span>(pseudo_header) / 2; i++)</div>
-<div class="line"><span class="lineno">   74</span>    {</div>
-<div class="line"><span class="lineno">   75</span>        checksum += ntohs(pseudo_header_ptr[i]);</div>
-<div class="line"><span class="lineno">   76</span>    }</div>
-<div class="line"><span class="lineno">   77</span> </div>
-<div class="line"><span class="lineno">   78</span>    <span class="comment">// Calculate checksum over TCP header and data</span></div>
-<div class="line"><span class="lineno">   79</span>    tcp_segment = (uint16_t *)tcp_header;</div>
-<div class="line"><span class="lineno">   80</span>    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; (tcp_length / 2); i++)</div>
-<div class="line"><span class="lineno">   81</span>    {</div>
-<div class="line"><span class="lineno">   82</span>        checksum += ntohs(tcp_segment[i]);</div>
-<div class="line"><span class="lineno">   83</span>    }</div>
-<div class="line"><span class="lineno">   84</span> </div>
-<div class="line"><span class="lineno">   85</span>    <span class="keywordflow">if</span> (tcp_length % 2)</div>
-<div class="line"><span class="lineno">   86</span>    {</div>
-<div class="line"><span class="lineno">   87</span>        <span class="comment">// Add padding if length is odd</span></div>
-<div class="line"><span class="lineno">   88</span>        checksum += ntohs(((uint8_t *)tcp_segment)[tcp_length - 1] &lt;&lt; 8);</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
-<div class="line"><span class="lineno">   90</span> </div>
-<div class="line"><span class="lineno">   91</span>    <span class="comment">// Finalize checksum</span></div>
-<div class="line"><span class="lineno">   92</span>    checksum = (checksum &amp; 0xFFFF) + (checksum &gt;&gt; 16);</div>
-<div class="line"><span class="lineno">   93</span>    checksum = ~checksum &amp; 0xFFFF;</div>
-<div class="line"><span class="lineno">   94</span>    tcp_header-&gt;th_sum = htons((uint16_t)checksum);</div>
-<div class="line"><span class="lineno">   95</span>}</div>
-</div><!-- fragment --><div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-3-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00071_a33bdbedcf6fc6cc7f29ca20db5bbf485_icgraph.png" border="0" usemap="#aa00071_a33bdbedcf6fc6cc7f29ca20db5bbf485_icgraph" alt=""/></div>
-<map name="aa00071_a33bdbedcf6fc6cc7f29ca20db5bbf485_icgraph" id="aa00071_a33bdbedcf6fc6cc7f29ca20db5bbf485_icgraph">
-<area shape="rect" title=" " alt="" coords="901,31,1080,56"/>
-<area shape="rect" href="a00008.html#a706ee73268db25870f26e074c69d84cb" title=" " alt="" coords="689,5,853,31"/>
-<area shape="poly" title=" " alt="" coords="887,34,853,30,854,25,888,29"/>
-<area shape="rect" href="a00023.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="735,55,807,80"/>
-<area shape="poly" title=" " alt="" coords="888,57,808,66,807,61,887,52"/>
-<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,31,641,56"/>
-<area shape="poly" title=" " alt="" coords="676,34,642,38,641,33,675,28"/>
-<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,31,481,56"/>
-<area shape="poly" title=" " alt="" coords="516,46,482,46,482,41,516,41"/>
-<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,31,275,56"/>
-<area shape="poly" title=" " alt="" coords="309,46,275,46,275,41,309,41"/>
-<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,56"/>
-<area shape="poly" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
-<area shape="poly" title=" " alt="" coords="721,64,641,53,642,48,722,58"/>
+<div class="center"><img src="a00071_a46ba20af6c21d2dca8a1ac3b1aeaf937_icgraph.png" border="0" usemap="#aa00071_a46ba20af6c21d2dca8a1ac3b1aeaf937_icgraph" alt=""/></div>
+<map name="aa00071_a46ba20af6c21d2dca8a1ac3b1aeaf937_icgraph" id="aa00071_a46ba20af6c21d2dca8a1ac3b1aeaf937_icgraph">
+<area shape="rect" title=" " alt="" coords="323,5,459,31"/>
+<area shape="rect" href="a00038.html#a3ed11d498018f0e7e5496194b4a757f7" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00029.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="a2e8c16b72b01132d58ef8e9e6fd7f101" name="a2e8c16b72b01132d58ef8e9e6fd7f101"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2e8c16b72b01132d58ef8e9e6fd7f101">&#9670;&#160;</a></span>generate_packet_id()</h2>
+<a id="afcb35109e8b74daefc9e9130c5cd4d9a" name="afcb35109e8b74daefc9e9130c5cd4d9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcb35109e8b74daefc9e9130c5cd4d9a">&#9670;&#160;</a></span>dump_tcp_flag_counts()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string generate_packet_id </td>
+          <td class="memname">void dump_tcp_flag_counts </td>
           <td>(</td>
-          <td class="paramtype">const struct iphdr *&#160;</td>
-          <td class="paramname"><em>ip_header</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00127.html">Server::Data</a> &gt;&#160;</td>
+          <td class="paramname"><em>internal</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">const struct tcphdr *&#160;</td>
-          <td class="paramname"><em>tcp_header</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00029_source.html#l00009">9</a> of file <a class="el" href="a00029_source.html">utilities.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   10</span>{</div>
-<div class="line"><span class="lineno">   11</span>    std::ostringstream oss;</div>
-<div class="line"><span class="lineno">   12</span>    oss &lt;&lt; ip_header-&gt;saddr &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; ntohs(tcp_header-&gt;source)</div>
-<div class="line"><span class="lineno">   13</span>        &lt;&lt; <span class="stringliteral">&quot;-&gt;&quot;</span> &lt;&lt; ip_header-&gt;daddr &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; ntohs(tcp_header-&gt;dest)</div>
-<div class="line"><span class="lineno">   14</span>        &lt;&lt; <span class="stringliteral">&quot;:&quot;</span> &lt;&lt; ntohl(tcp_header-&gt;seq);</div>
-<div class="line"><span class="lineno">   15</span>    <span class="keywordflow">return</span> oss.str();</div>
-<div class="line"><span class="lineno">   16</span>}</div>
+<p class="definition">Definition at line <a class="el" href="a00041_source.html#l00124">124</a> of file <a class="el" href="a00041_source.html">tcp_header.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  125</span>{</div>
+<div class="line"><span class="lineno">  126</span>    std::unordered_map&lt;std::string, size_t&gt; flag_counts_copy;</div>
+<div class="line"><span class="lineno">  127</span> </div>
+<div class="line"><span class="lineno">  128</span>    {</div>
+<div class="line"><span class="lineno">  129</span>        std::lock_guard&lt;std::mutex&gt; lock(internal-&gt;flags_mutex);</div>
+<div class="line"><span class="lineno">  130</span>        flag_counts_copy = internal-&gt;tcp_flag_counts;</div>
+<div class="line"><span class="lineno">  131</span>        internal-&gt;tcp_flag_counts.clear();</div>
+<div class="line"><span class="lineno">  132</span>    }</div>
+<div class="line"><span class="lineno">  133</span> </div>
+<div class="line"><span class="lineno">  134</span>    <span class="comment">// Create or load existing JSON data</span></div>
+<div class="line"><span class="lineno">  135</span>    nlohmann::json j;</div>
+<div class="line"><span class="lineno">  136</span> </div>
+<div class="line"><span class="lineno">  137</span>    <span class="comment">// Open existing file if it exists to append new counts</span></div>
+<div class="line"><span class="lineno">  138</span>    std::ifstream ifs(<span class="stringliteral">&quot;tcp_flag_counts.json&quot;</span>);</div>
+<div class="line"><span class="lineno">  139</span>    <span class="keywordflow">if</span> (ifs)</div>
+<div class="line"><span class="lineno">  140</span>    {</div>
+<div class="line"><span class="lineno">  141</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  142</span>        {</div>
+<div class="line"><span class="lineno">  143</span>            ifs &gt;&gt; j;</div>
+<div class="line"><span class="lineno">  144</span>        }</div>
+<div class="line"><span class="lineno">  145</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  146</span>        {</div>
+<div class="line"><span class="lineno">  147</span>            LOG_ERROR(internal-&gt;logger, <span class="stringliteral">&quot;Failed to read existing JSON file: {}&quot;</span>, e.what());</div>
+<div class="line"><span class="lineno">  148</span>            ifs.close();</div>
+<div class="line"><span class="lineno">  149</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  150</span>        }</div>
+<div class="line"><span class="lineno">  151</span>    }</div>
+<div class="line"><span class="lineno">  152</span>    ifs.close();</div>
+<div class="line"><span class="lineno">  153</span> </div>
+<div class="line"><span class="lineno">  154</span>    <span class="comment">// Ensure we have an object to work with</span></div>
+<div class="line"><span class="lineno">  155</span>    <span class="keywordflow">if</span> (!j.is_object())</div>
+<div class="line"><span class="lineno">  156</span>    {</div>
+<div class="line"><span class="lineno">  157</span>        j = nlohmann::json::object();</div>
+<div class="line"><span class="lineno">  158</span>    }</div>
+<div class="line"><span class="lineno">  159</span> </div>
+<div class="line"><span class="lineno">  160</span>    <span class="comment">// Append new data to existing JSON</span></div>
+<div class="line"><span class="lineno">  161</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;kv : flag_counts_copy)</div>
+<div class="line"><span class="lineno">  162</span>    {</div>
+<div class="line"><span class="lineno">  163</span>        <span class="keyword">const</span> std::string &amp;flag_name = kv.first;</div>
+<div class="line"><span class="lineno">  164</span>        <span class="keywordtype">size_t</span> count = kv.second;</div>
+<div class="line"><span class="lineno">  165</span> </div>
+<div class="line"><span class="lineno">  166</span>        <span class="keywordflow">if</span> (j.contains(flag_name))</div>
+<div class="line"><span class="lineno">  167</span>        {</div>
+<div class="line"><span class="lineno">  168</span>            j[flag_name] = j[flag_name].get&lt;<span class="keywordtype">size_t</span>&gt;() + count;</div>
+<div class="line"><span class="lineno">  169</span>        }</div>
+<div class="line"><span class="lineno">  170</span>        <span class="keywordflow">else</span></div>
+<div class="line"><span class="lineno">  171</span>        {</div>
+<div class="line"><span class="lineno">  172</span>            j[flag_name] = count;</div>
+<div class="line"><span class="lineno">  173</span>        }</div>
+<div class="line"><span class="lineno">  174</span>    }</div>
+<div class="line"><span class="lineno">  175</span> </div>
+<div class="line"><span class="lineno">  176</span>    <span class="comment">// Write updated JSON back to file</span></div>
+<div class="line"><span class="lineno">  177</span>    std::ofstream ofs(<span class="stringliteral">&quot;tcp_flag_counts.json&quot;</span>);</div>
+<div class="line"><span class="lineno">  178</span>    <span class="keywordflow">if</span> (!ofs)</div>
+<div class="line"><span class="lineno">  179</span>    {</div>
+<div class="line"><span class="lineno">  180</span>        LOG_ERROR(internal-&gt;logger, <span class="stringliteral">&quot;Failed to open tcp_flag_counts.json for writing.&quot;</span>);</div>
+<div class="line"><span class="lineno">  181</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  182</span>    }</div>
+<div class="line"><span class="lineno">  183</span> </div>
+<div class="line"><span class="lineno">  184</span>    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  185</span>    {</div>
+<div class="line"><span class="lineno">  186</span>        ofs &lt;&lt; j.dump(4); <span class="comment">// Pretty print with indent of 4 spaces</span></div>
+<div class="line"><span class="lineno">  187</span>    }</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  189</span>    {</div>
+<div class="line"><span class="lineno">  190</span>        LOG_ERROR(internal-&gt;logger, <span class="stringliteral">&quot;Failed to write JSON to file: {}&quot;</span>, e.what());</div>
+<div class="line"><span class="lineno">  191</span>        ofs.close();</div>
+<div class="line"><span class="lineno">  192</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  193</span>    }</div>
+<div class="line"><span class="lineno">  194</span> </div>
+<div class="line"><span class="lineno">  195</span>    ofs.close();</div>
+<div class="line"><span class="lineno">  196</span> </div>
+<div class="line"><span class="lineno">  197</span>    <span class="comment">// LOG_INFO(internal-&gt;logger, &quot;TCP flag counts appended to tcp_flag_counts.json&quot;);</span></div>
+<div class="line"><span class="lineno">  198</span>}</div>
 </div><!-- fragment --><div id="dynsection-4" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
   <img id="dynsection-4-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
 <div id="dynsection-4-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-4-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00071_a2e8c16b72b01132d58ef8e9e6fd7f101_icgraph.png" border="0" usemap="#aa00071_a2e8c16b72b01132d58ef8e9e6fd7f101_icgraph" alt=""/></div>
-<map name="aa00071_a2e8c16b72b01132d58ef8e9e6fd7f101_icgraph" id="aa00071_a2e8c16b72b01132d58ef8e9e6fd7f101_icgraph">
-<area shape="rect" title=" " alt="" coords="1037,29,1187,55"/>
-<area shape="rect" href="a00008.html#a6ef922dfbc7b51bfd8c18ab752e8e2fd" title=" " alt="" coords="689,5,839,31"/>
-<area shape="poly" title=" " alt="" coords="1023,39,839,26,839,20,1024,33"/>
-<area shape="rect" href="a00011.html#a60773435d027e71a67dd3070a065961c" title=" " alt="" coords="887,55,989,80"/>
-<area shape="poly" title=" " alt="" coords="1024,58,990,63,989,57,1023,52"/>
-<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,31,641,56"/>
-<area shape="poly" title=" " alt="" coords="676,33,642,38,641,33,675,28"/>
-<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,31,481,56"/>
-<area shape="poly" title=" " alt="" coords="516,46,482,46,482,41,516,41"/>
-<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,31,275,56"/>
-<area shape="poly" title=" " alt="" coords="309,46,275,46,275,41,309,41"/>
-<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,56"/>
-<area shape="poly" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
-<area shape="rect" href="a00023.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="728,55,800,80"/>
-<area shape="poly" title=" " alt="" coords="873,70,800,70,800,65,873,65"/>
-<area shape="poly" title=" " alt="" coords="714,63,641,53,642,48,715,58"/>
+<div class="center"><img src="a00071_afcb35109e8b74daefc9e9130c5cd4d9a_icgraph.png" border="0" usemap="#aa00071_afcb35109e8b74daefc9e9130c5cd4d9a_icgraph" alt=""/></div>
+<map name="aa00071_afcb35109e8b74daefc9e9130c5cd4d9a_icgraph" id="aa00071_afcb35109e8b74daefc9e9130c5cd4d9a_icgraph">
+<area shape="rect" title=" " alt="" coords="323,5,489,31"/>
+<area shape="rect" href="a00038.html#a3ed11d498018f0e7e5496194b4a757f7" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00029.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>
 </div>
 
 </div>
 </div>
-<a id="ae2cacf1859fb0b54c2a8c98def76b9e6" name="ae2cacf1859fb0b54c2a8c98def76b9e6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae2cacf1859fb0b54c2a8c98def76b9e6">&#9670;&#160;</a></span>get_current_timestamp()</h2>
+<a id="ae5ed28b7d469288895f4e51339355df7" name="ae5ed28b7d469288895f4e51339355df7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5ed28b7d469288895f4e51339355df7">&#9670;&#160;</a></span>dump_tcp_option_counts()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::string get_current_timestamp </td>
+          <td class="memname">void dump_tcp_option_counts </td>
           <td>(</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00127.html">Server::Data</a> &gt;&#160;</td>
+          <td class="paramname"><em>internal</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="a00029_source.html#l00019">19</a> of file <a class="el" href="a00029_source.html">utilities.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   20</span>{</div>
-<div class="line"><span class="lineno">   21</span>    <span class="keyword">auto</span> now = std::chrono::system_clock::now();</div>
-<div class="line"><span class="lineno">   22</span>    <span class="keyword">auto</span> in_time_t = std::chrono::system_clock::to_time_t(now);</div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>    <span class="keyword">struct </span>tm buf;</div>
-<div class="line"><span class="lineno">   25</span>    localtime_r(&amp;in_time_t, &amp;buf);</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    <span class="keywordtype">char</span> time_str[20];</div>
-<div class="line"><span class="lineno">   28</span>    strftime(time_str, <span class="keyword">sizeof</span>(time_str), <span class="stringliteral">&quot;%Y-%m-%d %H:%M:%S&quot;</span>, &amp;buf);</div>
-<div class="line"><span class="lineno">   29</span> </div>
-<div class="line"><span class="lineno">   30</span>    <span class="keywordflow">return</span> std::string(time_str);</div>
-<div class="line"><span class="lineno">   31</span>}</div>
+<p class="definition">Definition at line <a class="el" href="a00041_source.html#l00201">201</a> of file <a class="el" href="a00041_source.html">tcp_header.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  202</span>{</div>
+<div class="line"><span class="lineno">  203</span>    std::unordered_map&lt;int, size_t&gt; counts_copy;</div>
+<div class="line"><span class="lineno">  204</span> </div>
+<div class="line"><span class="lineno">  205</span>    {</div>
+<div class="line"><span class="lineno">  206</span>        std::lock_guard&lt;std::mutex&gt; lock(internal-&gt;counts_mutex);</div>
+<div class="line"><span class="lineno">  207</span>        counts_copy = internal-&gt;tcp_option_counts;</div>
+<div class="line"><span class="lineno">  208</span>        internal-&gt;tcp_option_counts.clear();</div>
+<div class="line"><span class="lineno">  209</span>    }</div>
+<div class="line"><span class="lineno">  210</span> </div>
+<div class="line"><span class="lineno">  211</span>    <span class="comment">// Create or load existing JSON data</span></div>
+<div class="line"><span class="lineno">  212</span>    nlohmann::json j;</div>
+<div class="line"><span class="lineno">  213</span> </div>
+<div class="line"><span class="lineno">  214</span>    <span class="comment">// Open existing file if it exists to append new counts</span></div>
+<div class="line"><span class="lineno">  215</span>    std::ifstream ifs(<span class="stringliteral">&quot;tcp_option_counts.json&quot;</span>);</div>
+<div class="line"><span class="lineno">  216</span>    <span class="keywordflow">if</span> (ifs)</div>
+<div class="line"><span class="lineno">  217</span>    {</div>
+<div class="line"><span class="lineno">  218</span>        <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  219</span>        {</div>
+<div class="line"><span class="lineno">  220</span>            ifs &gt;&gt; j;</div>
+<div class="line"><span class="lineno">  221</span>        }</div>
+<div class="line"><span class="lineno">  222</span>        <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  223</span>        {</div>
+<div class="line"><span class="lineno">  224</span>            LOG_ERROR(internal-&gt;logger, <span class="stringliteral">&quot;Failed to read existing JSON file: {}&quot;</span>, e.what());</div>
+<div class="line"><span class="lineno">  225</span>            ifs.close();</div>
+<div class="line"><span class="lineno">  226</span>            <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  227</span>        }</div>
+<div class="line"><span class="lineno">  228</span>    }</div>
+<div class="line"><span class="lineno">  229</span>    ifs.close();</div>
+<div class="line"><span class="lineno">  230</span> </div>
+<div class="line"><span class="lineno">  231</span>    <span class="comment">// Ensure we have an array to work with</span></div>
+<div class="line"><span class="lineno">  232</span>    <span class="keywordflow">if</span> (!j.is_array())</div>
+<div class="line"><span class="lineno">  233</span>    {</div>
+<div class="line"><span class="lineno">  234</span>        j = nlohmann::json::array();</div>
+<div class="line"><span class="lineno">  235</span>    }</div>
+<div class="line"><span class="lineno">  236</span> </div>
+<div class="line"><span class="lineno">  237</span>    <span class="comment">// Append new data to existing JSON</span></div>
+<div class="line"><span class="lineno">  238</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;kv : counts_copy)</div>
+<div class="line"><span class="lineno">  239</span>    {</div>
+<div class="line"><span class="lineno">  240</span>        <span class="keywordtype">int</span> option_kind = kv.first;</div>
+<div class="line"><span class="lineno">  241</span>        <span class="keywordtype">size_t</span> count = kv.second;</div>
+<div class="line"><span class="lineno">  242</span>        std::string option_name = <a class="code hl_function" href="a00041.html#a5c8bc944cf715bce438eaca3705ad329">get_tcp_option_name</a>(option_kind);</div>
+<div class="line"><span class="lineno">  243</span> </div>
+<div class="line"><span class="lineno">  244</span>        <span class="keywordtype">bool</span> updated = <span class="keyword">false</span>;</div>
+<div class="line"><span class="lineno">  245</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;entry : j)</div>
+<div class="line"><span class="lineno">  246</span>        {</div>
+<div class="line"><span class="lineno">  247</span>            <span class="keywordflow">if</span> (entry[<span class="stringliteral">&quot;kind&quot;</span>].get&lt;int&gt;() == option_kind)</div>
+<div class="line"><span class="lineno">  248</span>            {</div>
+<div class="line"><span class="lineno">  249</span>                entry[<span class="stringliteral">&quot;count&quot;</span>] = entry[<span class="stringliteral">&quot;count&quot;</span>].get&lt;<span class="keywordtype">size_t</span>&gt;() + count;</div>
+<div class="line"><span class="lineno">  250</span>                updated = <span class="keyword">true</span>;</div>
+<div class="line"><span class="lineno">  251</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><span class="lineno">  252</span>            }</div>
+<div class="line"><span class="lineno">  253</span>        }</div>
+<div class="line"><span class="lineno">  254</span> </div>
+<div class="line"><span class="lineno">  255</span>        <span class="keywordflow">if</span> (!updated)</div>
+<div class="line"><span class="lineno">  256</span>        {</div>
+<div class="line"><span class="lineno">  257</span>            <span class="comment">// Add a new entry if this kind doesn&#39;t exist yet</span></div>
+<div class="line"><span class="lineno">  258</span>            nlohmann::json option_entry;</div>
+<div class="line"><span class="lineno">  259</span>            option_entry[<span class="stringliteral">&quot;kind&quot;</span>] = option_kind;</div>
+<div class="line"><span class="lineno">  260</span>            option_entry[<span class="stringliteral">&quot;name&quot;</span>] = option_name;</div>
+<div class="line"><span class="lineno">  261</span>            option_entry[<span class="stringliteral">&quot;count&quot;</span>] = count;</div>
+<div class="line"><span class="lineno">  262</span>            j.push_back(option_entry);</div>
+<div class="line"><span class="lineno">  263</span>        }</div>
+<div class="line"><span class="lineno">  264</span>    }</div>
+<div class="line"><span class="lineno">  265</span> </div>
+<div class="line"><span class="lineno">  266</span>    <span class="comment">// Sort the JSON array by option kind</span></div>
+<div class="line"><span class="lineno">  267</span>    std::sort(j.begin(), j.end(), [](<span class="keyword">const</span> nlohmann::json &amp;a, <span class="keyword">const</span> nlohmann::json &amp;b)</div>
+<div class="line"><span class="lineno">  268</span>              { return a[<span class="stringliteral">&quot;kind&quot;</span>].get&lt;int&gt;() &lt; b[<span class="stringliteral">&quot;kind&quot;</span>].get&lt;int&gt;(); });</div>
+<div class="line"><span class="lineno">  269</span> </div>
+<div class="line"><span class="lineno">  270</span>    <span class="comment">// Write updated JSON back to file</span></div>
+<div class="line"><span class="lineno">  271</span>    std::ofstream ofs(<span class="stringliteral">&quot;tcp_option_counts.json&quot;</span>);</div>
+<div class="line"><span class="lineno">  272</span>    <span class="keywordflow">if</span> (!ofs)</div>
+<div class="line"><span class="lineno">  273</span>    {</div>
+<div class="line"><span class="lineno">  274</span>        LOG_ERROR(internal-&gt;logger, <span class="stringliteral">&quot;Failed to open tcp_option_counts.json for writing.&quot;</span>);</div>
+<div class="line"><span class="lineno">  275</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  276</span>    }</div>
+<div class="line"><span class="lineno">  277</span> </div>
+<div class="line"><span class="lineno">  278</span>    <span class="keywordflow">try</span></div>
+<div class="line"><span class="lineno">  279</span>    {</div>
+<div class="line"><span class="lineno">  280</span>        ofs &lt;&lt; j.dump(4); <span class="comment">// Pretty print with indent of 4 spaces</span></div>
+<div class="line"><span class="lineno">  281</span>    }</div>
+<div class="line"><span class="lineno">  282</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><span class="lineno">  283</span>    {</div>
+<div class="line"><span class="lineno">  284</span>        LOG_ERROR(internal-&gt;logger, <span class="stringliteral">&quot;Failed to write JSON to file: {}&quot;</span>, e.what());</div>
+<div class="line"><span class="lineno">  285</span>        ofs.close();</div>
+<div class="line"><span class="lineno">  286</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><span class="lineno">  287</span>    }</div>
+<div class="line"><span class="lineno">  288</span> </div>
+<div class="line"><span class="lineno">  289</span>    ofs.close();</div>
+<div class="line"><span class="lineno">  290</span> </div>
+<div class="line"><span class="lineno">  291</span>    <span class="comment">// LOG_INFO(internal-&gt;logger, &quot;TCP option counts appended to tcp_option_counts.json&quot;);</span></div>
+<div class="line"><span class="lineno">  292</span>}</div>
 </div><!-- fragment --><div id="dynsection-5" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+  <img id="dynsection-5-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
 <div id="dynsection-5-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-5-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00071_ae2cacf1859fb0b54c2a8c98def76b9e6_icgraph.png" border="0" usemap="#aa00071_ae2cacf1859fb0b54c2a8c98def76b9e6_icgraph" alt=""/></div>
-<map name="aa00071_ae2cacf1859fb0b54c2a8c98def76b9e6_icgraph" id="aa00071_ae2cacf1859fb0b54c2a8c98def76b9e6_icgraph">
-<area shape="rect" title=" " alt="" coords="1037,29,1212,55"/>
-<area shape="rect" href="a00008.html#a6ef922dfbc7b51bfd8c18ab752e8e2fd" title=" " alt="" coords="689,5,839,31"/>
-<area shape="poly" title=" " alt="" coords="1024,38,839,26,839,20,1024,33"/>
-<area shape="rect" href="a00011.html#a60773435d027e71a67dd3070a065961c" title=" " alt="" coords="887,55,989,80"/>
-<area shape="poly" title=" " alt="" coords="1024,58,990,63,989,58,1024,53"/>
-<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,31,641,56"/>
-<area shape="poly" title=" " alt="" coords="676,33,642,38,641,33,675,28"/>
-<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,31,481,56"/>
-<area shape="poly" title=" " alt="" coords="516,46,482,46,482,41,516,41"/>
-<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,31,275,56"/>
-<area shape="poly" title=" " alt="" coords="309,46,275,46,275,41,309,41"/>
-<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,31,60,56"/>
-<area shape="poly" title=" " alt="" coords="94,46,60,46,60,41,94,41"/>
-<area shape="rect" href="a00023.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="728,55,800,80"/>
-<area shape="poly" title=" " alt="" coords="873,70,800,70,800,65,873,65"/>
-<area shape="poly" title=" " alt="" coords="714,63,641,53,642,48,715,58"/>
+<div class="center"><img src="a00071_ae5ed28b7d469288895f4e51339355df7_cgraph.png" border="0" usemap="#aa00071_ae5ed28b7d469288895f4e51339355df7_cgraph" alt=""/></div>
+<map name="aa00071_ae5ed28b7d469288895f4e51339355df7_cgraph" id="aa00071_ae5ed28b7d469288895f4e51339355df7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,5,189,31"/>
+<area shape="rect" href="a00041.html#a5c8bc944cf715bce438eaca3705ad329" title=" " alt="" coords="237,5,400,31"/>
+<area shape="poly" title=" " alt="" coords="190,15,224,15,224,21,190,21"/>
+</map>
+</div>
+<div id="dynsection-6" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-6-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-6-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-6-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00071_ae5ed28b7d469288895f4e51339355df7_icgraph.png" border="0" usemap="#aa00071_ae5ed28b7d469288895f4e51339355df7_icgraph" alt=""/></div>
+<map name="aa00071_ae5ed28b7d469288895f4e51339355df7_icgraph" id="aa00071_ae5ed28b7d469288895f4e51339355df7_icgraph">
+<area shape="rect" title=" " alt="" coords="323,5,507,31"/>
+<area shape="rect" href="a00038.html#a3ed11d498018f0e7e5496194b4a757f7" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00029.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a3ed11d498018f0e7e5496194b4a757f7" name="a3ed11d498018f0e7e5496194b4a757f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ed11d498018f0e7e5496194b4a757f7">&#9670;&#160;</a></span>serialization_manager()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void serialization_manager </td>
+          <td>(</td>
+          <td class="paramtype">std::shared_ptr&lt; <a class="el" href="a00127.html">Server::Data</a> &gt;&#160;</td>
+          <td class="paramname"><em>internal</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00038_source.html#l00034">34</a> of file <a class="el" href="a00038_source.html">serialization_manager.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   35</span>{</div>
+<div class="line"><span class="lineno">   36</span>    <span class="comment">// Define the name of the JSON files to delete</span></div>
+<div class="line"><span class="lineno">   37</span>    <span class="keyword">const</span> std::string option_filename = <span class="stringliteral">&quot;tcp_option_counts.json&quot;</span>;</div>
+<div class="line"><span class="lineno">   38</span>    <span class="keyword">const</span> std::string flag_filename = <span class="stringliteral">&quot;tcp_flag_counts.json&quot;</span>;</div>
+<div class="line"><span class="lineno">   39</span>    <span class="keyword">const</span> std::string packet_filename = <span class="stringliteral">&quot;packet_log.json&quot;</span>;</div>
+<div class="line"><span class="lineno">   40</span> </div>
+<div class="line"><span class="lineno">   41</span>    <span class="comment">// Delete old JSON files on startup</span></div>
+<div class="line"><span class="lineno">   42</span>    <a class="code hl_function" href="a00038.html#a79bde9ae362b9bce0cdd8d061ebc954f">delete_old_json</a>(option_filename, internal-&gt;logger);</div>
+<div class="line"><span class="lineno">   43</span>    <a class="code hl_function" href="a00038.html#a79bde9ae362b9bce0cdd8d061ebc954f">delete_old_json</a>(flag_filename, internal-&gt;logger);</div>
+<div class="line"><span class="lineno">   44</span>    <a class="code hl_function" href="a00038.html#a79bde9ae362b9bce0cdd8d061ebc954f">delete_old_json</a>(packet_filename, internal-&gt;logger);</div>
+<div class="line"><span class="lineno">   45</span> </div>
+<div class="line"><span class="lineno">   46</span>    <span class="comment">// Periodically dump the TCP option and flag counts to the files</span></div>
+<div class="line"><span class="lineno">   47</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><span class="lineno">   48</span>    {</div>
+<div class="line"><span class="lineno">   49</span>        std::this_thread::sleep_for(std::chrono::seconds(5)); <span class="comment">// Adjust the interval as needed</span></div>
+<div class="line"><span class="lineno">   50</span>        <a class="code hl_function" href="a00041.html#ae5ed28b7d469288895f4e51339355df7">dump_tcp_option_counts</a>(internal);</div>
+<div class="line"><span class="lineno">   51</span>        <a class="code hl_function" href="a00041.html#afcb35109e8b74daefc9e9130c5cd4d9a">dump_tcp_flag_counts</a>(internal);</div>
+<div class="line"><span class="lineno">   52</span>        <a class="code hl_function" href="a00041.html#a46ba20af6c21d2dca8a1ac3b1aeaf937">dump_packet_log</a>(internal);</div>
+<div class="line"><span class="lineno">   53</span>    }</div>
+<div class="line"><span class="lineno">   54</span>}</div>
+<div class="ttc" id="aa00038_html_a79bde9ae362b9bce0cdd8d061ebc954f"><div class="ttname"><a href="a00038.html#a79bde9ae362b9bce0cdd8d061ebc954f">delete_old_json</a></div><div class="ttdeci">void delete_old_json(const std::string &amp;filename, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00038_source.html#l00013">serialization_manager.cpp:13</a></div></div>
+<div class="ttc" id="aa00041_html_a46ba20af6c21d2dca8a1ac3b1aeaf937"><div class="ttname"><a href="a00041.html#a46ba20af6c21d2dca8a1ac3b1aeaf937">dump_packet_log</a></div><div class="ttdeci">void dump_packet_log(std::shared_ptr&lt; Server::Data &gt; internal)</div><div class="ttdef"><b>Definition</b> <a href="a00041_source.html#l00061">tcp_header.cpp:61</a></div></div>
+<div class="ttc" id="aa00041_html_ae5ed28b7d469288895f4e51339355df7"><div class="ttname"><a href="a00041.html#ae5ed28b7d469288895f4e51339355df7">dump_tcp_option_counts</a></div><div class="ttdeci">void dump_tcp_option_counts(std::shared_ptr&lt; Server::Data &gt; internal)</div><div class="ttdef"><b>Definition</b> <a href="a00041_source.html#l00201">tcp_header.cpp:201</a></div></div>
+<div class="ttc" id="aa00041_html_afcb35109e8b74daefc9e9130c5cd4d9a"><div class="ttname"><a href="a00041.html#afcb35109e8b74daefc9e9130c5cd4d9a">dump_tcp_flag_counts</a></div><div class="ttdeci">void dump_tcp_flag_counts(std::shared_ptr&lt; Server::Data &gt; internal)</div><div class="ttdef"><b>Definition</b> <a href="a00041_source.html#l00124">tcp_header.cpp:124</a></div></div>
+</div><!-- fragment --><div id="dynsection-7" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-7-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
+<div id="dynsection-7-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-7-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00071_a3ed11d498018f0e7e5496194b4a757f7_cgraph.png" border="0" usemap="#aa00071_a3ed11d498018f0e7e5496194b4a757f7_cgraph" alt=""/></div>
+<map name="aa00071_a3ed11d498018f0e7e5496194b4a757f7_cgraph" id="aa00071_a3ed11d498018f0e7e5496194b4a757f7_cgraph">
+<area shape="rect" title=" " alt="" coords="5,80,172,105"/>
+<area shape="rect" href="a00038.html#a79bde9ae362b9bce0cdd8d061ebc954f" title=" " alt="" coords="250,5,374,31"/>
+<area shape="poly" title=" " alt="" coords="119,77,219,39,245,32,246,37,221,45,121,82"/>
+<area shape="rect" href="a00041.html#a46ba20af6c21d2dca8a1ac3b1aeaf937" title=" " alt="" coords="244,55,380,80"/>
+<area shape="poly" title=" " alt="" coords="172,81,230,74,231,79,172,86"/>
+<area shape="rect" href="a00041.html#afcb35109e8b74daefc9e9130c5cd4d9a" title=" " alt="" coords="229,104,395,129"/>
+<area shape="poly" title=" " alt="" coords="172,99,215,104,215,109,172,104"/>
+<area shape="rect" href="a00041.html#ae5ed28b7d469288895f4e51339355df7" title=" " alt="" coords="220,153,404,179"/>
+<area shape="poly" title=" " alt="" coords="123,103,221,138,250,147,249,152,219,143,121,108"/>
+<area shape="rect" href="a00041.html#a5c8bc944cf715bce438eaca3705ad329" title=" " alt="" coords="452,104,615,129"/>
+<area shape="poly" title=" " alt="" coords="370,77,463,98,462,104,369,83"/>
+<area shape="poly" title=" " alt="" coords="369,151,462,130,463,135,370,156"/>
+</map>
+</div>
+<div id="dynsection-8" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-8-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-8-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-8-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00071_a3ed11d498018f0e7e5496194b4a757f7_icgraph.png" border="0" usemap="#aa00071_a3ed11d498018f0e7e5496194b4a757f7_icgraph" alt=""/></div>
+<map name="aa00071_a3ed11d498018f0e7e5496194b4a757f7_icgraph" id="aa00071_a3ed11d498018f0e7e5496194b4a757f7_icgraph">
+<area shape="rect" title=" " alt="" coords="108,5,275,31"/>
+<area shape="rect" href="a00029.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
 </map>
 </div>
 
@@ -477,7 +644,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="a00071.html">utilities.h</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_bfc45e77520112b140cffab3214f7fed.html">serialization</a></li><li class="navelem"><a class="el" href="a00071.html">serialization_manager.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

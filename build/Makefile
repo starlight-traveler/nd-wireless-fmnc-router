@@ -312,30 +312,6 @@ src/manipulation/packeting.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.s
 .PHONY : src/manipulation/packeting.cpp.s
 
-src/manipulation/sending.o: src/manipulation/sending.cpp.o
-.PHONY : src/manipulation/sending.o
-
-# target to build an object file
-src/manipulation/sending.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o
-.PHONY : src/manipulation/sending.cpp.o
-
-src/manipulation/sending.i: src/manipulation/sending.cpp.i
-.PHONY : src/manipulation/sending.i
-
-# target to preprocess a source file
-src/manipulation/sending.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.i
-.PHONY : src/manipulation/sending.cpp.i
-
-src/manipulation/sending.s: src/manipulation/sending.cpp.s
-.PHONY : src/manipulation/sending.s
-
-# target to generate assembly for a file
-src/manipulation/sending.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/FMNC-MITM.dir/build.make CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.s
-.PHONY : src/manipulation/sending.cpp.s
-
 src/manipulation/timing.o: src/manipulation/timing.cpp.o
 .PHONY : src/manipulation/timing.o
 
@@ -558,9 +534,6 @@ help:
 	@echo "... src/manipulation/packeting.o"
 	@echo "... src/manipulation/packeting.i"
 	@echo "... src/manipulation/packeting.s"
-	@echo "... src/manipulation/sending.o"
-	@echo "... src/manipulation/sending.i"
-	@echo "... src/manipulation/sending.s"
 	@echo "... src/manipulation/timing.o"
 	@echo "... src/manipulation/timing.i"
 	@echo "... src/manipulation/timing.s"

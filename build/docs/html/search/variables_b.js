@@ -1,7 +1,8 @@
 var searchData=
 [
-  ['tcp_5fflag_5fcounts_0',['tcp_flag_counts',['../a00108.html#ad4150db5361b70a29e1d091959679c73',1,'Server::Data']]],
-  ['tcp_5foption_5fcounts_1',['tcp_option_counts',['../a00108.html#a35d75e2fefff569c771f75ac8742d7d1',1,'Server::Data']]],
-  ['timestamp_2',['timestamp',['../a00096.html#a720e9778070249fdf22d1320507db7d5',1,'MacCacheEntry::timestamp'],['../a00100.html#a1f4b70a664af5588acb13c250229a9b8',1,'Server::PacketLogEntry::timestamp']]],
-  ['total_5fpayload_5flength_3',['total_payload_length',['../a00108.html#a9b3dd2827059d5a2f19ba3a2183bd541',1,'Server::Data']]]
+  ['size_0',['size',['../a00111.html#ae79665c997c8f554c8df211075e18f43',1,'PacketInfo']]],
+  ['socket_5faddress_1',['socket_address',['../a00123.html#aa286310eace6844779ed02bc0aeed9dd',1,'Server::PacketData']]],
+  ['src_5fmac_2',['src_mac',['../a00032.html#a4303343d28e43fc8a393ecd6bc01e739',1,'src_mac:&#160;general.h'],['../a00068.html#a4303343d28e43fc8a393ecd6bc01e739',1,'src_mac:&#160;general.h']]],
+  ['start_3',['start',['../a00115.html#a031a07e1c62751e2485ffc6278000fb5',1,'TimingInfo']]],
+  ['status_4',['status',['../a00091.html#a85d3dfdaf95d72488c38c52734fd5ee1',1,'ClientPacketLogEntry::status'],['../a00119.html#a60177e7554074ccadf535a85bd32b60e',1,'Server::PacketLogEntry::status']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['length_0',['length',['../a00104.html#a6fcfbe21641ddcfd5cd38ef7ab7998db',1,'Server::PacketData']]],
-  ['logger_1',['logger',['../a00088.html#a67d2018b2848ac33ff318ea2bd3eac28',1,'Client::Configuration::logger'],['../a00108.html#a391a6f2cb5c6b45174ba18ca7c0c98f4',1,'Server::Data::logger']]]
+  ['if_5findex_0',['if_index',['../a00032.html#a268d42a17b51dd418ffc6825d69d45b4',1,'if_index:&#160;general.h'],['../a00068.html#a268d42a17b51dd418ffc6825d69d45b4',1,'if_index:&#160;general.h']]],
+  ['interface_1',['interface',['../a00032.html#a4dcae56eb6645becdd38c6a852ba7055',1,'interface:&#160;general.h'],['../a00068.html#a4dcae56eb6645becdd38c6a852ba7055',1,'interface:&#160;general.h']]]
 ];

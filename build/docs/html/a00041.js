@@ -1,5 +1,7 @@
 var a00041 =
 [
-    [ "delete_old_json", "a00041.html#a79bde9ae362b9bce0cdd8d061ebc954f", null ],
-    [ "serialization_manager", "a00041.html#a3ed11d498018f0e7e5496194b4a757f7", null ]
+    [ "dump_packet_log", "a00041.html#a46ba20af6c21d2dca8a1ac3b1aeaf937", null ],
+    [ "dump_tcp_flag_counts", "a00041.html#afcb35109e8b74daefc9e9130c5cd4d9a", null ],
+    [ "dump_tcp_option_counts", "a00041.html#ae5ed28b7d469288895f4e51339355df7", null ],
+    [ "get_tcp_option_name", "a00041.html#a5c8bc944cf715bce438eaca3705ad329", null ]
 ];

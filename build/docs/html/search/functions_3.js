@@ -1,15 +1,10 @@
 var searchData=
 [
-  ['generate_5fpacket_5fid_0',['generate_packet_id',['../a00029.html#a2e8c16b72b01132d58ef8e9e6fd7f101',1,'generate_packet_id(const struct iphdr *ip_header, const struct tcphdr *tcp_header):&#160;utilities.cpp'],['../a00071.html#a2e8c16b72b01132d58ef8e9e6fd7f101',1,'generate_packet_id(const struct iphdr *ip_header, const struct tcphdr *tcp_header):&#160;utilities.cpp']]],
-  ['get_5fcurrent_5ftimestamp_1',['get_current_timestamp',['../a00029.html#ae2cacf1859fb0b54c2a8c98def76b9e6',1,'get_current_timestamp():&#160;utilities.cpp'],['../a00071.html#ae2cacf1859fb0b54c2a8c98def76b9e6',1,'get_current_timestamp():&#160;utilities.cpp']]],
-  ['get_5fdestination_5fip_2',['get_destination_ip',['../a00008.html#aa1bc425b1a57cabd0126dbdad3ad22da',1,'server.cpp']]],
-  ['get_5fdestination_5fmac_3',['get_destination_mac',['../a00008.html#a2149cd2b6d56a6561d1fe96bbd24f960',1,'server.cpp']]],
-  ['get_5fmac_5faddress_4',['get_mac_address',['../a00038.html#a91a4e24d46900f2d4c78a5e062e0608d',1,'get_mac_address(const char *ip_address, quill::Logger *logger):&#160;arp.cpp'],['../a00065.html#a91a4e24d46900f2d4c78a5e062e0608d',1,'get_mac_address(const char *ip_address, quill::Logger *logger):&#160;arp.cpp']]],
-  ['get_5ftcp_5fflag_5fnames_5',['get_tcp_flag_names',['../a00008.html#aecacb419c1bf41572f0c8edc6b94092e',1,'server.cpp']]],
-  ['get_5ftcp_5foption_5fname_6',['get_tcp_option_name',['../a00044.html#a5c8bc944cf715bce438eaca3705ad329',1,'tcp_header.cpp']]],
-  ['getlogdirectory_7',['getLogDirectory',['../a00092.html#adf2a1456feeecb034886aadb0df0e146',1,'ConfigManager']]],
-  ['getloglevel_8',['getLogLevel',['../a00092.html#ad6ebe707ef655c67a7a3091a4e87cc19',1,'ConfigManager']]],
-  ['getmanagessl_9',['getManageSSL',['../a00092.html#a072697ca2c74224a1e0b276a10251c44',1,'ConfigManager']]],
-  ['getreorderpackets_10',['getReorderPackets',['../a00092.html#a6f090eaad2a3fc904b23061066ed0c49',1,'ConfigManager']]],
-  ['gettimewait_11',['getTimeWait',['../a00092.html#aeeb5b1b6229ea527d70431119f46ddab',1,'ConfigManager']]]
+  ['delete_5fold_5fjson_0',['delete_old_json',['../a00038.html#a79bde9ae362b9bce0cdd8d061ebc954f',1,'serialization_manager.cpp']]],
+  ['dump_5fclient_5fpacket_5flog_1',['dump_client_packet_log',['../a00032.html#a4e9925ce7d8b70f5a45a0648db0f5f67',1,'dump_client_packet_log(std::shared_ptr&lt; Client::Data &gt; data):&#160;client.cpp'],['../a00077.html#a4e9925ce7d8b70f5a45a0648db0f5f67',1,'dump_client_packet_log(std::shared_ptr&lt; Client::Data &gt; data):&#160;client.cpp']]],
+  ['dump_5fclient_5ftcp_5fflag_5fcounts_2',['dump_client_tcp_flag_counts',['../a00032.html#a0de2045541e91d6264f3bcc12302d87e',1,'dump_client_tcp_flag_counts(std::shared_ptr&lt; Client::Data &gt; data):&#160;client.cpp'],['../a00077.html#a0de2045541e91d6264f3bcc12302d87e',1,'dump_client_tcp_flag_counts(std::shared_ptr&lt; Client::Data &gt; data):&#160;client.cpp']]],
+  ['dump_5fclient_5ftcp_5foption_5fcounts_3',['dump_client_tcp_option_counts',['../a00032.html#acb7d4ebcbda3b6e3a7e001fa15f311a8',1,'dump_client_tcp_option_counts(std::shared_ptr&lt; Client::Data &gt; data):&#160;client.cpp'],['../a00077.html#acb7d4ebcbda3b6e3a7e001fa15f311a8',1,'dump_client_tcp_option_counts(std::shared_ptr&lt; Client::Data &gt; data):&#160;client.cpp']]],
+  ['dump_5fpacket_5flog_4',['dump_packet_log',['../a00041.html#a46ba20af6c21d2dca8a1ac3b1aeaf937',1,'dump_packet_log(std::shared_ptr&lt; Server::Data &gt; internal):&#160;tcp_header.cpp'],['../a00071.html#a46ba20af6c21d2dca8a1ac3b1aeaf937',1,'dump_packet_log(std::shared_ptr&lt; Server::Data &gt; internal):&#160;tcp_header.cpp']]],
+  ['dump_5ftcp_5fflag_5fcounts_5',['dump_tcp_flag_counts',['../a00041.html#afcb35109e8b74daefc9e9130c5cd4d9a',1,'dump_tcp_flag_counts(std::shared_ptr&lt; Server::Data &gt; internal):&#160;tcp_header.cpp'],['../a00071.html#afcb35109e8b74daefc9e9130c5cd4d9a',1,'dump_tcp_flag_counts(std::shared_ptr&lt; Server::Data &gt; internal):&#160;tcp_header.cpp']]],
+  ['dump_5ftcp_5foption_5fcounts_6',['dump_tcp_option_counts',['../a00041.html#ae5ed28b7d469288895f4e51339355df7',1,'dump_tcp_option_counts(std::shared_ptr&lt; Server::Data &gt; internal):&#160;tcp_header.cpp'],['../a00071.html#ae5ed28b7d469288895f4e51339355df7',1,'dump_tcp_option_counts(std::shared_ptr&lt; Server::Data &gt; internal):&#160;tcp_header.cpp']]]
 ];

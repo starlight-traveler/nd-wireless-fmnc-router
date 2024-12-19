@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FMNC-MITM: sending.cpp File Reference</title>
+<title>FMNC-MITM: timing.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -89,17 +89,202 @@ $(document).ready(function(){initNavTree('a00017.html',''); initResizable(); });
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">sending.cpp File Reference</div></div>
+  <div class="summary">
+<a href="#func-members">Functions</a>  </div>
+  <div class="headertitle"><div class="title">timing.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &quot;<a class="el" href="a00065_source.html">timing.h</a>&quot;</code><br />
+<code>#include &lt;chrono&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00080_source.html">server.h</a>&quot;</code><br />
+<code>#include &lt;cmath&gt;</code><br />
+</div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for timing.cpp:</div>
+<div id="dynsection-0-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-0-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00018.png" border="0" usemap="#atiming_8cpp" alt=""/></div>
+<map name="atiming_8cpp" id="atiming_8cpp">
+<area shape="rect" title=" " alt="" coords="1189,5,1279,31"/>
+<area shape="rect" href="a00065.html" title=" " alt="" coords="1159,79,1235,104"/>
+<area shape="poly" title=" " alt="" coords="1230,32,1211,68,1207,65,1225,30"/>
+<area shape="rect" title=" " alt="" coords="1070,152,1137,177"/>
+<area shape="poly" title=" " alt="" coords="1212,33,1180,53,1148,80,1128,110,1114,140,1109,138,1123,107,1144,77,1176,49,1209,28"/>
+<area shape="rect" href="a00080.html" title=" " alt="" coords="1257,152,1331,177"/>
+<area shape="poly" title=" " alt="" coords="1241,30,1286,138,1281,140,1236,32"/>
+<area shape="rect" title=" " alt="" coords="1311,79,1373,104"/>
+<area shape="poly" title=" " alt="" coords="1253,28,1314,69,1311,73,1250,33"/>
+<area shape="poly" title=" " alt="" coords="1183,106,1131,146,1128,141,1180,102"/>
+<area shape="rect" title=" " alt="" coords="1161,152,1232,177"/>
+<area shape="poly" title=" " alt="" coords="1199,104,1199,138,1194,138,1194,104"/>
+<area shape="poly" title=" " alt="" coords="1214,102,1268,141,1265,146,1211,106"/>
+<area shape="rect" href="a00068.html" title=" " alt="" coords="1253,225,1335,251"/>
+<area shape="poly" title=" " alt="" coords="1297,178,1297,212,1291,212,1291,178"/>
+<area shape="rect" title=" " alt="" coords="5,299,71,324"/>
+<area shape="poly" title=" " alt="" coords="1252,243,697,261,350,278,201,289,85,302,84,296,201,284,350,273,697,255,1252,238"/>
+<area shape="rect" title=" " alt="" coords="95,299,157,324"/>
+<area shape="poly" title=" " alt="" coords="1252,243,736,261,416,278,279,289,171,302,170,296,278,284,416,273,736,256,1252,238"/>
+<area shape="rect" title=" " alt="" coords="181,299,247,324"/>
+<area shape="poly" title=" " alt="" coords="1252,242,1094,242,851,249,561,267,410,282,261,302,260,296,409,277,561,262,851,244,1094,237,1252,236"/>
+<area shape="rect" title=" " alt="" coords="271,299,338,324"/>
+<area shape="poly" title=" " alt="" coords="1252,242,1106,244,886,252,624,269,487,283,352,301,351,296,487,278,623,264,886,246,1106,238,1252,237"/>
+<area shape="rect" title=" " alt="" coords="362,299,437,324"/>
+<area shape="poly" title=" " alt="" coords="1252,243,922,258,691,275,456,301,451,302,450,297,455,296,691,270,922,253,1252,238"/>
+<area shape="rect" title=" " alt="" coords="1429,445,1509,471"/>
+<area shape="poly" title=" " alt="" coords="1252,242,1076,243,837,251,719,258,617,269,541,283,516,291,501,300,496,311,501,322,519,334,549,347,641,369,764,390,907,407,1198,435,1415,451,1414,456,1197,440,906,413,764,395,640,374,547,352,516,339,497,326,491,311,497,297,513,286,539,278,616,263,719,253,836,245,1076,238,1252,237"/>
+<area shape="rect" title=" " alt="" coords="512,299,615,324"/>
+<area shape="poly" title=" " alt="" coords="1253,244,994,263,815,280,629,301,628,296,814,275,993,258,1252,239"/>
+<area shape="rect" title=" " alt="" coords="639,299,735,324"/>
+<area shape="poly" title=" " alt="" coords="1253,245,1041,265,750,301,749,296,1040,260,1252,240"/>
+<area shape="rect" title=" " alt="" coords="759,299,863,324"/>
+<area shape="poly" title=" " alt="" coords="1253,247,877,301,876,296,1252,242"/>
+<area shape="rect" title=" " alt="" coords="888,299,996,324"/>
+<area shape="poly" title=" " alt="" coords="1253,250,1010,299,1009,294,1252,245"/>
+<area shape="rect" title=" " alt="" coords="1020,299,1155,324"/>
+<area shape="poly" title=" " alt="" coords="1262,253,1135,297,1133,292,1260,248"/>
+<area shape="rect" title=" " alt="" coords="1179,299,1294,324"/>
+<area shape="poly" title=" " alt="" coords="1287,253,1257,290,1253,286,1282,249"/>
+<area shape="rect" title=" " alt="" coords="1318,299,1385,324"/>
+<area shape="poly" title=" " alt="" coords="1306,249,1335,286,1331,290,1301,253"/>
+<area shape="rect" title=" " alt="" coords="1409,299,1501,324"/>
+<area shape="poly" title=" " alt="" coords="1321,248,1418,291,1415,295,1319,253"/>
+<area shape="rect" title=" " alt="" coords="1526,299,1614,324"/>
+<area shape="poly" title=" " alt="" coords="1337,247,1513,293,1512,298,1335,253"/>
+<area shape="rect" title=" " alt="" coords="1639,299,1768,324"/>
+<area shape="poly" title=" " alt="" coords="1336,244,1626,294,1625,299,1335,249"/>
+<area shape="rect" title=" " alt="" coords="1793,299,1857,324"/>
+<area shape="poly" title=" " alt="" coords="1336,240,1528,259,1654,276,1780,296,1780,296,1779,301,1779,301,1653,281,1528,265,1336,245"/>
+<area shape="rect" title=" " alt="" coords="1881,299,1977,324"/>
+<area shape="poly" title=" " alt="" coords="1336,240,1559,259,1867,296,1866,301,1558,265,1335,245"/>
+<area shape="rect" title=" " alt="" coords="2001,299,2065,324"/>
+<area shape="poly" title=" " alt="" coords="1336,238,1606,252,1793,270,1988,296,1987,301,1793,275,1606,258,1335,243"/>
+<area shape="rect" title=" " alt="" coords="2089,299,2213,324"/>
+<area shape="poly" title=" " alt="" coords="1336,239,1640,257,1853,274,2076,296,2075,301,1853,279,1639,263,1336,244"/>
+<area shape="rect" title=" " alt="" coords="2238,299,2294,324"/>
+<area shape="poly" title=" " alt="" coords="1336,236,1480,237,1698,244,1957,262,2092,277,2225,296,2224,302,2091,282,1956,267,1698,249,1480,242,1336,242"/>
+<area shape="rect" title=" " alt="" coords="2319,299,2387,324"/>
+<area shape="poly" title=" " alt="" coords="1336,236,1491,238,1728,245,2011,263,2159,278,2305,296,2305,302,2159,283,2011,269,1728,251,1491,243,1336,242"/>
+<area shape="rect" title=" " alt="" coords="2411,299,2521,324"/>
+<area shape="poly" title=" " alt="" coords="1336,237,1504,241,1763,250,2074,268,2398,296,2397,301,2074,273,1763,255,1503,246,1336,243"/>
+<area shape="rect" href="a00050.html" title=" " alt="" coords="2545,299,2619,324"/>
+<area shape="poly" title=" " alt="" coords="1335,238,1904,256,2259,273,2412,284,2531,296,2531,302,2411,289,2259,279,1903,261,1335,243"/>
+<area shape="rect" title=" " alt="" coords="2251,372,2387,397"/>
+<area shape="poly" title=" " alt="" coords="2545,325,2375,371,2374,366,2544,320"/>
+<area shape="rect" title=" " alt="" coords="2411,372,2521,397"/>
+<area shape="poly" title=" " alt="" coords="2565,326,2498,367,2495,362,2562,322"/>
+<area shape="rect" href="a00047.html" title=" " alt="" coords="2545,372,2619,397"/>
+<area shape="poly" title=" " alt="" coords="2578,324,2576,359,2571,358,2572,324"/>
+<area shape="poly" title=" " alt="" coords="2545,398,2533,400,2386,418,2235,432,1943,450,1693,458,1523,460,1523,454,1693,453,1942,445,2235,427,2385,413,2532,395,2545,393"/>
+<area shape="poly" title=" " alt="" coords="2586,372,2588,338,2593,338,2592,372"/>
+<area shape="rect" title=" " alt="" coords="2472,445,2583,471"/>
+<area shape="poly" title=" " alt="" coords="2575,399,2547,436,2542,433,2571,396"/>
+<area shape="rect" title=" " alt="" coords="2607,445,2666,471"/>
+<area shape="poly" title=" " alt="" coords="2593,396,2622,433,2617,436,2589,399"/>
+</map>
+</div>
+</div>
 <p><a href="a00017_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a9940f684badc662066323166bd7af5a6" id="r_a9940f684badc662066323166bd7af5a6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00017.html#a9940f684badc662066323166bd7af5a6">start_timing</a> (<a class="el" href="a00115.html">TimingInfo</a> &amp;timing)</td></tr>
+<tr class="separator:a9940f684badc662066323166bd7af5a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86dd518604ffab7b67cd69d01fc77467" id="r_a86dd518604ffab7b67cd69d01fc77467"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00017.html#a86dd518604ffab7b67cd69d01fc77467">end_timing</a> (<a class="el" href="a00115.html">TimingInfo</a> &amp;timing)</td></tr>
+<tr class="separator:a86dd518604ffab7b67cd69d01fc77467"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="a86dd518604ffab7b67cd69d01fc77467" name="a86dd518604ffab7b67cd69d01fc77467"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86dd518604ffab7b67cd69d01fc77467">&#9670;&#160;</a></span>end_timing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void end_timing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00115.html">TimingInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>timing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00017_source.html#l00010">10</a> of file <a class="el" href="a00017_source.html">timing.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   11</span>{</div>
+<div class="line"><span class="lineno">   12</span>    <span class="comment">// LOG_DEBUG(logger, &quot;  Throughput: {:.2f} bytes/s ({:.2f} bits/s)&quot;, bytes_per_second, bits_per_second);</span></div>
+<div class="line"><span class="lineno">   13</span>}</div>
+</div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00017_a86dd518604ffab7b67cd69d01fc77467_icgraph.png" border="0" usemap="#aa00017_a86dd518604ffab7b67cd69d01fc77467_icgraph" alt=""/></div>
+<map name="aa00017_a86dd518604ffab7b67cd69d01fc77467_icgraph" id="aa00017_a86dd518604ffab7b67cd69d01fc77467_icgraph">
+<area shape="rect" title=" " alt="" coords="809,5,904,31"/>
+<area shape="rect" href="a00020.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="689,5,761,31"/>
+<area shape="poly" title=" " alt="" coords="796,21,762,21,762,15,796,15"/>
+<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,5,641,31"/>
+<area shape="poly" title=" " alt="" coords="676,21,641,21,641,15,676,15"/>
+<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,5,481,31"/>
+<area shape="poly" title=" " alt="" coords="516,21,482,21,482,15,516,15"/>
+<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00029.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a9940f684badc662066323166bd7af5a6" name="a9940f684badc662066323166bd7af5a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9940f684badc662066323166bd7af5a6">&#9670;&#160;</a></span>start_timing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void start_timing </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="a00115.html">TimingInfo</a> &amp;&#160;</td>
+          <td class="paramname"><em>timing</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="a00017_source.html#l00006">6</a> of file <a class="el" href="a00017_source.html">timing.cpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>                                      {</div>
+<div class="line"><span class="lineno">    7</span>    <span class="comment">// LOG_DEBUG(logger, &quot;  Throughput: {:.2f} bytes/s ({:.2f} bits/s)&quot;, bytes_per_second, bits_per_second);</span></div>
+<div class="line"><span class="lineno">    8</span>}</div>
+</div><!-- fragment --><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
+<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-2-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00017_a9940f684badc662066323166bd7af5a6_icgraph.png" border="0" usemap="#aa00017_a9940f684badc662066323166bd7af5a6_icgraph" alt=""/></div>
+<map name="aa00017_a9940f684badc662066323166bd7af5a6_icgraph" id="aa00017_a9940f684badc662066323166bd7af5a6_icgraph">
+<area shape="rect" title=" " alt="" coords="809,5,911,31"/>
+<area shape="rect" href="a00020.html#a063a58ec9acd8e3e2fd505cce47a65ba" title=" " alt="" coords="689,5,761,31"/>
+<area shape="poly" title=" " alt="" coords="796,21,762,21,762,15,796,15"/>
+<area shape="rect" href="a00008.html#aca814acf6586fc323ecb3ae699ca6bc0" title=" " alt="" coords="529,5,641,31"/>
+<area shape="poly" title=" " alt="" coords="676,21,641,21,641,15,676,15"/>
+<area shape="rect" href="a00008.html#af872b12da3814bf0d060951d001617da" title=" " alt="" coords="323,5,481,31"/>
+<area shape="poly" title=" " alt="" coords="516,21,482,21,482,15,516,15"/>
+<area shape="rect" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9" title=" " alt="" coords="108,5,275,31"/>
+<area shape="poly" title=" " alt="" coords="309,21,275,21,275,15,309,15"/>
+<area shape="rect" href="a00029.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
+<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
+</map>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1b8c89d3abd0c0683d2ba66e75d0c0d7.html">manipulation</a></li><li class="navelem"><a class="el" href="a00017.html">sending.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1b8c89d3abd0c0683d2ba66e75d0c0d7.html">manipulation</a></li><li class="navelem"><a class="el" href="a00017.html">timing.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

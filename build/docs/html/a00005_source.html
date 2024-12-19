@@ -97,15 +97,15 @@ $(document).ready(function(){initNavTree('a00005_source.html',''); initResizable
   <div class="headertitle"><div class="title">sockets.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="a00005.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="a00059.html">sockets.h</a>&quot;</span></div>
+<a href="a00005.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="a00056.html">sockets.h</a>&quot;</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span> </div>
 <div class="foldopen" id="foldopen00004" data-start="{" data-end="}">
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno"><a class="line" href="a00005.html#adf1a1b6666f7a6f364bcca7d27a79442">    4</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="a00005.html#adf1a1b6666f7a6f364bcca7d27a79442">setup_raw_socket</a>()</div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span>{</div>
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span>    <span class="comment">// Create a raw socket</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a> = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a> == -1)</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <a class="code hl_variable" href="a00032.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a> = socket(AF_PACKET, SOCK_RAW, htons(ETH_P_ALL));</div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>    <span class="keywordflow">if</span> (<a class="code hl_variable" href="a00032.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a> == -1)</div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    {</div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>        perror(<span class="stringliteral">&quot;Failed to create raw socket&quot;</span>);</div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>        exit(EXIT_FAILURE);</div>
@@ -115,31 +115,31 @@ $(document).ready(function(){initNavTree('a00005_source.html',''); initResizable
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>    <span class="keyword">struct </span>ifreq ifr</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    {</div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    };</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    strncpy(ifr.ifr_name, <a class="code hl_variable" href="a00065.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a>, IFNAMSIZ - 1);</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">if</span> (ioctl(<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>, SIOCGIFINDEX, &amp;ifr) == -1)</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    strncpy(ifr.ifr_name, <a class="code hl_variable" href="a00032.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a>, IFNAMSIZ - 1);</div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordflow">if</span> (ioctl(<a class="code hl_variable" href="a00032.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>, SIOCGIFINDEX, &amp;ifr) == -1)</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    {</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>        perror(<span class="stringliteral">&quot;Failed to get interface index&quot;</span>);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        close(<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>);</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>        close(<a class="code hl_variable" href="a00032.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>);</div>
 <div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>        exit(EXIT_FAILURE);</div>
 <div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    }</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_variable" href="a00065.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a> = ifr.ifr_ifindex;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <a class="code hl_variable" href="a00032.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a> = ifr.ifr_ifindex;</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
 <div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">// Get the source MAC address</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (ioctl(<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>, SIOCGIFHWADDR, &amp;ifr) == -1)</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordflow">if</span> (ioctl(<a class="code hl_variable" href="a00032.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>, SIOCGIFHWADDR, &amp;ifr) == -1)</div>
 <div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    {</div>
 <div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        perror(<span class="stringliteral">&quot;Failed to get MAC address&quot;</span>);</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        close(<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        close(<a class="code hl_variable" href="a00032.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>);</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        exit(EXIT_FAILURE);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    memcpy(<a class="code hl_variable" href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>, ifr.ifr_hwaddr.sa_data, 6);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    memcpy(<a class="code hl_variable" href="a00032.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>, ifr.ifr_hwaddr.sa_data, 6);</div>
 <div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
 </div>
 <div class="ttc" id="aa00005_html_adf1a1b6666f7a6f364bcca7d27a79442"><div class="ttname"><a href="a00005.html#adf1a1b6666f7a6f364bcca7d27a79442">setup_raw_socket</a></div><div class="ttdeci">void setup_raw_socket()</div><div class="ttdef"><b>Definition</b> <a href="a00005_source.html#l00004">sockets.cpp:4</a></div></div>
-<div class="ttc" id="aa00059_html"><div class="ttname"><a href="a00059.html">sockets.h</a></div></div>
-<div class="ttc" id="aa00065_html_a08923b3f7d62077d55fd2a500eb00163"><div class="ttname"><a href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a></div><div class="ttdeci">int raw_socket</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00039">general.h:39</a></div></div>
-<div class="ttc" id="aa00065_html_a268d42a17b51dd418ffc6825d69d45b4"><div class="ttname"><a href="a00065.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a></div><div class="ttdeci">int if_index</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00040">general.h:40</a></div></div>
-<div class="ttc" id="aa00065_html_a4303343d28e43fc8a393ecd6bc01e739"><div class="ttname"><a href="a00065.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a></div><div class="ttdeci">unsigned char src_mac[6]</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00041">general.h:41</a></div></div>
-<div class="ttc" id="aa00065_html_a4dcae56eb6645becdd38c6a852ba7055"><div class="ttname"><a href="a00065.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a></div><div class="ttdeci">const char * interface</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00042">general.h:42</a></div></div>
+<div class="ttc" id="aa00032_html_a08923b3f7d62077d55fd2a500eb00163"><div class="ttname"><a href="a00032.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a></div><div class="ttdeci">int raw_socket</div><div class="ttdef"><b>Definition</b> <a href="a00068_source.html#l00039">general.h:39</a></div></div>
+<div class="ttc" id="aa00032_html_a268d42a17b51dd418ffc6825d69d45b4"><div class="ttname"><a href="a00032.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a></div><div class="ttdeci">int if_index</div><div class="ttdef"><b>Definition</b> <a href="a00068_source.html#l00040">general.h:40</a></div></div>
+<div class="ttc" id="aa00032_html_a4303343d28e43fc8a393ecd6bc01e739"><div class="ttname"><a href="a00032.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a></div><div class="ttdeci">unsigned char src_mac[6]</div><div class="ttdef"><b>Definition</b> <a href="a00068_source.html#l00041">general.h:41</a></div></div>
+<div class="ttc" id="aa00032_html_a4dcae56eb6645becdd38c6a852ba7055"><div class="ttname"><a href="a00032.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a></div><div class="ttdeci">const char * interface</div><div class="ttdef"><b>Definition</b> <a href="a00068_source.html#l00042">general.h:42</a></div></div>
+<div class="ttc" id="aa00056_html"><div class="ttname"><a href="a00056.html">sockets.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

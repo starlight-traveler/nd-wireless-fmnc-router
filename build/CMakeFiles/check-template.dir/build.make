@@ -67,7 +67,7 @@ include CMakeFiles/check-template.dir/compiler_depend.make
 include CMakeFiles/check-template.dir/progress.make
 
 CMakeFiles/check-template:
-	/usr/bin/cmake -DPROJECT_SOURCE_DIR= -DPROJECT_BINARY_DIR= -DAPPLIED_CMAKE_INIT_SHA=79f247836b1e -P /cmake/CheckTemplate.cmake
+	/usr/bin/cmake -DPROJECT_SOURCE_DIR= -DPROJECT_BINARY_DIR= -DAPPLIED_CMAKE_INIT_SHA=926519f4ad72 -P /cmake/CheckTemplate.cmake
 
 check-template: CMakeFiles/check-template
 check-template: CMakeFiles/check-template.dir/build.make

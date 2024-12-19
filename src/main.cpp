@@ -12,6 +12,11 @@ void signalHandler(int signum)
     exit(signum);
 }
 
+// pcap inject would not work, same thing as just immediate send with pcap loop
+
+// options are added to logging on the client side
+
+// 
 
 int main()
 {
@@ -34,22 +39,28 @@ int main()
     setup_raw_socket();
 
     // Allocate shared Server::Data
-    std::shared_ptr<Server::Data> internal = std::make_shared<Server::Data>();
-    internal->logger = logger;
-    internal->prev_timestamp.tv_sec = 0;
-    internal->prev_timestamp.tv_usec = 0;
-    internal->total_payload_length = 0;
+    std::shared_ptr<Server::Data> internal_server = std::make_shared<Server::Data>();
+    internal_server->logger = logger;
+    internal_server->prev_timestamp.tv_sec = 0;
+    internal_server->prev_timestamp.tv_usec = 0;
+    internal_server->total_payload_length = 0;
+
+    // Allocate shared Client::Data
+    std::shared_ptr<Client::Data> internal_client = std::make_shared<Client::Data>();
+    internal_client->logger = logger;
 
     // Threaded functions using custom variables from config
     std::thread thread_client_to_server([&]()
                                         { threaded(logger, 5, 3, capture_packets_to, logger); });
 
     std::thread thread_server_to_client([&]()
-                                        { threaded(logger, 5, 3, capture_packets_from, internal, logger, config); });
+                                        { threaded(logger, 5, 3, capture_packets_from, internal_server, logger, config); });
 
-    std::thread thread_serialization([&]()
-                                        { threaded(logger, 5, 3, serialization_manager, internal); });
+    std::thread thread_serialization_server([&]()
+                                            { threaded(logger, 5, 3, serialization_manager, internal_server); });
 
+    std::thread thread_serialization_client([&]()
+                                            { threaded(logger, 5, 3, serialization_manager_client, internal_client); });
     // Just suspend until CTRL-C is called
     while (true)
     {

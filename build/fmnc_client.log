@@ -1,6 +1,123 @@
-09:59:15.499252436 [40564] config.cpp:21                LOG_INFO      root         Successfully read configuration file: ../config.cfg
-09:59:15.500309412 [40568] serialization_manager.cpp:20 LOG_INFO      root         Deleted old file: tcp_option_counts.json
-09:59:15.500841726 [40568] serialization_manager.cpp:20 LOG_INFO      root         Deleted old file: tcp_flag_counts.json
-09:59:15.500861794 [40568] serialization_manager.cpp:24 LOG_INFO      root         No old file found to delete: packet_log.json
-09:59:15.516163242 [40567] server.cpp:61                LOG_INFO      root         Successfully applied packet filter: src host 192.168.2.2 and not ether src 04:7c:16:8a:5e:6b
-09:59:20.501491137 [40568] tcp_header.cpp:74            LOG_DEBUG     root         No packet logs to dump.
+18:40:41.134037019 [616745] config.cpp:21                LOG_INFO      root         Successfully read configuration file: ../config.cfg
+18:40:41.134335582 [616751] client.cpp:33                LOG_INFO      root         No old file found to delete: client_tcp_option_counts.json
+18:40:41.134354471 [616750] client.cpp:29                LOG_INFO      root         Deleted old file: client_tcp_option_counts.json
+18:40:41.134357805 [616749] serialization_manager.cpp:20 LOG_INFO      root         Deleted old file: tcp_option_counts.json
+18:40:41.134448483 [616750] client.cpp:33                LOG_INFO      root         No old file found to delete: client_tcp_flag_counts.json
+18:40:41.134451433 [616751] client.cpp:29                LOG_INFO      root         Deleted old file: client_tcp_flag_counts.json
+18:40:41.134455497 [616749] serialization_manager.cpp:20 LOG_INFO      root         Deleted old file: tcp_flag_counts.json
+18:40:41.134456059 [616751] client.cpp:29                LOG_INFO      root         Deleted old file: client_packet_log.json
+18:40:41.134456634 [616749] serialization_manager.cpp:24 LOG_INFO      root         No old file found to delete: packet_log.json
+18:40:41.134462437 [616750] client.cpp:29                LOG_INFO      root         Deleted old file: client_packet_log.json
+18:40:41.154256323 [616748] server.cpp:61                LOG_INFO      root         Successfully applied packet filter: src host 192.168.2.2 and not ether src 04:7c:16:8a:5e:6b
+18:40:46.134754095 [616751] client.cpp:53                LOG_DEBUG     root         Dumped client TCP option counts to client_tcp_option_counts.json
+18:40:46.134778477 [616750] client.cpp:53                LOG_DEBUG     root         Dumped client TCP option counts to client_tcp_option_counts.json
+18:40:46.134943860 [616749] tcp_header.cpp:74            LOG_DEBUG     root         No packet logs to dump.
+18:40:46.134973933 [616750] client.cpp:67                LOG_DEBUG     root         Dumped client TCP flag counts to client_tcp_flag_counts.json
+18:40:46.135000392 [616751] client.cpp:67                LOG_DEBUG     root         Dumped client TCP flag counts to client_tcp_flag_counts.json
+18:40:46.135165316 [616751] client.cpp:86                LOG_DEBUG     root         Dumped client packet log to client_packet_log.json
+18:40:46.135183897 [616750] client.cpp:86                LOG_DEBUG     root         Dumped client packet log to client_packet_log.json
+18:40:51.135561620 [616749] tcp_header.cpp:74            LOG_DEBUG     root         No packet logs to dump.
+18:40:51.135564479 [616750] client.cpp:53                LOG_DEBUG     root         Dumped client TCP option counts to client_tcp_option_counts.json
+18:40:51.135565633 [616751] client.cpp:53                LOG_DEBUG     root         Dumped client TCP option counts to client_tcp_option_counts.json
+18:40:51.135750296 [616751] client.cpp:67                LOG_DEBUG     root         Dumped client TCP flag counts to client_tcp_flag_counts.json
+18:40:51.135778061 [616750] client.cpp:67                LOG_DEBUG     root         Dumped client TCP flag counts to client_tcp_flag_counts.json
+18:40:51.135855452 [616751] client.cpp:86                LOG_DEBUG     root         Dumped client packet log to client_packet_log.json
+18:40:51.136148755 [616750] client.cpp:86                LOG_DEBUG     root         Dumped client packet log to client_packet_log.json
+18:40:51.898041156 [616747] arp.cpp:92                   LOG_WARNING   root         Failed to ping IP: 192.168.1.40
+18:40:51.903178151 [616747] arp.cpp:88                   LOG_INFO      root         Pinged IP: 192.168.2.2
+18:40:51.903217271 [616747] client.cpp:322               LOG_DEBUG     root         Forwarded packet, length: 74 bytes
+18:40:51.904112426 [616748] server.cpp:461               LOG_DEBUG     root         Entering queue_packet with packet length: 60
+18:40:51.904124219 [616748] server.cpp:122               LOG_DEBUG     root         Packet data copied, length: 60
+18:40:51.904125943 [616748] server.cpp:129               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0806
+18:40:51.904127058 [616748] server.cpp:138               LOG_DEBUG     root         Non-IP packet received, protocol: 0x0806
+18:40:51.904131407 [616748] server.cpp:461               LOG_DEBUG     root         Entering queue_packet with packet length: 98
+18:40:51.904134406 [616748] server.cpp:122               LOG_DEBUG     root         Packet data copied, length: 98
+18:40:51.904134875 [616748] server.cpp:129               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:40:51.904135578 [616748] server.cpp:141               LOG_DEBUG     root         IP packet received
+18:40:51.904202307 [616748] server.cpp:153               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.2.1, protocol: 1
+18:40:51.904208244 [616748] server.cpp:168               LOG_DEBUG     root         Destination IP address: 192.168.2.1
+18:40:52.910014336 [616748] arp.cpp:92                   LOG_WARNING   root         Failed to ping IP: 192.168.1.40
+18:40:52.915543657 [616748] arp.cpp:88                   LOG_INFO      root         Pinged IP: 192.168.2.2
+18:40:52.915665333 [616748] arp.cpp:134                  LOG_WARNING   root         MAC address for IP 192.168.2.1 not found even after pinging.
+18:40:52.915668436 [616748] server.cpp:178               LOG_CRITICAL  root         Failed to get MAC address for 192.168.2.1
+18:40:52.915679572 [616748] server.cpp:461               LOG_DEBUG     root         Entering queue_packet with packet length: 74
+18:40:52.915689070 [616748] server.cpp:122               LOG_DEBUG     root         Packet data copied, length: 74
+18:40:52.915690927 [616748] server.cpp:129               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:40:52.915692370 [616748] server.cpp:141               LOG_DEBUG     root         IP packet received
+18:40:52.915698792 [616748] server.cpp:153               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.2.1, protocol: 6
+18:40:52.915701211 [616748] server.cpp:168               LOG_DEBUG     root         Destination IP address: 192.168.2.1
+18:40:53.920971721 [616748] arp.cpp:92                   LOG_WARNING   root         Failed to ping IP: 192.168.1.40
+18:40:53.926433877 [616748] arp.cpp:88                   LOG_INFO      root         Pinged IP: 192.168.2.2
+18:40:53.926554295 [616748] arp.cpp:134                  LOG_WARNING   root         MAC address for IP 192.168.2.1 not found even after pinging.
+18:40:53.926557024 [616748] server.cpp:178               LOG_CRITICAL  root         Failed to get MAC address for 192.168.2.1
+18:40:53.926568272 [616748] server.cpp:461               LOG_DEBUG     root         Entering queue_packet with packet length: 98
+18:40:53.926575536 [616748] server.cpp:122               LOG_DEBUG     root         Packet data copied, length: 98
+18:40:53.926577595 [616748] server.cpp:129               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:40:53.926579009 [616748] server.cpp:141               LOG_DEBUG     root         IP packet received
+18:40:53.926585585 [616748] server.cpp:153               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.2.1, protocol: 1
+18:40:53.926587832 [616748] server.cpp:168               LOG_DEBUG     root         Destination IP address: 192.168.2.1
+18:40:53.975128473 [616748] arp.cpp:92                   LOG_WARNING   root         Failed to ping IP: 192.168.1.40
+18:40:53.980353012 [616748] arp.cpp:88                   LOG_INFO      root         Pinged IP: 192.168.2.2
+18:40:53.980472611 [616748] arp.cpp:134                  LOG_WARNING   root         MAC address for IP 192.168.2.1 not found even after pinging.
+18:40:53.980474980 [616748] server.cpp:178               LOG_CRITICAL  root         Failed to get MAC address for 192.168.2.1
+18:40:53.980484063 [616748] server.cpp:461               LOG_DEBUG     root         Entering queue_packet with packet length: 98
+18:40:53.980490304 [616748] server.cpp:122               LOG_DEBUG     root         Packet data copied, length: 98
+18:40:53.980492142 [616748] server.cpp:129               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:40:53.980493646 [616748] server.cpp:141               LOG_DEBUG     root         IP packet received
+18:40:53.980499892 [616748] server.cpp:153               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.2.1, protocol: 1
+18:40:53.980502233 [616748] server.cpp:168               LOG_DEBUG     root         Destination IP address: 192.168.2.1
+18:40:54.985129280 [616748] arp.cpp:92                   LOG_WARNING   root         Failed to ping IP: 192.168.1.40
+18:40:54.990619024 [616748] arp.cpp:88                   LOG_INFO      root         Pinged IP: 192.168.2.2
+18:40:54.990762401 [616748] arp.cpp:134                  LOG_WARNING   root         MAC address for IP 192.168.2.1 not found even after pinging.
+18:40:54.990765708 [616748] server.cpp:178               LOG_CRITICAL  root         Failed to get MAC address for 192.168.2.1
+18:40:54.990776604 [616748] server.cpp:461               LOG_DEBUG     root         Entering queue_packet with packet length: 98
+18:40:54.990784265 [616748] server.cpp:122               LOG_DEBUG     root         Packet data copied, length: 98
+18:40:54.990785739 [616748] server.cpp:129               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:40:54.990787115 [616748] server.cpp:141               LOG_DEBUG     root         IP packet received
+18:40:54.990792740 [616748] server.cpp:153               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.2.1, protocol: 1
+18:40:54.990794963 [616748] server.cpp:168               LOG_DEBUG     root         Destination IP address: 192.168.2.1
+18:40:55.996242921 [616748] arp.cpp:92                   LOG_WARNING   root         Failed to ping IP: 192.168.1.40
+18:40:56.001633077 [616748] arp.cpp:88                   LOG_INFO      root         Pinged IP: 192.168.2.2
+18:40:56.001773434 [616748] arp.cpp:134                  LOG_WARNING   root         MAC address for IP 192.168.2.1 not found even after pinging.
+18:40:56.001776381 [616748] server.cpp:178               LOG_CRITICAL  root         Failed to get MAC address for 192.168.2.1
+18:40:56.001786898 [616748] server.cpp:461               LOG_DEBUG     root         Entering queue_packet with packet length: 98
+18:40:56.001794600 [616748] server.cpp:122               LOG_DEBUG     root         Packet data copied, length: 98
+18:40:56.001796085 [616748] server.cpp:129               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:40:56.001797330 [616748] server.cpp:141               LOG_DEBUG     root         IP packet received
+18:40:56.001804372 [616748] server.cpp:153               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.2.1, protocol: 1
+18:40:56.001806423 [616748] server.cpp:168               LOG_DEBUG     root         Destination IP address: 192.168.2.1
+18:40:56.136160195 [616749] tcp_header.cpp:74            LOG_DEBUG     root         No packet logs to dump.
+18:40:56.136181506 [616751] client.cpp:53                LOG_DEBUG     root         Dumped client TCP option counts to client_tcp_option_counts.json
+18:40:56.136332478 [616751] client.cpp:67                LOG_DEBUG     root         Dumped client TCP flag counts to client_tcp_flag_counts.json
+18:40:56.136407930 [616751] client.cpp:86                LOG_DEBUG     root         Dumped client packet log to client_packet_log.json
+18:40:56.136683794 [616750] client.cpp:53                LOG_DEBUG     root         Dumped client TCP option counts to client_tcp_option_counts.json
+18:40:56.136875666 [616750] client.cpp:67                LOG_DEBUG     root         Dumped client TCP flag counts to client_tcp_flag_counts.json
+18:40:56.137049197 [616750] client.cpp:86                LOG_DEBUG     root         Dumped client packet log to client_packet_log.json
+18:40:57.007257454 [616748] arp.cpp:92                   LOG_WARNING   root         Failed to ping IP: 192.168.1.40
+18:40:58.012921083 [616748] arp.cpp:92                   LOG_WARNING   root         Failed to ping IP: 192.168.2.2
+18:40:58.013059298 [616748] arp.cpp:134                  LOG_WARNING   root         MAC address for IP 192.168.2.1 not found even after pinging.
+18:40:58.013062553 [616748] server.cpp:178               LOG_CRITICAL  root         Failed to get MAC address for 192.168.2.1
+18:40:58.013111503 [616748] server.cpp:461               LOG_DEBUG     root         Entering queue_packet with packet length: 98
+18:40:58.013172237 [616748] server.cpp:122               LOG_DEBUG     root         Packet data copied, length: 98
+18:40:58.013175821 [616748] server.cpp:129               LOG_DEBUG     root         Parsed Ethernet header, protocol: 0x0800
+18:40:58.013177419 [616748] server.cpp:141               LOG_DEBUG     root         IP packet received
+18:40:58.013185069 [616748] server.cpp:153               LOG_DEBUG     root         Parsed IP header, source IP: 192.168.2.2, destination IP: 192.168.2.1, protocol: 1
+18:40:58.013188955 [616748] server.cpp:168               LOG_DEBUG     root         Destination IP address: 192.168.2.1
+18:40:59.018924334 [616748] arp.cpp:92                   LOG_WARNING   root         Failed to ping IP: 192.168.1.40
+18:41:00.024106352 [616748] arp.cpp:92                   LOG_WARNING   root         Failed to ping IP: 192.168.2.2
+18:41:00.024236789 [616748] arp.cpp:134                  LOG_WARNING   root         MAC address for IP 192.168.2.1 not found even after pinging.
+18:41:00.024239990 [616748] server.cpp:178               LOG_CRITICAL  root         Failed to get MAC address for 192.168.2.1
+18:41:01.136743890 [616751] client.cpp:53                LOG_DEBUG     root         Dumped client TCP option counts to client_tcp_option_counts.json
+18:41:01.136753636 [616749] tcp_header.cpp:74            LOG_DEBUG     root         No packet logs to dump.
+18:41:01.136892909 [616751] client.cpp:67                LOG_DEBUG     root         Dumped client TCP flag counts to client_tcp_flag_counts.json
+18:41:01.136961260 [616751] client.cpp:86                LOG_DEBUG     root         Dumped client packet log to client_packet_log.json
+18:41:01.137418888 [616750] client.cpp:53                LOG_DEBUG     root         Dumped client TCP option counts to client_tcp_option_counts.json
+18:41:01.137600581 [616750] client.cpp:67                LOG_DEBUG     root         Dumped client TCP flag counts to client_tcp_flag_counts.json
+18:41:01.137767797 [616750] client.cpp:86                LOG_DEBUG     root         Dumped client packet log to client_packet_log.json
+18:41:06.137235334 [616751] client.cpp:53                LOG_DEBUG     root         Dumped client TCP option counts to client_tcp_option_counts.json
+18:41:06.137377140 [616749] tcp_header.cpp:74            LOG_DEBUG     root         No packet logs to dump.
+18:41:06.137388060 [616751] client.cpp:67                LOG_DEBUG     root         Dumped client TCP flag counts to client_tcp_flag_counts.json
+18:41:06.137456998 [616751] client.cpp:86                LOG_DEBUG     root         Dumped client packet log to client_packet_log.json
+18:41:06.138121423 [616750] client.cpp:53                LOG_DEBUG     root         Dumped client TCP option counts to client_tcp_option_counts.json
+18:41:06.138309042 [616750] client.cpp:67                LOG_DEBUG     root         Dumped client TCP flag counts to client_tcp_flag_counts.json
+18:41:06.138499359 [616750] client.cpp:86                LOG_DEBUG     root         Dumped client packet log to client_packet_log.json

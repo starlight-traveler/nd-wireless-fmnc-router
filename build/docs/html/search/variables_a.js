@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['socket_5faddress_0',['socket_address',['../a00104.html#aa286310eace6844779ed02bc0aeed9dd',1,'Server::PacketData']]],
-  ['src_5fmac_1',['src_mac',['../a00065.html#a4303343d28e43fc8a393ecd6bc01e739',1,'general.h']]],
-  ['status_2',['status',['../a00100.html#a60177e7554074ccadf535a85bd32b60e',1,'Server::PacketLogEntry']]]
+  ['raw_5fsocket_0',['raw_socket',['../a00032.html#a08923b3f7d62077d55fd2a500eb00163',1,'raw_socket:&#160;general.h'],['../a00068.html#a08923b3f7d62077d55fd2a500eb00163',1,'raw_socket:&#160;general.h']]],
+  ['raw_5fsocket_5fmutex_1',['raw_socket_mutex',['../a00032.html#a2b3b87e06ade0ff4cdee803fc15e5428',1,'raw_socket_mutex:&#160;general.h'],['../a00068.html#a2b3b87e06ade0ff4cdee803fc15e5428',1,'raw_socket_mutex:&#160;general.h']]]
 ];

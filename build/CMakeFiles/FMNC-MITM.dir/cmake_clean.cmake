@@ -11,8 +11,6 @@ file(REMOVE_RECURSE
   "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o.d"
   "CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o"
   "CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o.d"
-  "CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o"
-  "CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o.d"
   "CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o"
   "CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o.d"
   "CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o"

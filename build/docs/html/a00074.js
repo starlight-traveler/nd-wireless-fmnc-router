@@ -1,7 +1,7 @@
 var a00074 =
 [
-    [ "Client::Configuration", "a00088.html", "a00088" ],
-    [ "MAX_PACKET_SIZE", "a00074.html#a879456c3b8e2853f7044d764e9c180d4", null ],
-    [ "capture_packets_to", "a00074.html#a8c6c08e6430364d394b8113ac986c5ab", null ],
-    [ "packet_handler_to", "a00074.html#aaa9b57f7648f54c1911058e4b8e94ef5", null ]
+    [ "compute_ip_checksum", "a00074.html#a1d919e8ec4fa73e99303ca26f1a24188", null ],
+    [ "compute_tcp_checksum", "a00074.html#a33bdbedcf6fc6cc7f29ca20db5bbf485", null ],
+    [ "generate_packet_id", "a00074.html#a2e8c16b72b01132d58ef8e9e6fd7f101", null ],
+    [ "get_current_timestamp", "a00074.html#ae2cacf1859fb0b54c2a8c98def76b9e6", null ]
 ];

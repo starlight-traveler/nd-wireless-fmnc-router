@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FMNC-MITM: logger.cpp File Reference</title>
+<title>FMNC-MITM: config.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -90,233 +90,138 @@ $(document).ready(function(){initNavTree('a00047.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">logger.cpp File Reference</div></div>
+<a href="#nested-classes">Classes</a>  </div>
+  <div class="headertitle"><div class="title">config.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;quill/Backend.h&quot;</code><br />
-<code>#include &quot;quill/Frontend.h&quot;</code><br />
-<code>#include &quot;quill/Logger.h&quot;</code><br />
-<code>#include &quot;quill/sinks/ConsoleSink.h&quot;</code><br />
-<code>#include &quot;quill/sinks/FileSink.h&quot;</code><br />
-<code>#include &lt;utility&gt;</code><br />
-<code>#include &quot;<a class="el" href="a00050_source.html">config.h</a>&quot;</code><br />
+<div class="textblock"><code>#include &lt;libconfig.h++&gt;</code><br />
+<code>#include &lt;string&gt;</code><br />
+<code>#include &lt;iostream&gt;</code><br />
+<code>#include &quot;<a class="el" href="a00050_source.html">logger.h</a>&quot;</code><br />
 </div><div class="textblock"><div id="dynsection-0" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for logger.cpp:</div>
+  <img id="dynsection-0-trigger" src="closed.png" alt="+"/> Include dependency graph for config.h:</div>
 <div id="dynsection-0-summary" class="dynsummary" style="display:block;">
 </div>
 <div id="dynsection-0-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00048.png" border="0" usemap="#alogger_8cpp" alt=""/></div>
-<map name="alogger_8cpp" id="alogger_8cpp">
-<area shape="rect" title=" " alt="" coords="396,5,485,31"/>
-<area shape="rect" title=" " alt="" coords="5,79,127,104"/>
-<area shape="poly" title=" " alt="" coords="396,30,140,79,139,73,395,25"/>
-<area shape="rect" title=" " alt="" coords="151,79,274,104"/>
-<area shape="poly" title=" " alt="" coords="405,33,264,77,262,72,403,28"/>
-<area shape="rect" title=" " alt="" coords="507,225,617,251"/>
-<area shape="poly" title=" " alt="" coords="406,33,377,46,351,62,336,81,335,91,339,103,354,125,372,144,416,177,462,201,506,219,504,224,460,206,413,181,369,148,350,128,334,105,330,92,331,79,348,58,374,41,404,28"/>
-<area shape="rect" title=" " alt="" coords="349,79,533,104"/>
-<area shape="poly" title=" " alt="" coords="443,31,443,65,438,65,438,31"/>
-<area shape="rect" title=" " alt="" coords="557,79,711,104"/>
-<area shape="poly" title=" " alt="" coords="473,28,591,71,589,76,471,33"/>
-<area shape="rect" title=" " alt="" coords="736,79,796,104"/>
-<area shape="poly" title=" " alt="" coords="486,25,723,76,722,81,485,31"/>
-<area shape="rect" href="a00050.html" title=" " alt="" coords="820,79,893,104"/>
-<area shape="poly" title=" " alt="" coords="486,23,625,44,807,76,806,81,624,49,485,28"/>
-<area shape="rect" title=" " alt="" coords="548,152,659,177"/>
-<area shape="poly" title=" " alt="" coords="821,106,658,151,656,146,819,100"/>
-<area shape="rect" title=" " alt="" coords="683,152,742,177"/>
-<area shape="poly" title=" " alt="" coords="835,106,750,148,747,143,832,102"/>
-<area shape="rect" title=" " alt="" coords="766,152,846,177"/>
-<area shape="poly" title=" " alt="" coords="850,106,824,142,820,139,846,103"/>
-<area shape="rect" href="a00053.html" title=" " alt="" coords="870,152,945,177"/>
-<area shape="poly" title=" " alt="" coords="860,103,886,140,881,143,856,106"/>
-<area shape="poly" title=" " alt="" coords="870,177,859,180,631,226,630,221,857,175,869,172"/>
-<area shape="poly" title=" " alt="" coords="904,153,879,116,883,113,908,150"/>
-<area shape="rect" title=" " alt="" coords="839,225,975,251"/>
-<area shape="poly" title=" " alt="" coords="910,178,910,212,905,212,905,178"/>
+<div class="center"><img src="a00048.png" border="0" usemap="#aconfig_8h" alt=""/></div>
+<map name="aconfig_8h" id="aconfig_8h">
+<area shape="rect" title=" " alt="" coords="227,5,300,31"/>
+<area shape="rect" title=" " alt="" coords="5,79,116,104"/>
+<area shape="poly" title=" " alt="" coords="232,33,107,77,105,72,230,28"/>
+<area shape="rect" title=" " alt="" coords="141,79,199,104"/>
+<area shape="poly" title=" " alt="" coords="250,33,198,72,194,68,247,29"/>
+<area shape="rect" title=" " alt="" coords="223,79,303,104"/>
+<area shape="poly" title=" " alt="" coords="266,31,266,65,261,65,261,31"/>
+<area shape="rect" href="a00050.html" title=" " alt="" coords="327,79,402,104"/>
+<area shape="poly" title=" " alt="" coords="274,29,331,69,328,74,271,33"/>
+<area shape="poly" title=" " alt="" coords="353,81,297,40,300,36,357,76"/>
+<area shape="rect" title=" " alt="" coords="223,152,359,177"/>
+<area shape="poly" title=" " alt="" coords="354,106,315,144,311,140,351,102"/>
+<area shape="rect" title=" " alt="" coords="383,152,493,177"/>
+<area shape="poly" title=" " alt="" coords="379,102,418,140,414,144,375,106"/>
+</map>
+</div>
+</div><div class="textblock"><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
+  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> This graph shows which files directly or indirectly include this file:</div>
+<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
+</div>
+<div id="dynsection-1-content" class="dyncontent" style="display:none;">
+<div class="center"><img src="a00049.png" border="0" usemap="#aconfig_8hdep" alt=""/></div>
+<map name="aconfig_8hdep" id="aconfig_8hdep">
+<area shape="rect" title=" " alt="" coords="209,5,282,31"/>
+<area shape="rect" href="a00002.html" title=" " alt="" coords="5,79,93,104"/>
+<area shape="poly" title=" " alt="" coords="202,38,82,81,80,76,200,33"/>
+<area shape="rect" href="a00044.html" title=" " alt="" coords="118,79,207,104"/>
+<area shape="poly" title=" " alt="" coords="223,42,178,80,174,76,220,38"/>
+<area shape="rect" href="a00050.html" title=" " alt="" coords="1444,79,1519,104"/>
+<area shape="poly" title=" " alt="" coords="296,20,1444,85,1444,91,296,25"/>
+<area shape="rect" href="a00029.html" title=" " alt="" coords="391,372,473,397"/>
+<area shape="poly" title=" " alt="" coords="248,44,248,163,248,239,252,265,263,287,279,307,299,324,347,351,392,369,391,374,344,356,296,328,275,311,258,290,247,266,243,240,243,163,243,44"/>
+<area shape="poly" title=" " alt="" coords="1430,89,282,24,282,19,1430,84"/>
+<area shape="rect" href="a00035.html" title=" " alt="" coords="1446,299,1517,324"/>
+<area shape="poly" title=" " alt="" coords="1484,118,1484,298,1479,298,1479,118"/>
+<area shape="rect" href="a00077.html" title=" " alt="" coords="334,299,405,324"/>
+<area shape="poly" title=" " alt="" coords="1430,95,1199,95,882,101,725,109,587,119,483,134,447,144,426,154,410,169,398,187,382,228,374,268,372,299,367,298,369,268,376,227,393,185,406,166,422,150,445,139,482,129,587,114,725,103,882,96,1199,90,1430,90"/>
+<area shape="poly" title=" " alt="" coords="1430,95,1195,96,870,104,708,111,566,121,458,136,421,144,397,154,351,190,332,209,319,229,310,251,308,273,312,297,324,323,337,339,354,352,391,370,389,375,351,357,333,343,319,325,307,299,302,273,305,249,314,227,328,206,347,186,395,150,419,139,457,130,566,116,708,105,869,98,1195,91,1430,90"/>
+<area shape="rect" href="a00068.html" title=" " alt="" coords="1081,152,1164,177"/>
+<area shape="poly" title=" " alt="" coords="1431,105,1165,158,1164,153,1430,100"/>
+<area shape="rect" href="a00023.html" title=" " alt="" coords="1279,372,1391,397"/>
+<area shape="poly" title=" " alt="" coords="1528,108,1554,126,1576,151,1598,198,1607,240,1606,261,1601,282,1575,326,1550,338,1504,352,1392,376,1391,370,1503,347,1549,333,1572,322,1596,280,1601,260,1602,241,1593,200,1571,153,1551,130,1525,112"/>
+<area shape="rect" href="a00020.html" title=" " alt="" coords="897,372,996,397"/>
+<area shape="poly" title=" " alt="" coords="1430,98,1225,112,1089,126,946,146,806,172,681,206,628,226,582,249,546,273,521,300,507,315,490,326,457,336,432,336,425,333,429,327,462,324,540,326,677,340,886,369,898,371,897,377,885,375,677,345,540,332,462,329,431,332,431,331,433,331,456,331,488,321,504,311,517,297,543,269,579,244,625,222,679,201,805,167,945,140,1088,121,1225,106,1430,92"/>
+<area shape="rect" href="a00011.html" title=" " alt="" coords="1415,372,1507,397"/>
+<area shape="poly" title=" " alt="" coords="1533,97,1584,115,1607,130,1626,150,1651,196,1659,238,1651,281,1626,326,1602,350,1571,367,1539,377,1508,383,1507,378,1537,372,1569,362,1599,346,1622,322,1646,279,1654,238,1646,198,1622,154,1604,134,1581,119,1531,102"/>
+<area shape="rect" href="a00071.html" title=" " alt="" coords="1693,299,1872,324"/>
+<area shape="poly" title=" " alt="" coords="1533,96,1604,114,1642,129,1676,150,1714,186,1745,228,1780,297,1776,300,1740,231,1710,190,1673,154,1639,134,1602,119,1532,101"/>
+<area shape="rect" href="a00038.html" title=" " alt="" coords="1685,372,1878,397"/>
+<area shape="poly" title=" " alt="" coords="1533,97,1619,115,1669,131,1720,151,1771,178,1817,210,1856,250,1886,298,1890,311,1888,324,1872,345,1846,362,1818,374,1816,369,1844,357,1868,341,1883,322,1885,311,1882,300,1852,253,1813,214,1768,182,1718,156,1667,136,1617,120,1532,102"/>
+<area shape="rect" href="a00041.html" title=" " alt="" coords="1903,372,2023,397"/>
+<area shape="poly" title=" " alt="" coords="1532,95,1639,112,1700,128,1760,150,1816,180,1863,224,1896,263,1924,305,1960,371,1955,373,1919,308,1892,266,1859,227,1813,184,1758,154,1699,133,1638,117,1532,100"/>
+<area shape="rect" href="a00008.html" title=" " alt="" coords="1042,372,1131,397"/>
+<area shape="poly" title=" " alt="" coords="1500,114,1525,158,1547,214,1553,244,1553,273,1547,301,1531,326,1501,346,1458,359,1405,367,1347,370,1232,370,1144,375,1132,377,1131,371,1144,369,1232,365,1347,364,1405,361,1456,354,1499,342,1527,322,1542,299,1548,272,1548,244,1542,215,1520,160,1495,117"/>
+<area shape="rect" href="a00032.html" title=" " alt="" coords="788,372,873,397"/>
+<area shape="poly" title=" " alt="" coords="419,320,424,321,600,345,775,369,788,372,787,377,774,375,599,351,424,327,418,326"/>
+<area shape="poly" title=" " alt="" coords="391,333,424,370,420,374,387,336"/>
+<area shape="poly" title=" " alt="" coords="1068,169,960,174,818,194,742,210,665,233,590,263,520,301,475,338,443,374,439,370,471,334,517,296,588,258,663,228,740,205,817,188,959,169,1068,163"/>
+<area shape="rect" href="a00053.html" title=" " alt="" coords="1287,225,1377,251"/>
+<area shape="poly" title=" " alt="" coords="1170,179,1299,223,1297,228,1169,184"/>
+<area shape="rect" href="a00080.html" title=" " alt="" coords="1025,225,1100,251"/>
+<area shape="poly" title=" " alt="" coords="1106,190,1074,227,1070,223,1102,186"/>
+<area shape="rect" href="a00056.html" title=" " alt="" coords="729,225,812,251"/>
+<area shape="poly" title=" " alt="" coords="1068,180,813,231,812,226,1067,174"/>
+<area shape="rect" href="a00074.html" title=" " alt="" coords="1187,299,1269,324"/>
+<area shape="poly" title=" " alt="" coords="1142,187,1222,297,1217,300,1137,190"/>
+<area shape="poly" title=" " alt="" coords="1369,254,1458,296,1456,301,1367,259"/>
+<area shape="poly" title=" " alt="" coords="1012,249,880,269,722,301,642,327,474,375,473,369,641,321,721,296,879,264,1011,243"/>
+<area shape="poly" title=" " alt="" coords="1114,240,1153,246,1197,256,1242,273,1283,297,1301,314,1315,334,1333,370,1328,373,1311,337,1297,317,1280,301,1240,278,1196,261,1152,251,1113,245"/>
+<area shape="rect" href="a00059.html" title=" " alt="" coords="1014,299,1111,324"/>
+<area shape="poly" title=" " alt="" coords="1065,264,1065,299,1060,299,1060,264"/>
+<area shape="poly" title=" " alt="" coords="1012,245,982,251,950,261,920,277,897,300,893,309,892,318,900,337,915,355,932,370,929,374,912,359,896,340,887,319,888,308,892,297,917,273,947,256,980,245,1012,240"/>
+<area shape="rect" href="a00083.html" title=" " alt="" coords="1344,299,1421,324"/>
+<area shape="poly" title=" " alt="" coords="1114,248,1344,299,1343,304,1113,253"/>
+<area shape="poly" title=" " alt="" coords="1114,242,1693,299,1693,304,1114,247"/>
+<area shape="poly" title=" " alt="" coords="1094,257,1112,275,1127,298,1129,319,1123,340,1100,373,1096,370,1118,338,1124,319,1121,300,1108,279,1090,261"/>
+<area shape="rect" href="a00017.html" title=" " alt="" coords="672,372,763,397"/>
+<area shape="poly" title=" " alt="" coords="1012,245,942,252,863,263,792,279,765,289,746,301,733,317,726,336,720,372,715,371,721,334,729,314,742,297,762,284,790,274,862,257,941,246,1011,240"/>
+<area shape="rect" href="a00065.html" title=" " alt="" coords="755,299,831,324"/>
+<area shape="poly" title=" " alt="" coords="1013,255,832,302,831,297,1012,250"/>
+<area shape="rect" href="a00062.html" title=" " alt="" coords="907,299,989,324"/>
+<area shape="poly" title=" " alt="" coords="1034,260,968,301,965,296,1031,255"/>
+<area shape="poly" title=" " alt="" coords="1120,325,1291,369,1290,374,1119,330"/>
+<area shape="poly" title=" " alt="" coords="1034,333,967,374,964,369,1031,329"/>
+<area shape="poly" title=" " alt="" coords="1407,331,1450,370,1447,374,1404,335"/>
+<area shape="poly" title=" " alt="" coords="1680,321,474,384,474,378,1679,315"/>
+<area shape="poly" title=" " alt="" coords="1785,338,1784,372,1779,372,1780,338"/>
+<area shape="poly" title=" " alt="" coords="1825,326,1934,369,1932,374,1823,331"/>
+<area shape="poly" title=" " alt="" coords="831,327,923,369,920,374,829,332"/>
+<area shape="poly" title=" " alt="" coords="773,335,732,374,728,370,769,331"/>
+<area shape="poly" title=" " alt="" coords="950,338,950,372,944,372,945,338"/>
+<area shape="poly" title=" " alt="" coords="984,328,1065,369,1063,374,981,333"/>
+<area shape="rect" href="a00005.html" title=" " alt="" coords="531,299,629,324"/>
+<area shape="poly" title=" " alt="" coords="728,258,612,301,610,296,726,253"/>
+<area shape="poly" title=" " alt="" coords="1173,324,886,375,874,377,873,372,885,369,1173,319"/>
+<area shape="poly" title=" " alt="" coords="1258,329,1319,370,1316,374,1255,334"/>
+<area shape="poly" title=" " alt="" coords="1174,329,993,375,991,369,1173,324"/>
+<area shape="poly" title=" " alt="" coords="1279,325,1424,369,1423,374,1278,330"/>
+<area shape="poly" title=" " alt="" coords="1195,332,1111,374,1109,369,1192,328"/>
+<area shape="rect" href="a00026.html" title=" " alt="" coords="1156,372,1255,397"/>
+<area shape="poly" title=" " alt="" coords="1223,338,1212,373,1206,371,1218,337"/>
 </map>
 </div>
 </div>
 <p><a href="a00047_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a5612e7039d064556accc794105a7397b" id="r_a5612e7039d064556accc794105a7397b"><td class="memItemLeft" align="right" valign="top">quill::Logger *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#a5612e7039d064556accc794105a7397b">initialize_logger</a> ()</td></tr>
-<tr class="separator:a5612e7039d064556accc794105a7397b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5b287b1f24cc9c79ac82e75e84994244" id="r_a5b287b1f24cc9c79ac82e75e84994244"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00047.html#a5b287b1f24cc9c79ac82e75e84994244">set_log_level</a> (<a class="el" href="a00092.html">ConfigManager</a> &amp;config, quill::Logger *logger)</td></tr>
-<tr class="separator:a5b287b1f24cc9c79ac82e75e84994244"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="a00103.html">ConfigManager</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a5612e7039d064556accc794105a7397b" name="a5612e7039d064556accc794105a7397b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5612e7039d064556accc794105a7397b">&#9670;&#160;</a></span>initialize_logger()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">quill::Logger * initialize_logger </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00011">11</a> of file <a class="el" href="a00047_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>{</div>
-<div class="line"><span class="lineno">   13</span>    <span class="comment">// Start the backend thread</span></div>
-<div class="line"><span class="lineno">   14</span>    quill::BackendOptions backend_options;</div>
-<div class="line"><span class="lineno">   15</span>    quill::Backend::start(backend_options);</div>
-<div class="line"><span class="lineno">   16</span> </div>
-<div class="line"><span class="lineno">   17</span>    <span class="comment">// Frontend</span></div>
-<div class="line"><span class="lineno">   18</span>    quill::ConsoleColours custom_console_colours;</div>
-<div class="line"><span class="lineno">   19</span>    custom_console_colours.set_default_colours();</div>
-<div class="line"><span class="lineno">   20</span>    custom_console_colours.set_colour(quill::LogLevel::Info, quill::ConsoleColours::blue);      <span class="comment">// overwrite the colour for INFO</span></div>
-<div class="line"><span class="lineno">   21</span>    custom_console_colours.set_colour(quill::LogLevel::Warning, quill::ConsoleColours::yellow); <span class="comment">// overwrite the colour for WARNING</span></div>
-<div class="line"><span class="lineno">   22</span>    custom_console_colours.set_colour(quill::LogLevel::Error, quill::ConsoleColours::red);      <span class="comment">// overwrite the colour for ERROR</span></div>
-<div class="line"><span class="lineno">   23</span> </div>
-<div class="line"><span class="lineno">   24</span>    <span class="comment">// Create the sink</span></div>
-<div class="line"><span class="lineno">   25</span>    <span class="keyword">auto</span> console_sink = quill::Frontend::create_or_get_sink&lt;quill::ConsoleSink&gt;(<span class="stringliteral">&quot;sink_client&quot;</span>, custom_console_colours);</div>
-<div class="line"><span class="lineno">   26</span> </div>
-<div class="line"><span class="lineno">   27</span>    <span class="keyword">auto</span> file_sink = quill::Frontend::create_or_get_sink&lt;quill::FileSink&gt;(</div>
-<div class="line"><span class="lineno">   28</span>        <span class="stringliteral">&quot;fmnc_client.log&quot;</span>,</div>
-<div class="line"><span class="lineno">   29</span>        []()</div>
-<div class="line"><span class="lineno">   30</span>        {</div>
-<div class="line"><span class="lineno">   31</span>            quill::FileSinkConfig cfg;</div>
-<div class="line"><span class="lineno">   32</span>            cfg.set_open_mode(<span class="charliteral">&#39;w&#39;</span>);</div>
-<div class="line"><span class="lineno">   33</span>            <span class="keywordflow">return</span> cfg;</div>
-<div class="line"><span class="lineno">   34</span>        }(),</div>
-<div class="line"><span class="lineno">   35</span>        quill::FileEventNotifier{});</div>
-<div class="line"><span class="lineno">   36</span> </div>
-<div class="line"><span class="lineno">   37</span>    quill::Logger *logger = quill::Frontend::create_or_get_logger(<span class="stringliteral">&quot;root&quot;</span>, {std::move(console_sink), std::move(file_sink)});</div>
-<div class="line"><span class="lineno">   38</span> </div>
-<div class="line"><span class="lineno">   39</span>    <span class="comment">// Change the LogLevel to print everything</span></div>
-<div class="line"><span class="lineno">   40</span>    logger-&gt;set_log_level(quill::LogLevel::TraceL3);</div>
-<div class="line"><span class="lineno">   41</span> </div>
-<div class="line"><span class="lineno">   42</span>    <span class="keywordflow">return</span> logger;</div>
-<div class="line"><span class="lineno">   43</span>}</div>
-</div><!-- fragment --><div id="dynsection-1" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-1-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-1-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-1-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00047_a5612e7039d064556accc794105a7397b_icgraph.png" border="0" usemap="#aa00047_a5612e7039d064556accc794105a7397b_icgraph" alt=""/></div>
-<map name="aa00047_a5612e7039d064556accc794105a7397b_icgraph" id="aa00047_a5612e7039d064556accc794105a7397b_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,235,31"/>
-<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" title=" " alt="" coords="95,21,60,21,60,15,95,15"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a5b287b1f24cc9c79ac82e75e84994244" name="a5b287b1f24cc9c79ac82e75e84994244"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5b287b1f24cc9c79ac82e75e84994244">&#9670;&#160;</a></span>set_log_level()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">void set_log_level </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="a00092.html">ConfigManager</a> &amp;&#160;</td>
-          <td class="paramname"><em>config</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">quill::Logger *&#160;</td>
-          <td class="paramname"><em>logger</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="a00047_source.html#l00045">45</a> of file <a class="el" href="a00047_source.html">logger.cpp</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>{</div>
-<div class="line"><span class="lineno">   47</span>    <span class="comment">// Retrieve the log level from the configuration</span></div>
-<div class="line"><span class="lineno">   48</span>    std::string log_level = config.<a class="code hl_function" href="a00092.html#ad6ebe707ef655c67a7a3091a4e87cc19">getLogLevel</a>();</div>
-<div class="line"><span class="lineno">   49</span> </div>
-<div class="line"><span class="lineno">   50</span>    <span class="comment">// Check the log level and set it accordingly</span></div>
-<div class="line"><span class="lineno">   51</span>    <span class="keywordflow">if</span> (log_level == <span class="stringliteral">&quot;TRACE_L1&quot;</span>)</div>
-<div class="line"><span class="lineno">   52</span>    {</div>
-<div class="line"><span class="lineno">   53</span>        logger-&gt;set_log_level(quill::LogLevel::TraceL1);</div>
-<div class="line"><span class="lineno">   54</span>    }</div>
-<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (log_level == <span class="stringliteral">&quot;TRACE_L2&quot;</span>)</div>
-<div class="line"><span class="lineno">   56</span>    {</div>
-<div class="line"><span class="lineno">   57</span>        logger-&gt;set_log_level(quill::LogLevel::TraceL2);</div>
-<div class="line"><span class="lineno">   58</span>    }</div>
-<div class="line"><span class="lineno">   59</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (log_level == <span class="stringliteral">&quot;TRACE_L3&quot;</span>)</div>
-<div class="line"><span class="lineno">   60</span>    {</div>
-<div class="line"><span class="lineno">   61</span>        logger-&gt;set_log_level(quill::LogLevel::TraceL3);</div>
-<div class="line"><span class="lineno">   62</span>    }</div>
-<div class="line"><span class="lineno">   63</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (log_level == <span class="stringliteral">&quot;DEBUG&quot;</span>)</div>
-<div class="line"><span class="lineno">   64</span>    {</div>
-<div class="line"><span class="lineno">   65</span>        logger-&gt;set_log_level(quill::LogLevel::Debug);</div>
-<div class="line"><span class="lineno">   66</span>    }</div>
-<div class="line"><span class="lineno">   67</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (log_level == <span class="stringliteral">&quot;INFO&quot;</span>)</div>
-<div class="line"><span class="lineno">   68</span>    {</div>
-<div class="line"><span class="lineno">   69</span>        logger-&gt;set_log_level(quill::LogLevel::Info);</div>
-<div class="line"><span class="lineno">   70</span>    }</div>
-<div class="line"><span class="lineno">   71</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (log_level == <span class="stringliteral">&quot;WARNING&quot;</span>)</div>
-<div class="line"><span class="lineno">   72</span>    {</div>
-<div class="line"><span class="lineno">   73</span>        logger-&gt;set_log_level(quill::LogLevel::Warning);</div>
-<div class="line"><span class="lineno">   74</span>    }</div>
-<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (log_level == <span class="stringliteral">&quot;ERROR&quot;</span>)</div>
-<div class="line"><span class="lineno">   76</span>    {</div>
-<div class="line"><span class="lineno">   77</span>        logger-&gt;set_log_level(quill::LogLevel::Error);</div>
-<div class="line"><span class="lineno">   78</span>    }</div>
-<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (log_level == <span class="stringliteral">&quot;CRITICAL&quot;</span>)</div>
-<div class="line"><span class="lineno">   80</span>    {</div>
-<div class="line"><span class="lineno">   81</span>        logger-&gt;set_log_level(quill::LogLevel::Critical);</div>
-<div class="line"><span class="lineno">   82</span>    }</div>
-<div class="line"><span class="lineno">   83</span>    <span class="keywordflow">else</span></div>
-<div class="line"><span class="lineno">   84</span>    {</div>
-<div class="line"><span class="lineno">   85</span>        <span class="comment">// Default or invalid log level case</span></div>
-<div class="line"><span class="lineno">   86</span>        logger-&gt;set_log_level(quill::LogLevel::Info); <span class="comment">// Set default log level</span></div>
-<div class="line"><span class="lineno">   87</span>        <span class="comment">// Optionally log a warning for an invalid log level</span></div>
-<div class="line"><span class="lineno">   88</span>        LOG_WARNING(logger, <span class="stringliteral">&quot;Invalid log level &#39;{}&#39; specified in configuration. Defaulting to INFO.&quot;</span>, log_level);</div>
-<div class="line"><span class="lineno">   89</span>    }</div>
-<div class="line"><span class="lineno">   90</span>}</div>
-<div class="ttc" id="aa00092_html_ad6ebe707ef655c67a7a3091a4e87cc19"><div class="ttname"><a href="a00092.html#ad6ebe707ef655c67a7a3091a4e87cc19">ConfigManager::getLogLevel</a></div><div class="ttdeci">std::string getLogLevel() const</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00052">config.cpp:52</a></div></div>
-</div><!-- fragment --><div id="dynsection-2" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-2-trigger" src="closed.png" alt="+"/> Here is the call graph for this function:</div>
-<div id="dynsection-2-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-2-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00047_a5b287b1f24cc9c79ac82e75e84994244_cgraph.png" border="0" usemap="#aa00047_a5b287b1f24cc9c79ac82e75e84994244_cgraph" alt=""/></div>
-<map name="aa00047_a5b287b1f24cc9c79ac82e75e84994244_cgraph" id="aa00047_a5b287b1f24cc9c79ac82e75e84994244_cgraph">
-<area shape="rect" title=" " alt="" coords="5,5,113,31"/>
-<area shape="rect" href="a00092.html#ad6ebe707ef655c67a7a3091a4e87cc19" title=" " alt="" coords="161,5,368,31"/>
-<area shape="poly" title=" " alt="" coords="113,15,147,15,147,21,113,21"/>
-</map>
-</div>
-<div id="dynsection-3" onclick="return toggleVisibility(this)" class="dynheader closed" style="cursor:pointer;">
-  <img id="dynsection-3-trigger" src="closed.png" alt="+"/> Here is the caller graph for this function:</div>
-<div id="dynsection-3-summary" class="dynsummary" style="display:block;">
-</div>
-<div id="dynsection-3-content" class="dyncontent" style="display:none;">
-<div class="center"><img src="a00047_a5b287b1f24cc9c79ac82e75e84994244_icgraph.png" border="0" usemap="#aa00047_a5b287b1f24cc9c79ac82e75e84994244_icgraph" alt=""/></div>
-<map name="aa00047_a5b287b1f24cc9c79ac82e75e84994244_icgraph" id="aa00047_a5b287b1f24cc9c79ac82e75e84994244_icgraph">
-<area shape="rect" title=" " alt="" coords="108,5,216,31"/>
-<area shape="rect" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4" title=" " alt="" coords="5,5,60,31"/>
-<area shape="poly" title=" " alt="" coords="94,21,60,21,60,15,94,15"/>
-</map>
-</div>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="a00047.html">logger.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="a00047.html">config.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

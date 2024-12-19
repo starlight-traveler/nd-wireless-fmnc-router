@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['if_5findex_0',['if_index',['../a00065.html#a268d42a17b51dd418ffc6825d69d45b4',1,'general.h']]],
-  ['initialize_5flogger_1',['initialize_logger',['../a00047.html#a5612e7039d064556accc794105a7397b',1,'initialize_logger():&#160;logger.cpp'],['../a00053.html#a5612e7039d064556accc794105a7397b',1,'initialize_logger():&#160;logger.cpp']]],
-  ['interface_2',['interface',['../a00065.html#a4dcae56eb6645becdd38c6a852ba7055',1,'general.h']]],
-  ['is_5fip_5fpacket_3',['is_ip_packet',['../a00008.html#a22eb1a4cd683c6aa5e856ccaafd48178',1,'server.cpp']]]
+  ['flags_0',['flags',['../a00091.html#a4c321a2d07dca6d22799b690c1185f55',1,'ClientPacketLogEntry::flags'],['../a00119.html#aa70042804b189aa9d44ba6fa7671d3af',1,'Server::PacketLogEntry::flags']]],
+  ['flags_5fmutex_1',['flags_mutex',['../a00095.html#ae6bcff5322f04687bdfe9e13b08c8397',1,'Client::Data::flags_mutex'],['../a00127.html#ab60bd2920993c1122a6ebc45d241f13b',1,'Server::Data::flags_mutex']]]
 ];

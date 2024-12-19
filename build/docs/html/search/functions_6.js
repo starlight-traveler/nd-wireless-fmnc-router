@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['main_0',['main',['../a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]]
+  ['initialize_5flogger_0',['initialize_logger',['../a00044.html#a5612e7039d064556accc794105a7397b',1,'initialize_logger():&#160;logger.cpp'],['../a00050.html#a5612e7039d064556accc794105a7397b',1,'initialize_logger():&#160;logger.cpp']]],
+  ['is_5fip_5fpacket_1',['is_ip_packet',['../a00008.html#a22eb1a4cd683c6aa5e856ccaafd48178',1,'server.cpp']]]
 ];

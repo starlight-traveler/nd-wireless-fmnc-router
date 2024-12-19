@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['mac_0',['mac',['../a00096.html#ad1b5559f6673ae72936932c5acb20a81',1,'MacCacheEntry']]],
-  ['mac_5fcache_1',['mac_cache',['../a00056.html#a1fa7a255d437df566293d8578cb49122',1,'mac_arp.h']]],
-  ['mac_5fcache_5fmutex_2',['mac_cache_mutex',['../a00056.html#a8992c39e04f6c7f3f7da55d6fd0f0f73',1,'mac_arp.h']]]
+  ['length_0',['length',['../a00123.html#a6fcfbe21641ddcfd5cd38ef7ab7998db',1,'Server::PacketData']]],
+  ['logger_1',['logger',['../a00095.html#af13741c2d6d09393074a53c91d164cb8',1,'Client::Data::logger'],['../a00099.html#a67d2018b2848ac33ff318ea2bd3eac28',1,'Client::Configuration::logger'],['../a00127.html#a391a6f2cb5c6b45174ba18ca7c0c98f4',1,'Server::Data::logger']]]
 ];

@@ -183,7 +183,6 @@ add_executable(${PROJECT_NAME}
     src/utilities.cpp
     src/manipulation/window.cpp
     src/manipulation/timing.cpp
-    src/manipulation/sending.cpp
     src/manipulation/packeting.cpp
 
 )

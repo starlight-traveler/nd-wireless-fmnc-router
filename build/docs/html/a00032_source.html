@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FMNC-MITM: main.cpp Source File</title>
+<title>FMNC-MITM: client.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -94,99 +94,376 @@ $(document).ready(function(){initNavTree('a00032_source.html',''); initResizable
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">main.cpp</div></div>
+  <div class="headertitle"><div class="title">client.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="a00032.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="a00065.html">general.h</a>&quot;</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="a00050.html">config.h</a>&quot;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="a00074.html">client.h</a>&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &quot;<a class="code" href="a00077.html">server.h</a>&quot;</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &quot;<a class="code" href="a00053.html">logger.h</a>&quot;</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &quot;<a class="code" href="a00068.html">serialization_manager.h</a>&quot;</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span> </div>
-<div class="foldopen" id="foldopen00008" data-start="{" data-end="}">
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno"><a class="line" href="a00032.html#a8ee3282bc313e547dbbb8d4f4010db61">    8</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="a00032.html#a8ee3282bc313e547dbbb8d4f4010db61">signalHandler</a>(<span class="keywordtype">int</span> signum)</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    std::cout &lt;&lt; <span class="stringliteral">&quot;Interrupt signal (&quot;</span> &lt;&lt; signum &lt;&lt; <span class="stringliteral">&quot;) received.\n&quot;</span>;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    exit(signum);</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
-</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span> </div>
-<div class="foldopen" id="foldopen00016" data-start="{" data-end="}">
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4">   16</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a>()</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>{</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">// Setup logger</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    quill::Logger *logger = <a class="code hl_function" href="a00047.html#a5612e7039d064556accc794105a7397b">initialize_logger</a>();</div>
+<a href="a00032.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="a00077.html">client.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &quot;<a class="code" href="a00074.html">utilities.h</a>&quot;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;pcap.h&gt;</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;arpa/inet.h&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">#include &lt;linux/if_packet.h&gt;</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#include &lt;net/ethernet.h&gt;</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;sys/socket.h&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;cstring&gt;</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;fstream&gt;</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#include &lt;filesystem&gt;</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="keyword">extern</span> <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> <a class="code hl_variable" href="a00032.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[6]; <span class="comment">// Defined elsewhere</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="a00032.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a>;             <span class="comment">// Defined elsewhere</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">extern</span> std::mutex <a class="code hl_variable" href="a00032.html#a2b3b87e06ade0ff4cdee803fc15e5428">raw_socket_mutex</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">extern</span> <span class="keywordtype">int</span> <a class="code hl_variable" href="a00032.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">extern</span> <span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_variable" href="a00032.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a>; <span class="comment">// Defined elsewhere</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="keyword">namespace </span>fs = std::filesystem;</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="comment">// Initialize config manager and load the config</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <a class="code hl_class" href="a00092.html">ConfigManager</a> config(<span class="stringliteral">&quot;../config.cfg&quot;</span>, logger);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">if</span> (!config.<a class="code hl_function" href="a00092.html#a51406b8b2a22f1744b10414eb67f5c93">loadConfig</a>())</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">static</span> <span class="keywordtype">void</span> delete_old_json(<span class="keyword">const</span> std::string &amp;filename, quill::Logger *logger)</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>{</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordflow">try</span></div>
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    {</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        LOG_ERROR(logger, <span class="stringliteral">&quot;Failed to load config.&quot;</span>);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        <span class="keywordflow">return</span> -1;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    }</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="comment">// Set log level config</span></div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="a00047.html#a5b287b1f24cc9c79ac82e75e84994244">set_log_level</a>(config, logger);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="comment">// Setup raw socket for packet forwarding</span></div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="a00005.html#adf1a1b6666f7a6f364bcca7d27a79442">setup_raw_socket</a>();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="comment">// Allocate shared Server::Data</span></div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    std::shared_ptr&lt;Server::Data&gt; internal = std::make_shared&lt;Server::Data&gt;();</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    internal-&gt;logger = logger;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    internal-&gt;prev_timestamp.tv_sec = 0;</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    internal-&gt;prev_timestamp.tv_usec = 0;</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    internal-&gt;total_payload_length = 0;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="comment">// Threaded functions using custom variables from config</span></div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::thread thread_client_to_server([&amp;]()</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>                                        { threaded(logger, 5, 3, <a class="code hl_function" href="a00035.html#a8c6c08e6430364d394b8113ac986c5ab">capture_packets_to</a>, logger); });</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    std::thread thread_server_to_client([&amp;]()</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>                                        { threaded(logger, 5, 3, <a class="code hl_function" href="a00008.html#a7acc69663649862e9f231cfe98fd80f9">capture_packets_from</a>, internal, logger, config); });</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    std::thread thread_serialization([&amp;]()</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>                                        { threaded(logger, 5, 3, <a class="code hl_function" href="a00041.html#a3ed11d498018f0e7e5496194b4a757f7">serialization_manager</a>, internal); });</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="comment">// Just suspend until CTRL-C is called</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    {</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        std::this_thread::sleep_for(std::chrono::seconds(1));</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    }</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    <span class="comment">// Cleanup</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    close(<a class="code hl_variable" href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>);</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordflow">return</span> 0;</div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>}</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>        <span class="keywordflow">if</span> (fs::exists(filename))</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>        {</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>            fs::remove(filename);</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>            LOG_INFO(logger, <span class="stringliteral">&quot;Deleted old file: {}&quot;</span>, filename);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>        }</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        {</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>            LOG_INFO(logger, <span class="stringliteral">&quot;No old file found to delete: {}&quot;</span>, filename);</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        }</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    }</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordflow">catch</span> (<span class="keyword">const</span> fs::filesystem_error &amp;e)</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        LOG_ERROR(logger, <span class="stringliteral">&quot;Failed to delete file: {}, Error: {}&quot;</span>, filename, e.what());</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    }</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>}</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="}">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="a00032.html#acb7d4ebcbda3b6e3a7e001fa15f311a8">   42</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="a00032.html#acb7d4ebcbda3b6e3a7e001fa15f311a8">dump_client_tcp_option_counts</a>(std::shared_ptr&lt;Client::Data&gt; data)</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>{</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    std::lock_guard&lt;std::mutex&gt; lock(data-&gt;counts_mutex);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    nlohmann::json j;</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;kv : data-&gt;tcp_option_counts)</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    {</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        j[std::to_string(kv.first)] = kv.second;</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>    }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    std::ofstream ofs(<span class="stringliteral">&quot;client_tcp_option_counts.json&quot;</span>);</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    ofs &lt;&lt; j.dump(4);</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    LOG_DEBUG(data-&gt;logger, <span class="stringliteral">&quot;Dumped client TCP option counts to client_tcp_option_counts.json&quot;</span>);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>}</div>
 </div>
-<div class="ttc" id="aa00005_html_adf1a1b6666f7a6f364bcca7d27a79442"><div class="ttname"><a href="a00005.html#adf1a1b6666f7a6f364bcca7d27a79442">setup_raw_socket</a></div><div class="ttdeci">void setup_raw_socket()</div><div class="ttdef"><b>Definition</b> <a href="a00005_source.html#l00004">sockets.cpp:4</a></div></div>
-<div class="ttc" id="aa00008_html_a7acc69663649862e9f231cfe98fd80f9"><div class="ttname"><a href="a00008.html#a7acc69663649862e9f231cfe98fd80f9">capture_packets_from</a></div><div class="ttdeci">void capture_packets_from(std::shared_ptr&lt; Server::Data &gt; internal, quill::Logger *logger, ConfigManager &amp;config)</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00014">server.cpp:14</a></div></div>
-<div class="ttc" id="aa00032_html_a8ee3282bc313e547dbbb8d4f4010db61"><div class="ttname"><a href="a00032.html#a8ee3282bc313e547dbbb8d4f4010db61">signalHandler</a></div><div class="ttdeci">void signalHandler(int signum)</div><div class="ttdef"><b>Definition</b> <a href="a00032_source.html#l00008">main.cpp:8</a></div></div>
-<div class="ttc" id="aa00032_html_ae66f6b31b5ad750f1fe042a706a4e3d4"><div class="ttname"><a href="a00032.html#ae66f6b31b5ad750f1fe042a706a4e3d4">main</a></div><div class="ttdeci">int main()</div><div class="ttdef"><b>Definition</b> <a href="a00032_source.html#l00016">main.cpp:16</a></div></div>
-<div class="ttc" id="aa00035_html_a8c6c08e6430364d394b8113ac986c5ab"><div class="ttname"><a href="a00035.html#a8c6c08e6430364d394b8113ac986c5ab">capture_packets_to</a></div><div class="ttdeci">void capture_packets_to(quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00035_source.html#l00006">client.cpp:6</a></div></div>
-<div class="ttc" id="aa00041_html_a3ed11d498018f0e7e5496194b4a757f7"><div class="ttname"><a href="a00041.html#a3ed11d498018f0e7e5496194b4a757f7">serialization_manager</a></div><div class="ttdeci">void serialization_manager(std::shared_ptr&lt; Server::Data &gt; internal)</div><div class="ttdef"><b>Definition</b> <a href="a00041_source.html#l00034">serialization_manager.cpp:34</a></div></div>
-<div class="ttc" id="aa00047_html_a5612e7039d064556accc794105a7397b"><div class="ttname"><a href="a00047.html#a5612e7039d064556accc794105a7397b">initialize_logger</a></div><div class="ttdeci">quill::Logger * initialize_logger()</div><div class="ttdef"><b>Definition</b> <a href="a00047_source.html#l00011">logger.cpp:11</a></div></div>
-<div class="ttc" id="aa00047_html_a5b287b1f24cc9c79ac82e75e84994244"><div class="ttname"><a href="a00047.html#a5b287b1f24cc9c79ac82e75e84994244">set_log_level</a></div><div class="ttdeci">void set_log_level(ConfigManager &amp;config, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00047_source.html#l00045">logger.cpp:45</a></div></div>
-<div class="ttc" id="aa00050_html"><div class="ttname"><a href="a00050.html">config.h</a></div></div>
-<div class="ttc" id="aa00053_html"><div class="ttname"><a href="a00053.html">logger.h</a></div></div>
-<div class="ttc" id="aa00065_html"><div class="ttname"><a href="a00065.html">general.h</a></div></div>
-<div class="ttc" id="aa00065_html_a08923b3f7d62077d55fd2a500eb00163"><div class="ttname"><a href="a00065.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a></div><div class="ttdeci">int raw_socket</div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00039">general.h:39</a></div></div>
-<div class="ttc" id="aa00068_html"><div class="ttname"><a href="a00068.html">serialization_manager.h</a></div></div>
-<div class="ttc" id="aa00074_html"><div class="ttname"><a href="a00074.html">client.h</a></div></div>
-<div class="ttc" id="aa00077_html"><div class="ttname"><a href="a00077.html">server.h</a></div></div>
-<div class="ttc" id="aa00092_html"><div class="ttname"><a href="a00092.html">ConfigManager</a></div><div class="ttdef"><b>Definition</b> <a href="a00050_source.html#l00010">config.h:11</a></div></div>
-<div class="ttc" id="aa00092_html_a51406b8b2a22f1744b10414eb67f5c93"><div class="ttname"><a href="a00092.html#a51406b8b2a22f1744b10414eb67f5c93">ConfigManager::loadConfig</a></div><div class="ttdeci">bool loadConfig()</div><div class="ttdef"><b>Definition</b> <a href="a00002_source.html#l00016">config.cpp:16</a></div></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="a00032.html#a0de2045541e91d6264f3bcc12302d87e">   56</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="a00032.html#a0de2045541e91d6264f3bcc12302d87e">dump_client_tcp_flag_counts</a>(std::shared_ptr&lt;Client::Data&gt; data)</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>{</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    std::lock_guard&lt;std::mutex&gt; lock(data-&gt;flags_mutex);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    nlohmann::json j;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;kv : data-&gt;tcp_flag_counts)</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    {</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>        j[kv.first] = kv.second;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    }</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    std::ofstream ofs(<span class="stringliteral">&quot;client_tcp_flag_counts.json&quot;</span>);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    ofs &lt;&lt; j.dump(4);</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    LOG_DEBUG(data-&gt;logger, <span class="stringliteral">&quot;Dumped client TCP flag counts to client_tcp_flag_counts.json&quot;</span>);</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>}</div>
+</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="foldopen" id="foldopen00070" data-start="{" data-end="}">
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="a00032.html#a4e9925ce7d8b70f5a45a0648db0f5f67">   70</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="a00032.html#a4e9925ce7d8b70f5a45a0648db0f5f67">dump_client_packet_log</a>(std::shared_ptr&lt;Client::Data&gt; data)</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>{</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    std::lock_guard&lt;std::mutex&gt; lock(data-&gt;packet_log_mutex);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    nlohmann::json j;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;kv : data-&gt;packet_log)</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    {</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        nlohmann::json entry;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>        entry[<span class="stringliteral">&quot;status&quot;</span>] = kv.second.status;</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        entry[<span class="stringliteral">&quot;timestamp&quot;</span>] = kv.second.timestamp;</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>        entry[<span class="stringliteral">&quot;flags&quot;</span>] = kv.second.flags;</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        entry[<span class="stringliteral">&quot;options&quot;</span>] = kv.second.options;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        j[kv.first] = entry;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    std::ofstream ofs(<span class="stringliteral">&quot;client_packet_log.json&quot;</span>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    ofs &lt;&lt; j.dump(4);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    LOG_DEBUG(data-&gt;logger, <span class="stringliteral">&quot;Dumped client packet log to client_packet_log.json&quot;</span>);</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>}</div>
+</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span> </div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span><span class="comment">// Client serialization manager thread</span></div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="a00032.html#a5b85c95f1164661b6ffeae2d6821f023">   90</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="a00032.html#a5b85c95f1164661b6ffeae2d6821f023">serialization_manager_client</a>(std::shared_ptr&lt;Client::Data&gt; data)</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>{</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <span class="comment">// Delete old JSON files on startup</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    delete_old_json(<span class="stringliteral">&quot;client_tcp_option_counts.json&quot;</span>, data-&gt;logger);</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    delete_old_json(<span class="stringliteral">&quot;client_tcp_flag_counts.json&quot;</span>, data-&gt;logger);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    delete_old_json(<span class="stringliteral">&quot;client_packet_log.json&quot;</span>, data-&gt;logger);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span> </div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    <span class="comment">// Periodically dump client data</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>)</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    {</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        std::this_thread::sleep_for(std::chrono::seconds(5));</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        <a class="code hl_function" href="a00032.html#acb7d4ebcbda3b6e3a7e001fa15f311a8">dump_client_tcp_option_counts</a>(data);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>        <a class="code hl_function" href="a00032.html#a0de2045541e91d6264f3bcc12302d87e">dump_client_tcp_flag_counts</a>(data);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>        <a class="code hl_function" href="a00032.html#a4e9925ce7d8b70f5a45a0648db0f5f67">dump_client_packet_log</a>(data);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    }</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>}</div>
+</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span><span class="comment">// A helper function to extract TCP flags and options, similar to server side</span></div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="keyword">static</span> std::vector&lt;std::string&gt; get_tcp_flag_names(uint8_t flags)</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>{</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keyword">static</span> <span class="keyword">const</span> std::unordered_map&lt;uint8_t, std::string&gt; tcp_flag_names = {</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>        {0x01, <span class="stringliteral">&quot;FIN&quot;</span>},</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>        {0x02, <span class="stringliteral">&quot;SYN&quot;</span>},</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>        {0x04, <span class="stringliteral">&quot;RST&quot;</span>},</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>        {0x08, <span class="stringliteral">&quot;PSH&quot;</span>},</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>        {0x10, <span class="stringliteral">&quot;ACK&quot;</span>},</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>        {0x20, <span class="stringliteral">&quot;URG&quot;</span>},</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        {0x40, <span class="stringliteral">&quot;ECE&quot;</span>},</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>        {0x80, <span class="stringliteral">&quot;CWR&quot;</span>},</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    };</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span> </div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    std::vector&lt;std::string&gt; flag_names;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;kv : tcp_flag_names)</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>        <span class="keywordflow">if</span> (flags &amp; kv.first)</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>        {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>            flag_names.push_back(kv.second);</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>    }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>    <span class="keywordflow">return</span> flag_names;</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>}</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span><span class="comment">// Similar to server, process flags and options on the client side</span></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keyword">static</span> <span class="keywordtype">void</span> process_tcp_flags_client(std::shared_ptr&lt;Client::Data&gt; data, uint8_t tcp_flags)</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>{</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    std::vector&lt;std::string&gt; flag_names = get_tcp_flag_names(tcp_flags);</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    <span class="keywordflow">if</span> (!flag_names.empty())</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    {</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>        std::lock_guard&lt;std::mutex&gt; lock(data-&gt;flags_mutex);</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span>        <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;f : flag_names)</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            data-&gt;tcp_flag_counts[f]++;</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        }</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    }</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>}</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span><span class="keyword">static</span> <span class="keywordtype">void</span> process_tcp_options_client(std::shared_ptr&lt;Client::Data&gt; data, u_char *options, <span class="keywordtype">int</span> tcp_options_length, std::vector&lt;int&gt; &amp;option_kinds)</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>{</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>    <span class="keywordtype">int</span> parsed_length = 0;</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>    <span class="keywordflow">while</span> (parsed_length &lt; tcp_options_length)</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>    {</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        u_char kind = options[parsed_length];</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>        option_kinds.push_back(kind);</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span> </div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        <span class="keywordflow">if</span> (kind == 0) <span class="comment">// End of options</span></div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>        {</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            parsed_length++;</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>            <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>        }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (kind == 1) <span class="comment">// NOP</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>        {</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>            parsed_length++;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span>        }</div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        {</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>            <span class="keywordflow">if</span> (parsed_length + 1 &gt;= tcp_options_length)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>            {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>                <span class="keywordflow">break</span>; <span class="comment">// malformed</span></div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>            }</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>            u_char length = options[parsed_length + 1];</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>            <span class="keywordflow">if</span> (length &lt; 2 || parsed_length + length &gt; tcp_options_length)</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>            {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>                <span class="keywordflow">break</span>; <span class="comment">// malformed</span></div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>            }</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>            {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>                std::lock_guard&lt;std::mutex&gt; lock(data-&gt;counts_mutex);</div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>                data-&gt;tcp_option_counts[kind]++;</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span>            }</div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>            parsed_length += length;</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        }</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    }</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>}</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span> </div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span><span class="comment">// For logging packets, we need a unique packet_id, similar to server side</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span><span class="keyword">static</span> std::string generate_packet_id(<span class="keyword">struct</span> iphdr *ip_header, <span class="keyword">struct</span> tcphdr *tcp_header)</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>{</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    std::stringstream ss;</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>    ss &lt;&lt; std::hex &lt;&lt; (int)ip_header-&gt;saddr &lt;&lt; <span class="stringliteral">&quot;_&quot;</span> &lt;&lt; (<span class="keywordtype">int</span>)ip_header-&gt;daddr &lt;&lt; <span class="stringliteral">&quot;_&quot;</span> &lt;&lt; (int)ntohs(tcp_header-&gt;source) &lt;&lt; <span class="stringliteral">&quot;_&quot;</span> &lt;&lt; (int)ntohs(tcp_header-&gt;dest) &lt;&lt; <span class="stringliteral">&quot;_&quot;</span> &lt;&lt; ntohl(tcp_header-&gt;seq);</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>    <span class="keywordflow">return</span> ss.str();</div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>}</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span> </div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span><span class="comment">// Handle packets going to 192.168.2.2</span></div>
+<div class="foldopen" id="foldopen00195" data-start="{" data-end="}">
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno"><a class="line" href="a00032.html#a8c6c08e6430364d394b8113ac986c5ab">  195</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="a00032.html#a8c6c08e6430364d394b8113ac986c5ab">capture_packets_to</a>(quill::Logger *logger)</div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>{</div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>    <span class="comment">// Create the client data object</span></div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    <span class="keyword">auto</span> data = std::make_shared&lt;Client::Data&gt;();</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>    data-&gt;logger = logger;</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span> </div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>    <span class="comment">// Start a serialization manager thread for the client</span></div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>    std::thread serialization_thread(<a class="code hl_function" href="a00032.html#a5b85c95f1164661b6ffeae2d6821f023">serialization_manager_client</a>, data);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>    serialization_thread.detach();</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span> </div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    <a class="code hl_struct" href="a00099.html">Client::Configuration</a> conf = {logger, data};</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>    <span class="keywordtype">char</span> error_buffer[PCAP_ERRBUF_SIZE];</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    pcap_t *handle;</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>    <span class="comment">// Open the device for packet capture</span></div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span>    handle = pcap_open_live(<a class="code hl_variable" href="a00032.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a>, BUFSIZ, 1, 50, error_buffer);</div>
+<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span>    <span class="keywordflow">if</span> (handle == <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00213" name="l00213"></a><span class="lineno">  213</span>    {</div>
+<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>        LOG_ERROR(logger, <span class="stringliteral">&quot;Could not open device {}: {}&quot;</span>, <a class="code hl_variable" href="a00032.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a>, error_buffer);</div>
+<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno">  216</span>    }</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span> </div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span>    <span class="keyword">struct </span>bpf_program filter;</div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span>    <span class="keywordtype">char</span> filter_exp_to[150];</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    snprintf(filter_exp_to, <span class="keyword">sizeof</span>(filter_exp_to),</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>             <span class="stringliteral">&quot;dst host 192.168.2.2 and not ether src %02x:%02x:%02x:%02x:%02x:%02x&quot;</span>,</div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>             <a class="code hl_variable" href="a00032.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[0], <a class="code hl_variable" href="a00032.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[1], <a class="code hl_variable" href="a00032.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[2], <a class="code hl_variable" href="a00032.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[3], <a class="code hl_variable" href="a00032.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[4], <a class="code hl_variable" href="a00032.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>[5]);</div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span> </div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keywordflow">if</span> (pcap_compile(handle, &amp;filter, filter_exp_to, 0, PCAP_NETMASK_UNKNOWN) == -1)</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>    {</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>        LOG_ERROR(logger, <span class="stringliteral">&quot;Bad filter: {}&quot;</span>, pcap_geterr(handle));</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>        pcap_close(handle);</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    }</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <span class="keywordflow">if</span> (pcap_setfilter(handle, &amp;filter) == -1)</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        LOG_ERROR(logger, <span class="stringliteral">&quot;Error setting filter: {}&quot;</span>, pcap_geterr(handle));</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>        pcap_close(handle);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>    }</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span> </div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    <span class="comment">// Start packet capture loop</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    pcap_loop(handle, 0, <a class="code hl_function" href="a00032.html#a1210b9f2d376d05583d5804cc44fb583">packet_handler_to</a>, (u_char *)&amp;conf);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="comment">// Cleanup</span></div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    pcap_close(handle);</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>}</div>
+</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span> </div>
+<div class="foldopen" id="foldopen00244" data-start="{" data-end="}">
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno"><a class="line" href="a00032.html#a1210b9f2d376d05583d5804cc44fb583">  244</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="a00032.html#a1210b9f2d376d05583d5804cc44fb583">packet_handler_to</a>(u_char *user, <span class="keyword">const</span> <span class="keyword">struct</span> pcap_pkthdr *header, <span class="keyword">const</span> u_char *packet)</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>{</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>    <a class="code hl_struct" href="a00099.html">Client::Configuration</a> *args = (<a class="code hl_struct" href="a00099.html">Client::Configuration</a> *)user;</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span> </div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>    <span class="comment">// Copy the packet</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> buffer[<a class="code hl_define" href="a00008.html#a879456c3b8e2853f7044d764e9c180d4">MAX_PACKET_SIZE</a>];</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    memcpy(buffer, packet, header-&gt;len);</div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>    <span class="comment">// Parse Ethernet header</span></div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    <span class="keyword">struct </span>ethhdr *eth = (<span class="keyword">struct </span>ethhdr *)buffer;</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    <span class="comment">// Only process IP packets</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordflow">if</span> (ntohs(eth-&gt;h_proto) != ETH_P_IP)</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    {</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span>    }</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span> </div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span>    <span class="comment">// Parse IP header</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span>    <span class="keyword">struct </span>iphdr *ip_header = (<span class="keyword">struct </span>iphdr *)(buffer + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr));</div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span>    <span class="comment">// Parse TCP header if protocol == TCP</span></div>
+<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    <span class="keywordflow">if</span> (ip_header-&gt;protocol == IPPROTO_TCP)</div>
+<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>    {</div>
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        <span class="keywordtype">int</span> ip_header_length = ip_header-&gt;ihl * 4;</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        <span class="keyword">struct </span>tcphdr *tcp_header = (<span class="keyword">struct </span>tcphdr *)(buffer + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> ethhdr) + ip_header_length);</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span> </div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        uint8_t tcp_flags = tcp_header-&gt;th_flags;</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        process_tcp_flags_client(args-&gt;<a class="code hl_variable" href="a00099.html#a0e430957f93d71e7a70b82e5d8cbf6d4">data</a>, tcp_flags);</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span> </div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>        <span class="keywordtype">int</span> tcp_header_length = tcp_header-&gt;doff * 4;</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        <span class="keywordtype">int</span> tcp_options_length = tcp_header_length - <span class="keyword">sizeof</span>(<span class="keyword">struct </span>tcphdr);</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>        std::vector&lt;int&gt; option_kinds;</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>        <span class="keywordflow">if</span> (tcp_options_length &gt; 0)</div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>        {</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>            u_char *options = (u_char *)tcp_header + <span class="keyword">sizeof</span>(<span class="keyword">struct</span> tcphdr);</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>            process_tcp_options_client(args-&gt;<a class="code hl_variable" href="a00099.html#a0e430957f93d71e7a70b82e5d8cbf6d4">data</a>, options, tcp_options_length, option_kinds);</div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>        }</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span> </div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>        <span class="comment">// Log the packet in the packet_log</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>        std::string packet_id = generate_packet_id(ip_header, tcp_header);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>        std::string timestamp = <a class="code hl_function" href="a00026.html#ae2cacf1859fb0b54c2a8c98def76b9e6">get_current_timestamp</a>();</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        {</div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>            std::lock_guard&lt;std::mutex&gt; lock(args-&gt;<a class="code hl_variable" href="a00099.html#a0e430957f93d71e7a70b82e5d8cbf6d4">data</a>-&gt;packet_log_mutex);</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>            <a class="code hl_struct" href="a00091.html">ClientPacketLogEntry</a> log_entry;</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>            log_entry.<a class="code hl_variable" href="a00091.html#a85d3dfdaf95d72488c38c52734fd5ee1">status</a> = <span class="stringliteral">&quot;received_client&quot;</span>;</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>            log_entry.<a class="code hl_variable" href="a00091.html#abdb7892bb04c56daa99c6a8d90b0dd8d">timestamp</a> = timestamp;</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>            log_entry.<a class="code hl_variable" href="a00091.html#a4c321a2d07dca6d22799b690c1185f55">flags</a> = get_tcp_flag_names(tcp_flags);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>            log_entry.<a class="code hl_variable" href="a00091.html#a29c69c8e3734d2a1ee6f45a54b3f3cfe">options</a> = option_kinds;</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>            args-&gt;<a class="code hl_variable" href="a00099.html#a0e430957f93d71e7a70b82e5d8cbf6d4">data</a>-&gt;packet_log[packet_id] = log_entry;</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>        }</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>    }</div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span> </div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <span class="comment">// Get the MAC address of 192.168.2.2</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>    <span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> *dest_mac = <a class="code hl_function" href="a00035.html#a91a4e24d46900f2d4c78a5e062e0608d">get_mac_address</a>(<span class="stringliteral">&quot;192.168.2.2&quot;</span>, args-&gt;<a class="code hl_variable" href="a00099.html#a67d2018b2848ac33ff318ea2bd3eac28">logger</a>);</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keywordflow">if</span> (!dest_mac)</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>    {</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        LOG_CRITICAL(args-&gt;<a class="code hl_variable" href="a00099.html#a67d2018b2848ac33ff318ea2bd3eac28">logger</a>, <span class="stringliteral">&quot;Failed to get MAC address for 192.168.2.2&quot;</span>);</div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    }</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="comment">// Update Ethernet header</span></div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    memcpy(eth-&gt;h_source, <a class="code hl_variable" href="a00032.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a>, 6); <span class="comment">// Set source MAC to our interface&#39;s MAC</span></div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>    memcpy(eth-&gt;h_dest, dest_mac, 6);  <span class="comment">// Set destination MAC to 192.168.2.2&#39;s MAC</span></div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span> </div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>    <span class="comment">// Send the packet</span></div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>    <span class="keyword">struct </span>sockaddr_ll socket_address = {};</div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    socket_address.sll_ifindex = <a class="code hl_variable" href="a00032.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a>;</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    socket_address.sll_halen = ETH_ALEN;</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span>    memcpy(socket_address.sll_addr, dest_mac, 6);</div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>    {</div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>        std::lock_guard&lt;std::mutex&gt; lock(<a class="code hl_variable" href="a00032.html#a2b3b87e06ade0ff4cdee803fc15e5428">raw_socket_mutex</a>);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        ssize_t sent = sendto(<a class="code hl_variable" href="a00032.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a>, buffer, header-&gt;len, 0, (<span class="keyword">struct</span> sockaddr *)&amp;socket_address, <span class="keyword">sizeof</span>(socket_address));</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        <span class="keywordflow">if</span> (sent == -1)</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        {</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>            LOG_CRITICAL(args-&gt;<a class="code hl_variable" href="a00099.html#a67d2018b2848ac33ff318ea2bd3eac28">logger</a>, <span class="stringliteral">&quot;Failed to send packet&quot;</span>);</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        }</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>        {</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>            LOG_DEBUG(args-&gt;<a class="code hl_variable" href="a00099.html#a67d2018b2848ac33ff318ea2bd3eac28">logger</a>, <span class="stringliteral">&quot;Forwarded packet, length: {} bytes&quot;</span>, sent);</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span>        }</div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span>    }</div>
+<div class="line"><a id="l00325" name="l00325"></a><span class="lineno">  325</span>}</div>
+</div>
+<div class="ttc" id="aa00008_html_a879456c3b8e2853f7044d764e9c180d4"><div class="ttname"><a href="a00008.html#a879456c3b8e2853f7044d764e9c180d4">MAX_PACKET_SIZE</a></div><div class="ttdeci">#define MAX_PACKET_SIZE</div><div class="ttdef"><b>Definition</b> <a href="a00008_source.html#l00011">server.cpp:11</a></div></div>
+<div class="ttc" id="aa00026_html_ae2cacf1859fb0b54c2a8c98def76b9e6"><div class="ttname"><a href="a00026.html#ae2cacf1859fb0b54c2a8c98def76b9e6">get_current_timestamp</a></div><div class="ttdeci">std::string get_current_timestamp()</div><div class="ttdef"><b>Definition</b> <a href="a00026_source.html#l00019">utilities.cpp:19</a></div></div>
+<div class="ttc" id="aa00032_html_a08923b3f7d62077d55fd2a500eb00163"><div class="ttname"><a href="a00032.html#a08923b3f7d62077d55fd2a500eb00163">raw_socket</a></div><div class="ttdeci">int raw_socket</div><div class="ttdef"><b>Definition</b> <a href="a00068_source.html#l00039">general.h:39</a></div></div>
+<div class="ttc" id="aa00032_html_a0de2045541e91d6264f3bcc12302d87e"><div class="ttname"><a href="a00032.html#a0de2045541e91d6264f3bcc12302d87e">dump_client_tcp_flag_counts</a></div><div class="ttdeci">void dump_client_tcp_flag_counts(std::shared_ptr&lt; Client::Data &gt; data)</div><div class="ttdef"><b>Definition</b> <a href="a00032_source.html#l00056">client.cpp:56</a></div></div>
+<div class="ttc" id="aa00032_html_a1210b9f2d376d05583d5804cc44fb583"><div class="ttname"><a href="a00032.html#a1210b9f2d376d05583d5804cc44fb583">packet_handler_to</a></div><div class="ttdeci">void packet_handler_to(u_char *user, const struct pcap_pkthdr *header, const u_char *packet)</div><div class="ttdef"><b>Definition</b> <a href="a00032_source.html#l00244">client.cpp:244</a></div></div>
+<div class="ttc" id="aa00032_html_a268d42a17b51dd418ffc6825d69d45b4"><div class="ttname"><a href="a00032.html#a268d42a17b51dd418ffc6825d69d45b4">if_index</a></div><div class="ttdeci">int if_index</div><div class="ttdef"><b>Definition</b> <a href="a00068_source.html#l00040">general.h:40</a></div></div>
+<div class="ttc" id="aa00032_html_a2b3b87e06ade0ff4cdee803fc15e5428"><div class="ttname"><a href="a00032.html#a2b3b87e06ade0ff4cdee803fc15e5428">raw_socket_mutex</a></div><div class="ttdeci">std::mutex raw_socket_mutex</div><div class="ttdef"><b>Definition</b> <a href="a00068_source.html#l00043">general.h:43</a></div></div>
+<div class="ttc" id="aa00032_html_a4303343d28e43fc8a393ecd6bc01e739"><div class="ttname"><a href="a00032.html#a4303343d28e43fc8a393ecd6bc01e739">src_mac</a></div><div class="ttdeci">unsigned char src_mac[6]</div><div class="ttdef"><b>Definition</b> <a href="a00068_source.html#l00041">general.h:41</a></div></div>
+<div class="ttc" id="aa00032_html_a4dcae56eb6645becdd38c6a852ba7055"><div class="ttname"><a href="a00032.html#a4dcae56eb6645becdd38c6a852ba7055">interface</a></div><div class="ttdeci">const char * interface</div><div class="ttdef"><b>Definition</b> <a href="a00068_source.html#l00042">general.h:42</a></div></div>
+<div class="ttc" id="aa00032_html_a4e9925ce7d8b70f5a45a0648db0f5f67"><div class="ttname"><a href="a00032.html#a4e9925ce7d8b70f5a45a0648db0f5f67">dump_client_packet_log</a></div><div class="ttdeci">void dump_client_packet_log(std::shared_ptr&lt; Client::Data &gt; data)</div><div class="ttdef"><b>Definition</b> <a href="a00032_source.html#l00070">client.cpp:70</a></div></div>
+<div class="ttc" id="aa00032_html_a5b85c95f1164661b6ffeae2d6821f023"><div class="ttname"><a href="a00032.html#a5b85c95f1164661b6ffeae2d6821f023">serialization_manager_client</a></div><div class="ttdeci">void serialization_manager_client(std::shared_ptr&lt; Client::Data &gt; data)</div><div class="ttdef"><b>Definition</b> <a href="a00032_source.html#l00090">client.cpp:90</a></div></div>
+<div class="ttc" id="aa00032_html_a8c6c08e6430364d394b8113ac986c5ab"><div class="ttname"><a href="a00032.html#a8c6c08e6430364d394b8113ac986c5ab">capture_packets_to</a></div><div class="ttdeci">void capture_packets_to(quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00032_source.html#l00195">client.cpp:195</a></div></div>
+<div class="ttc" id="aa00032_html_acb7d4ebcbda3b6e3a7e001fa15f311a8"><div class="ttname"><a href="a00032.html#acb7d4ebcbda3b6e3a7e001fa15f311a8">dump_client_tcp_option_counts</a></div><div class="ttdeci">void dump_client_tcp_option_counts(std::shared_ptr&lt; Client::Data &gt; data)</div><div class="ttdef"><b>Definition</b> <a href="a00032_source.html#l00042">client.cpp:42</a></div></div>
+<div class="ttc" id="aa00035_html_a91a4e24d46900f2d4c78a5e062e0608d"><div class="ttname"><a href="a00035.html#a91a4e24d46900f2d4c78a5e062e0608d">get_mac_address</a></div><div class="ttdeci">unsigned char * get_mac_address(const char *ip_address, quill::Logger *logger)</div><div class="ttdef"><b>Definition</b> <a href="a00035_source.html#l00010">arp.cpp:10</a></div></div>
+<div class="ttc" id="aa00074_html"><div class="ttname"><a href="a00074.html">utilities.h</a></div></div>
+<div class="ttc" id="aa00077_html"><div class="ttname"><a href="a00077.html">client.h</a></div></div>
+<div class="ttc" id="aa00091_html"><div class="ttname"><a href="a00091.html">ClientPacketLogEntry</a></div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00014">client.h:15</a></div></div>
+<div class="ttc" id="aa00091_html_a29c69c8e3734d2a1ee6f45a54b3f3cfe"><div class="ttname"><a href="a00091.html#a29c69c8e3734d2a1ee6f45a54b3f3cfe">ClientPacketLogEntry::options</a></div><div class="ttdeci">std::vector&lt; int &gt; options</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00019">client.h:19</a></div></div>
+<div class="ttc" id="aa00091_html_a4c321a2d07dca6d22799b690c1185f55"><div class="ttname"><a href="a00091.html#a4c321a2d07dca6d22799b690c1185f55">ClientPacketLogEntry::flags</a></div><div class="ttdeci">std::vector&lt; std::string &gt; flags</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00018">client.h:18</a></div></div>
+<div class="ttc" id="aa00091_html_a85d3dfdaf95d72488c38c52734fd5ee1"><div class="ttname"><a href="a00091.html#a85d3dfdaf95d72488c38c52734fd5ee1">ClientPacketLogEntry::status</a></div><div class="ttdeci">std::string status</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00016">client.h:16</a></div></div>
+<div class="ttc" id="aa00091_html_abdb7892bb04c56daa99c6a8d90b0dd8d"><div class="ttname"><a href="a00091.html#abdb7892bb04c56daa99c6a8d90b0dd8d">ClientPacketLogEntry::timestamp</a></div><div class="ttdeci">std::string timestamp</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00017">client.h:17</a></div></div>
+<div class="ttc" id="aa00099_html"><div class="ttname"><a href="a00099.html">Client::Configuration</a></div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00042">client.h:43</a></div></div>
+<div class="ttc" id="aa00099_html_a0e430957f93d71e7a70b82e5d8cbf6d4"><div class="ttname"><a href="a00099.html#a0e430957f93d71e7a70b82e5d8cbf6d4">Client::Configuration::data</a></div><div class="ttdeci">std::shared_ptr&lt; Client::Data &gt; data</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00045">client.h:45</a></div></div>
+<div class="ttc" id="aa00099_html_a67d2018b2848ac33ff318ea2bd3eac28"><div class="ttname"><a href="a00099.html#a67d2018b2848ac33ff318ea2bd3eac28">Client::Configuration::logger</a></div><div class="ttdeci">quill::Logger * logger</div><div class="ttdef"><b>Definition</b> <a href="a00077_source.html#l00044">client.h:44</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="a00032.html">main.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_b5b08b2c71e765de61561c69bd176f55.html">client_to_server</a></li><li class="navelem"><a class="el" href="a00032.html">client.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

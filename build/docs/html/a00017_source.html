@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.9.8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>FMNC-MITM: sending.cpp Source File</title>
+<title>FMNC-MITM: timing.cpp Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -94,15 +94,37 @@ $(document).ready(function(){initNavTree('a00017_source.html',''); initResizable
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">sending.cpp</div></div>
+  <div class="headertitle"><div class="title">timing.cpp</div></div>
 </div><!--header-->
 <div class="contents">
-<a href="a00017.html">Go to the documentation of this file.</a><div class="fragment"></div><!-- fragment --></div><!-- contents -->
+<a href="a00017.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#include &quot;<a class="code" href="a00065.html">timing.h</a>&quot;</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;chrono&gt;</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;<a class="code" href="a00080.html">server.h</a>&quot;</span> <span class="comment">// For quill::Logger</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">#include &lt;cmath&gt;</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="foldopen" id="foldopen00006" data-start="{" data-end="}">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="a00017.html#a9940f684badc662066323166bd7af5a6">    6</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="a00017.html#a9940f684badc662066323166bd7af5a6">start_timing</a>(<a class="code hl_struct" href="a00115.html">TimingInfo</a> &amp;timing) {</div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span>    <span class="comment">// LOG_DEBUG(logger, &quot;  Throughput: {:.2f} bytes/s ({:.2f} bits/s)&quot;, bytes_per_second, bits_per_second);</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>}</div>
+</div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="foldopen" id="foldopen00010" data-start="{" data-end="}">
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno"><a class="line" href="a00017.html#a86dd518604ffab7b67cd69d01fc77467">   10</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="a00017.html#a86dd518604ffab7b67cd69d01fc77467">end_timing</a>(<a class="code hl_struct" href="a00115.html">TimingInfo</a> &amp;timing)</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>{</div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="comment">// LOG_DEBUG(logger, &quot;  Throughput: {:.2f} bytes/s ({:.2f} bits/s)&quot;, bytes_per_second, bits_per_second);</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>}</div>
+</div>
+<div class="ttc" id="aa00017_html_a86dd518604ffab7b67cd69d01fc77467"><div class="ttname"><a href="a00017.html#a86dd518604ffab7b67cd69d01fc77467">end_timing</a></div><div class="ttdeci">void end_timing(TimingInfo &amp;timing)</div><div class="ttdef"><b>Definition</b> <a href="a00017_source.html#l00010">timing.cpp:10</a></div></div>
+<div class="ttc" id="aa00017_html_a9940f684badc662066323166bd7af5a6"><div class="ttname"><a href="a00017.html#a9940f684badc662066323166bd7af5a6">start_timing</a></div><div class="ttdeci">void start_timing(TimingInfo &amp;timing)</div><div class="ttdef"><b>Definition</b> <a href="a00017_source.html#l00006">timing.cpp:6</a></div></div>
+<div class="ttc" id="aa00065_html"><div class="ttname"><a href="a00065.html">timing.h</a></div></div>
+<div class="ttc" id="aa00080_html"><div class="ttname"><a href="a00080.html">server.h</a></div></div>
+<div class="ttc" id="aa00115_html"><div class="ttname"><a href="a00115.html">TimingInfo</a></div><div class="ttdef"><b>Definition</b> <a href="a00065_source.html#l00008">timing.h:9</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1b8c89d3abd0c0683d2ba66e75d0c0d7.html">manipulation</a></li><li class="navelem"><a class="el" href="a00017.html">sending.cpp</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_1b8c89d3abd0c0683d2ba66e75d0c0d7.html">manipulation</a></li><li class="navelem"><a class="el" href="a00017.html">timing.cpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>

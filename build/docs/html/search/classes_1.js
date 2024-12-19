@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['data_0',['Data',['../a00108.html',1,'Server']]]
+  ['data_0',['data',['../a00095.html',1,'Client::Data'],['../a00127.html',1,'Server::Data']]]
 ];

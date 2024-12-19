@@ -14,7 +14,6 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/local/research/research-mitmproxy/src/logger.cpp" "CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/logger.cpp.o.d"
   "/local/research/research-mitmproxy/src/main.cpp" "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/main.cpp.o.d"
   "/local/research/research-mitmproxy/src/manipulation/packeting.cpp" "CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/manipulation/packeting.cpp.o.d"
-  "/local/research/research-mitmproxy/src/manipulation/sending.cpp" "CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/manipulation/sending.cpp.o.d"
   "/local/research/research-mitmproxy/src/manipulation/timing.cpp" "CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/manipulation/timing.cpp.o.d"
   "/local/research/research-mitmproxy/src/manipulation/window.cpp" "CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/manipulation/window.cpp.o.d"
   "/local/research/research-mitmproxy/src/serialization/serialization_manager.cpp" "CMakeFiles/FMNC-MITM.dir/src/serialization/serialization_manager.cpp.o" "gcc" "CMakeFiles/FMNC-MITM.dir/src/serialization/serialization_manager.cpp.o.d"
